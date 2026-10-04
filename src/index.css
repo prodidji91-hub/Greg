@@ -1,0 +1,313 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-cream: #F5F2ED;
+    --color-cream-soft: #EDEAE4;
+    --color-forest: #1B3022;
+    --color-forest-deep: #122218;
+    --color-forest-light: #2A4533;
+    --color-gold: #C5A059;
+    --color-gold-dark: #A68648;
+    --color-earth: #8C583E;
+    --color-charcoal: #1B3022;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1B3022;
+    background-color: #F5F2ED;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', Georgia, Cambria, 'Times New Roman', Times, serif;
+  }
+
+  .font-display {
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom boutique scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F2ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A68648;
+}
+
+/* Specific focal alignment for slider 9 Barred Ant Shrike on mobile screens */
+.object-antshrike-pos {
+  object-position: 70% center;
+}
+
+/* Specific focal alignment for slider 12 Barred Ant Shrike Male: framed with generous space */
+.object-antshrike-male-pos {
+  object-position: 48% 30%;
+}
+
+/* Specific focal alignment for slider 15 Rusty-margined Flycatcher */
+.object-flycatcher-pos {
+  object-position: 60% 36%;
+}
+
+/* Specific focal alignment for Panama Wildlife top monkey image: shifted lower in frame */
+.object-monkey-wildlife-pos {
+  object-position: center 15% !important;
+}
+
+/* Specific focal alignment for slider 3 Agouti on mobile screens */
+.object-agouti-pos {
+  object-position: 35% center;
+}
+
+/* Specific focal alignment for slider 6 Gray-headed Chachalaca */
+.object-chachalaca-pos {
+  object-position: center center;
+}
+
+/* Specific focal alignment for slider 8 Orange-chinned Parakeet: moves image lower on the screen so the bird and its head are in full view */
+.object-parakeet-pos {
+  object-position: center top;
+}
+
+/* Specific focal alignment for slider 10 Blue-gray Tanager: shifted lower and to the left */
+.object-tanager-pos {
+  object-position: 75% 25%;
+}
+
+/* Specific focal alignment for Crimson-backed Tanager (redbird.jpeg) */
+.object-crimson-tanager-pos {
+  object-position: center 18%;
+}
+
+/* Specific focal alignment for slider 7 Yellow-backed Oriole: shifted slightly higher on screen */
+.object-oriole-pos {
+  object-position: center 65%;
+}
+
+/* Specific focal alignment for slider 2 Coatimundi: shifted slightly higher on screen */
+.object-coatimundi-pos {
+  object-position: center 38%;
+  width: 106% !important;
+  max-width: none !important;
+  height: 110% !important;
+  top: -4% !important;
+  bottom: auto !important;
+  left: -3% !important;
+  right: auto !important;
+}
+
+/* Specific focal alignment for slider 1 Toucan (Tucannn.jpg): shifted a little lower and to the right for optimal fit on both mobile and desktop */
+.object-toucan-pos {
+  object-position: 30% 30%;
+  width: 110% !important;
+  max-width: none !important;
+  height: 110% !important;
+  top: -4% !important;
+  bottom: auto !important;
+  left: -4% !important;
+  right: auto !important;
+  transform: translateY(3%) translateX(1%);
+}
+
+/* Specific focal alignment for slider 11 Variegated Squirrel (jumpsquirel.jpg) */
+.object-squirrel-pos {
+  object-position: 28% 38%;
+}
+
+/* Specific focal alignment for slider 12 Green Honeycreeper */
+.object-honeycreeper-pos {
+  object-position: 54% 46%;
+}
+
+/* Specific focal alignment for slider 13 Greg: shifted slightly to the left and lower */
+.object-greg-left {
+  object-position: 58% center;
+  width: 106% !important;
+  max-width: none !important;
+  height: 108% !important;
+  top: -4% !important;
+  bottom: auto !important;
+  left: -3% !important;
+  right: auto !important;
+  transform: translate(-2%, 2.5%);
+}
+
+@media (min-width: 1024px) {
+  .object-toucan-pos {
+    object-position: 35% 25%;
+    width: 108% !important;
+    height: 108% !important;
+    top: -3% !important;
+    left: -3% !important;
+    transform: translateY(2.5%) translateX(1%);
+  }
+  .object-squirrel-pos {
+    object-position: center center;
+  }
+  .object-antshrike-pos,
+  .object-agouti-pos {
+    object-position: center;
+  }
+  .object-antshrike-male-pos {
+    object-position: 48% 30%;
+  }
+  .object-flycatcher-pos {
+    object-position: 60% 36%;
+  }
+  .object-monkey-wildlife-pos {
+    object-position: center 12% !important;
+  }
+  .object-chachalaca-pos {
+    object-position: center center;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+  .object-parakeet-pos {
+    object-position: center top;
+  }
+  .object-crimson-tanager-pos {
+    object-position: center 18%;
+  }
+  .object-tanager-pos {
+    object-position: 70% 20%;
+  }
+  .object-oriole-pos {
+    object-position: center 65%;
+  }
+  .object-coatimundi-pos {
+    object-position: center 35%;
+    width: 106% !important;
+    height: 110% !important;
+    top: -4% !important;
+    left: -3% !important;
+  }
+  .object-honeycreeper-pos {
+    object-position: 54% 46%;
+  }
+  .object-greg-left {
+    object-position: center 38%;
+    width: 106% !important;
+    height: 108% !important;
+    top: -4% !important;
+    left: -3% !important;
+    transform: translate(-2.5%, 2.5%);
+  }
+}
+
+/* ==========================================================================
+   Page-Load / Reload Cinematic Intro Animation
+   ========================================================================== */
+
+@keyframes introLogoAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes introBirdFlight {
+  0% {
+    transform: translate(-120px, 80px) rotate(-14deg) scale(0.85);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.35;
+  }
+  80% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate(calc(100vw + 120px), -100px) rotate(-8deg) scale(1.05);
+    opacity: 0;
+  }
+}
+
+@keyframes introBirdWing {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.65);
+  }
+}
+
+@keyframes introLightSweep {
+  0% {
+    transform: translateX(-140%) skewX(-25deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.65;
+  }
+  75% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translateX(260%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+.intro-logo-enter {
+  animation: introLogoAppear 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.intro-bird-motion {
+  animation: introBirdFlight 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) 0.22s both;
+}
+
+.intro-bird-wing {
+  animation: introBirdWing 0.26s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.intro-light-sweep {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(218, 185, 115, 0.08) 25%,
+    rgba(255, 235, 180, 0.38) 50%,
+    rgba(218, 185, 115, 0.08) 75%,
+    transparent 100%
+  );
+  animation: introLightSweep 0.65s cubic-bezier(0.25, 1, 0.5, 1) 0.45s both;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-logo-enter {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .intro-bird-motion {
+    display: none !important;
+  }
+  .intro-light-sweep {
+    display: none !important;
+  }
+}
+
+

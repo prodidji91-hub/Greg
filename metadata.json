@@ -1,0 +1,6 @@
+{
+  "name": "Greg's Place in Albrook",
+  "description": "An over 80-year-old home in Albrook, surrounded by greenery, birds, and the quiet character of one of Panama City’s hidden gems. Stay in history. Wake up to nature.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
