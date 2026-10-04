@@ -408,9 +408,9 @@ export const contentFr = {
         "note": "Appliqué automatiquement pour les séjours de 31 à 45 nuitées"
       },
       {
-        "tier": "Plus de 45 jours",
+        "tier": "Plus de 46 jours",
         "discount": "25% de réduction",
-        "note": "Valable pour les séjours de plus de 45 nuitées"
+        "note": "Valable pour les séjours de plus de 46 nuitées"
       }
     ],
     "monthlyRatesTitle": "Tarifs Mensuels pour Long Séjour",
@@ -703,25 +703,6 @@ export const contentFr = {
     ],
     "places": [
       {
-        "id": "albrook-mall",
-        "name": "Albrook Mall\n« Le plus grand centre commercial d'Amérique latine »",
-        "category": "Shopping & Gastronomie",
-        "categoryKey": "shopping",
-        "distance": "env. 1 km à vol d'oiseau",
-        "driveTime": "env. 7 minutes en voiture",
-        "description": "Cet immense complexe commercial entièrement climatisé compte plus de 700 boutiques et kiosques. Des visiteurs de tout le Panama et des pays voisins s'y rendent en bus ou en métro. On y trouve des centaines d'enseignes, de grands supermarchés, des pharmacies, des banques et des loisirs.",
-        "futureNote": "Une excellente sortie en journée s'il fait trop chaud (ou s'il pleut). Admirez les différentes entrées décorées d'immenses statues d'animaux !",
-        "highlights": [
-          "Plus de 700 boutiques & marques internationales",
-          "Entièrement climatisé",
-          "Supermarchés, pharmacies & essentiels de voyage",
-          "Vastes espaces de restauration et restaurants variés",
-          "Cinémas, bowling et espaces de divertissement",
-          "Connexion directe intérieure avec le terminal de bus d'Albrook et la station de métro"
-        ],
-        "iconType": "shopping"
-      },
-      {
         "id": "panama-canal",
         "name": "Canal de Panama – Centre des Visiteurs de Miraflores",
         "category": "Canal & Ingénierie",
@@ -732,9 +713,10 @@ export const contentFr = {
         "futureNote": "Ne manquez pas le documentaire 3D/IMAX de 45 minutes raconté par Morgan Freeman. Les horaires sont consultables sur https://visitcanaldepanama.com/en/points-of-interest/miraflores-visitor-center/",
         "highlights": [
           "Terrasses panoramiques sur plusieurs étages face aux écluses",
-          "Film documentaire 3D/IMAX primé sur place",
+          "Commentaires en direct en anglais et espagnol",
           "Musée historique retraçant l'épopée de la construction du canal",
-          "Excellent restaurant avec vue directe sur les navires en transit"
+          "Documentaire 3D/IMAX primé",
+          "Horaire du transit des navires (change chaque matin) :\nhttps://visitcanaldepanama.com/en/#horarios-barcos"
         ],
         "iconType": "canal"
       },
@@ -840,6 +822,25 @@ export const contentFr = {
           "Observations fréquentes de paresseux, daims et toucans le long du chemin"
         ],
         "iconType": "mountain"
+      },
+      {
+        "id": "albrook-mall",
+        "name": "Albrook Mall\n« Le plus grand centre commercial d'Amérique latine »",
+        "category": "Shopping & Gastronomie",
+        "categoryKey": "shopping",
+        "distance": "env. 1 km à vol d'oiseau",
+        "driveTime": "env. 7 minutes en voiture",
+        "description": "Cet immense complexe commercial entièrement climatisé compte plus de 700 boutiques et kiosques. Des visiteurs de tout le Panama et des pays voisins s'y rendent en bus ou en métro. On y trouve des centaines d'enseignes, de grands supermarchés, des pharmacies, des banques et des loisirs.",
+        "futureNote": "Une excellente sortie en journée s'il fait trop chaud (ou s'il pleut). Admirez les différentes entrées décorées d'immenses statues d'animaux !",
+        "highlights": [
+          "Plus de 700 boutiques & marques internationales",
+          "Entièrement climatisé",
+          "Supermarchés, pharmacies & essentiels de voyage",
+          "Vastes espaces de restauration et restaurants variés",
+          "Cinémas, bowling et espaces de divertissement",
+          "Connexion directe intérieure avec le terminal de bus d'Albrook et la station de métro"
+        ],
+        "iconType": "shopping"
       },
       {
         "id": "panama-city-base",

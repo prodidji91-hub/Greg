@@ -265,6 +265,31 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                     <div className="mb-4 pt-3 border-t border-[#1B3022]/10 space-y-2">
                       {place.highlights.map((highlight: string, idx: number) => {
                         const isSubItem = highlight.startsWith('  ') || highlight.startsWith('\t');
+                        const text = highlight.trim();
+                        const urlRegex = /(https?:\/\/[^\s]+)/g;
+
+                        const renderTextWithLinks = (contentStr: string) => {
+                          if (!contentStr.match(urlRegex)) return contentStr;
+                          const parts = contentStr.split(urlRegex);
+                          return parts.map((part: string, i: number) => {
+                            if (part.match(urlRegex)) {
+                              return (
+                                <a
+                                  key={i}
+                                  href={part}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="underline text-[#8C583E] hover:text-[#C5A059] font-medium transition-colors break-all inline-block mt-0.5"
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  {part}
+                                </a>
+                              );
+                            }
+                            return part;
+                          });
+                        };
+
                         return (
                           <div
                             key={idx}
@@ -279,7 +304,7 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                             ) : (
                               <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
                             )}
-                            <span>{highlight.trim()}</span>
+                            <span className="whitespace-pre-line">{renderTextWithLinks(text)}</span>
                           </div>
                         );
                       })}

@@ -97,6 +97,20 @@ export const BirdingBreakfast: React.FC<BirdingBreakfastProps> = ({
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                      {isBirdWatching && (
+                        <div className="absolute bottom-2 left-2 right-2 z-20 pointer-events-none">
+                          <span className="block px-2.5 py-1 bg-black/75 backdrop-blur-md border border-white/20 text-white text-[11px] font-medium text-center shadow-xs">
+                            Red-legged Honeycreepers visit Greg’s Place every day
+                          </span>
+                        </div>
+                      )}
+                      {isWildlifeCritters && (
+                        <div className="absolute bottom-2 left-2 right-2 z-20 pointer-events-none">
+                          <span className="block px-2.5 py-1 bg-black/75 backdrop-blur-md border border-white/20 text-white text-[11px] font-medium text-center shadow-xs">
+                            White-nosed Coatimundis visit Greg’s Place every day
+                          </span>
+                        </div>
+                      )}
                     </div>
                   )}
                   <div className="p-6 flex-1 flex flex-col justify-center">
@@ -266,7 +280,7 @@ export const BirdingBreakfast: React.FC<BirdingBreakfastProps> = ({
                     {isHighlight && t.importantNotice && (
                       <div className="mb-6 p-4 bg-black/40 border-l-3 border-[#C5A059] flex items-start gap-3">
                         <AlertCircle className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
-                        <p className="text-xs text-white/90 leading-relaxed font-light">
+                        <p className="text-xs sm:text-sm text-white/95 leading-relaxed font-normal">
                           {t.importantNotice}
                         </p>
                       </div>

@@ -408,9 +408,9 @@ export const contentDe = {
         "note": "Wird bei Aufenthalten zwischen 31 und 45 Tagen automatisch angewendet"
       },
       {
-        "tier": "Ab 45 Tagen",
+        "tier": "Ab 46 Tagen",
         "discount": "25% Rabatt",
-        "note": "Gilt für Aufenthalte ab 45 Tagen"
+        "note": "Gilt für Aufenthalte ab 46 Tagen"
       }
     ],
     "monthlyRatesTitle": "Monatliche Aufenthaltstarife",
@@ -703,25 +703,6 @@ export const contentDe = {
     ],
     "places": [
       {
-        "id": "albrook-mall",
-        "name": "Albrook Mall\n„Das größte Einkaufszentrum Lateinamerikas“",
-        "category": "Einkaufen & Gastronomie",
-        "categoryKey": "shopping",
-        "distance": "ca. 1 km (Luftlinie)",
-        "driveTime": "ca. 7 Minuten mit dem Auto",
-        "description": "Dieses weitläufige, vollständig klimatisierte Einkaufszentrum bietet über 700 Geschäfte und Kioske. Menschen aus ganz Panama und den Nachbarländern kommen mit Bus oder Metro hierher. Es bietet Hunderte Fachgeschäfte, große Supermärkte, Apotheken, Banken und Unterhaltungsangebote.",
-        "futureNote": "Ein tolles Tagesziel, wenn es draußen zu heiß ist (oder regnet). Bewundern Sie die vielen Eingänge mit ihren riesigen Tierskulpturen!",
-        "highlights": [
-          "Über 700 Geschäfte & internationale Modemarken",
-          "Vollständig klimatisiert",
-          "Supermärkte, Apotheken & Reisebedarf",
-          "Große Food-Courts und Restaurants",
-          "Kino, Bowlingbahn und Unterhaltungsbereiche",
-          "Direkte Innenverbindung zum zentralen Busbahnhof Albrook und zur Metro-Station"
-        ],
-        "iconType": "shopping"
-      },
-      {
         "id": "panama-canal",
         "name": "Panamakanal – Miraflores-Besucherzentrum",
         "category": "Kanal & Ingenieurskunst",
@@ -732,9 +713,10 @@ export const contentDe = {
         "futureNote": "Verpassen Sie nicht den 45-minütigen 3D/IMAX-Dokumentarfilm mit Morgan Freeman als Erzähler. Spielzeiten finden Sie hier: https://visitcanaldepanama.com/en/points-of-interest/miraflores-visitor-center/",
         "highlights": [
           "Mehrstöckige Aussichtsplattformen direkt an den Schleusen",
-          "Preisgekrönter 3D/IMAX-Dokumentarfilm vor Ort",
+          "Preisgekrönter 3D/IMAX-Dokumentarfilm",
           "Historisches Museum zur Baugeschichte des Kanals",
-          "Ausgezeichnetes Restaurant mit Blick auf die Schiffe"
+          "Ausgezeichnetes Restaurant mit Blick auf die Schiffe",
+          "Fahrplan der Schiffsdurchfahrten (ändert sich jeden Morgen):\nhttps://visitcanaldepanama.com/en/#horarios-barcos"
         ],
         "iconType": "canal"
       },
@@ -840,6 +822,25 @@ export const contentDe = {
           "Häufige Sichtungen von Faultieren, Hirschen und Tukanen am Wegesrand"
         ],
         "iconType": "mountain"
+      },
+      {
+        "id": "albrook-mall",
+        "name": "Albrook Mall\n„Das größte Einkaufszentrum Lateinamerikas“",
+        "category": "Einkaufen & Gastronomie",
+        "categoryKey": "shopping",
+        "distance": "ca. 1 km (Luftlinie)",
+        "driveTime": "ca. 7 Minuten mit dem Auto",
+        "description": "Dieses weitläufige, vollständig klimatisierte Einkaufszentrum bietet über 700 Geschäfte und Kioske. Menschen aus ganz Panama und den Nachbarländern kommen mit Bus oder Metro hierher. Es bietet Hunderte Fachgeschäfte, große Supermärkte, Apotheken, Banken und Unterhaltungsangebote.",
+        "futureNote": "Ein tolles Tagesziel, wenn es draußen zu heiß ist (oder regnet). Bewundern Sie die vielen Eingänge mit ihren riesigen Tierskulpturen!",
+        "highlights": [
+          "Über 700 Geschäfte & internationale Modemarken",
+          "Vollständig klimatisiert",
+          "Supermärkte, Apotheken & Reisebedarf",
+          "Große Food-Courts und Restaurants",
+          "Kino, Bowlingbahn und Unterhaltungsbereiche",
+          "Direkte Innenverbindung zum zentralen Busbahnhof Albrook und zur Metro-Station"
+        ],
+        "iconType": "shopping"
       },
       {
         "id": "panama-city-base",

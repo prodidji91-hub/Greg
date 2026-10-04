@@ -188,7 +188,7 @@ const WILDLIFE_SLIDES: WildlifeSlide[] = [
     tagEs: 'Bandada del Jardín',
     descEn: 'Playful and vocal parakeets frequently seen chattering in pairs across the Albrook garden trees.',
     descEs: 'Periquitos juguetones y comunicativos que suelen verse en parejas entre los árboles de Albrook.',
-    subtitleEn: "Flock of 50+ visit Greg’s Place every day",
+    subtitleEn: "A Pandemonium of 50+ visit Greg’s Place every day",
     subtitleEs: "Bandada de más de 50 visita Greg’s Place todos los días",
     subtitleDe: "Schwarm von über 50 besucht Greg’s Place jeden Tag",
     subtitleFr: "Une volée de plus de 50 visite Greg’s Place tous les jours",

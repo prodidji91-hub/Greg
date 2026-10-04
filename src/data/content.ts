@@ -356,7 +356,7 @@ export const content = {
         { tier: "7–14 days", discount: "10% discount", note: "Applied automatically to stays between 7 and 14 days" },
         { tier: "15–30 days", discount: "15% discount", note: "Applied automatically to stays between 15 and 30 days" },
         { tier: "31–45 days", discount: "20% discount", note: "Applied automatically to stays between 31 and 45 days" },
-        { tier: "45+ days", discount: "25% discount", note: "Applies to stays of 45 days or more / more than 45 days" }
+        { tier: "46+ days", discount: "25% discount", note: "Applies to stays of 46 days or more / more than 45 days" }
       ],
       monthlyRatesTitle: "Monthly Rates",
       monthlyRatesSubtitle: "Long-Term Extended Residency Options",
@@ -401,9 +401,9 @@ export const content = {
       experienceNote: "An intimate, authentic morning retreat surrounded by lush tropical greenery and soothing morning bird song.",
       airbnbExperienceRef: "https://www.airbnb.com/experiences/635171",
       experiencePillars: [
-        { title: "Bird Watching", desc: "Watch and listen to toucans, parakeets, hummingbirds, and over 100 tropical species singing right outside the patio." },
-        { title: "Tropical Breakfast", desc: "Freshly brewed Panama coffee, teas, seasonal fruit smoothies, and homemade morning specialties." },
-        { title: "Wildlife & Critters Viewing", desc: "Spot agoutis (ñeques), Rocky the coatimundi, sloths, and tropical lizards exploring the garden." }
+        { title: "Bird Watching", desc: "Watch and listen to a variety of colorful tropical birds. Some are large, some are small, some are noisy! Well over 100 species live in the neighborhood." },
+        { title: "Tropical Breakfast", desc: "Freshly brewed Panama coffee, teas, seasonal fruit smoothies, and homemade morning specialties prepared by Maria, our Panamanian cook." },
+        { title: "Wildlife & Critters Viewing", desc: "Spot Agoutis, Coatimundis, Geoffrey’s Tamarin Monkeys, Iguanas, and Variegated Squirrels exploring the garden." }
       ],
       offers: [
         {
@@ -411,14 +411,14 @@ export const content = {
           title: "Outside Visitors",
           badge: "For Non-Staying Visitors",
           price: 39,
-          priceNote: "per person · Morning reservation required",
+          priceNote: "Reservation required by 8PM the evening before the event",
           audience: "For visitors who are not staying at the property",
           tagline: "Breakfast in the middle of nature",
           description: "Join us for a special morning experience in Albrook combining bird watching, fresh tropical breakfast, and wildlife viewing on our screened garden patio.",
           features: [
             "Bird watching with 100+ species active in Albrook canopy",
             "Complete handcrafted tropical breakfast with fresh Panama coffee",
-            "Fresh home-grown fruit smoothies & seasonal fruits",
+            "Fresh home-grown fruit smoothies with seasonal fruits",
             "Wildlife & critter viewing around the garden grounds",
             "Screened-in garden patio dining — completely bug-free",
             "Greg's neighborhood wildlife guidance and local tips"
@@ -433,21 +433,20 @@ export const content = {
           price: 25,
           priceNote: "per person · Exclusive guest rate",
           audience: "Exclusive offer for guests staying overnight at the property",
-          tagline: "Wake up to nature, step into breakfast",
+          tagline: "Wake up to nature and enjoy the breakfast experience",
           description: "Guests staying at Greg's Place enjoy our full birding, breakfast & critters experience at a preferred rate, just steps from their bedroom door.",
           features: [
             "Special preferred rate exclusively for staying guests ($25 vs $39)",
             "Bird watching, breakfast, and wildlife viewing",
             "Freshly prepared breakfast served in the screened garden patio",
             "Panama coffee, teas & fresh fruit smoothies",
-            "Important: Overnight guests must let Greg know the night before and pay in cash in US Dollars",
             "Contact Greg to add this to your morning itinerary"
           ],
           cta: "Contact Greg to Arrange Experience",
           highlighted: true
         }
       ],
-      importantNotice: "Important: Overnight guests must let Greg know the night before and pay in cash in US Dollars.",
+      importantNotice: "Important: Overnight guests need to let Greg know by 8 PM the night before and pay in cash in US Dollars.",
       quote: "Watching birds while sipping fresh Panama coffee in the screened patio is an experience you'll never forget.",
       ctaGeneral: "Reserve Your Birding Breakfast",
       bullets: [
@@ -465,7 +464,7 @@ export const content = {
         },
         {
           title: "Greg's Curated Wildlife Discovery Map",
-          description: "Greg provides a hand-drawn neighborhood map pointing out a secret wildlife stream walking distance from our door."
+          description: "Greg provides a hand-drawn neighborhood map pointing out a wildlife stream within walking distance from our door."
         },
         {
           title: "Nearby Caimans, Turtles & Basilisk Lizards",
@@ -483,34 +482,34 @@ export const content = {
       animals: [
         {
           id: 'toucans',
-          name: "Keel-billed Toucan & Tropical Birds",
+          name: "Keel-billed Toucans",
           scientificOrLocal: "Ramphastos sulfuratus · Tucán pico iris",
-          frequency: "Frequent daily garden visitors",
+          frequency: "Live in the neighborhood",
           habitat: "Garden tree canopies & fruiting branches",
           category: 'birds',
-          description: "Recognized by their rainbow-colored bills, pairs of toucans frequently land in our garden trees during early mornings and late afternoons."
+          description: "Recognized by their rainbow-colored bills, many consider these to be the best looking of all of the toucans. We hear them close by every morning and late afternoons, but they are difficult to spot in the foilage. Sometimes you will get lucky and see pair of them fly overhead between the local trees. We are trying to get them to show themselves more frequently with papaya hoisted high in Greg’s Toucan Tower in his backyard."
         },
         {
           id: 'coatimundi',
-          name: "Coatimundis (Gatos Solos)",
+          name: "White-nosed Coatimundis (Gatos Solos)",
           scientificOrLocal: "Nasua narica · Coati de nariz blanca",
           frequency: "Regularly spotted passing through",
-          habitat: "Garden perimeter & ground foraging",
+          habitat: "Fruit trees and ground foraging",
           category: 'mammals',
-          description: "Curious and agile relatives of the raccoon, coatimundis use their sensitive snouts and ringed tails to forage along the quiet residential garden edges."
+          description: "Curious and agile relatives of the raccoon, coatimundis use their sensitive snouts to forage. Several visit Greg’s Place every day. They are great climbers and adept at stealing from the bird feeders!"
         },
         {
           id: 'agouti',
           name: "Central American Agoutis (Ñeques)",
           scientificOrLocal: "Dasyprocta punctata · Ñeque",
-          frequency: "Very common daily visitors",
+          frequency: "Common daily visitors",
           habitat: "Lawn and shaded undergrowth",
           category: 'mammals',
-          description: "These gentle, glossy-furred creatures are beloved fixtures of the lawn, nibbling fallen seeds and entertaining guests during breakfast."
+          description: "These gentle, glossy-furred creatures are beloved fixtures of the lawn, nibbling fallen fruits and seeds and entertaining guests during breakfast."
         },
         {
           id: 'sloth',
-          name: "Brown-throated Three-toed Sloths",
+          name: "Two and Three-toed Sloths",
           scientificOrLocal: "Bradypus variegatus · Perezoso",
           frequency: "Occasional peaceful sightings",
           habitat: "Cecropia trees & high branches",
@@ -519,27 +518,27 @@ export const content = {
         },
         {
           id: 'monkeys',
-          name: "Geoffroy's Tamarins & Howler Monkeys",
-          scientificOrLocal: "Saguinus geoffroyi & Alouatta palliata",
+          name: "Geoffroy’s Tamarin Monkeys (Monotitis)",
+          scientificOrLocal: "Saguinus geoffroyi · Mono tití",
           frequency: "Occasional visitors in tree corridors",
           habitat: "Canopy transit routes across Albrook",
           category: 'mammals',
-          description: "Small, energetic Geoffrey's Tamarins and vocal Howler Monkeys occasionally make appearances along the leafy canopy corridors bordering the neighborhood."
+          description: "Small, energetic Geoffroy’s Tamarin Monkeys make appearances along the leafy canopy corridors bordering the neighborhood. A troop of 3 to 5 visit Greg’s Place two or three times per day almost every day."
         },
         {
           id: 'caiman',
-          name: "Spectacled Caimans (Short Walk)",
+          name: "Crocodiles (Short Walk)",
           scientificOrLocal: "Caiman crocodilus · Babilla",
-          frequency: "Reliable at the local wildlife stream",
+          frequency: "Frequently visible at nearby Crocodile Creek",
           habitat: "Natural creek & wetland near the residence",
           category: 'reptiles',
-          description: "Located a short stroll from Greg's Place using Greg's wildlife guide map, small caimans can be observed resting quietly on creek banks."
+          description: "Located a short stroll from Greg's Place using Greg's wildlife guide map, caiman crocodiles can be observed in the water or resting quietly on creek banks. Occasionally small to medium sized saltwater crocodiles can also be observed."
         },
         {
           id: 'jesus-christ-lizard',
           name: "Common Basilisk (Jesus Christ Lizard)",
           scientificOrLocal: "Basiliscus basiliscus · Basilisco",
-          frequency: "Common at nearby stream & garden borders",
+          frequency: "Common along nearby Crocodile Creek",
           habitat: "Stream overhanging branches & waterside rocks",
           category: 'reptiles',
           description: "Famous for their ability to run across the water's surface when startled, these remarkable lizards are easily spotted along the creek."
@@ -605,25 +604,6 @@ export const content = {
       ],
       places: [
         {
-          id: 'albrook-mall',
-          name: "Albrook Mall\n“The Largest Mall in Latin America”",
-          category: "Shopping & Dining",
-          categoryKey: "shopping",
-          distance: "~1 km (as the toucan flies)",
-          driveTime: "~7 minutes by car",
-          description: "This expansive fully air-conditioned mall features over 700 stores and kiosks. People come from throughout Panama and nearby countries by bus or metro to enjoy the mall. It features hundreds of retail shops, diverse food courts, major supermarkets, pharmacies, banking services, and family entertainment.",
-          futureNote: "A great daytime destination when it is too hot (or raining) to go outside. Enjoy visiting the many entrances with their huge animal statues!",
-          highlights: [
-            "Over 700 retail stores & international brands",
-            "Fully air conditioned",
-            "Supermarkets, pharmacies & travel essentials",
-            "Extensive food courts and casual restaurants",
-            "Entertainment such as a movie theater, bowling alley and casino",
-            "Direct indoor connection to the Albrook Bus Terminal (which has a direct indoor connection to the Albrook Metro Station)"
-          ],
-          iconType: "shopping"
-        },
-        {
           id: 'panama-canal',
           name: "Panama Canal – Miraflores Locks Visitor Center",
           category: "Historic Engineering",
@@ -636,7 +616,8 @@ export const content = {
             "Up-close observation decks overlooking active locks",
             "Narrated transit commentary in English and Spanish",
             "Interactive museum detailing canal construction history",
-            "Award winning 3D/IMAX documentary movie on site"
+            "Award winning 3D/IMAX documentary movie",
+            "Ship Transit Schedule (changes every morning):\nhttps://visitcanaldepanama.com/en/#horarios-barcos"
           ],
           iconType: "canal"
         },
@@ -745,6 +726,25 @@ export const content = {
             "Frequent roadside sightings of sloths, deer, and toucans"
           ],
           iconType: "mountain"
+        },
+        {
+          id: 'albrook-mall',
+          name: "Albrook Mall\n“The Largest Mall in Latin America”",
+          category: "Shopping & Dining",
+          categoryKey: "shopping",
+          distance: "~1 km (as the toucan flies)",
+          driveTime: "~7 minutes by car",
+          description: "This expansive fully air-conditioned mall features over 700 stores and kiosks. People come from throughout Panama and nearby countries by bus or metro to enjoy the mall. It features hundreds of retail shops, diverse food courts, major supermarkets, pharmacies, banking services, and family entertainment.",
+          futureNote: "A great daytime destination when it is too hot (or raining) to go outside. Enjoy visiting the many entrances with their huge animal statues!",
+          highlights: [
+            "Over 700 retail stores & international brands",
+            "Fully air conditioned",
+            "Supermarkets, pharmacies & travel essentials",
+            "Extensive food courts and casual restaurants",
+            "Entertainment such as a movie theater, bowling alley and casino",
+            "Direct indoor connection to the Albrook Bus Terminal (which has a direct indoor connection to the Albrook Metro Station)"
+          ],
+          iconType: "shopping"
         },
         {
           id: 'panama-city-base',
@@ -1918,25 +1918,6 @@ export const content = {
       ],
       places: [
         {
-          id: 'albrook-mall',
-          name: "Albrook Mall\n“El Centro Comercial Más Grande de América Latina”",
-          category: "Compras y Gastronomía",
-          categoryKey: "shopping",
-          distance: "~1 km (como vuela el tucán)",
-          driveTime: "~7 minutos en auto",
-          description: "Este amplio centro comercial totalmente climatizado cuenta con más de 700 tiendas y quioscos. Personas de todo Panamá y países vecinos llegan en autobús o metro para disfrutar del centro comercial. Cuenta con cientos de tiendas de marcas, diversas plazoletas gastronómicas, supermercados completos, farmacias, servicios bancarios y entretenimiento familiar.",
-          futureNote: "Un excelente destino diurno cuando hace demasiado calor (o llueve) para estar al aire libre. ¡Disfrute visitando las múltiples entradas con sus enormes estatuas de animales!",
-          highlights: [
-            "Más de 700 tiendas departamentales y marcas globales",
-            "Totalmente climatizado (aire acondicionado)",
-            "Supermercados, farmacias y servicios esenciales",
-            "Extensas opciones gastronómicas y restaurantes casuales",
-            "Entretenimiento como salas de cine, bolera y casino",
-            "Conexión directa bajo techo con la Terminal de Autobuses de Albrook (que cuenta con conexión directa bajo techo con la Estación del Metro de Albrook)"
-          ],
-          iconType: "shopping"
-        },
-        {
           id: 'panama-canal',
           name: "Canal de Panamá – Centro de Visitantes de Miraflores",
           category: "Ingeniería Emblemática",
@@ -1949,7 +1930,8 @@ export const content = {
             "Terrazas con vista directa y cercana a las esclusas activas",
             "Narración en vivo en español e inglés durante los tránsitos",
             "Museo interactivo sobre la colosal historia de su construcción",
-            "Película documental galardonada en 3D / IMAX en el lugar"
+            "Película documental galardonada en 3D / IMAX",
+            "Horario de Tránsito de Barcos (cambia cada mañana):\nhttps://visitcanaldepanama.com/en/#horarios-barcos"
           ],
           iconType: "canal"
         },
@@ -2058,6 +2040,25 @@ export const content = {
             "Avistamientos frecuentes de perezosos, venados y coatíes al borde del camino"
           ],
           iconType: "mountain"
+        },
+        {
+          id: 'albrook-mall',
+          name: "Albrook Mall\n“El Centro Comercial Más Grande de América Latina”",
+          category: "Compras y Gastronomía",
+          categoryKey: "shopping",
+          distance: "~1 km (como vuela el tucán)",
+          driveTime: "~7 minutos en auto",
+          description: "Este amplio centro comercial totalmente climatizado cuenta con más de 700 tiendas y quioscos. Personas de todo Panamá y países vecinos llegan en autobús o metro para disfrutar del centro comercial. Cuenta con cientos de tiendas de marcas, diversas plazoletas gastronómicas, supermercados completos, farmacias, servicios bancarios y entretenimiento familiar.",
+          futureNote: "Un excelente destino diurno cuando hace demasiado calor (o llueve) para estar al aire libre. ¡Disfrute visitando las múltiples entradas con sus enormes estatuas de animales!",
+          highlights: [
+            "Más de 700 tiendas departamentales y marcas globales",
+            "Totalmente climatizado (aire acondicionado)",
+            "Supermercados, farmacias y servicios esenciales",
+            "Extensas opciones gastronómicas y restaurantes casuales",
+            "Entretenimiento como salas de cine, bolera y casino",
+            "Conexión directa bajo techo con la Terminal de Autobuses de Albrook (que cuenta con conexión directa bajo techo con la Estación del Metro de Albrook)"
+          ],
+          iconType: "shopping"
         },
         {
           id: 'panama-city-base',
