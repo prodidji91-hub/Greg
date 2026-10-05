@@ -41,6 +41,7 @@ export const RoomDetail: React.FC<RoomDetailProps> = ({
 }) => {
   const tRooms = content[lang].rooms;
   const room = tRooms.items.find((r) => r.id === roomId) || tRooms.items[0];
+  const rId = room.id;
   const images = roomGalleries[roomId] || [];
 
   // Scroll to top when room detail mounts or changes
@@ -425,40 +426,73 @@ export const RoomDetail: React.FC<RoomDetailProps> = ({
                 </div>
 
                 {/* Direct Lodgify Booking CTA */}
-                <div className="space-y-3 mb-6">
-                  <button
-                    type="button"
-                    onClick={() => onBookRoom(room.id)}
-                    className="w-full py-4 px-6 bg-[#C5A059] hover:bg-[#A68648] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-md hover:shadow-xl flex items-center justify-center gap-2"
-                  >
-                    <Calendar className="w-4 h-4 text-white" />
-                    <span>
-                      {tRooms.ctaCheckAvailability ||
-                        (lang === 'fr'
-                          ? 'Vérifier la Disponibilité'
-                          : lang === 'de'
-                          ? 'Verfügbarkeit Prüfen'
-                          : lang === 'en'
-                          ? 'Check Availability'
-                          : 'Consultar Disponibilidad')}
-                    </span>
-                  </button>
-
-                  <a
-                    href="tel:+50765037828"
-                    className="w-full py-3 px-4 border border-[#1B3022]/20 hover:bg-[#FAF8F5] text-[#1B3022] text-xs font-semibold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 text-center"
-                  >
-                    <span>
+                {rId === 'coati-room' ? (
+                  <div className="space-y-4 mb-6">
+                    <div className="py-3 px-4 bg-red-50 border border-red-200 text-red-700 text-xs font-bold uppercase tracking-widest text-center">
+                      {lang === 'fr' 
+                        ? 'ACTUELLEMENT INDISPONIBLE' 
+                        : lang === 'de' 
+                        ? 'DERZEIT NICHT VERFÜGBAR' 
+                        : lang === 'en' 
+                        ? 'CURRENTLY UNAVAILABLE' 
+                        : 'ACTUALMENTE NO DISPONIBLE'}
+                    </div>
+                    <p className="text-xs text-[#1B3022]/80 leading-relaxed text-center italic font-serif">
                       {lang === 'fr'
-                        ? 'Appeler Greg (+507 6503-7828)'
+                        ? "Désolé, la chambre Coati n'est pas disponible dans un avenir prévisible car elle est occupée par un client de longue durée."
                         : lang === 'de'
-                        ? 'Greg anrufen (+507 6503-7828)'
+                        ? "Leider ist das Coati-Zimmer auf absehbare Zeit nicht verfügbar, da es von einem Langzeitgast bewohnt wird."
                         : lang === 'en'
-                        ? 'Call Greg (+507 6503-7828)'
-                        : 'Llamar a Greg (+507 6503-7828)'}
-                    </span>
-                  </a>
-                </div>
+                        ? "Sorry, the Coati Room is unavailable for the foreseeable future because it is occupied by a long-term guest."
+                        : "Lo sentimos, la habitación Coati no está disponible en el futuro previsible porque está ocupada por un huésped a largo plazo."}
+                    </p>
+                  </div>
+                ) : (
+                  <div className="space-y-3 mb-6">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (rId === 'master-bedroom') {
+                          window.open('https://gregsplaceinalbrook.com/en/special-tropical-home---master-bedroom', '_blank', 'noopener,noreferrer');
+                        } else if (rId === 'cayuca-room') {
+                          window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---cayuca-room', '_blank', 'noopener,noreferrer');
+                        } else if (rId === 'owl-room') {
+                          window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---owl-room', '_blank', 'noopener,noreferrer');
+                        } else {
+                          onBookRoom(rId);
+                        }
+                      }}
+                      className="w-full py-4 px-6 bg-[#C5A059] hover:bg-[#A68648] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-md hover:shadow-xl flex items-center justify-center gap-2"
+                    >
+                      <Calendar className="w-4 h-4 text-white" />
+                      <span>
+                        {tRooms.ctaCheckAvailability ||
+                          (lang === 'fr'
+                            ? 'Vérifier la Disponibilité'
+                            : lang === 'de'
+                            ? 'Verfügbarkeit Prüfen'
+                            : lang === 'en'
+                            ? 'Check Availability'
+                            : 'Consultar Disponibilidad')}
+                      </span>
+                    </button>
+
+                    <a
+                      href="tel:+50765037828"
+                      className="w-full py-3 px-4 border border-[#1B3022]/20 hover:bg-[#FAF8F5] text-[#1B3022] text-xs font-semibold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 text-center"
+                    >
+                      <span>
+                        {lang === 'fr'
+                          ? 'Appeler Greg (+507 6503-7828)'
+                          : lang === 'de'
+                          ? 'Greg anrufen (+507 6503-7828)'
+                          : lang === 'en'
+                          ? 'Call Greg (+507 6503-7828)'
+                          : 'Llamar a Greg (+507 6503-7828)'}
+                      </span>
+                    </a>
+                  </div>
+                )}
 
                 {/* Direct Booking Note */}
                 <div className="p-3.5 bg-[#FAF8F5] border border-[#1B3022]/10 text-xs text-[#1B3022]/80 space-y-1.5 mb-6">
@@ -542,14 +576,41 @@ export const RoomDetail: React.FC<RoomDetailProps> = ({
             <span>{backLabel}</span>
           </button>
 
-          <button
-            type="button"
-            onClick={() => onBookRoom(room.id)}
-            className="inline-flex items-center gap-2 px-6 py-3 min-h-[44px] bg-[#C5A059] hover:bg-[#A68648] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-md hover:shadow-lg focus:outline-none"
-          >
-            <Calendar className="w-3.5 h-3.5" />
-            <span>{tRooms.ctaCheckAvailability || 'Check Availability'}</span>
-          </button>
+          {rId === 'coati-room' ? (
+            <div className="inline-flex flex-col sm:flex-row items-center gap-3 bg-red-50 border border-red-100 p-3">
+              <span className="text-xs font-bold text-red-700 tracking-wider uppercase shrink-0">
+                {lang === 'fr' ? 'Indisponible' : lang === 'de' ? 'Nicht verfügbar' : lang === 'en' ? 'Currently Unavailable' : 'No disponible'}
+              </span>
+              <span className="text-[11px] text-[#1B3022]/70 italic leading-snug">
+                {lang === 'fr'
+                  ? "Occupée par un client de longue durée."
+                  : lang === 'de'
+                  ? "Von einem Langzeitgast bewohnt."
+                  : lang === 'en'
+                  ? "Occupied by a long-term guest."
+                  : "Ocupada por un huésped a largo plazo."}
+              </span>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => {
+                if (rId === 'master-bedroom') {
+                  window.open('https://gregsplaceinalbrook.com/en/special-tropical-home---master-bedroom', '_blank', 'noopener,noreferrer');
+                } else if (rId === 'cayuca-room') {
+                  window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---cayuca-room', '_blank', 'noopener,noreferrer');
+                } else if (rId === 'owl-room') {
+                  window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---owl-room', '_blank', 'noopener,noreferrer');
+                } else {
+                  onBookRoom(rId);
+                }
+              }}
+              className="inline-flex items-center gap-2 px-6 py-3 min-h-[44px] bg-[#C5A059] hover:bg-[#A68648] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-md hover:shadow-lg focus:outline-none"
+            >
+              <Calendar className="w-3.5 h-3.5" />
+              <span>{tRooms.ctaCheckAvailability || 'Check Availability'}</span>
+            </button>
+          )}
         </div>
 
       </div>

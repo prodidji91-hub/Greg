@@ -4,6 +4,22 @@ import { Language } from '../types';
 import { content } from '../data/content';
 import { LanguageSelector } from './LanguageSelector';
 
+const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
+
 interface FooterProps {
   lang: Language;
   onLanguageChange: (lang: Language) => void;
@@ -130,6 +146,19 @@ export const Footer: React.FC<FooterProps> = ({
               <Phone className="w-4 h-4 text-[#C5A059] shrink-0" />
               <a href="tel:+50765037828" className="hover:text-[#C5A059] transition-colors font-mono">
                 {t.phone}
+              </a>
+            </div>
+
+            {/* Instagram Link */}
+            <div className="pt-2">
+              <a
+                href="https://www.instagram.com/gregsplace22/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/5 hover:bg-white/10 border border-[#C5A059]/40 hover:border-[#C5A059] text-white hover:text-[#C5A059] text-[11px] font-medium transition-all shadow-2xs rounded-xs"
+              >
+                <InstagramIcon className="w-3.5 h-3.5 text-[#C5A059]" />
+                <span>Follow Greg's Place on Instagram</span>
               </a>
             </div>
 

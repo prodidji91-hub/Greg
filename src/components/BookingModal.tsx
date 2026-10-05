@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Calendar, Users, ExternalLink, ShieldCheck, Phone, CheckCircle2, Coffee, Feather } from 'lucide-react';
+import { X, Calendar, ExternalLink, Phone, CheckCircle2, Coffee } from 'lucide-react';
 import { Language } from '../types';
 import { content } from '../data/content';
 
@@ -21,13 +21,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   initialBirdingOffer = 'visitor',
 }) => {
   const t = content[lang].booking;
-  const roomsT = content[lang].rooms.items;
 
   const [activeTab, setActiveTab] = useState<'lodgify' | 'birding'>(initialTab);
-  const [checkIn, setCheckIn] = useState('');
-  const [checkOut, setCheckOut] = useState('');
-  const [guests, setGuests] = useState('2');
-  const [roomId, setRoomId] = useState(selectedRoomId || 'all');
 
   // Birding Breakfast form state
   const [birdingOffer, setBirdingOffer] = useState<'visitor' | 'guest'>(initialBirdingOffer);
@@ -43,21 +38,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     if (initialBirdingOffer) setBirdingOffer(initialBirdingOffer);
   }, [initialBirdingOffer]);
 
-  useEffect(() => {
-    if (selectedRoomId) setRoomId(selectedRoomId);
-  }, [selectedRoomId]);
-
   if (!isOpen) return null;
 
   const handleLodgifyRedirect = (e: React.FormEvent) => {
     e.preventDefault();
-    const baseUrl = 'https://gregs-place-in-albrook.lodgify.com';
-    const params = new URLSearchParams();
-    if (checkIn) params.append('checkIn', checkIn);
-    if (checkOut) params.append('checkOut', checkOut);
-    if (guests) params.append('guests', guests);
-    
-    const targetUrl = `${baseUrl}?${params.toString()}`;
+    const targetUrl = 'https://gregsplaceinalbrook.com/en/gregs-place-in-albrook';
     window.open(targetUrl, '_blank', 'noopener,noreferrer');
     onClose();
   };
@@ -90,10 +75,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </span>
             </div>
             <h3 id="booking-modal-title" className="font-serif text-2xl font-light text-white">
-              {activeTab === 'lodgify' ? t.modalTitle : t.birdingTitle}
+              Reserve with Greg&apos;s Place in Albrook
             </h3>
-            <p className="text-xs text-white/80 mt-1 font-light">
-              {activeTab === 'lodgify' ? t.modalLead : t.birdingLead}
+            <p className="text-xs text-white/80 mt-1.5 font-light leading-relaxed">
+              {activeTab === 'lodgify' 
+                ? "Check current availability and reserve your stay securely through our official Lodgify booking system."
+                : t.birdingLead}
             </p>
           </div>
           <button
@@ -135,74 +122,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
         {/* Lodgify Room Booking Form */}
         {activeTab === 'lodgify' && (
-          <form onSubmit={handleLodgifyRedirect} className="p-6 space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <label className="block text-[10px] font-bold text-[#1B3022] uppercase tracking-wider mb-1">
-                  {t.formCheckIn}
-                </label>
-                <input
-                  type="date"
-                  value={checkIn}
-                  onChange={(e) => setCheckIn(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-white border border-[#1B3022]/15 text-xs text-[#1B3022] focus:outline-none focus:border-[#C5A059]"
-                />
-              </div>
-
-              <div>
-                <label className="block text-[10px] font-bold text-[#1B3022] uppercase tracking-wider mb-1">
-                  {t.formCheckOut}
-                </label>
-                <input
-                  type="date"
-                  value={checkOut}
-                  onChange={(e) => setCheckOut(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-white border border-[#1B3022]/15 text-xs text-[#1B3022] focus:outline-none focus:border-[#C5A059]"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <label className="block text-[10px] font-bold text-[#1B3022] uppercase tracking-wider mb-1">
-                  {t.formGuests}
-                </label>
-                <select
-                  value={guests}
-                  onChange={(e) => setGuests(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-white border border-[#1B3022]/15 text-xs text-[#1B3022] focus:outline-none focus:border-[#C5A059]"
-                >
-                  <option value="1">1 {lang === 'fr' ? 'Personne' : lang === 'de' ? 'Gast' : lang === 'en' ? 'Guest' : 'Huésped'}</option>
-                  <option value="2">2 {lang === 'fr' ? 'Personnes' : lang === 'de' ? 'Gäste' : lang === 'en' ? 'Guests' : 'Huéspedes'}</option>
-                  <option value="3">3 {lang === 'fr' ? 'Personnes' : lang === 'de' ? 'Gäste' : lang === 'en' ? 'Guests' : 'Huéspedes'}</option>
-                  <option value="4">4+ {lang === 'fr' ? 'Personnes' : lang === 'de' ? 'Gäste' : lang === 'en' ? 'Guests' : 'Huéspedes'}</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-[10px] font-bold text-[#1B3022] uppercase tracking-wider mb-1">
-                  {t.formRoom}
-                </label>
-                <select
-                  value={roomId}
-                  onChange={(e) => setRoomId(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-white border border-[#1B3022]/15 text-xs text-[#1B3022] focus:outline-none focus:border-[#C5A059]"
-                >
-                  <option value="all">{t.allRooms}</option>
-                  {roomsT.map((r) => (
-                    <option key={r.id} value={r.id}>
-                      {r.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
+          <form onSubmit={handleLodgifyRedirect} className="p-6 space-y-6">
             {/* Note on availability */}
-            <div className="bg-white p-3.5 border-l-2 border-[#C5A059] shadow-sm space-y-1.5 text-xs text-[#1B3022]/80">
+            <div className="bg-white p-4 border-l-2 border-[#C5A059] shadow-sm space-y-1.5 text-xs text-[#1B3022]/80">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0" />
-                <span className="font-light">
+                <span className="font-light leading-relaxed">
                   {lang === 'fr'
                     ? 'Réservations officielles gérées directement via le système Lodgify'
                     : lang === 'de'
@@ -212,33 +137,21 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     : 'Reservas oficiales gestionadas a través del sistema directo de Lodgify'}
                 </span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0" />
-                <span className="font-light">
-                  {lang === 'fr'
-                    ? '4 chambres d\'hôtes privées & 3 salles de bain proposées à la location'
-                    : lang === 'de'
-                    ? '4 private Gästezimmer & 3 Bäder zur Vermietung angeboten'
-                    : lang === 'en'
-                    ? '4 private guest rooms & 3 bathrooms offered for rental'
-                    : '4 habitaciones privadas y 3 baños disponibles para alquiler'}
-                </span>
-              </div>
             </div>
 
             {/* Action buttons */}
             <div className="pt-2 flex flex-col sm:flex-row gap-2.5">
               <button
                 type="submit"
-                className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#1B3022] hover:bg-[#2A4533] text-white text-[11px] font-bold uppercase tracking-widest transition-all shadow-md"
+                className="flex-grow inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#C5A059] hover:bg-[#A68648] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-md"
               >
-                <span>{t.forwardBtn}</span>
-                <ExternalLink className="w-4 h-4 text-[#C5A059]" />
+                <span>CHECK AVAILABILITY ON LODGIFY</span>
+                <ExternalLink className="w-4 h-4 text-white" />
               </button>
               <button
                 type="button"
                 onClick={onClose}
-                className="px-5 py-3.5 border border-[#1B3022]/20 hover:bg-white text-[#1B3022] text-[11px] font-bold uppercase tracking-widest transition-colors"
+                className="px-5 py-4 border border-[#1B3022]/20 hover:bg-white text-[#1B3022] text-xs font-bold uppercase tracking-widest transition-colors"
               >
                 {t.cancelBtn}
               </button>
@@ -311,7 +224,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
               <div>
                 <label className="block text-[10px] font-bold text-[#1B3022] uppercase tracking-wider mb-1">
-                  {lang === 'fr' ? 'Nombre de personnes' : lang === 'de' ? 'Anzahl der Personen' : lang === 'en' ? 'Number of Guests' : 'Número de Huéspedes'}
+                  {lang === 'fr' ? 'Nombre de personnes' : lang === 'de' ? 'Anzahl der Personen' : lang === 'en' ? 'Number of Guests' : 'Nombre de Huéspedes'}
                 </label>
                 <select
                   value={birdingGuests}
@@ -343,7 +256,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             <div className="pt-2 flex flex-col sm:flex-row gap-2.5">
               <button
                 type="submit"
-                className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#C5A059] hover:bg-[#A68648] text-white text-[11px] font-bold uppercase tracking-widest transition-all shadow-md"
+                className="flex-grow inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#C5A059] hover:bg-[#A68648] text-white text-[11px] font-bold uppercase tracking-widest transition-all shadow-md"
               >
                 <span>{t.reserveBirdingBtn}</span>
               </button>

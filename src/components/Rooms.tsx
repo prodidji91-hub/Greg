@@ -164,13 +164,14 @@ export const Rooms: React.FC<RoomsProps> = ({
           {t.items.map((room) => {
             const photoCount = getRoomPhotoCount(room);
             const photoLabel = getPhotoText(photoCount);
+            const rId = room.id;
 
             return (
               <div
-                key={room.id}
+                key={rId}
                 onClick={() => {
                   if (onSelectRoom) {
-                    onSelectRoom(room.id);
+                    onSelectRoom(rId);
                   } else {
                     setActiveRoomDetail(room);
                   }
@@ -311,17 +312,44 @@ export const Rooms: React.FC<RoomsProps> = ({
                   <span>{t.ctaView}</span>
                   <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
                 </button>
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onBookRoom(room.id);
-                  }}
-                  className="flex-1 py-3 px-3 bg-[#1B3022] hover:bg-[#2A4533] text-white text-[10px] font-bold uppercase tracking-widest transition-colors shadow flex items-center justify-center gap-1"
-                >
-                  <Calendar className="w-3 h-3 text-[#C5A059]" />
-                  <span>{lang === 'fr' ? 'Réserver' : lang === 'de' ? 'Anfragen' : lang === 'en' ? 'Inquire' : 'Consultar'}</span>
-                </button>
+                 {rId === 'coati-room' ? (
+                  <button
+                    type="button"
+                    disabled
+                    onClick={(e) => e.stopPropagation()}
+                    className="flex-1 py-3 px-3 bg-gray-200 text-gray-500 text-[10px] font-bold uppercase tracking-widest cursor-not-allowed flex items-center justify-center gap-1"
+                  >
+                    <span>
+                      {lang === 'fr' 
+                        ? 'Indisponible' 
+                        : lang === 'de' 
+                        ? 'Nicht verfügbar' 
+                        : lang === 'en' 
+                        ? 'Unavailable' 
+                        : 'No disponible'}
+                    </span>
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (rId === 'master-bedroom') {
+                        window.open('https://gregsplaceinalbrook.com/en/special-tropical-home---master-bedroom', '_blank', 'noopener,noreferrer');
+                      } else if (rId === 'cayuca-room') {
+                        window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---cayuca-room', '_blank', 'noopener,noreferrer');
+                      } else if (rId === 'owl-room') {
+                        window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---owl-room', '_blank', 'noopener,noreferrer');
+                      } else {
+                        onBookRoom(rId);
+                      }
+                    }}
+                    className="flex-1 py-3 px-3 bg-[#1B3022] hover:bg-[#2A4533] text-white text-[10px] font-bold uppercase tracking-widest transition-colors shadow flex items-center justify-center gap-1"
+                  >
+                    <Calendar className="w-3 h-3 text-[#C5A059]" />
+                    <span>{lang === 'fr' ? 'Réserver' : lang === 'de' ? 'Anfragen' : lang === 'en' ? 'Inquire' : 'Consultar'}</span>
+                  </button>
+                )}
               </div>
             </div>
           );

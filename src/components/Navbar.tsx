@@ -5,6 +5,22 @@ import { content } from '../data/content';
 import { localPictures } from '../data/images';
 import { LANGUAGES } from './LanguageSelector';
 
+const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
+
 interface NavbarProps {
   lang: Language;
   onLanguageChange: (lang: Language) => void;
@@ -167,34 +183,53 @@ export const Navbar: React.FC<NavbarProps> = ({
           })}
         </nav>
 
-        {/* Right Utility: Four Horizontal Language Flags directly above Book Now button */}
+        {/* Right Utility: Four Horizontal Language Flags & Instagram directly above Book Now button */}
         <div className="hidden lg:flex flex-col items-end justify-center shrink-0 gap-1.5">
-          {/* Four Language Flags Horizontal on One Line: 🇺🇸 English, 🇪🇸 Spanish, 🇩🇪 German, 🇫🇷 French */}
-          <div
-            className="flex items-center gap-1.5"
-            role="group"
-            aria-label="Language selection: English, Spanish, German, French"
-          >
-            {LANGUAGES.map((option) => {
-              const isSelected = lang === option.code;
-              const FlagComp = option.flag;
-              return (
-                <button
-                  key={option.code}
-                  type="button"
-                  onClick={() => onLanguageChange(option.code)}
-                  aria-label={`Switch language to ${option.nativeTitle}`}
-                  title={option.nativeTitle}
-                  className={`p-1 rounded-[3px] transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A059] ${
-                    isSelected
-                      ? 'ring-2 ring-[#C5A059] shadow-xs scale-110 opacity-100'
-                      : 'opacity-75 hover:opacity-100 hover:scale-105'
-                  }`}
-                >
-                  <FlagComp className="w-[26px] h-[18px] rounded-[2px] shadow-2xs" />
-                </button>
-              );
-            })}
+          {/* Four Language Flags Horizontal on One Line & Instagram Profile Link */}
+          <div className="flex items-center gap-2">
+            <div
+              className="flex items-center gap-1.5"
+              role="group"
+              aria-label="Language selection: English, Spanish, German, French"
+            >
+              {LANGUAGES.map((option) => {
+                const isSelected = lang === option.code;
+                const FlagComp = option.flag;
+                return (
+                  <button
+                    key={option.code}
+                    type="button"
+                    onClick={() => onLanguageChange(option.code)}
+                    aria-label={`Switch language to ${option.nativeTitle}`}
+                    title={option.nativeTitle}
+                    className={`p-1 rounded-[3px] transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A059] ${
+                      isSelected
+                        ? 'ring-2 ring-[#C5A059] shadow-xs scale-110 opacity-100'
+                        : 'opacity-75 hover:opacity-100 hover:scale-105'
+                    }`}
+                  >
+                    <FlagComp className="w-[26px] h-[18px] rounded-[2px] shadow-2xs" />
+                  </button>
+                );
+              })}
+            </div>
+
+            <span className="w-[1px] h-4 bg-[#C5A059]/40" />
+
+            <a
+              href="https://www.instagram.com/gregsplace22/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Greg's Place on Instagram"
+              title="Follow Greg's Place on Instagram"
+              className={`p-1 rounded-[3px] transition-all duration-150 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A059] ${
+                effectiveScrolled
+                  ? 'text-[#1B3022] hover:text-[#C5A059]'
+                  : 'text-white/90 hover:text-[#C5A059]'
+              }`}
+            >
+              <InstagramIcon className="w-5 h-5" />
+            </a>
           </div>
 
           {/* Book Now Button */}
@@ -208,9 +243,9 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Mobile / Tablet Controls (Screens < lg) */}
-        <div className="flex lg:hidden items-center gap-2.5 shrink-0">
+        <div className="flex lg:hidden items-center gap-2 sm:gap-2.5 shrink-0">
           {/* Four horizontal flags on small screens */}
-          <div className="flex items-center gap-1.5" role="group" aria-label="Language selection">
+          <div className="flex items-center gap-1 sm:gap-1.5" role="group" aria-label="Language selection">
             {LANGUAGES.map((option) => {
               const isSelected = lang === option.code;
               const FlagComp = option.flag;
@@ -221,17 +256,30 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onClick={() => onLanguageChange(option.code)}
                   aria-label={`Switch language to ${option.nativeTitle}`}
                   title={option.nativeTitle}
-                  className={`p-1 rounded-[3px] transition-all duration-150 cursor-pointer ${
+                  className={`p-0.5 sm:p-1 rounded-[3px] transition-all duration-150 cursor-pointer ${
                     isSelected
                       ? 'ring-2 ring-[#C5A059] shadow-xs scale-110 opacity-100'
                       : 'opacity-70 hover:opacity-100'
                   }`}
                 >
-                  <FlagComp className="w-[23px] h-[15.5px] rounded-[1.5px] shadow-2xs" />
+                  <FlagComp className="w-[22px] sm:w-[23px] h-[15px] sm:h-[15.5px] rounded-[1.5px] shadow-2xs" />
                 </button>
               );
             })}
           </div>
+
+          <a
+            href="https://www.instagram.com/gregsplace22/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow Greg's Place on Instagram"
+            title="Follow Greg's Place on Instagram"
+            className={`p-1 rounded-[3px] transition-all duration-150 flex items-center justify-center ${
+              effectiveScrolled ? 'text-[#1B3022] hover:text-[#C5A059]' : 'text-white/90 hover:text-[#C5A059]'
+            }`}
+          >
+            <InstagramIcon className="w-4 h-4" />
+          </a>
 
           {/* Book Now button on medium screens */}
           <button
