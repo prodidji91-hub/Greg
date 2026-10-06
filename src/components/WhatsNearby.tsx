@@ -119,8 +119,102 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
         </div>
 
         {/* Destinations Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 items-stretch">
-          {(t.places as readonly NearbyPlace[]).map((place: NearbyPlace) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 items-stretch">
+          {(t.places as readonly NearbyPlace[]).filter((p) => p.id !== '51-fun-things').map((place: NearbyPlace) => {
+            if (place.id === 'monkey-island') {
+              return (
+                <div
+                  key={place.id}
+                  id={place.id}
+                  className="p-7 transition-all flex flex-col justify-between group relative bg-white border border-[#1B3022]/10 hover:border-[#C5A059] shadow-sm hover:shadow-md"
+                >
+                  <div>
+                    {/* Card Top: Icon & Category */}
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <div className="w-10 h-10 flex items-center justify-center bg-[#F5F2ED] border border-[#1B3022]/10 group-hover:border-[#C5A059] transition-colors">
+                        <Ship className="w-5 h-5 text-[#C5A059]" />
+                      </div>
+                      <span className="text-[11px] font-mono uppercase tracking-widest font-bold px-2.5 py-1 text-[#8C583E] bg-[#EDEAE4]">
+                        {lang === 'fr' ? 'Excursion Nature' : lang === 'de' ? 'Naturausflug' : lang === 'es' ? 'Excursión de Naturaleza' : 'Rainforest Excursion'}
+                      </span>
+                    </div>
+
+                    {/* Title & Subtitle */}
+                    <div className="mb-3">
+                      <h3 className="font-serif text-xl font-medium text-[#1B3022] leading-snug">
+                        {lang === 'fr' ? 'Tour Nature de l\'Île aux Singes en Bateau Privé' : lang === 'de' ? 'Affeninsel-Naturtour im Privatboot' : lang === 'es' ? 'Tour de Naturaleza a la Isla de Monos en Bote Privado' : 'Monkey Island Nature Tour by Private Boat'}
+                      </h3>
+                      <p className="text-sm text-[#8C583E] italic mt-0.5">
+                        {lang === 'fr' ? 'avec Roberto, l\'ami de Greg' : lang === 'de' ? 'mit Gregs Freund Roberto' : lang === 'es' ? 'con Roberto, el amigo de Greg' : 'with Greg’s friend Roberto'}
+                      </p>
+                    </div>
+
+                    {/* Location / Launch Info */}
+                    <div className="flex flex-col gap-1.5 mb-4 p-2.5 border bg-[#FAF8F5] border-[#C5A059]/20">
+                      <div className="flex items-center gap-1.5 text-xs font-semibold text-[#1B3022]">
+                        <MapPin className="w-4 h-4 text-[#C5A059] shrink-0" />
+                        <span>{lang === 'fr' ? 'Départ de chez Greg vers Gamboa (40 min)' : lang === 'de' ? 'Abfahrt von Greg\'s Place nach Gamboa (40 Min.)' : lang === 'es' ? 'Salida de Greg’s Place hacia Gamboa (40 minutos)' : 'Leaves from Greg’s Place to Gamboa (40 minutes)'}</span>
+                      </div>
+                    </div>
+
+                    {/* Options list */}
+                    <div className="mb-4 space-y-2 text-xs text-[#1B3022]/90 leading-relaxed">
+                      <div className="p-3 bg-[#FAF8F5] border-l-2 border-[#C5A059] rounded-r-sm">
+                        <p className="font-bold text-[#1B3022] mb-0.5">
+                          {lang === 'fr' ? 'Option 1 : Pêche dans le lac Gatun' : lang === 'de' ? 'Option 1: Angeln im Gatun-See' : lang === 'es' ? 'Opción 1: Pesca en el Lago Gatún' : 'Option 1: Fishing in Gatun Lake for Peacock Bass'}
+                        </p>
+                        <p className="text-[#1B3022]/80 font-light">
+                          {lang === 'fr' ? 'Pêche au bar-paon, suivie d\'un barbecue de poisson chez Greg.' : lang === 'de' ? 'Angeln auf Pfauenbarsch, gefolgt von einem Fisch-Grillabend bei Greg.' : lang === 'es' ? 'Pesca de sargento, seguida de un asado de pescado en Greg’s Place.' : 'followed by a fish barbecue at Greg’s Place.'}
+                        </p>
+                      </div>
+                      <div className="p-3 bg-[#FAF8F5] border-l-2 border-[#8C583E] rounded-r-sm">
+                        <p className="font-bold text-[#1B3022] mb-0.5">
+                          {lang === 'fr' ? 'Option 2 : Visite du zoo de Soberanía' : lang === 'de' ? 'Option 2: Besuch des Soberanía-Zoos' : lang === 'es' ? 'Opción 2: Visite el Zoológico del Parque Soberanía' : 'Option 2: Visit the Soberanía National Park Zoo'}
+                        </p>
+                        <p className="text-[#1B3022]/80 font-light">
+                          {lang === 'fr' ? 'Visite du zoo sur le chemin du retour depuis Gamboa.' : lang === 'de' ? 'Besuch des Soberanía-Nationalpark-Zoos auf dem Rückweg von Gamboa.' : lang === 'es' ? 'en el camino de regreso desde Gamboa.' : 'on the way back from Gamboa.'}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Detailed Narrative Paragraphs */}
+                    <div className="text-xs sm:text-[13px] text-[#1B3022]/85 leading-relaxed space-y-3 font-normal">
+                      <p>
+                        {lang === 'fr'
+                          ? "C'est un voyage magnifique car vous embarquerez à bord d'un petit bateau depuis la zone de forêt tropicale de Gamboa dans la rivière Chagres. Vous serez juste à côté des navires géants qui viennent de sortir des écluses de Pedro Miguel alors qu'ils continuent vers le lac Gatun."
+                          : lang === 'de'
+                          ? "Dies ist ein wunderbarer Ausflug, da Sie mit einem kleinen Boot vom Regenwaldgebiet Gamboa aus in den Chagres-Fluss starten. Sie befinden sich direkt neben den riesigen Schiffen, die gerade die Pedro-Miguel-Schleusen verlassen haben und ihre Fahrt zum Gatun-See fortsetzen."
+                          : lang === 'es'
+                          ? "Este es un viaje maravilloso, ya que zarpará en un pequeño bote desde el área de la selva tropical de Gamboa hacia el río Chagres. Estará justo al lado de los barcos gigantes que acaban de salir de las esclusas de Pedro Miguel mientras continúan hacia el Lago Gatún."
+                          : "This is a wonderful trip as you will launch in a small boat from the Gamboa rainforest area into the Chagres River. You will be right next to the giant ships that have just exited the Pedro Miguel locks as they continue to Gatun Lake."}
+                      </p>
+                      <p>
+                        {lang === 'fr'
+                          ? "Roberto part tôt pour que son bateau soit le premier sur place, les singes ont donc faim. De plus, vous entendrez les singes hurleurs retentir. Roberto trouve généralement au moins 3 espèces de singes différentes (ils ne sont pas tous sur l'île !). Il y a aussi beaucoup d'oiseaux aquatiques."
+                          : lang === 'de'
+                          ? "Roberto fährt früh los, so dass sein Boot das erste vor Ort ist, weshalb die Affen hungrig sind. Außerdem werden Sie das Heulen der Brüllaffen hören. Roberto kann in der Regel mindestens 3 verschiedene Affenarten finden (sie sind nicht alle auf der Insel!). Es gibt auch viele Wasservögel."
+                          : lang === 'es'
+                          ? "Roberto sale temprano para que su bote sea el primero en llegar, así que los monos tienen hambre. Además, escuchará a los monos aulladores gritar. Roberto suele encontrar al menos 3 especies diferentes de monos (¡no todos están en la isla!). También hay muchas aves acuáticas."
+                          : "Roberto leaves early so his boat will be the first one out there so the monkeys are hungry. Plus, you will hear the howler monkeys going off. Roberto can usually find at least 3 different species of monkeys (they are not all on the island!). There’s lots of waterfowl too."}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Direct Contact WhatsApp CTA */}
+                  <div className="pt-4 border-t border-[#1B3022]/10 mt-4">
+                    <a
+                      href="https://wa.me/50765037828?text=Hello%20Greg,%20I'm%20interested%20in%20the%20Monkey%20Island%20Nature%20Tour%20with%20Roberto.%20Could%20you%20please%20send%20me%20more%20information%20and%20pricing%3F"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 bg-[#C5A059] hover:bg-[#A68648] text-white text-[10.5px] font-bold uppercase tracking-widest transition-colors shadow-sm"
+                    >
+                      <span>{lang === 'fr' ? 'Contacter Greg pour les prix' : lang === 'de' ? 'Preise bei Greg anfragen' : lang === 'es' ? 'Consultar precios con Greg' : 'Inquire with Greg for prices'}</span>
+                    </a>
+                  </div>
+                </div>
+              );
+            }
+
             const isClickable = Boolean(place.linkUrl);
             const isRedHighlight = place.id === '51-fun-things';
             const CardElement = isClickable ? 'a' : 'div';
@@ -386,6 +480,133 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
             );
           })}
         </div>
+
+        {/* Location Map & 51+ Fun Things Card Row */}
+        {(() => {
+          const funThingsPlace = (t.places as readonly NearbyPlace[]).find((p) => p.id === '51-fun-things');
+          if (!funThingsPlace) return null;
+
+          const isClickable = Boolean(funThingsPlace.linkUrl);
+          const CardElement = isClickable ? 'a' : 'div';
+          const linkProps = isClickable
+            ? {
+                href: funThingsPlace.linkUrl,
+                target: '_blank',
+                rel: 'noopener noreferrer',
+                'aria-label': funThingsPlace.name,
+              }
+            : {};
+
+          return (
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12 items-stretch">
+              {/* Left: Location Map */}
+              <div className="lg:col-span-7 bg-white p-7 border border-[#1B3022]/10 shadow-sm flex flex-col justify-between h-full group relative hover:border-[#C5A059] transition-all">
+                <div className="mb-4">
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <div className="flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] text-[#8C583E] uppercase tracking-wider font-bold">
+                      <MapPin className="w-3.5 h-3.5 text-[#C5A059] shrink-0" />
+                      <span>{lang === 'fr' ? 'Localisation interactive' : lang === 'de' ? 'Interaktive Karte' : lang === 'es' ? 'Ubicación de Greg’s Place' : 'Interactive Location Map'}</span>
+                    </div>
+                    <span className="text-[10px] uppercase font-mono tracking-wider px-2 py-0.5 bg-[#1B3022]/5 text-[#1B3022] font-semibold">
+                      Albrook Oasis
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-xl font-medium text-[#1B3022] mb-1">
+                    {lang === 'fr' ? 'Greg’s Place à Albrook' : lang === 'de' ? 'Greg’s Place in Albrook' : lang === 'es' ? 'Greg’s Place en Albrook' : 'Greg’s Place in Albrook'}
+                  </h3>
+                  <p className="text-xs text-[#8C583E] italic">
+                    Calle Los Guayacanes 247, Albrook, Panama City, Panama
+                  </p>
+                </div>
+
+                <div className="flex-grow min-h-[350px] relative rounded-xs overflow-hidden border border-[#1B3022]/10 shadow-inner">
+                  <iframe
+                    title="Interactive Location Map of Greg's Place in Albrook"
+                    src="https://maps.google.com/maps?q=Calle%20Los%20Guayacanes%20247,%20Albrook,%20Panama%20City,%20Panama&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    className="absolute inset-0 w-full h-full border-0"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+              </div>
+
+              {/* Right: 51+ Card */}
+              <div className="lg:col-span-5 flex flex-col h-full justify-between">
+                <CardElement
+                  key={funThingsPlace.id}
+                  id={funThingsPlace.id}
+                  {...linkProps}
+                  className="p-7 h-full transition-all flex flex-col justify-between group relative bg-gradient-to-b from-red-50/90 via-white to-red-50/40 border-2 border-red-600 shadow-xl ring-4 ring-red-500/15 hover:border-red-700 hover:shadow-2xl cursor-pointer hover:-translate-y-1 block"
+                >
+                  {/* Red highlight badge */}
+                  <div className="absolute -top-3.5 left-6 bg-red-600 text-white text-[11px] font-mono uppercase tracking-widest font-bold px-3 py-0.5 shadow-md flex items-center gap-1.5">
+                    <span>★</span>
+                    <span>{lang === 'fr' ? 'À ne pas manquer' : lang === 'de' ? 'Must-Do Empfehlung' : lang === 'es' ? 'Imperdible' : 'Must-Do Guide'}</span>
+                  </div>
+
+                  <div>
+                    {/* Card Top: Icon & Category */}
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <div className="w-10 h-10 flex items-center justify-center transition-colors bg-blue-50/70 border border-blue-200 group-hover:border-blue-400">
+                        {getPlaceIcon(funThingsPlace.iconType, true)}
+                      </div>
+                      <span className="text-[11px] font-mono uppercase tracking-widest font-bold px-2.5 py-1 text-white bg-red-600">
+                        {funThingsPlace.category}
+                      </span>
+                    </div>
+
+                    {/* Prominently Formatted Title */}
+                    {funThingsPlace.prominentTitleLines && (
+                      <div className="mb-4 p-5 text-center transition-all bg-blue-50/30 border-2 border-[#1E3A8A]/30 group-hover:border-[#1E3A8A]/50 group-hover:bg-blue-50/50 shadow-md">
+                        <div className="font-serif text-2xl sm:text-3xl font-bold leading-tight text-[#1E3A8A]">
+                          {funThingsPlace.prominentTitleLines[0]}
+                        </div>
+                        <div className="text-[11px] uppercase font-mono tracking-[0.25em] font-bold my-1.5 text-[#1E3A8A]">
+                          {funThingsPlace.prominentTitleLines[1]}
+                        </div>
+                        <div className="font-serif text-xl sm:text-2xl font-medium leading-tight text-[#1E3A8A]">
+                          {funThingsPlace.prominentTitleLines[2]}
+                        </div>
+                        <div className="text-[11px] uppercase font-mono tracking-[0.25em] font-bold my-1.5 text-[#1E3A8A]">
+                          {funThingsPlace.prominentTitleLines[3]}
+                        </div>
+                        <div className="font-serif text-2xl sm:text-3xl font-bold leading-tight text-[#1E3A8A]">
+                          {funThingsPlace.prominentTitleLines[4]}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Distance / Details Pill */}
+                    <div className="flex flex-col gap-1.5 mb-4 p-2.5 border bg-blue-50/60 border-blue-200">
+                      <div className="flex items-center gap-1.5 text-sm font-semibold text-[#1E3A8A]">
+                        <MapPin className="w-4 h-4 shrink-0 text-[#1E3A8A]" />
+                        <span>{funThingsPlace.distance}</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-xs font-medium text-[#1E3A8A]">
+                        <Clock className="w-4 h-4 shrink-0 text-[#1E3A8A]" />
+                        <span>{funThingsPlace.driveTime}</span>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <div className="text-sm sm:text-[15px] text-[#1B3022]/90 leading-relaxed mb-4 font-normal">
+                      {funThingsPlace.description}
+                    </div>
+                  </div>
+
+                  {/* Link indicator */}
+                  <div className="pt-3 border-t border-blue-200 text-[#0284C7] group-hover:text-[#0369A1] flex items-center justify-between gap-2 text-xs sm:text-[13px] font-semibold transition-colors mt-2">
+                    <span className="underline underline-offset-4 decoration-[#0284C7] font-bold">
+                      {lang === 'fr' ? 'Voir 51+ activités sur tourscanner.com' : lang === 'de' ? '51+ Aktivitäten auf tourscanner.com ansehen' : lang === 'en' ? 'tourscanner.com/things-to-do-in-panama-city-panama' : 'Ver 51+ actividades en tourscanner.com'}
+                    </span>
+                    <ExternalLink className="w-4 h-4 shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-[#0284C7]" />
+                  </div>
+                </CardElement>
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Host Guidance Banner */}
         <div className="p-6 bg-white border-l-4 border-[#C5A059] shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm sm:text-[15px] text-[#1B3022]/90">

@@ -25,7 +25,7 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
         <div className="max-w-3xl mb-12">
           <div className="flex items-center gap-3 mb-3">
             <div className="h-[1px] w-8 bg-[#C5A059]" />
-            <span className="text-[#C5A059] uppercase tracking-[0.3em] text-[10px] font-bold">
+            <span className="text-[#8C583E] uppercase tracking-[0.3em] text-[10px] font-bold">
               {t.tag}
             </span>
           </div>
@@ -34,7 +34,7 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
             {t.title}
           </h2>
 
-          <p className="text-[#C5A059] text-lg font-serif italic mb-4">
+          <p className="text-[#8C583E] text-lg font-serif italic mb-4">
             {t.subtitle}
           </p>
 
@@ -133,7 +133,7 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
                   <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 bg-[#1B3022]/5 text-[#1B3022] font-semibold">
                     {animal.category}
                   </span>
-                  <span className="text-[11px] text-[#C5A059] font-medium italic">
+                  <span className="text-[11px] text-[#8C583E] font-medium italic">
                     {animal.frequency}
                   </span>
                 </div>
@@ -142,7 +142,7 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
                   {animal.name}
                 </h3>
 
-                <p className="text-[11px] font-serif italic text-[#C5A059] mb-3">
+                <p className="text-[11px] font-serif italic text-[#8C583E] mb-3">
                   {animal.scientificOrLocal}
                 </p>
 

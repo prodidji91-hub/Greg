@@ -34,7 +34,7 @@ export const Contact: React.FC<ContactProps> = ({ lang, onOpenBooking }) => {
         <div className="max-w-3xl mb-16">
           <div className="flex items-center gap-3 mb-3">
             <div className="h-[1px] w-8 bg-[#C5A059]" />
-            <span className="text-[#C5A059] uppercase tracking-[0.3em] text-[10px] font-bold">
+            <span className="text-[#8C583E] uppercase tracking-[0.3em] text-[10px] font-bold">
               {t.tag}
             </span>
           </div>
@@ -43,7 +43,7 @@ export const Contact: React.FC<ContactProps> = ({ lang, onOpenBooking }) => {
             {t.title}
           </h2>
 
-          <p className="text-[#C5A059] text-lg font-serif italic mb-4">
+          <p className="text-[#8C583E] text-lg font-serif italic mb-4">
             {t.subtitle}
           </p>
 

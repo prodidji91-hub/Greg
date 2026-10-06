@@ -122,6 +122,38 @@ export const Navbar: React.FC<NavbarProps> = ({
           {navItems.map((item) => {
             const isActive = isPhotoGalleryActive && item.id === 'photo-gallery';
 
+            if (item.id === 'home') {
+              return (
+                <div key={item.id} className="flex flex-col items-center shrink-0 self-center">
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    className={`text-[10.5px] xl:text-[11px] 2xl:text-[11.5px] uppercase tracking-wider font-semibold transition-all py-0.5 border-b shrink-0 whitespace-nowrap ${
+                      isActive
+                        ? 'text-[#C5A059] border-[#C5A059] font-bold'
+                        : effectiveScrolled
+                        ? 'text-[#1B3022]/90 hover:text-[#C5A059] border-transparent hover:border-[#C5A059]'
+                        : 'text-white/90 hover:text-[#C5A059] border-transparent hover:border-[#C5A059] drop-shadow'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                  <a
+                    href="https://www.instagram.com/gregsplace22/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-1.5 text-[9.5px] xl:text-[10px] font-mono font-medium tracking-normal leading-none mt-1 transition-colors focus:outline-none ${
+                      effectiveScrolled
+                        ? 'text-[#1B3022]/70 hover:text-[#C5A059]'
+                        : 'text-white/80 hover:text-[#C5A059]'
+                    }`}
+                  >
+                    <InstagramIcon className="w-3.5 h-3.5" />
+                    <span>@gregsplace22</span>
+                  </a>
+                </div>
+              );
+            }
+
             // Special Compact Two-Line Button: 51+ FUN THINGS TO DO IN PANAMA
             // Bold text, bright red text, subtle box/border around the button
             if (item.id === '51-fun-things' || item.id === '51-things') {
@@ -160,6 +192,26 @@ export const Navbar: React.FC<NavbarProps> = ({
                 >
                   <span className="font-bold whitespace-nowrap">BIRDING</span>
                   <span className="font-bold whitespace-nowrap">BREAKFAST & CRITTERS</span>
+                </button>
+              );
+            }
+
+            // Special Compact Two-Line Button: WHAT'S NEARBY
+            // Bold text, bright sophisticated dark green text, subtle box/border around the button
+            if (item.id === 'whats-nearby') {
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`inline-flex flex-col items-center justify-center text-center px-1.5 sm:px-2 py-0.5 rounded-[3px] font-bold text-[9.5px] xl:text-[10px] 2xl:text-[10.5px] leading-[1.1] tracking-wide transition-all border shrink-0 ${
+                    effectiveScrolled
+                      ? 'text-[#1B3022] border-[#1B3022]/40 hover:border-[#1B3022] hover:bg-[#1B3022]/5 shadow-2xs'
+                      : 'text-[#4ADE80] border-[#4ADE80]/50 hover:border-[#4ADE80] hover:bg-black/35 drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]'
+                  }`}
+                  aria-label="What's Nearby"
+                >
+                  <span className="font-bold whitespace-nowrap">WHAT'S</span>
+                  <span className="font-bold whitespace-nowrap">NEARBY</span>
                 </button>
               );
             }
@@ -213,23 +265,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 );
               })}
             </div>
-
-            <span className="w-[1px] h-4 bg-[#C5A059]/40" />
-
-            <a
-              href="https://www.instagram.com/gregsplace22/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow Greg's Place on Instagram"
-              title="Follow Greg's Place on Instagram"
-              className={`p-1 rounded-[3px] transition-all duration-150 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A059] ${
-                effectiveScrolled
-                  ? 'text-[#1B3022] hover:text-[#C5A059]'
-                  : 'text-white/90 hover:text-[#C5A059]'
-              }`}
-            >
-              <InstagramIcon className="w-5 h-5" />
-            </a>
           </div>
 
           {/* Book Now Button */}
@@ -267,19 +302,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               );
             })}
           </div>
-
-          <a
-            href="https://www.instagram.com/gregsplace22/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Follow Greg's Place on Instagram"
-            title="Follow Greg's Place on Instagram"
-            className={`p-1 rounded-[3px] transition-all duration-150 flex items-center justify-center ${
-              effectiveScrolled ? 'text-[#1B3022] hover:text-[#C5A059]' : 'text-white/90 hover:text-[#C5A059]'
-            }`}
-          >
-            <InstagramIcon className="w-4 h-4" />
-          </a>
 
           {/* Book Now button on medium screens */}
           <button
@@ -381,6 +403,25 @@ export const Navbar: React.FC<NavbarProps> = ({
                 );
               }
 
+              // Mobile What's Nearby
+              if (item.id === 'whats-nearby') {
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-left text-xs uppercase tracking-wider font-bold py-2 border-b border-[#1B3022]/10 transition-colors text-[#1B3022] flex items-center justify-between"
+                  >
+                    <div className="flex flex-col leading-tight">
+                      <span>WHAT'S</span>
+                      <span className="text-[10px] opacity-90">NEARBY</span>
+                    </div>
+                    <span className="text-[10px] font-mono px-1.5 py-0.5 border border-[#1B3022]/40 rounded-xs text-[#1B3022]">
+                      EXPLORE
+                    </span>
+                  </button>
+                );
+              }
+
               return (
                 <button
                   key={item.id}
@@ -414,6 +455,16 @@ export const Navbar: React.FC<NavbarProps> = ({
               >
                 <Phone className="w-3.5 h-3.5 text-[#8C583E]" />
                 <span>+507 6503-7828</span>
+              </a>
+
+              <a
+                href="https://www.instagram.com/gregsplace22/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 text-xs font-medium text-[#1B3022] border border-[#1B3022]/20 bg-white"
+              >
+                <InstagramIcon className="w-4 h-4 text-[#C5A059]" />
+                <span>@gregsplace22</span>
               </a>
             </div>
           </div>

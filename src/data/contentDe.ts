@@ -808,7 +808,7 @@ export const contentDe = {
       },
       {
         "id": "cerro-ancon",
-        "name": "Cerro Ancón (Ancon Hill)",
+        "name": "Ancon Hill (Cerró Ancon)",
         "category": "Aussichtspunkt & Geschichte",
         "categoryKey": "nature",
         "distance": "ca. 4 km",

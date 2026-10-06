@@ -435,7 +435,7 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
             <div className="mb-10 text-left max-w-4xl">
               <div className="flex items-center gap-3 mb-3">
                 <div className="h-[1px] w-8 bg-[#C5A059]" />
-                <span className="text-[#C5A059] uppercase tracking-[0.3em] text-[10px] sm:text-[11px] font-bold">
+                <span className="text-[#8C583E] uppercase tracking-[0.3em] text-[10px] sm:text-[11px] font-bold">
                   {isFrench
                     ? 'Visite Visuelle du Domaine & des Espaces Communs'
                     : isGerman
@@ -450,7 +450,7 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
                 {isFrench ? 'Galerie Photos' : isGerman ? 'Fotogalerie' : isSpanish ? 'Galería de Fotos' : 'Photo Gallery'}
               </h1>
 
-              <p className="text-[#C5A059] text-base sm:text-lg font-serif italic mb-4">
+              <p className="text-[#8C583E] text-base sm:text-lg font-serif italic mb-4">
                 {isFrench
                   ? 'Espaces communs, architecture historique de la Zone du Canal et nature tropicale luxuriante à Albrook'
                   : isGerman
@@ -639,7 +639,9 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
 
             <button
               type="button"
-              onClick={onOpenBooking}
+              onClick={() => {
+                window.open('https://gregsplaceinalbrook.com/en/gregs-place-in-albrook', '_blank', 'noopener,noreferrer');
+              }}
               className="w-full sm:w-auto px-8 py-3.5 bg-[#C5A059] hover:bg-[#A68648] text-white font-bold text-[11px] tracking-widest uppercase transition-all shadow-md flex items-center justify-center gap-2"
             >
               <Calendar className="w-4 h-4 text-white" />

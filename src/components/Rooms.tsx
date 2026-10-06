@@ -84,7 +84,7 @@ export const Rooms: React.FC<RoomsProps> = ({
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-3">
               <div className="h-[1px] w-8 bg-[#C5A059]" />
-              <span className="text-[#C5A059] uppercase tracking-[0.3em] text-[10px] font-bold">
+              <span className="text-[#8C583E] uppercase tracking-[0.3em] text-[10px] font-bold">
                 {t.tag}
               </span>
             </div>
@@ -93,7 +93,7 @@ export const Rooms: React.FC<RoomsProps> = ({
               {t.title}
             </h2>
 
-            <p className="text-[#C5A059] text-lg font-serif italic mb-4">
+            <p className="text-[#8C583E] text-lg font-serif italic mb-4">
               {t.subtitle}
             </p>
 
@@ -225,7 +225,7 @@ export const Rooms: React.FC<RoomsProps> = ({
                     </h3>
                   </div>
                   
-                  <p className="text-[10px] text-[#C5A059] uppercase tracking-widest font-bold mb-3">
+                  <p className="text-[10px] text-[#8C583E] uppercase tracking-widest font-bold mb-3">
                     {room.subtitle}
                   </p>
 
@@ -408,9 +408,9 @@ export const Rooms: React.FC<RoomsProps> = ({
         {/* 2. Shared Room Amenities Area ("Every Room Includes") */}
         <div className="mb-16 bg-white p-8 sm:p-10 border border-[#1B3022]/10 shadow-sm">
           <div className="max-w-3xl mb-8">
-            <div className="flex items-center gap-2 text-[#C5A059] mb-2">
+            <div className="flex items-center gap-2 text-[#8C583E] mb-2">
               <Sparkles className="w-4 h-4" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#C5A059]">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#8C583E]">
                 {t.sharedAmenitiesTitle || 'Every Room Includes'}
               </span>
             </div>
@@ -451,9 +451,9 @@ export const Rooms: React.FC<RoomsProps> = ({
           {/* Transparent Rate Table */}
           <div className="lg:col-span-7 bg-white p-6 sm:p-8 border border-[#1B3022]/10 shadow-sm flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 text-[#C5A059] mb-2">
+              <div className="flex items-center gap-2 text-[#8C583E] mb-2">
                 <DollarSign className="w-4 h-4" />
-                <span className="text-[10px] font-bold uppercase tracking-widest text-[#C5A059]">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-[#8C583E]">
                   {t.pricingTableTitle || 'Room Rates & Cleaning Fees'}
                 </span>
               </div>
@@ -593,8 +593,8 @@ export const Rooms: React.FC<RoomsProps> = ({
         <div className="mb-16 bg-white p-8 sm:p-10 border border-[#1B3022]/10 shadow-sm">
           <div className="max-w-2xl mb-8">
             <div className="flex items-center gap-2 text-[#8C583E] mb-2">
-              <Percent className="w-4 h-4 text-[#C5A059]" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#C5A059]">
+              <Percent className="w-4 h-4 text-[#8C583E]" />
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#8C583E]">
                 {t.longStayTitle || 'Long-Stay Discounts'}
               </span>
             </div>
@@ -691,7 +691,7 @@ export const Rooms: React.FC<RoomsProps> = ({
                   <h4 className="font-serif text-xl font-light text-[#1B3022] mb-1">
                     {item.roomName}
                   </h4>
-                  <p className="text-[10px] text-[#C5A059] uppercase tracking-wider font-semibold mb-4">
+                  <p className="text-[10px] text-[#8C583E] uppercase tracking-wider font-semibold mb-4">
                     {item.location}
                   </p>
                   <div className="mb-4 pb-4 border-b border-[#1B3022]/10">
@@ -704,12 +704,14 @@ export const Rooms: React.FC<RoomsProps> = ({
                   </div>
                 </div>
 
-                <button
-                  onClick={() => onBookRoom()}
-                  className="w-full py-2.5 px-4 border border-[#1B3022]/20 hover:bg-[#1B3022] hover:text-white text-[10px] font-bold uppercase tracking-widest transition-colors text-center"
+                <a
+                  href="https://wa.me/50765037828?text=Hello%20Greg,%20I'm%20interested%20in%20a%20long-term%20stay%20at%20Greg's%20Place%20in%20Albrook.%20Could%20you%20please%20tell%20me%20about%20availability%3F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2.5 px-4 border border-[#1B3022]/20 hover:bg-[#1B3022] hover:text-white text-[10px] font-bold uppercase tracking-widest transition-colors text-center block"
                 >
                   {lang === 'fr' ? 'Demande Long Séjour' : lang === 'de' ? 'Langzeitaufenthalt Anfragen' : lang === 'en' ? 'Inquire for Long Term' : 'Consultar Larga Estadía'}
-                </button>
+                </a>
               </div>
             ))}
           </div>
