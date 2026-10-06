@@ -325,7 +325,7 @@ export const Rooms: React.FC<RoomsProps> = ({
                         : lang === 'de' 
                         ? 'Nicht verfügbar' 
                         : lang === 'en' 
-                        ? 'Unavailable' 
+                        ? 'UNAVAILABLE' 
                         : 'No disponible'}
                     </span>
                   </button>
@@ -347,7 +347,7 @@ export const Rooms: React.FC<RoomsProps> = ({
                     className="flex-1 py-3 px-3 bg-[#1B3022] hover:bg-[#2A4533] text-white text-[10px] font-bold uppercase tracking-widest transition-colors shadow flex items-center justify-center gap-1"
                   >
                     <Calendar className="w-3 h-3 text-[#C5A059]" />
-                    <span>{lang === 'fr' ? 'Réserver' : lang === 'de' ? 'Anfragen' : lang === 'en' ? 'Inquire' : 'Consultar'}</span>
+                    <span>{lang === 'fr' ? 'Réserver' : lang === 'de' ? 'Anfragen' : lang === 'en' ? 'REQUEST' : 'Consultar'}</span>
                   </button>
                 )}
               </div>
@@ -481,7 +481,7 @@ export const Rooms: React.FC<RoomsProps> = ({
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-[#1B3022]/10 text-xs">
-                    {t.items.map((r) => (
+                    {t.items.map((r: any) => (
                       <tr key={r.id} className="hover:bg-[#FAF8F5] transition-colors">
                         <td className="py-3.5 px-3">
                           <span className="font-medium text-[#1B3022] block">{r.name}</span>
@@ -495,12 +495,35 @@ export const Rooms: React.FC<RoomsProps> = ({
                           ${r.cleaningFee} <span className="text-[10px] text-[#1B3022]/60">{lang === 'fr' ? 'unique' : lang === 'de' ? 'einmalig' : lang === 'en' ? 'one-time' : 'única'}</span>
                         </td>
                         <td className="py-3.5 px-3 text-right">
-                          <button
-                            onClick={() => onBookRoom(r.id)}
-                            className="text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 bg-[#C5A059] hover:bg-[#A68648] text-white transition-colors"
-                          >
-                            {lang === 'fr' ? 'Réserver' : lang === 'de' ? 'Anfragen' : lang === 'en' ? 'Request' : 'Reservar'}
-                          </button>
+                          {r.id === 'coati-room' ? (
+                            <button
+                              type="button"
+                              disabled
+                              onClick={(e) => e.stopPropagation()}
+                              className="text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 bg-gray-200 text-gray-500 cursor-not-allowed"
+                            >
+                              {lang === 'fr' ? 'INDISPONIBLE' : lang === 'de' ? 'NICHT VERFÜGBAR' : lang === 'en' ? 'UNAVAILABLE' : 'NO DISPONIBLE'}
+                            </button>
+                          ) : (
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (r.id === 'master-bedroom') {
+                                  window.open('https://gregsplaceinalbrook.com/en/special-tropical-home---master-bedroom', '_blank', 'noopener,noreferrer');
+                                } else if (r.id === 'cayuca-room') {
+                                  window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---cayuca-room', '_blank', 'noopener,noreferrer');
+                                } else if (r.id === 'owl-room') {
+                                  window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---owl-room', '_blank', 'noopener,noreferrer');
+                                } else {
+                                  onBookRoom(r.id);
+                                }
+                              }}
+                              className="text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 bg-[#C5A059] hover:bg-[#A68648] text-white transition-colors"
+                            >
+                              {lang === 'fr' ? 'Réserver' : lang === 'de' ? 'Anfragen' : lang === 'en' ? 'REQUEST' : 'Reservar'}
+                            </button>
+                          )}
                         </td>
                       </tr>
                     ))}
