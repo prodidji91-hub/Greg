@@ -102,6 +102,59 @@ export default function App() {
     }
   }, []);
 
+  // Dynamic SEO Page Titles and Meta Descriptions (English only, per step instructions)
+  useEffect(() => {
+    const path = window.location.pathname;
+    const isGallery = parseGalleryFromPath(path).isGallery;
+
+    let title = "Greg's Place in Albrook | Bed & Breakfast in Panama City";
+    let metaDescription = "Stay at Greg's Place in Albrook, a peaceful historic bed and breakfast in Panama City surrounded by tropical nature, wildlife, and Canal Zone history.";
+
+    if (currentRoomId === 'master-bedroom') {
+      title = "Master Bedroom | Greg's Place in Albrook, Panama City";
+      metaDescription = "Discover the spacious Master Bedroom at Greg's Place in Albrook, featuring a California king-size bed in a peaceful historic home in Panama City.";
+    } else if (currentRoomId === 'cayuca-room') {
+      title = "Cayuca Room | Greg's Place in Albrook, Panama City";
+      metaDescription = "Explore the Cayuca Room at Greg's Place in Albrook, a comfortable queen-size guest room located downstairs in a quiet Panama City setting.";
+    } else if (currentRoomId === 'coati-room') {
+      title = "Coati Room | Greg's Place in Albrook, Panama City";
+      metaDescription = "View the Coati Room at Greg's Place in Albrook, a queen-size room located upstairs in a historic tropical home in Panama City.";
+    } else if (currentRoomId === 'owl-room') {
+      title = "Owl Room | Greg's Place in Albrook, Panama City";
+      metaDescription = "Discover the Owl Room at Greg's Place in Albrook, a peaceful upstairs queen-size guest room surrounded by tropical nature in Panama City.";
+    } else if (isGallery) {
+      title = "Photo Gallery | Greg's Place in Albrook";
+      metaDescription = "Explore the rooms, shared spaces, tropical veranda, historic architecture, gardens, and natural surroundings of Greg's Place in Albrook.";
+    }
+
+    document.title = title;
+    
+    // Safely update or create meta tags to prevent duplicate instances
+    const setMetaTag = (selector: string, attr: string, value: string) => {
+      let el = document.querySelector(selector);
+      if (el) {
+        el.setAttribute(attr, value);
+      } else {
+        el = document.createElement('meta');
+        if (selector.startsWith('meta[property=')) {
+          const prop = selector.match(/property="([^"]+)"/)?.[1];
+          if (prop) el.setAttribute('property', prop);
+        } else if (selector.startsWith('meta[name=')) {
+          const name = selector.match(/name="([^"]+)"/)?.[1];
+          if (name) el.setAttribute('name', name);
+        }
+        el.setAttribute(attr, value);
+        document.head.appendChild(el);
+      }
+    };
+
+    setMetaTag('meta[name="description"]', 'content', metaDescription);
+    setMetaTag('meta[property="og:title"]', 'content', title);
+    setMetaTag('meta[property="og:description"]', 'content', metaDescription);
+    setMetaTag('meta[name="twitter:title"]', 'content', title);
+    setMetaTag('meta[name="twitter:description"]', 'content', metaDescription);
+  }, [currentRoomId, galleryCategoryId]);
+
   const handleSelectRoom = (roomId: string) => {
     const targetPath = `/rooms/${roomId}`;
     if (window.location.pathname !== targetPath) {

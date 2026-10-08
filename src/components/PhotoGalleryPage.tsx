@@ -432,7 +432,7 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
           <div>
 
             {/* Header Section */}
-            <div className="mb-10 text-left max-w-4xl">
+            <div className="mb-8 text-left max-w-4xl">
               <div className="flex items-center gap-3 mb-3">
                 <div className="h-[1px] w-8 bg-[#C5A059]" />
                 <span className="text-[#8C583E] uppercase tracking-[0.3em] text-[10px] sm:text-[11px] font-bold">
@@ -450,7 +450,7 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
                 {isFrench ? 'Galerie Photos' : isGerman ? 'Fotogalerie' : isSpanish ? 'Galería de Fotos' : 'Photo Gallery'}
               </h1>
 
-              <p className="text-[#8C583E] text-base sm:text-lg font-serif italic mb-4">
+              <p className="text-[#8C583E] text-base sm:text-lg font-serif italic">
                 {isFrench
                   ? 'Espaces communs, architecture historique de la Zone du Canal et nature tropicale luxuriante à Albrook'
                   : isGerman
@@ -459,46 +459,6 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
                   ? 'Espacios compartidos, arquitectura histórica de la Zona del Canal y exuberante naturaleza en Albrook'
                   : 'Shared spaces, Canal Zone historic architecture, and lush tropical nature in Albrook'}
               </p>
-
-              <p className="text-sm sm:text-base text-[#1B3022]/80 leading-relaxed max-w-3xl">
-                {isFrench
-                  ? 'Cliquez sur l\'une des cinq catégories ci-dessous pour ouvrir sa galerie dédiée avec visionneuse haute résolution, miniatures et mode plein écran.'
-                  : isGerman
-                  ? 'Klicken Sie auf eine der fünf Kategorien, um die Fotogalerie mit hochauflösendem Bildbetrachter, Vorschaubildern und Vollbildansicht zu öffnen.'
-                  : isSpanish
-                  ? 'Haga clic en cualquiera de las 5 categorías a continuación para abrir su galería individual dedicada con visor de fotos, miniaturas y vista ampliada a pantalla completa.'
-                  : 'Click on any of the five categories below to open its dedicated individual gallery page with high-resolution photo viewer, thumbnails, and full-screen lightbox.'}
-              </p>
-            </div>
-
-            {/* Quick Category Tab Navigation */}
-            <div className="mb-10 overflow-x-auto pb-2 scrollbar-thin no-scrollbar" role="tablist">
-              <div className="flex items-center gap-2 sm:gap-3 min-w-max">
-                {propertyGalleryCategories.map((cat) => {
-                  const title = getCatTitle(cat);
-                  const isUpstairsBathroom = cat.id === 'upstairs-guest-bathroom';
-
-                  return (
-                    <button
-                      key={cat.id}
-                      type="button"
-                      onClick={() => handleOpenCategory(cat.id)}
-                      className="group relative flex items-center gap-2 px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold tracking-wide bg-white hover:bg-[#1B3022] text-[#1B3022] hover:text-[#C5A059] border border-[#1B3022]/15 hover:border-[#C5A059] shadow-xs transition-all"
-                    >
-                      <Camera className="w-3.5 h-3.5 text-[#C5A059] shrink-0" />
-                      <span>{title}</span>
-                      {isUpstairsBathroom && (
-                        <span className="text-[9px] px-1.5 py-0.5 uppercase tracking-wider font-bold bg-[#8C583E] text-white">
-                          {isGerman ? 'Coati & Owl' : isSpanish ? 'Coati y Owl' : 'Coati & Owl'}
-                        </span>
-                      )}
-                      <span className="text-[10px] px-1.5 py-0.2 rounded-full font-mono bg-[#FAF8F5] text-[#1B3022]/70 group-hover:bg-[#C5A059]/20 group-hover:text-[#C5A059]">
-                        {cat.images.length}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
             </div>
 
             {/* 5 Categories Grid */}

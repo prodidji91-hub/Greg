@@ -88,6 +88,11 @@
   object-position: 75% 25%;
 }
 
+/* Specific focal alignment for Rufous-tailed Hummingbird */
+.object-hummingbird-pos {
+  object-position: center;
+}
+
 /* Specific focal alignment for Crimson-backed Tanager (redbird.jpeg) */
 .object-crimson-tanager-pos {
   object-position: center 18%;

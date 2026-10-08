@@ -354,6 +354,26 @@ const WILDLIFE_SLIDES: WildlifeSlide[] = [
     subtitleFr: "Visitent Greg’s Place tous les jours",
     imagePosition: 'object-crimson-tanager-pos',
   },
+  {
+    id: 'rufous-tailed-hummingbird',
+    slideIndex: 16,
+    src: '/pictures/Rufous-tailed Hummingbird.jpg',
+    nameEn: 'Rufous-tailed Hummingbird',
+    nameEs: 'Colibrí Rabirrufo (Rufous-tailed Hummingbird)',
+    nameDe: 'Rostschwanzkolibri (Rufous-tailed Hummingbird)',
+    nameFr: 'Colibri à queue rousse',
+    speciesEn: 'Amazilia tzacatl',
+    speciesEs: 'Amazilia tzacatl',
+    tagEn: 'Garden Flowers',
+    tagEs: 'Flores del Jardín',
+    descEn: 'Feisty, iridescent hummingbirds hovering swiftly among tropical flowers and feeding perches throughout the day.',
+    descEs: 'Colibríes inquietos e iridiscentes que revolotean entre las flores tropicales del jardín.',
+    subtitleEn: "Visit Greg’s Place every day",
+    subtitleEs: "Visitan Greg’s Place todos los días",
+    subtitleDe: "Besuchen Greg’s Place jeden Tag",
+    subtitleFr: "Visitent Greg’s Place tous les jours",
+    imagePosition: 'object-hummingbird-pos',
+  },
 ];
 
 // Infinite slide track: prepend clone of last slide (Slide 15), append clone of first slide (Slide 1) (length = 17)
@@ -561,7 +581,7 @@ export const Hero: React.FC<HeroProps> = ({
                 {/* Full-screen Background Photograph */}
                 <img
                   src={slide.src}
-                  alt={getSlideName(slide)}
+                  alt={slide.id === 'rufous-tailed-hummingbird' ? 'Rufous-tailed Hummingbird in Albrook' : getSlideName(slide)}
                   loading={idx === 1 ? 'eager' : 'lazy'}
                   className={`absolute inset-0 w-full h-full object-cover ${
                     slide.imagePosition || 'object-center'

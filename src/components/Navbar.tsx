@@ -197,16 +197,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             }
 
             // Special Compact Two-Line Button: WHAT'S NEARBY
-            // Bold text, bright sophisticated dark green text, subtle box/border around the button
+            // Bold text, bright sophisticated green text, subtle box/border around the button
             if (item.id === 'whats-nearby') {
               return (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`inline-flex flex-col items-center justify-center text-center px-1.5 sm:px-2 py-0.5 rounded-[3px] font-bold text-[9.5px] xl:text-[10px] 2xl:text-[10.5px] leading-[1.1] tracking-wide transition-all border shrink-0 ${
+                  className={`inline-flex flex-col items-center justify-center text-center px-1.5 sm:px-2 py-0.5 rounded-[3px] font-bold text-[9.5px] xl:text-[10px] 2xl:text-[10.5px] leading-[1.1] tracking-wide transition-all border shrink-0 outline-none focus:outline-none focus:ring-0 ${
                     effectiveScrolled
-                      ? 'text-[#1B3022] border-[#1B3022]/40 hover:border-[#1B3022] hover:bg-[#1B3022]/5 shadow-2xs'
-                      : 'text-[#4ADE80] border-[#4ADE80]/50 hover:border-[#4ADE80] hover:bg-black/35 drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]'
+                      ? 'text-[#15803D] border-[#15803D]/50 hover:border-[#15803D] hover:bg-[#15803D]/10 focus:text-[#15803D] focus:border-[#15803D] active:text-[#15803D] active:border-[#15803D] visited:text-[#15803D] shadow-2xs'
+                      : 'text-[#4ADE80] border-[#4ADE80]/50 hover:border-[#4ADE80] hover:bg-black/35 focus:text-[#4ADE80] focus:border-[#4ADE80] active:text-[#4ADE80] active:border-[#4ADE80] visited:text-[#4ADE80] drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]'
                   }`}
                   aria-label="What's Nearby"
                 >
@@ -409,13 +409,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-left text-xs uppercase tracking-wider font-bold py-2 border-b border-[#1B3022]/10 transition-colors text-[#1B3022] flex items-center justify-between"
+                    className="text-left text-xs uppercase tracking-wider font-bold py-2 border-b border-[#15803D]/20 transition-colors text-[#15803D] hover:text-[#15803D] focus:text-[#15803D] active:text-[#15803D] visited:text-[#15803D] outline-none focus:outline-none flex items-center justify-between"
                   >
                     <div className="flex flex-col leading-tight">
                       <span>WHAT'S</span>
                       <span className="text-[10px] opacity-90">NEARBY</span>
                     </div>
-                    <span className="text-[10px] font-mono px-1.5 py-0.5 border border-[#1B3022]/40 rounded-xs text-[#1B3022]">
+                    <span className="text-[10px] font-mono px-1.5 py-0.5 border border-[#15803D]/40 rounded-xs text-[#15803D]">
                       EXPLORE
                     </span>
                   </button>

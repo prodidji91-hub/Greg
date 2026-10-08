@@ -126,7 +126,7 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                 <div
                   key={place.id}
                   id={place.id}
-                  className="p-7 transition-all flex flex-col justify-between group relative bg-white border border-[#1B3022]/10 hover:border-[#C5A059] shadow-sm hover:shadow-md"
+                  className="p-7 transition-all flex flex-col justify-between group relative bg-white border border-[#1B3022]/10 hover:border-[#C5A059] shadow-sm hover:shadow-md col-span-1 md:col-span-2 lg:col-span-2"
                 >
                   <div>
                     {/* Card Top: Icon & Category */}
@@ -141,44 +141,24 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
 
                     {/* Title & Subtitle */}
                     <div className="mb-3">
-                      <h3 className="font-serif text-xl font-medium text-[#1B3022] leading-snug">
-                        {lang === 'fr' ? 'Tour Nature de l\'Île aux Singes en Bateau Privé' : lang === 'de' ? 'Affeninsel-Naturtour im Privatboot' : lang === 'es' ? 'Tour de Naturaleza a la Isla de Monos en Bote Privado' : 'Monkey Island Nature Tour by Private Boat'}
+                      <h3 className="font-serif text-xl sm:text-2xl font-medium text-[#1B3022] leading-snug">
+                        {lang === 'fr' ? "Tour Nature de l'Île aux Singes en Bateau Privé" : lang === 'de' ? 'Affeninsel-Naturtour im Privatboot' : lang === 'es' ? 'Tour de Naturaleza a la Isla de Monos en Bote Privado' : 'Monkey Island Nature Tour by Private Boat'}
                       </h3>
-                      <p className="text-sm text-[#8C583E] italic mt-0.5">
-                        {lang === 'fr' ? 'avec Roberto, l\'ami de Greg' : lang === 'de' ? 'mit Gregs Freund Roberto' : lang === 'es' ? 'con Roberto, el amigo de Greg' : 'with Greg’s friend Roberto'}
+                      <p className="text-sm text-[#8C583E] italic mt-0.5 font-serif">
+                        {lang === 'fr' ? "avec Roberto, l'ami de Greg" : lang === 'de' ? 'mit Gregs Freund Roberto' : lang === 'es' ? 'con Roberto, el amigo de Greg' : 'with Greg’s friend Roberto'}
                       </p>
                     </div>
 
                     {/* Location / Launch Info */}
-                    <div className="flex flex-col gap-1.5 mb-4 p-2.5 border bg-[#FAF8F5] border-[#C5A059]/20">
-                      <div className="flex items-center gap-1.5 text-xs font-semibold text-[#1B3022]">
+                    <div className="flex flex-col gap-1.5 mb-5 p-3 border bg-[#FAF8F5] border-[#C5A059]/20">
+                      <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#1B3022]">
                         <MapPin className="w-4 h-4 text-[#C5A059] shrink-0" />
-                        <span>{lang === 'fr' ? 'Départ de chez Greg vers Gamboa (40 min)' : lang === 'de' ? 'Abfahrt von Greg\'s Place nach Gamboa (40 Min.)' : lang === 'es' ? 'Salida de Greg’s Place hacia Gamboa (40 minutos)' : 'Leaves from Greg’s Place to Gamboa (40 minutes)'}</span>
-                      </div>
-                    </div>
-
-                    {/* Options list */}
-                    <div className="mb-4 space-y-2 text-xs text-[#1B3022]/90 leading-relaxed">
-                      <div className="p-3 bg-[#FAF8F5] border-l-2 border-[#C5A059] rounded-r-sm">
-                        <p className="font-bold text-[#1B3022] mb-0.5">
-                          {lang === 'fr' ? 'Option 1 : Pêche dans le lac Gatun' : lang === 'de' ? 'Option 1: Angeln im Gatun-See' : lang === 'es' ? 'Opción 1: Pesca en el Lago Gatún' : 'Option 1: Fishing in Gatun Lake for Peacock Bass'}
-                        </p>
-                        <p className="text-[#1B3022]/80 font-light">
-                          {lang === 'fr' ? 'Pêche au bar-paon, suivie d\'un barbecue de poisson chez Greg.' : lang === 'de' ? 'Angeln auf Pfauenbarsch, gefolgt von einem Fisch-Grillabend bei Greg.' : lang === 'es' ? 'Pesca de sargento, seguida de un asado de pescado en Greg’s Place.' : 'followed by a fish barbecue at Greg’s Place.'}
-                        </p>
-                      </div>
-                      <div className="p-3 bg-[#FAF8F5] border-l-2 border-[#8C583E] rounded-r-sm">
-                        <p className="font-bold text-[#1B3022] mb-0.5">
-                          {lang === 'fr' ? 'Option 2 : Visite du zoo de Soberanía' : lang === 'de' ? 'Option 2: Besuch des Soberanía-Zoos' : lang === 'es' ? 'Opción 2: Visite el Zoológico del Parque Soberanía' : 'Option 2: Visit the Soberanía National Park Zoo'}
-                        </p>
-                        <p className="text-[#1B3022]/80 font-light">
-                          {lang === 'fr' ? 'Visite du zoo sur le chemin du retour depuis Gamboa.' : lang === 'de' ? 'Besuch des Soberanía-Nationalpark-Zoos auf dem Rückweg von Gamboa.' : lang === 'es' ? 'en el camino de regreso desde Gamboa.' : 'on the way back from Gamboa.'}
-                        </p>
+                        <span>{lang === 'fr' ? 'Départ de chez Greg vers Gamboa (40 minutes)' : lang === 'de' ? "Abfahrt von Greg's Place nach Gamboa (40 Minuten)" : lang === 'es' ? 'Salida de Greg’s Place hacia Gamboa (40 minutos)' : "Leaves from Greg's Place to Gamboa (40 minutes)"}</span>
                       </div>
                     </div>
 
                     {/* Detailed Narrative Paragraphs */}
-                    <div className="text-xs sm:text-[13px] text-[#1B3022]/85 leading-relaxed space-y-3 font-normal">
+                    <div className="text-xs sm:text-[13px] text-[#1B3022]/85 leading-relaxed space-y-3 font-normal mb-6">
                       <p>
                         {lang === 'fr'
                           ? "C'est un voyage magnifique car vous embarquerez à bord d'un petit bateau depuis la zone de forêt tropicale de Gamboa dans la rivière Chagres. Vous serez juste à côté des navires géants qui viennent de sortir des écluses de Pedro Miguel alors qu'ils continuent vers le lac Gatun."
@@ -186,29 +166,213 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                           ? "Dies ist ein wunderbarer Ausflug, da Sie mit einem kleinen Boot vom Regenwaldgebiet Gamboa aus in den Chagres-Fluss starten. Sie befinden sich direkt neben den riesigen Schiffen, die gerade die Pedro-Miguel-Schleusen verlassen haben und ihre Fahrt zum Gatun-See fortsetzen."
                           : lang === 'es'
                           ? "Este es un viaje maravilloso, ya que zarpará en un pequeño bote desde el área de la selva tropical de Gamboa hacia el río Chagres. Estará justo al lado de los barcos gigantes que acaban de salir de las esclusas de Pedro Miguel mientras continúan hacia el Lago Gatún."
-                          : "This is a wonderful trip as you will launch in a small boat from the Gamboa rainforest area into the Chagres River. You will be right next to the giant ships that have just exited the Pedro Miguel locks as they continue to Gatun Lake."}
+                          : "This is a wonderful trip as you will launch in a small boat from the Gamboa rainforest area into the Chagres River. You will be right next to the giant ships that have just exited the Pedro Miguel locks as they continue on to Gatun Lake."}
                       </p>
+
+                      {/* Chagres National Park Photo Feature */}
+                      <div className="my-4 overflow-hidden border border-[#1B3022]/15 bg-[#FAF8F5] shadow-xs rounded-[2px]">
+                        <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full overflow-hidden">
+                          <img
+                            src="/pictures/natpark.jpg"
+                            alt="Chagres National Park and Chagres River in Panama"
+                            className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-102"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="p-2.5 sm:p-3 bg-[#FAF8F5] border-t border-[#1B3022]/10 flex items-center justify-between gap-2">
+                          <div className="flex items-center gap-2">
+                            <Trees className="w-4 h-4 text-[#C5A059] shrink-0" />
+                            <h4 className="font-serif text-xs sm:text-sm font-semibold text-[#1B3022]">
+                              Chagres National Park
+                            </h4>
+                          </div>
+                          <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-[#8C583E] bg-[#EDEAE4] px-2 py-0.5 rounded-xs font-medium shrink-0">
+                            Chagres River
+                          </span>
+                        </div>
+                      </div>
+
                       <p>
                         {lang === 'fr'
-                          ? "Roberto part tôt pour que son bateau soit le premier sur place, les singes ont donc faim. De plus, vous entendrez les singes hurleurs retentir. Roberto trouve généralement au moins 3 espèces de singes différentes (ils ne sont pas tous sur l'île !). Il y a aussi beaucoup d'oiseaux aquatiques."
+                          ? "Roberto part tôt pour que son bateau soit le premier sur place, les singes ont donc faim. De plus, vous entendrez les singes hurleurs retentir tôt le matin. Roberto peut généralement trouver au moins 3 espèces de singes différentes (ils ne sont pas tous sur l'île !). Il y a aussi beaucoup d'oiseaux aquatiques intéressants. Roberto peut généralement trouver un crocodile marin aussi."
                           : lang === 'de'
-                          ? "Roberto fährt früh los, so dass sein Boot das erste vor Ort ist, weshalb die Affen hungrig sind. Außerdem werden Sie das Heulen der Brüllaffen hören. Roberto kann in der Regel mindestens 3 verschiedene Affenarten finden (sie sind nicht alle auf der Insel!). Es gibt auch viele Wasservögel."
+                          ? "Roberto fährt früh los, so dass sein Boot das erste vor Ort ist und die Affen hungrig sind. Außerdem werden Sie am frühen Morgen das Heulen der Brüllaffen hören. Roberto kann normalerweise mindestens 3 verschiedene Affenarten finden (sie sind nicht alle auf der Insel!). Es gibt auch viele interessante Wasservögel. Roberto kann normalerweise auch ein Salzwasserkrokodil finden."
                           : lang === 'es'
-                          ? "Roberto sale temprano para que su bote sea el primero en llegar, así que los monos tienen hambre. Además, escuchará a los monos aulladores gritar. Roberto suele encontrar al menos 3 especies diferentes de monos (¡no todos están en la isla!). También hay muchas aves acuáticas."
-                          : "Roberto leaves early so his boat will be the first one out there so the monkeys are hungry. Plus, you will hear the howler monkeys going off. Roberto can usually find at least 3 different species of monkeys (they are not all on the island!). There’s lots of waterfowl too."}
+                          ? "Roberto sale temprano para que su bote sea el primero en llegar y los monos tengan hambre. Además, escuchará a los monos aulladores cantar temprano en la mañana. Roberto suele encontrar al menos 3 especies diferentes de monos (¡no todos están en la isla!). También hay muchas aves acuáticas interesantes. Roberto suele encontrar un cocodrilo de agua salada también."
+                          : "Roberto leaves early so his boat will be the first one out there so the monkeys are will be hungry. Plus, you will hear the early morning howler monkeys going off. Roberto can usually find at least 3 different species of monkeys (they are not all on the island!). There’s lots of interesting waterfowl too. Roberto can usually find a saltwater crocodile too."}
                       </p>
+                    </div>
+
+                    {/* Optional Experiences Subsection */}
+                    <div className="mb-6 pt-5 border-t border-[#1B3022]/10">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-[11px] font-mono uppercase tracking-widest font-bold text-[#8C583E] px-2.5 py-1 bg-[#FAF8F5] border border-[#8C583E]/20">
+                          {lang === 'fr' ? 'Expériences Optionnelles' : lang === 'de' ? 'Optionale Erlebnisse' : lang === 'es' ? 'Experiencias Opcionales' : 'OPTIONAL EXPERIENCES'}
+                        </span>
+                      </div>
+
+                      <div className="space-y-3 text-xs sm:text-[13px] text-[#1B3022]">
+                        <div className="p-3.5 bg-[#FAF8F5] border-l-2 border-[#C5A059] space-y-3">
+                          <div className="overflow-hidden border border-[#1B3022]/15 bg-white shadow-xs rounded-[2px]">
+                            <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full overflow-hidden">
+                              <img
+                                src="/pictures/basss.jpg"
+                                alt="Peacock Bass caught while fishing in Gatun Lake, Panama"
+                                className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-102"
+                                loading="lazy"
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <p className="font-semibold text-[#1B3022]">
+                              {lang === 'fr'
+                                ? 'Pêche au bar-paon dans le lac Gatun'
+                                : lang === 'de'
+                                ? 'Angeln auf Pfauenbarsch im Gatun-See'
+                                : lang === 'es'
+                                ? 'Pesca de sargento en el Lago Gatún'
+                                : 'Fishing in Gatun Lake for Peacock Bass'}
+                            </p>
+                            <p className="text-[#1B3022]/80 font-light mt-0.5">
+                              {lang === 'fr'
+                                ? "suivie d'un barbecue de poisson chez Greg."
+                                : lang === 'de'
+                                ? 'gefolgt von einem Fisch-Grillabend bei Greg.'
+                                : lang === 'es'
+                                ? 'seguida de un asado de pescado en Greg’s Place.'
+                                : 'followed by a fish barbecue at Greg’s Place'}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="p-3.5 bg-[#FAF8F5] border-l-2 border-[#8C583E] space-y-3">
+                          <div className="overflow-hidden border border-[#1B3022]/15 bg-white shadow-xs rounded-[2px]">
+                            <div className="relative aspect-[16/9] w-full overflow-hidden">
+                              <img
+                                src="/pictures/own.jpg"
+                                alt="Soberanía National Park Zoo experience in Panama"
+                                className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-102"
+                                loading="lazy"
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <p className="font-semibold text-[#1B3022]">
+                              {lang === 'fr'
+                                ? 'Visite du zoo du parc national Soberanía'
+                                : lang === 'de'
+                                ? 'Besuch des Soberanía-Nationalpark-Zoos'
+                                : lang === 'es'
+                                ? 'Visita al Zoológico del Parque Nacional Soberanía'
+                                : 'Visit the Soberanía National Park Zoo'}
+                            </p>
+                            <p className="text-[#1B3022]/80 font-light mt-0.5">
+                              {lang === 'fr'
+                                ? 'sur le chemin du retour depuis Gamboa.'
+                                : lang === 'de'
+                                ? 'auf dem Rückweg von Gamboa.'
+                                : lang === 'es'
+                                ? 'en el camino de regreso desde Gamboa.'
+                                : 'on the way back from Gamboa.'}
+                            </p>
+                            <p className="text-[#8C583E] font-medium text-xs mt-1 italic">
+                              {lang === 'fr'
+                                ? "Ne manquez pas l'exposition sur l'Aigle Harpie (Harpe Eagle)."
+                                : lang === 'de'
+                                ? 'Verpassen Sie nicht die Harpe Eagle-Ausstellung.'
+                                : lang === 'es'
+                                ? 'No se pierda la exhibición del Harpe Eagle.'
+                                : 'Don’t miss the Harpe Eagle exhibit.'}
+                            </p>
+
+                            {/* Zoo Price visually connected */}
+                            <div className="mt-3 pt-2.5 border-t border-[#8C583E]/20 flex flex-wrap items-center justify-between gap-1 text-xs">
+                              <span className="font-semibold text-[#1B3022]">
+                                {lang === 'fr' ? 'Zoo du parc national Soberanía' : lang === 'de' ? 'Soberanía Nationalpark-Zoo' : lang === 'es' ? 'Zoológico Parque Nacional Soberanía' : 'Soberanía National Park Zoo'}
+                              </span>
+                              <span className="font-bold text-[#8C583E]">$25 {lang === 'fr' ? 'par personne' : lang === 'de' ? 'pro Person' : lang === 'es' ? 'por persona' : 'per person'}</span>
+                              <p className="w-full text-[11px] text-[#1B3022]/70 italic mt-0.5">
+                                {lang === 'fr' ? "Comprend les frais d'entrée au zoo." : lang === 'de' ? 'Inklusive Zoo-Eintrittsgebühren.' : lang === 'es' ? 'Incluye la entrada al zoológico.' : 'Includes the Zoo entrance fees.'}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Pricing Section */}
+                    <div className="mb-6 pt-5 border-t border-[#1B3022]/10 space-y-4">
+                      {/* Pricing Block 1 */}
+                      <div className="bg-[#FAF8F5] p-4 border border-[#1B3022]/10">
+                        <h4 className="font-serif text-base font-semibold text-[#1B3022] mb-3">
+                          {lang === 'fr' ? "Tour Nature de l'Île aux Singes en Bateau" : lang === 'de' ? 'Affeninsel-Naturtour im Boot' : lang === 'es' ? 'Tour de Naturaleza a la Isla de Monos en Bote' : 'Monkey Island Nature Boat Tour'}
+                        </h4>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                          <div className="bg-white p-2 border border-[#1B3022]/10 text-center">
+                            <span className="block text-[#1B3022]/70 text-[11px]">1 or 2 {lang === 'fr' ? 'pers.' : lang === 'de' ? 'Pers.' : lang === 'es' ? 'pers.' : 'persons'}</span>
+                            <span className="font-bold text-[#1B3022] text-sm">$220</span>
+                          </div>
+                          <div className="bg-white p-2 border border-[#1B3022]/10 text-center">
+                            <span className="block text-[#1B3022]/70 text-[11px]">3 {lang === 'fr' ? 'pers.' : lang === 'de' ? 'Pers.' : lang === 'es' ? 'pers.' : 'persons'}</span>
+                            <span className="font-bold text-[#1B3022] text-sm">$285</span>
+                          </div>
+                          <div className="bg-white p-2 border border-[#1B3022]/10 text-center">
+                            <span className="block text-[#1B3022]/70 text-[11px]">4 {lang === 'fr' ? 'pers.' : lang === 'de' ? 'Pers.' : lang === 'es' ? 'pers.' : 'persons'}</span>
+                            <span className="font-bold text-[#1B3022] text-sm">$360</span>
+                          </div>
+                          <div className="bg-white p-2 border border-[#1B3022]/10 text-center">
+                            <span className="block text-[#1B3022]/70 text-[11px]">5 {lang === 'fr' ? 'pers.' : lang === 'de' ? 'Pers.' : lang === 'es' ? 'pers.' : 'persons'}</span>
+                            <span className="font-bold text-[#1B3022] text-sm">$470</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Pricing Block 2 */}
+                      <div className="bg-[#FAF8F5] p-4 border border-[#C5A059]/30">
+                        <h4 className="font-serif text-base font-semibold text-[#1B3022] mb-3 leading-tight">
+                          {lang === 'fr'
+                            ? "Tour Île aux Singes ET Pêche au Bar-Paon ET Barbecue de Poisson"
+                            : lang === 'de'
+                            ? 'Affeninsel-Tour UND Pfauenbarsch-Angeln UND Fisch-BBQ'
+                            : lang === 'es'
+                            ? 'Tour Isla de Monos Y Pesca de Sargento Y Asado de Pescado'
+                            : 'Monkey Island Nature Boat Tour AND Peacock Bass Fishing AND Fish BBQ'}
+                        </h4>
+                        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">
+                          <div className="bg-white p-2 border border-[#1B3022]/10 text-center">
+                            <span className="block text-[#1B3022]/70 text-[11px]">1 or 2 {lang === 'fr' ? 'pers.' : lang === 'de' ? 'Pers.' : lang === 'es' ? 'pers.' : 'persons'}</span>
+                            <span className="font-bold text-[#1B3022] text-sm">$295</span>
+                          </div>
+                          <div className="bg-white p-2 border border-[#1B3022]/10 text-center">
+                            <span className="block text-[#1B3022]/70 text-[11px]">3 {lang === 'fr' ? 'pers.' : lang === 'de' ? 'Pers.' : lang === 'es' ? 'pers.' : 'persons'}</span>
+                            <span className="font-bold text-[#1B3022] text-sm">$395</span>
+                          </div>
+                          <div className="bg-white p-2 border border-[#1B3022]/10 text-center">
+                            <span className="block text-[#1B3022]/70 text-[11px]">4 {lang === 'fr' ? 'pers.' : lang === 'de' ? 'Pers.' : lang === 'es' ? 'pers.' : 'persons'}</span>
+                            <span className="font-bold text-[#1B3022] text-sm">$445</span>
+                          </div>
+                          <div className="bg-white p-2 border border-[#1B3022]/10 text-center">
+                            <span className="block text-[#1B3022]/70 text-[11px]">5 {lang === 'fr' ? 'pers.' : lang === 'de' ? 'Pers.' : lang === 'es' ? 'pers.' : 'persons'}</span>
+                            <span className="font-bold text-[#1B3022] text-sm">$570</span>
+                          </div>
+                          <div className="bg-white p-2 border border-[#1B3022]/10 text-center col-span-2 sm:col-span-1">
+                            <span className="block text-[#1B3022]/70 text-[11px]">6 {lang === 'fr' ? 'pers.' : lang === 'de' ? 'Pers.' : lang === 'es' ? 'pers.' : 'persons'}</span>
+                            <span className="font-bold text-[#1B3022] text-sm">$645</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
                   {/* Direct Contact WhatsApp CTA */}
                   <div className="pt-4 border-t border-[#1B3022]/10 mt-4">
                     <a
-                      href="https://wa.me/50765037828?text=Hello%20Greg,%20I'm%20interested%20in%20the%20Monkey%20Island%20Nature%20Tour%20with%20Roberto.%20Could%20you%20please%20send%20me%20more%20information%20and%20pricing%3F"
+                      href="https://wa.me/50765037828?text=Hello%20Greg,%20I'm%20interested%20in%20the%20Monkey%20Island%20Nature%20Tour%20with%20Roberto.%20Could%20you%20please%20send%20me%20more%20information%20and%20help%20me%20make%20a%20reservation%3F"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 bg-[#C5A059] hover:bg-[#A68648] text-white text-[10.5px] font-bold uppercase tracking-widest transition-colors shadow-sm"
+                      className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 bg-[#C5A059] hover:bg-[#A68648] text-white text-[11px] font-bold uppercase tracking-widest transition-colors shadow-sm text-center"
                     >
-                      <span>{lang === 'fr' ? 'Contacter Greg pour les prix' : lang === 'de' ? 'Preise bei Greg anfragen' : lang === 'es' ? 'Consultar precios con Greg' : 'Inquire with Greg for prices'}</span>
+                      <span>{lang === 'fr' ? 'Contacter Greg pour les réservations' : lang === 'de' ? 'Greg für Reservierungen kontaktieren' : lang === 'es' ? 'Contactar a Greg para Reservaciones' : 'Contact Greg for Reservations'}</span>
                     </a>
                   </div>
                 </div>

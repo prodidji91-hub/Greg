@@ -811,11 +811,11 @@ export const content = {
           categoryKey: "nature",
           distance: "Gamboa Rainforest Launch",
           driveTime: "40 min drive from Greg’s Place",
-          description: "This is a wonderful trip as you will launch in a small boat from the Gamboa rainforest area into the Chagres River. You will be right next to the giant ships that have just exited the Pedro Miguel locks as they continue to Gatun Lake.\n\nRoberto leaves early so his boat will be the first one out there so the monkeys are hungry. Plus, you will hear the howler monkeys going off. Roberto can usually find at least 3 different species of monkeys (they are not all on the island!). There’s lots of waterfowl too.",
+          description: "This is a wonderful trip as you will launch in a small boat from the Gamboa rainforest area into the Chagres River. You will be right next to the giant ships that have just exited the Pedro Miguel locks as they continue on to Gatun Lake.\n\nRoberto leaves early so his boat will be the first one out there so the monkeys are will be hungry. Plus, you will hear the early morning howler monkeys going off. Roberto can usually find at least 3 different species of monkeys (they are not all on the island!). There’s lots of interesting waterfowl too. Roberto can usually find a saltwater crocodile too.",
           futureNote: "with Greg’s friend Roberto\nLeaves from Greg’s Place to Gamboa (40 minutes)",
           highlights: [
-            "Option 1: Fishing in Gatun Lake for Peacock Bass, followed by a fish barbecue at Greg’s Place.",
-            "Option 2: Visit the Soberanía National Park Zoo on the way back from Gamboa."
+            "Fishing in Gatun Lake for Peacock Bass, followed by a fish barbecue at Greg’s Place.",
+            "Visit the Soberanía National Park Zoo on the way back from Gamboa. Don’t miss the Harpe Eagle exhibit."
           ],
           iconType: "canal"
         },
