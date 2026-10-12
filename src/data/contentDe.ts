@@ -604,7 +604,7 @@ export const contentDe = {
         "frequency": "Regelmäßige Besucher in den Baumkronen",
         "habitat": "Grüne Baumkorridore quer durch Albrook",
         "category": "mammals",
-        "description": "Kleine, quirlige Geoffroy-Tamarinaffen und die markanten Stimmen von Brüllaffen beleben regelmäßig die schattigen Baumkorridore rund um unser Viertel."
+        "description": "Kleine, quirlige Geoffroy-Tamarinaffen und die markanten Stimmen von Brüllaffen beleben regelmäßig die schattigen Baumkorridore rund um unser Viertel.\n\nEin geschlechtsreifes Weibchen paart sich mit mehreren Männchen und bringt häufig zweieiige Zwillinge zur Welt – zwei Geschwister, die gleichzeitig geboren werden, aber nicht identisch sind. Obwohl gewöhnlich nur eines das Erwachsenenalter erreicht, arbeiten die Männchen zusammen, um den Nachwuchs zu versorgen, und tragen die Jungtiere während ihrer ersten 10 Lebenswochen."
       },
       {
         "id": "caiman",
@@ -623,6 +623,58 @@ export const contentDe = {
         "habitat": "Überhängende Äste & Felsen am Bach",
         "category": "reptiles",
         "description": "Berühmt für ihre Fähigkeit, bei Gefahr über die Wasseroberfläche zu flitzen. Diese faszinierenden Echsen sind am nahen Bach leicht zu entdecken."
+      },
+      {
+        "id": "tropical-birds",
+        "name": "Tropische Vögel",
+        "category": "birds",
+        "description": "Gut über 100 Arten leben in der Nachbarschaft.\n\nFolgende Vögel besuchen Greg's Place jeden Tag:",
+        "birdSpeciesList": [
+          "Crimson-backed Tanager",
+          "Yellow-backed Oriole",
+          "Blue-gray Tanager",
+          "Barred Ant Shrike",
+          "Red-legged Honeycreeper",
+          "Rufous-tailed Hummingbird",
+          "Red-crowned Woodpecker",
+          "Palm Tanager",
+          "Clay-colored Thrush",
+          "Rock Pigeon",
+          "Pale-vented Pigeon",
+          "Ruddy Ground Dove",
+          "Plain-colored Tanager",
+          "Gray-headed Chachalaca",
+          "Great-tailed Grackle",
+          "Orange-chinned Parakeet",
+          "Rusty-margined Flycatcher",
+          "Variable Seedeater"
+        ],
+        "birdFooter": "Viele weitere Arten schauen von Zeit zu Zeit vorbei."
+      },
+      {
+        "id": "variegated-squirrel",
+        "name": "Bunteichhörnchen (Variegated Squirrel)",
+        "category": "mammals",
+        "description": "Selten in Albrook – wir hatten über 10 Jahre lang keines gesehen. Aber jetzt besuchen ein oder zwei jeden Tag Greg's Place. Sie lieben frischen Maiskolben, geröstete Erdnüsse in der Schale und Sonnenblumenkerne in der Schale."
+      },
+      {
+        "id": "tropical-slider-turtle",
+        "name": "Tropische Schmuckschildkröte (Tropical Slider Turtle)",
+        "frequency": "Häufig im Crocodile Creek",
+        "category": "reptiles",
+        "description": "Junge tropische Schmuckschildkröten (grün mit einem roten Streifen am Ohr) wurden viele Jahre lang in den gesamten USA verkauft. Vielleicht hatten Sie als Kind auch eine als Haustier?\n\nBitten Sie Greg, Ihnen die Schildkrötentrommel zu zeigen, die er von einem indigenen Emberá erhalten hat."
+      },
+      {
+        "id": "iguana",
+        "name": "Iguana",
+        "category": "reptiles",
+        "description": "Leguane verschiedener Größe krabbeln jeden Tag über die Affenbrücke zu unseren Vogelfutterstellen. Nachdem die Vögel und Nasenbären mit den Früchten fertig sind, sind die Leguane das Reinigungsteam, das die restlichen Papaya- und Bananenschalen frisst. Manchmal sieht man einen großen Leguan, der Vögel oder einen kleineren Leguan verjagt. Die kleineren Leguane haben die intensivere grüne Farbe."
+      },
+      {
+        "id": "capybara",
+        "name": "Wasserschwein (Capybara)",
+        "category": "mammals",
+        "description": "Panama ist die Heimat des Kleinen Wasserschweins (Lesser Capybara), einer kleineren Art als das berühmte südamerikanische Gemeine Wasserschwein. Sie werden etwa 80 bis 105 cm lang und wiegen etwa 28 bis 40 kg.\n\nGleich die Straße hinunter von Greg’s Place liegt der Crocodile Creek. Wann immer der untere Abschnitt der kleinen Brücke über den Crocodile Creek blockiert ist, bildet sich eine wunderschöne Lagune. Jede Nacht schwimmen die Wasserschweine den Fluss hinunter zur Brücke. Hier klettern sie an Land und überqueren die Straße, um auf der anderen Seite wieder in den Fluss zu gelangen. Greg musste schon mehr als einmal mit dem Auto anhalten, um die Wasserschweine vor sich die Straße überqueren zu lassen. Manchmal halten sie etwa 20 Minuten lang an, um am Straßenrand Gras zu fressen."
       }
     ]
   },
@@ -703,6 +755,22 @@ export const contentDe = {
     ],
     "places": [
       {
+        "id": "stores-and-facilities",
+        "name": "Geschäfte & Einrichtungen in Albrook",
+        "category": "Nahversorgung & Dienstleistungen",
+        "categoryKey": "shopping",
+        "distance": "In Fußnähe / 2–4 Min. Fahrt",
+        "driveTime": "Sehr nah",
+        "description": "Albrook bietet eine hervorragende Infrastruktur mit Apotheken, Supermärkten, Bäckereien, Geldautomaten und Restaurants direkt im Viertel.",
+        "highlights": [
+          "Riba Smith & Rey Supermärkte mit internationalen Produkten",
+          "Lokale Bäckereien und erstklassige Kaffeebars",
+          "24-Stunden-Apotheken und Bankfilialen",
+          "Über 15 Restaurants und Food Trucks zu Fuß erreichbar"
+        ],
+        "iconType": "services"
+      },
+      {
         "id": "panama-canal",
         "name": "Panamakanal – Miraflores-Besucherzentrum",
         "category": "Kanal & Ingenieurskunst",
@@ -719,6 +787,18 @@ export const contentDe = {
           "Fahrplan der Schiffsdurchfahrten (ändert sich jeden Morgen):\nhttps://visitcanaldepanama.com/en/#horarios-barcos"
         ],
         "iconType": "canal"
+      },
+      {
+        "id": "kotowa-coffee-house",
+        "name": "Kotowa Coffee House",
+        "organization": "Gegenüber dem Flughafen Marcos Gelabert",
+        "category": "Kaffee & Bäckerei",
+        "categoryKey": "city",
+        "distance": "~1,2 km",
+        "driveTime": "~3 Minuten mit dem Auto oder ~12 Minuten zu Fuß",
+        "description": "Ein schönes Café mit exzellentem panamaischem Kaffee. Wenn Sie Kaffee mögen, ist dies der richtige Ort.",
+        "futureNote": "Mein Lieblingskaffee. Sie können auch abgepackten Kaffee für zu Hause kaufen. Sie haben zwei Sorten, eine in einer grünen Verpackung und eine in einer roten Verpackung, beide exzellent. Den in der grünen Verpackung servieren sie den Kunden. Dies sind tolle Geschenke für zu Hause.",
+        "iconType": "services"
       },
       {
         "id": "casco-viejo",
@@ -770,6 +850,68 @@ export const contentDe = {
           "Direkt am Eingang des Panamakanals am Amador Causeway gelegen"
         ],
         "iconType": "nature"
+      },
+      {
+        "id": "punta-culebra",
+        "name": "Punta Culebra Nature Center",
+        "organization": "Smithsonian Tropical Research Institute",
+        "category": "Natur & Wissenschaft",
+        "categoryKey": "nature",
+        "distance": "Nahe dem Ende des Causeway (~10 km)",
+        "driveTime": "~12-18 Minuten mit dem Auto",
+        "description": "Ein Freiluft-Natur- und Meeresforschungszentrum des Smithsonian Tropical Research Institute auf der Insel Naos am Amador Causeway.",
+        "highlights": [
+          "Fabulous Frogs of Panama Exhibit (Panama-Frosch-Ausstellung)",
+          "Panama Coastal Fish Aquarium (Küstenfisch-Aquarium)",
+          "Tropical Fish Aquarium (Tropisches Fisch-Aquarium)",
+          "Butterfly Dome (Schmetterlingskuppel)",
+          "Ecological Exhibits (Ökologische Ausstellungen)",
+          "Interactive/Educational Exhibits (Interaktive & bildende Ausstellungen)",
+          "Walking Trails where you may spot sloths, raccoons, iguanas and various birds (Wanderwege für Faultiere, Waschbären, Leguane & Vögel)"
+        ],
+        "futureNote": "Hinweis des Gastgebers:\nBesuchen Sie die Website für Standort und Öffnungszeiten: https://stri.si.edu/visit/punta-culebra",
+        "linkUrl": "https://stri.si.edu/visit/punta-culebra",
+        "linkText": "OFFIZIELLE WEBSITE",
+        "iconType": "nature"
+      },
+      {
+        "id": "panama-nature-center",
+        "name": "Panama Nature Center",
+        "organization": "Auffangstation & Tierschutzzentrum",
+        "category": "Auffangstation & Tierschutz",
+        "categoryKey": "nature",
+        "distance": "In der Stadt des Wissens / Cuidad del Saber (~10 km)",
+        "driveTime": "~10-12 Minuten mit dem Auto",
+        "description": "Diese Auffangstation und Tierauffangzentrum beherbergt faszinierende heimische Tiere aus nächster Nähe. Zu den geretteten Tieren gehören Tukane, Ameisenbären, zwei Faultierarten, Stachelschweine und verschiedene Affenarten.\n\nGenießen Sie Ihr Mittagessen im großen Food-Court an der Plaza Ciudad del Saber (La Plaza Cuidad del Saber) mit vielen à la carte Angeboten und Desserts.",
+        "highlights": [
+          "Beobachtung geretteter Wildtiere aus nächster Nähe: Tukane, Ameisenbären, zwei Faultierarten, Stachelschweine und Affen",
+          "Tierschutzzentrum & Auffangstation",
+          "Mittagessen & Desserts à la carte an der Plaza Ciudad del Saber (La Plaza Cuidad del Saber)"
+        ],
+        "futureNote": "Hinweis des Gastgebers:\nBesuchen Sie die Website für Standort und Öffnungszeiten: https://panamanaturecenter.org/",
+        "linkUrl": "https://panamanaturecenter.org/",
+        "linkText": "OFFIZIELLE WEBSITE",
+        "iconType": "nature"
+      },
+      {
+        "id": "albrook-swimming-pool",
+        "name": "Albrook Swimming Pool (Piscina de Albrook)",
+        "organization": "„Der Pool im Dschungel“ · Olympische Größe (50 Meter)",
+        "category": "Sport & Erholung",
+        "categoryKey": "city",
+        "distance": "Ganz in der Nähe am Paseo de la Iguana (~1 km)",
+        "driveTime": "~1 Minute mit dem Auto, ~8 Minuten zu Fuß",
+        "description": "Das Albrook Schwimmbad ist eine öffentliche Anlage mit olympischen Ausmaßen (50 Meter).\n\nBitte beachten Sie jedoch vor einem Besuch, dass die Anlage derzeit einem umfassenden 7,6-Millionen-Dollar-Sanierungs- und Umbauprojekt unterliegt. Der Zugang kann je nach Bauphase eingeschränkt oder geschlossen sein.\n\nIn Betrieb ist das Bad kostenlos. Regulär wird ein Gesundheitszeugnis benötigt (vor Ort für ca. 50 $ inkl. Blut-Test in der lokalen Klinik erhältlich). Touristen wird die Nutzung manchmal ohne Zeugnis gestattet.",
+        "highlights": [
+          "Öffentliches Schwimmbad mit olympischen Ausmaßen (50 Meter)",
+          "Umfassendes 7,6-Millionen-Dollar-Renovierungsprojekt im Gange (Zugang möglicherweise eingeschränkt)",
+          "Kostenloser Eintritt im regulären Betrieb (Gesundheitszeugnis ca. 50 $ erforderlich)",
+          "Touristen wird die Nutzung gelegentlich ohne Zeugnis gestattet"
+        ],
+        "futureNote": "Hinweis des Gastgebers:\nAktuelle Öffnungszeiten finden Sie hier: https://www.instagram.com/piscinaalbrook/\n\nDas Bad ist manchmal wegen Wettkämpfen und Training geschlossen. Bei langem Haar ist eine Badekappe erforderlich (am Empfang erhältlich).",
+        "linkUrl": "https://www.instagram.com/piscinaalbrook/",
+        "linkText": "ÖFFNUNGSZEITEN PRÜFEN",
+        "iconType": "services"
       },
       {
         "id": "cinta-costera",
@@ -940,23 +1082,6 @@ export const contentDe = {
         "driveTime": "~8 Minuten",
         "description": "Fahren Sie mit der historischen Panama-Kanal-Eisenbahn quer über den Isthmus von Panama, entlang des Kanals und durch den Dschungel. Ihre einstündige Fahrt führt nach Colón an der Karibikküste. Sie können am selben Tag mit demselben Zug zurückkehren.\nAlle Details finden Sie hier: https://www.panarail.com/",
         "futureNote": "Dies ist ein wunderbarer Ausflug, der sich absolut lohnt. Wählen Sie den Dome Car (Panoramawagen) für die schönste Aussicht. Lassen Sie sich von Gregs vertrautem Taxifahrer Jose empfangen, um eine Tour durch Colón zu machen, das Gatun-Schleusen-Besucherzentrum zu besuchen und weiter nach Portobelo zu fahren, um die historische Festungsstadt zu sehen, dort zu Mittag zu essen und nach Greg's Place zurückzukehren.",
-        "iconType": "train"
-      },
-      {
-        "id": "stores-and-facilities",
-        "name": "Geschäfte & Einrichtungen in Albrook",
-        "category": "Nahversorgung & Dienstleistungen",
-        "categoryKey": "shopping",
-        "distance": "In Fußnähe / 2–4 Min. Fahrt",
-        "driveTime": "Sehr nah",
-        "description": "Albrook bietet eine hervorragende Infrastruktur mit Apotheken, Supermärkten, Bäckereien, Geldautomaten und Restaurants direkt im Viertel.",
-        "highlights": [
-          "Riba Smith & Rey Supermärkte mit internationalen Produkten",
-          "Lokale Bäckereien und erstklassige Kaffeebars",
-          "24-Stunden-Apotheken und Bankfilialen",
-          "Über 15 Restaurants und Food Trucks zu Fuß erreichbar"
-        ],
-        "iconType": "services"
       }
     ],
     "diningCallout": {

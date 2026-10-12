@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   ShoppingBag,
   Ship,
@@ -14,10 +14,66 @@ import {
   Moon,
   ExternalLink,
   Store,
-  Train
+  Train,
+  X,
+  Maximize2
 } from 'lucide-react';
 import { Language, NearbyPlace, FacilityItem } from '../types';
 import { content } from '../data/content';
+
+interface NearbyCardPhoto {
+  src: string;
+  alt: string;
+  title?: string;
+}
+
+const nearbyCardPhotos: Record<string, { src: string; defaultAlt: string; defaultTitle: string }> = {
+  'albrook-mall': {
+    src: '/pictures/Albrook Mall.jpg',
+    defaultAlt: 'Albrook Mall in Panama',
+    defaultTitle: 'Albrook Mall',
+  },
+  'albrook-swimming-pool': {
+    src: '/pictures/Albrook Pool.jpg',
+    defaultAlt: 'Albrook Swimming Pool (Piscina de Albrook)',
+    defaultTitle: 'Albrook Swimming Pool (Piscina de Albrook)',
+  },
+  'amador-causeway': {
+    src: '/pictures/Amador Causeway.jpg',
+    defaultAlt: 'Amador Causeway in Panama City',
+    defaultTitle: 'Amador Causeway',
+  },
+  'cerro-ancon': {
+    src: '/pictures/Ancon Hill.jpeg',
+    defaultAlt: 'Ancon Hill (Cerró Ancon) in Panama City',
+    defaultTitle: 'Ancon Hill (Cerró Ancon)',
+  },
+  'casco-viejo': {
+    src: '/pictures/Casco Viejo Alternate.jpg',
+    defaultAlt: 'Casco Viejo (Historic Old Town) in Panama City',
+    defaultTitle: 'Casco Viejo',
+  },
+  'biomuseo': {
+    src: '/pictures/Biomuseo.jpg',
+    defaultAlt: 'Biomuseo (Museum of Biodiversity) in Panama City',
+    defaultTitle: 'Biomuseo',
+  },
+  'panama-city-base': {
+    src: '/pictures/Panama City.jpg',
+    defaultAlt: 'Panama City skyline and urban exploration',
+    defaultTitle: 'Panama City',
+  },
+  'parque-metropolitano': {
+    src: '/pictures/PARQUE-METROPOLITANO.jpg',
+    defaultAlt: 'Parque Natural Metropolitano (Metropolitan Natural Park) in Panama City',
+    defaultTitle: 'Metropolitan Natural Park',
+  },
+  'walk-neighborhood': {
+    src: '/pictures/Neighborhood Walk 1.jpg',
+    defaultAlt: 'Walk and Explore the Neighborhood in Albrook, Panama City',
+    defaultTitle: 'Walk and Explore the Neighborhood',
+  },
+};
 
 interface WhatsNearbyProps {
   lang: Language;
@@ -25,6 +81,26 @@ interface WhatsNearbyProps {
 
 export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
   const t = content[lang].whatsNearby;
+  const [lightboxImage, setLightboxImage] = useState<NearbyCardPhoto | null>(null);
+
+  useEffect(() => {
+    if (!lightboxImage) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setLightboxImage(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [lightboxImage]);
 
   const getPlaceIcon = (iconType?: string, isRed?: boolean) => {
     const iconColor = isRed ? 'text-[#1E3A8A]' : 'text-[#C5A059]';
@@ -102,10 +178,10 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                   {lang === 'fr' ? 'Restauration dans le Quartier' : lang === 'de' ? 'Gastronomie im Viertel' : lang === 'en' ? 'Neighborhood Dining' : 'Gastronomía en el Vecindario'}
                 </span>
                 <h3 className="font-serif text-xl sm:text-2xl text-white mb-2 font-normal">
-                  {t.diningCallout.title}
+                  {t.diningCallout?.title}
                 </h3>
                 <p className="text-sm sm:text-[15px] text-white/90 leading-relaxed max-w-3xl font-normal">
-                  {t.diningCallout.description}
+                  {t.diningCallout?.description}
                 </p>
               </div>
             </div>
@@ -381,26 +457,36 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
 
             const isClickable = Boolean(place.linkUrl);
             const isRedHighlight = place.id === '51-fun-things';
-            const CardElement = isClickable ? 'a' : 'div';
-            const linkProps = isClickable
+            const cardPhotoConfig = nearbyCardPhotos[place.id];
+            const cardPhoto: NearbyCardPhoto | undefined = place.image
               ? {
-                  href: place.linkUrl,
-                  target: '_blank',
-                  rel: 'noopener noreferrer',
-                  'aria-label': place.name,
+                  src: place.image,
+                  alt: place.imageAlt || place.name.split('\n')[0],
+                  title: place.name.split('\n')[0],
                 }
-              : {};
+              : cardPhotoConfig
+              ? {
+                  src: cardPhotoConfig.src,
+                  alt: `${place.name.split('\n')[0]} · Greg's Place Albrook`,
+                  title: place.name.split('\n')[0],
+                }
+              : undefined;
 
             return (
-              <CardElement
+              <div
                 key={place.id}
                 id={place.id}
-                {...linkProps}
                 className={`p-7 transition-all flex flex-col justify-between group relative ${
                   isRedHighlight
                     ? 'bg-gradient-to-b from-red-50/90 via-white to-red-50/40 border-2 border-red-600 shadow-xl ring-4 ring-red-500/15 hover:border-red-700 hover:shadow-2xl'
                     : 'bg-white border border-[#1B3022]/10 hover:border-[#C5A059] shadow-sm hover:shadow-md'
                 } ${isClickable ? 'cursor-pointer hover:-translate-y-1 block' : ''}`}
+                onClick={(e) => {
+                  if (isClickable && place.linkUrl) {
+                    if ((e.target as HTMLElement).closest('a')) return;
+                    window.open(place.linkUrl, '_blank', 'noopener,noreferrer');
+                  }
+                }}
               >
                 {/* Red highlight badge */}
                 {isRedHighlight && (
@@ -461,9 +547,16 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                       </div>
                     </div>
                   ) : (
-                    <h3 className="font-serif text-xl font-medium text-[#1B3022] mb-3 leading-snug">
-                      {place.name}
-                    </h3>
+                    <div className="mb-3 leading-snug">
+                      <h3 className="font-serif text-xl font-medium text-[#1B3022]">
+                        {place.name}
+                      </h3>
+                      {place.organization && (
+                        <div className="font-serif text-sm text-[#8C583E] italic mt-0.5 font-medium">
+                          {place.organization}
+                        </div>
+                      )}
+                    </div>
                   )}
 
                   {/* Distance & Drive Time Pill */}
@@ -485,6 +578,35 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                           <span>{place.driveTime}</span>
                         </div>
                       )}
+                    </div>
+                  )}
+
+                  {/* Small Landscape Photo Feature with Click-to-Expand Lightbox */}
+                  {cardPhoto && (
+                    <div className="mb-4">
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          e.preventDefault();
+                          setLightboxImage(cardPhoto);
+                        }}
+                        className="w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059]/60 cursor-pointer block rounded-[2px]"
+                        aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${cardPhoto.title || place.name.split('\n')[0]}`}
+                      >
+                        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#1B3022]/15 bg-[#FAF8F5] shadow-xs group-hover/photo:border-[#C5A059] group-hover/photo:shadow-md transition-all duration-300">
+                          <img
+                            src={cardPhoto.src}
+                            alt={cardPhoto.alt}
+                            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-102"
+                            loading="lazy"
+                          />
+                          <div className="absolute bottom-2 right-2 bg-black/65 hover:bg-black/85 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1 opacity-90 group-hover/photo:opacity-100 transition-opacity shadow-xs">
+                            <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
+                            <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>
+                          </div>
+                        </div>
+                      </button>
                     </div>
                   )}
 
@@ -593,16 +715,22 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
 
                   {/* Clickable Card Link Indicator */}
                   {place.linkUrl && (
-                    <div className={`pt-3 border-t flex items-center justify-between gap-2 text-xs sm:text-[13px] font-semibold transition-colors mt-2 ${
-                      isRedHighlight
-                        ? 'border-blue-200 text-[#0284C7] group-hover:text-[#0369A1]'
-                        : 'border-[#1B3022]/10 text-[#8C583E] group-hover:text-[#C5A059]'
-                    }`}>
+                    <a
+                      href={place.linkUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`pt-3 border-t flex items-center justify-between gap-2 text-xs sm:text-[13px] font-semibold transition-colors mt-2 ${
+                        isRedHighlight
+                          ? 'border-blue-200 text-[#0284C7] group-hover:text-[#0369A1]'
+                          : 'border-[#1B3022]/10 text-[#8C583E] group-hover:text-[#C5A059]'
+                      }`}
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       <span className={`underline underline-offset-4 ${isRedHighlight ? 'decoration-[#0284C7] font-bold text-[#0284C7]' : 'decoration-[#C5A059]/40'}`}>
-                        {lang === 'fr' ? 'Voir 51+ activités sur tourscanner.com' : lang === 'de' ? '51+ Aktivitäten auf tourscanner.com ansehen' : lang === 'en' ? 'tourscanner.com/things-to-do-in-panama-city-panama' : 'Ver 51+ actividades en tourscanner.com'}
+                        {place.linkText || (lang === 'fr' ? 'Voir 51+ activités sur tourscanner.com' : lang === 'de' ? '51+ Aktivitäten auf tourscanner.com ansehen' : lang === 'en' ? 'tourscanner.com/things-to-do-in-panama-city-panama' : 'Ver 51+ actividades en tourscanner.com')}
                       </span>
                       <ExternalLink className={`w-4 h-4 shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform ${isRedHighlight ? 'text-[#0284C7]' : 'text-[#C5A059]'}`} />
-                    </div>
+                    </a>
                   )}
                 </div>
 
@@ -640,7 +768,7 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                     </div>
                   </div>
                 )}
-              </CardElement>
+              </div>
             );
           })}
         </div>
@@ -651,15 +779,6 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
           if (!funThingsPlace) return null;
 
           const isClickable = Boolean(funThingsPlace.linkUrl);
-          const CardElement = isClickable ? 'a' : 'div';
-          const linkProps = isClickable
-            ? {
-                href: funThingsPlace.linkUrl,
-                target: '_blank',
-                rel: 'noopener noreferrer',
-                'aria-label': funThingsPlace.name,
-              }
-            : {};
 
           return (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12 items-stretch">
@@ -697,11 +816,16 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
 
               {/* Right: 51+ Card */}
               <div className="lg:col-span-5 flex flex-col h-full justify-between">
-                <CardElement
+                <div
                   key={funThingsPlace.id}
                   id={funThingsPlace.id}
-                  {...linkProps}
                   className="p-7 h-full transition-all flex flex-col justify-between group relative bg-gradient-to-b from-red-50/90 via-white to-red-50/40 border-2 border-red-600 shadow-xl ring-4 ring-red-500/15 hover:border-red-700 hover:shadow-2xl cursor-pointer hover:-translate-y-1 block"
+                  onClick={(e) => {
+                    if (funThingsPlace.linkUrl) {
+                      if ((e.target as HTMLElement).closest('a')) return;
+                      window.open(funThingsPlace.linkUrl, '_blank', 'noopener,noreferrer');
+                    }
+                  }}
                 >
                   {/* Red highlight badge */}
                   <div className="absolute -top-3.5 left-6 bg-red-600 text-white text-[11px] font-mono uppercase tracking-widest font-bold px-3 py-0.5 shadow-md flex items-center gap-1.5">
@@ -760,13 +884,19 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                   </div>
 
                   {/* Link indicator */}
-                  <div className="pt-3 border-t border-blue-200 text-[#0284C7] group-hover:text-[#0369A1] flex items-center justify-between gap-2 text-xs sm:text-[13px] font-semibold transition-colors mt-2">
+                  <a
+                    href={funThingsPlace.linkUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pt-3 border-t border-blue-200 text-[#0284C7] group-hover:text-[#0369A1] flex items-center justify-between gap-2 text-xs sm:text-[13px] font-semibold transition-colors mt-2"
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     <span className="underline underline-offset-4 decoration-[#0284C7] font-bold">
                       {lang === 'fr' ? 'Voir 51+ activités sur tourscanner.com' : lang === 'de' ? '51+ Aktivitäten auf tourscanner.com ansehen' : lang === 'en' ? 'tourscanner.com/things-to-do-in-panama-city-panama' : 'Ver 51+ actividades en tourscanner.com'}
                     </span>
                     <ExternalLink className="w-4 h-4 shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-[#0284C7]" />
-                  </div>
-                </CardElement>
+                  </a>
+                </div>
               </div>
             </div>
           );
@@ -782,6 +912,51 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
           </span>
         </div>
       </div>
+
+      {/* Reusable Lightbox Modal for What's Nearby Photos */}
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-black/85 backdrop-blur-xs animate-in fade-in duration-200"
+          onClick={() => setLightboxImage(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={lightboxImage.title || lightboxImage.alt}
+        >
+          {/* Close button positioned top-right for easy one-tap access */}
+          <button
+            type="button"
+            onClick={() => setLightboxImage(null)}
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 p-2.5 text-white/90 hover:text-white bg-black/60 hover:bg-black/90 rounded-full border border-white/25 transition-all shadow-lg hover:border-[#C5A059] focus:outline-none focus:ring-2 focus:ring-[#C5A059] cursor-pointer"
+            aria-label="Close image preview"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
+          {/* Modal Container: clicking inside prevents backdrop dismiss */}
+          <div
+            className="relative max-w-5xl max-h-[90vh] flex flex-col items-center justify-center animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative overflow-hidden bg-black/60 border border-[#C5A059]/50 shadow-2xl rounded-[2px] flex flex-col">
+              <img
+                src={lightboxImage.src}
+                alt={lightboxImage.alt}
+                className="max-h-[75vh] sm:max-h-[80vh] max-w-[92vw] sm:max-w-[85vw] md:max-w-4xl w-auto h-auto object-contain block select-none"
+              />
+              {lightboxImage.title && (
+                <div className="py-2.5 px-4 bg-[#1B3022] border-t border-[#C5A059]/30 flex items-center justify-between gap-3 text-xs sm:text-sm">
+                  <span className="font-serif text-[#FAF8F5] font-light truncate">
+                    {lightboxImage.title}
+                  </span>
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#C5A059] shrink-0">
+                    Greg&apos;s Place · Albrook
+                  </span>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

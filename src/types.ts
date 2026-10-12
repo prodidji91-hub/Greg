@@ -81,11 +81,13 @@ export interface LaundryOption {
 export interface WildlifeAnimal {
   id: string;
   name: string;
-  scientificOrLocal: string;
-  frequency: string;
+  scientificOrLocal?: string;
+  frequency?: string;
   description: string;
-  habitat: string;
+  habitat?: string;
   category: 'birds' | 'mammals' | 'reptiles';
+  birdSpeciesList?: readonly string[];
+  birdFooter?: string;
 }
 
 export interface Destination {
@@ -137,6 +139,7 @@ export interface FacilityItem {
 export interface NearbyPlace {
   readonly id: string;
   readonly name: string;
+  readonly organization?: string;
   readonly category: string;
   readonly categoryKey?: 'shopping' | 'canal' | 'history' | 'nature' | 'waterfront' | 'city';
   readonly distance?: string;
@@ -146,8 +149,11 @@ export interface NearbyPlace {
   readonly highlights?: readonly string[];
   readonly iconType?: 'shopping' | 'flight' | 'nature' | 'heritage' | 'canal' | 'landmark' | 'mountain' | 'city' | 'night' | 'link' | 'crafts' | 'services' | 'train';
   readonly linkUrl?: string;
+  readonly linkText?: string;
   readonly prominentTitleLines?: readonly string[];
   readonly facilities?: readonly FacilityItem[];
+  readonly image?: string;
+  readonly imageAlt?: string;
 }
 
 export interface DistanceItem {

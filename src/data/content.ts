@@ -523,7 +523,7 @@ export const content = {
           frequency: "Occasional visitors in tree corridors",
           habitat: "Canopy transit routes across Albrook",
           category: 'mammals',
-          description: "Small, energetic Geoffroy’s Tamarin Monkeys make appearances along the leafy canopy corridors bordering the neighborhood. A troop of 3 to 5 visit Greg’s Place two or three times per day almost every day."
+          description: "Small, energetic Geoffroy’s Tamarin Monkeys make appearances along the leafy canopy corridors bordering the neighborhood. A troup of four visit Greg’s Place multiple times per day almost every day.\n\nOne breeding female mates with several males and often gives birth to fraternal twins, two siblings born at the same time, but that are not identical. Although usually only one survives to adulthood, the males work together to care for the babies, carrying them for their first 10 weeks of life."
         },
         {
           id: 'caiman',
@@ -542,6 +542,58 @@ export const content = {
           habitat: "Stream overhanging branches & waterside rocks",
           category: 'reptiles',
           description: "Famous for their ability to run across the water's surface when startled, these remarkable lizards are easily spotted along the creek."
+        },
+        {
+          id: 'tropical-birds',
+          name: "Tropical Birds",
+          category: 'birds',
+          description: "Well over 100 species live in the neighborhood.\n\nThe following birds visit Greg’s Place every day:",
+          birdSpeciesList: [
+            "Crimson-backed Tanager",
+            "Yellow-backed Oriole",
+            "Blue-gray Tanager",
+            "Barred Ant Shrike",
+            "Red-legged Honeycreeper",
+            "Rufous-tailed Hummingbird",
+            "Red-crowned Woodpecker",
+            "Palm Tanager",
+            "Clay-colored Thrush",
+            "Rock Pigeon",
+            "Pale-vented Pigeon",
+            "Ruddy Ground Dove",
+            "Plain-colored Tanager",
+            "Gray-headed Chachalaca",
+            "Great-tailed Grackle",
+            "Orange-chinned Parakeet",
+            "Rusty-margined Flycatcher",
+            "Variable Seedeater"
+          ],
+          birdFooter: "Many other species drop by from time-to-time."
+        },
+        {
+          id: 'variegated-squirrel',
+          name: "Variegated Squirrel",
+          category: 'mammals',
+          description: "Rare in Albrook, we had not seen one in over 10 years. But now, one or two visit Greg’s Place every day. They love fresh corn-on-the-cob, roasted peanuts in the shell, and sunflower seeds in the shell."
+        },
+        {
+          id: 'tropical-slider-turtle',
+          name: "Tropical Slider Turtle",
+          frequency: "Common in Crocodile Creek",
+          category: 'reptiles',
+          description: "Baby Tropical Slider Turtles (green with a red stripe by the ear) were sold throughout the United States for many years. Maybe you had one as a pet when you were a kid?\n\nAsk Greg to show you the turtle drum he received from an indigenous Embarra native."
+        },
+        {
+          id: 'iguana',
+          name: "Iguana",
+          category: 'reptiles',
+          description: "Different size iguanas crawl across the Monkey Bridge to our bird feeders every day. After the birds and coatimundis have finished with the fruit, the iguanas are the clean-up crew that eat the remaining papaya and banana skins. Sometimes you will see a large iguana chase birds or a smaller iguana away. The smaller iguanas have the more intense green color."
+        },
+        {
+          id: 'capybara',
+          name: "Capybara",
+          category: 'mammals',
+          description: "Panama is home to the Lesser Capybara, a smaller species than the famous South American common capybara. They grow to about 80 to 105 cm (31 to 41 inches) in length and weigh roughly 28 to 40 kg (62 to 88 lbs).\n\nJust down the street from Greg’s Place is Crocodile Creek. Whenever the lower section of the small bridge over Crocodile Creek becomes blocked, a beautiful lagoon forms. Then, every night, the Capybaras swim down the river to the bridge. Here they climb onto land and cross the street in order to re-enter the river on the other side. Greg has had to stop his car more than once in order to let the Capybaras cross the street in front of him. Sometimes they will stop for 20 minutes or so to munch on grass along the side of the road."
         }
       ]
     },
@@ -604,6 +656,83 @@ export const content = {
       ],
       places: [
         {
+          id: 'stores-and-facilities',
+          name: "Facilities and Stores",
+          category: "Neighborhood Services",
+          categoryKey: "city",
+          distance: "Albrook Community",
+          driveTime: "2–7 min by car or walking",
+          description: "Essential everyday facilities, shopping, and professional services located close to Greg's Place:",
+          facilities: [
+            {
+              name: "Marcos Gelabert Airport",
+              time: "~3 minutes by car or ~12 minutes walking"
+            },
+            {
+              name: "United States Embassy",
+              time: "~7 minutes by car"
+            },
+            {
+              name: "Farmer’s Market (fruit, vegetables, eggs)",
+              time: "~2 minutes by car or 8 minutes walking"
+            },
+            {
+              name: "El Rey Supermarket",
+              note: "(the largest grocery store in Albrook, where Host normally shops)",
+              time: "~3 minutes by car or ~12 minutes walking"
+            },
+            {
+              name: "Super Carnes Supermarket",
+              time: "~3 minutes by car or ~12 minutes walking"
+            },
+            {
+              name: "Kotowa Coffee House",
+              time: "~3 minutes by car or ~12 minutes walking"
+            },
+            {
+              name: "Car Rentals",
+              time: "~3 minutes by car or ~12 minutes walking"
+            },
+            {
+              name: "Power Club Fitness Center",
+              time: "~4 minutes by car or ~16 minutes walking"
+            },
+            {
+              name: "Full Tech (Phone/Computer service)",
+              time: "~3 minutes by car or ~12 minutes walking"
+            },
+            {
+              name: "Arrocha Pharmacy",
+              time: "~2 minutes by car or 8 minutes walking"
+            },
+            {
+              name: "Medical Clinic (Clinica Albrook)",
+              time: "~2 minutes by car or 8 minutes walking"
+            },
+            {
+              name: "Dentist (Clinica Arango Orillac Albrook)",
+              time: "~2 minutes by car or 8 minutes walking"
+            },
+            {
+              name: "Barbers",
+              time: "~2 minutes by car or 8 minutes walking"
+            },
+            {
+              name: "Beauty Salons",
+              time: "~2 minutes by car or 8 minutes walking"
+            },
+            {
+              name: "Dry Cleaners/Seamstress",
+              time: "~2 minutes by car or 8 minutes walking"
+            },
+            {
+              name: "Mail Boxes, Etc.",
+              time: "~2 minutes by car or 8 minutes walking"
+            }
+          ],
+          iconType: "services"
+        },
+        {
           id: 'panama-canal',
           name: "Panama Canal – Miraflores Locks Visitor Center",
           category: "Historic Engineering",
@@ -620,6 +749,18 @@ export const content = {
             "Ship Transit Schedule (changes every morning):\nhttps://visitcanaldepanama.com/en/#horarios-barcos"
           ],
           iconType: "canal"
+        },
+        {
+          id: 'kotowa-coffee-house',
+          name: "Kotowa Coffee House",
+          organization: "Across the street from the Marcos Gelabert Airport",
+          category: "Coffee & Bakery",
+          categoryKey: "city",
+          distance: "~1.2 km",
+          driveTime: "~3 minutes by car or ~12 minutes walking",
+          description: "A nice coffee shop with Excellent Panamanian coffee. If you like coffee, this is the place to go.",
+          futureNote: "My favorite coffee. You can also buy their packaged coffee to take home. They have two types, one in a green package and one in a red package, both excellent. They serve the one in the green package to customers. These make great gifts to take home.",
+          iconType: "services"
         },
         {
           id: 'casco-viejo',
@@ -674,6 +815,67 @@ export const content = {
             "Surrounding botanical park featuring native flora"
           ],
           iconType: "nature"
+        },
+        {
+          id: 'punta-culebra',
+          name: "Punta Culebra Nature Center",
+          organization: "Smithsonian Tropical Research Institute",
+          category: "Nature & Science",
+          categoryKey: "nature",
+          distance: "Located near the end of the Causeway (~10 km)",
+          driveTime: "~12-18 minutes by car",
+          description: "An open-air nature and marine science center operated by the Smithsonian Tropical Research Institute, located on Naos Island along the Amador Causeway.",
+          highlights: [
+            "Fabulous Frogs of Panama Exhibit",
+            "Panama Coastal Fish Aquarium",
+            "Tropical Fish Aquarium",
+            "Butterfly Dome",
+            "Ecological Exhibits",
+            "Interactive/Educational Exhibits",
+            "Walking Trails where you may spot sloths, raccoons, iguanas and various birds."
+          ],
+          futureNote: "Host Note:\nCheck their website for location and hours: https://stri.si.edu/visit/punta-culebra",
+          linkUrl: "https://stri.si.edu/visit/punta-culebra",
+          linkText: "OFFICIAL WEBSITE",
+          iconType: "nature"
+        },
+        {
+          id: 'panama-nature-center',
+          name: "Panama Nature Center",
+          category: "Animal Sanctuary & Rescue",
+          categoryKey: "nature",
+          distance: "Located in the Cuidad del Saber (City of Knowledge) (~10 km)",
+          driveTime: "~10-12 minutes by car",
+          description: "This Animal Rescue Center/Sanctuary has a number of interesting local animals you can see close up. Rescued animals include toucan, anteater, two types of sloth, porcupine, and various types of monkeys.\n\nEnjoy lunch at the large food court at the City of Knowledge Plaza (La Plaza Cuidad del Saber). There are lots of great places to order your food and desserts à la carte to enjoy in the large central eating area.",
+          highlights: [
+            "Animal Rescue Center & Sanctuary close-up wildlife encounters",
+            "Rescued wildlife: toucans, anteaters, two types of sloths, porcupines, and monkeys",
+            "City of Knowledge Plaza (La Plaza Cuidad del Saber) food court with à la carte dining & desserts"
+          ],
+          futureNote: "Host Note:\nCheck their website for location and hours: https://panamanaturecenter.org/",
+          linkUrl: "https://panamanaturecenter.org/",
+          linkText: "OFFICIAL WEBSITE",
+          iconType: "nature"
+        },
+        {
+          id: 'albrook-swimming-pool',
+          name: "Albrook Swimming Pool (Piscina de Albrook)",
+          organization: "“The Pool in the Jungle” · Olympic Size (50-meter)",
+          category: "Sports & Recreation",
+          categoryKey: "city",
+          distance: "Located close by on Paseo de la Iguana (~1 km)",
+          driveTime: "~1 minute by car, ~8 minutes walking",
+          description: "The Albrook Swimming Pool is a public, Olympic-sized (50-meter) facility.\n\nHowever, before planning a visit, please note that the facility is undergoing a major $7.6 million remodeling and rehabilitation project. Access may be limited or entirely closed to the general public depending on the active construction timeline.\n\nWhen the pool is operational, it is free to the public. However, a Health Certificate (obtainable locally, costs about $50 including a blood test at the local clinic) is required.\n\nTourists are sometimes allowed to use the pool at no charge without a health certificate.",
+          highlights: [
+            "Olympic-sized (50-meter) public swimming facility",
+            "Undergoing a major $7.6 million remodeling & rehabilitation project (access may be limited or closed)",
+            "Free public access when operational (Health Certificate usually required, ~$50 with local clinic blood test)",
+            "Tourists are sometimes allowed to use the pool at no charge without a health certificate"
+          ],
+          futureNote: "Host Note:\nCheck here for hours: https://www.instagram.com/piscinaalbrook/\n\nThe pool is sometimes closed for training and competitive sports events. If you have long hair, you will be required to wear a shower cap (available at the pool desk).",
+          linkUrl: "https://www.instagram.com/piscinaalbrook/",
+          linkText: "CHECK CURRENT HOURS",
+          iconType: "services"
         },
         {
           id: 'cinta-costera',
@@ -839,84 +1041,6 @@ export const content = {
           driveTime: "~8 minutes",
           description: "Take the historic Panama Canal Railway across the Isthmus of Panama, along the Panama Canal and through the jungle. Your one-hour destination is Colon, on the Caribbean side. You can return by this same train later in the day.\nCheck out the details here: https://www.panarail.com/",
           futureNote: "This is a wonderful trip worth doing. Get the Dome Car for the best viewing. Consider having Greg’s taxi driver, Jose, meet you to give you a tour of Colon, take you to the Gatun Locks Visitor Center, and then on to Portobelo to see the historic town and fort, have lunch in Portobelo and return you to Greg’s Place.",
-          iconType: "train"
-        },
-        {
-          id: 'stores-and-facilities',
-          name: "Stores and Facilities",
-          category: "Neighborhood Services",
-          categoryKey: "city",
-          distance: "Albrook Community",
-          driveTime: "2–7 min by car or walking",
-          description: "Essential everyday facilities, shopping, and professional services located close to Greg's Place:",
-          facilities: [
-            {
-              name: "Marcos Gelabert Airport",
-              time: "~3 minutes by car or ~12 minutes walking"
-            },
-            {
-              name: "United States Embassy",
-              time: "~7 minutes by car"
-            },
-            {
-              name: "Farmer’s Market (fruit, vegetables, eggs)",
-              time: "~2 minutes by car or 8 minutes walking"
-            },
-            {
-              name: "El Rey Supermarket",
-              note: "(the largest grocery store in Albrook, where Host normally shops)",
-              time: "~3 minutes by car or ~12 minutes walking"
-            },
-            {
-              name: "Super Carnes Supermarket",
-              time: "~3 minutes by car or ~12 minutes walking"
-            },
-            {
-              name: "Kotowa Coffee House",
-              time: "~3 minutes by car or ~12 minutes walking"
-            },
-            {
-              name: "Car Rentals",
-              time: "~3 minutes by car or ~12 minutes walking"
-            },
-            {
-              name: "Power Club Fitness Center",
-              time: "~4 minutes by car or ~16 minutes walking"
-            },
-            {
-              name: "Full Tech (Phone/Computer service)",
-              time: "~3 minutes by car or ~12 minutes walking"
-            },
-            {
-              name: "Arrocha Pharmacy",
-              time: "~2 minutes by car or 8 minutes walking"
-            },
-            {
-              name: "Medical Clinic (Clinica Albrook)",
-              time: "~2 minutes by car or 8 minutes walking"
-            },
-            {
-              name: "Dentist (Clinica Arango Orillac Albrook)",
-              time: "~2 minutes by car or 8 minutes walking"
-            },
-            {
-              name: "Barbers",
-              time: "~2 minutes by car or 8 minutes walking"
-            },
-            {
-              name: "Beauty Salons",
-              time: "~2 minutes by car or 8 minutes walking"
-            },
-            {
-              name: "Dry Cleaners/Seamstress",
-              time: "~2 minutes by car or 8 minutes walking"
-            },
-            {
-              name: "Mail Boxes, Etc.",
-              time: "~2 minutes by car or 8 minutes walking"
-            }
-          ],
-          iconType: "services"
         },
         {
           id: '51-fun-things',
@@ -1852,7 +1976,7 @@ export const content = {
           frequency: "Visitantes ocasionales en corredores arbóreos",
           habitat: "Corredores de vegetación en Albrook",
           category: 'mammals',
-          description: "Pequeños monos tití y aulladores hacen apariciones periódicas a lo largo de los árboles que bordean el vecindario residencial."
+          description: "Pequeños monos tití y aulladores hacen apariciones periódicas a lo largo de los árboles que bordean el vecindario residencial.\n\nUna hembra reproductora se aparea con varios machos y a menudo da a luz a mellizos, dos hermanos nacidos al mismo tiempo, pero que no son idénticos. Aunque por lo general solo uno sobrevive hasta la edad adulta, los machos colaboran para cuidar a los bebés, cargándolos durante sus primeras 10 semanas de vida."
         },
         {
           id: 'caiman',
@@ -1871,6 +1995,58 @@ export const content = {
           habitat: "Ramas sobre el agua y rocas ribereñas",
           category: 'reptiles',
           description: "Famoso por su capacidad de correr sobre la superficie del agua cuando se sobresalta, este singular lagarto se observa fácilmente junto a la quebrada."
+        },
+        {
+          id: 'tropical-birds',
+          name: "Aves Tropicales",
+          category: 'birds',
+          description: "Bien más de 100 especies viven en el vecindario.\n\nLas siguientes aves visitan Greg’s Place todos los días:",
+          birdSpeciesList: [
+            "Crimson-backed Tanager",
+            "Yellow-backed Oriole",
+            "Blue-gray Tanager",
+            "Barred Ant Shrike",
+            "Red-legged Honeycreeper",
+            "Rufous-tailed Hummingbird",
+            "Red-crowned Woodpecker",
+            "Palm Tanager",
+            "Clay-colored Thrush",
+            "Rock Pigeon",
+            "Pale-vented Pigeon",
+            "Ruddy Ground Dove",
+            "Plain-colored Tanager",
+            "Gray-headed Chachalaca",
+            "Great-tailed Grackle",
+            "Orange-chinned Parakeet",
+            "Rusty-margined Flycatcher",
+            "Variable Seedeater"
+          ],
+          birdFooter: "Muchas otras especies pasan de vez en cuando."
+        },
+        {
+          id: 'variegated-squirrel',
+          name: "Ardilla Variegada",
+          category: 'mammals',
+          description: "Rara en Albrook, no habíamos visto una en más de 10 años. Pero ahora, una o dos visitan Greg’s Place todos los días. Les encanta la mazorca de maíz fresco, los maníes tostados con cáscara y las semillas de girasol con cáscara."
+        },
+        {
+          id: 'tropical-slider-turtle',
+          name: "Tortuga Jicotea Tropical",
+          frequency: "Común en la quebrada Crocodile Creek",
+          category: 'reptiles',
+          description: "Las tortugas jicoteas tropicales bebé (verdes con una raya roja cerca de la oreja) se vendieron en todo Estados Unidos durante muchos años. ¿Quizás tuviste una como mascota cuando eras niño?\n\nPídele a Greg que te muestre el tambor de tortuga que recibió de un indígena Emberá."
+        },
+        {
+          id: 'iguana',
+          name: "Iguana",
+          category: 'reptiles',
+          description: "Iguanas de diferentes tamaños se desplazan por el Puente del Mono hacia nuestros comederos de aves todos los días. Después de que las aves y los coatíes han terminado con la fruta, las iguanas son el equipo de limpieza que come los restos de cáscaras de papaya y banano. A veces verá a una iguana grande ahuyentar a las aves o a una iguana más pequeña. Las iguanas más pequeñas tienen un color verde más intenso."
+        },
+        {
+          id: 'capybara',
+          name: "Capibara (Poncho)",
+          category: 'mammals',
+          description: "Panamá es el hogar del Capibara Menor, una especie más pequeña que el famoso capibara común de América del Sur. Crecen hasta unos 80 a 105 cm (31 a 41 pulgadas) de longitud y pesan entre 28 y 40 kg (62 a 88 libras).\n\nJusto al final de la calle de Greg’s Place está Crocodile Creek. Cuando la sección inferior del puente pequeño sobre Crocodile Creek se bloquea, se forma una hermosa laguna. Luego, cada noche, los capibaras nadan río abajo hasta el puente. Aquí suben a tierra y cruzan la calle para volver a entrar al río al otro lado. Greg ha tenido que detener su automóvil más de una vez para dejar que los capibaras crucen la calle frente a él. A veces se detienen durante unos 20 minutos para morder la hierba a un lado del camino."
         }
       ]
     },
@@ -1933,6 +2109,83 @@ export const content = {
       ],
       places: [
         {
+          id: 'stores-and-facilities',
+          name: "Instalaciones y Tiendas (Facilities and Stores)",
+          category: "Servicios del Vecindario",
+          categoryKey: "city",
+          distance: "Comunidad de Albrook",
+          driveTime: "2–7 min en auto o caminando",
+          description: "Servicios esenciales diarios, compras y centros profesionales ubicados en las inmediaciones de Greg's Place:",
+          facilities: [
+            {
+              name: "Aeropuerto Marcos A. Gelabert",
+              time: "~3 minutos en auto o ~12 minutos caminando"
+            },
+            {
+              name: "Embajada de los Estados Unidos",
+              time: "~7 minutos en auto"
+            },
+            {
+              name: "Mercado Agrícola / de Productores (frutas, verduras, huevos)",
+              time: "~2 minutos en auto u 8 minutos caminando"
+            },
+            {
+              name: "Supermercado El Rey",
+              note: "(el supermercado más grande de Albrook, donde suele comprar el anfitrión)",
+              time: "~3 minutos en auto o ~12 minutos caminando"
+            },
+            {
+              name: "Supermercado Super Carnes",
+              time: "~3 minutos en auto o ~12 minutos caminando"
+            },
+            {
+              name: "Kotowa Coffee House",
+              time: "~3 minutos en auto o ~12 minutos caminando"
+            },
+            {
+              name: "Alquiler de Autos (Car Rentals)",
+              time: "~3 minutos en auto o ~12 minutos caminando"
+            },
+            {
+              name: "Gimnasio Power Club",
+              time: "~4 minutos en auto o ~16 minutos caminando"
+            },
+            {
+              name: "Full Tech (Servicio técnico teléfonos/computadoras)",
+              time: "~3 minutos en auto o ~12 minutos caminando"
+            },
+            {
+              name: "Farmacia Arrocha",
+              time: "~2 minutos en auto u 8 minutos caminando"
+            },
+            {
+              name: "Clínica Médica (Clínica Albrook)",
+              time: "~2 minutos en auto u 8 minutos caminando"
+            },
+            {
+              name: "Dentista (Clínica Arango Orillac Albrook)",
+              time: "~2 minutos en auto u 8 minutos caminando"
+            },
+            {
+              name: "Barberías",
+              time: "~2 minutos en auto u 8 minutos caminando"
+            },
+            {
+              name: "Salones de Belleza",
+              time: "~2 minutos en auto u 8 minutos caminando"
+            },
+            {
+              name: "Tintorería / Costurera (Dry Cleaners/Seamstress)",
+              time: "~2 minutos en auto u 8 minutos caminando"
+            },
+            {
+              name: "Mail Boxes, Etc.",
+              time: "~2 minutos en auto u 8 minutos caminando"
+            }
+          ],
+          iconType: "services"
+        },
+        {
           id: 'panama-canal',
           name: "Canal de Panamá – Centro de Visitantes de Miraflores",
           category: "Ingeniería Emblemática",
@@ -1949,6 +2202,18 @@ export const content = {
             "Horario de Tránsito de Barcos (cambia cada mañana):\nhttps://visitcanaldepanama.com/en/#horarios-barcos"
           ],
           iconType: "canal"
+        },
+        {
+          id: 'kotowa-coffee-house',
+          name: "Kotowa Coffee House",
+          organization: "Frente al Aeropuerto Marcos A. Gelabert",
+          category: "Café y Repostería",
+          categoryKey: "city",
+          distance: "~1.2 km",
+          driveTime: "~3 minutos en auto o ~12 minutos caminando",
+          description: "Un café muy agradable con excelente café panameño. Si le gusta el café, este es el lugar para ir.",
+          futureNote: "Mi café favorito. También puede comprar su café empaquetado para llevar a casa. Tienen dos tipos, uno en paquete verde y otro en paquete rojo, ambos excelentes. Sirven el del paquete verde a los clientes. Son excelentes regalos para llevar a casa.",
+          iconType: "services"
         },
         {
           id: 'casco-viejo',
@@ -2003,6 +2268,67 @@ export const content = {
             "Parque botánico con senderos de vegetación tropical autóctona"
           ],
           iconType: "nature"
+        },
+        {
+          id: 'punta-culebra',
+          name: "Centro de Naturaleza Punta Culebra",
+          organization: "Instituto Smithsonian de Investigaciones Tropicales",
+          category: "Naturaleza y Ciencia",
+          categoryKey: "nature",
+          distance: "Ubicado cerca del final de la Calzada de Amador (~10 km)",
+          driveTime: "~12-18 minutos en auto",
+          description: "Centro educativo y marino al aire libre administrado por el Instituto Smithsonian de Investigaciones Tropicales en la Isla Naos de la Calzada de Amador.",
+          highlights: [
+            "Exhibición Fabulosas Ranas de Panamá (Fabulous Frogs of Panama Exhibit)",
+            "Acuario de Peces Costeros de Panamá (Panama Coastal Fish Aquarium)",
+            "Acuario de Peces Tropicales (Tropical Fish Aquarium)",
+            "Mariposario (Butterfly Dome)",
+            "Exhibiciones Ecológicas (Ecological Exhibits)",
+            "Exhibiciones Interactivas y Educativas (Interactive/Educational Exhibits)",
+            "Senderos para Caminar donde se pueden observar perezosos, mapaches, iguanas y diversas aves (Walking Trails)"
+          ],
+          futureNote: "Nota del Anfitrión:\nConsulte su sitio web para conocer la ubicación y los horarios: https://stri.si.edu/visit/punta-culebra",
+          linkUrl: "https://stri.si.edu/visit/punta-culebra",
+          linkText: "SITIO WEB OFICIAL",
+          iconType: "nature"
+        },
+        {
+          id: 'panama-nature-center',
+          name: "Panama Nature Center",
+          category: "Santuario y Rescate de Fauna",
+          categoryKey: "nature",
+          distance: "Ubicado en la Ciudad del Saber (Cuidad del Saber) (~10 km)",
+          driveTime: "~10-12 minutos en auto",
+          description: "Este Centro de Rescate y Santuario de Animales cuenta con una variedad de fascinantes animales locales que se pueden observar de cerca. Entre los animales rescatados se encuentran tucanes, osos hormigueros, dos especies de perezosos, puercoespines y diversas especies de monos.\n\nDisfrute de un almuerzo en la gran plaza de comidas de la Plaza Ciudad del Saber (La Plaza Cuidad del Saber). Hay excelentes opciones para pedir comida y postres à la carte y disfrutar en la amplia área central de comedor.",
+          highlights: [
+            "Encuentros de cerca con fauna rescatada: tucanes, osos hormigueros, dos tipos de perezosos, puercoespines y monos",
+            "Santuario dedicado a la rehabilitación y cuidado animal",
+            "Almuerzo y postres à la carte en La Plaza Cuidad del Saber (Plaza Ciudad del Saber)"
+          ],
+          futureNote: "Nota del Anfitrión:\nConsulte su sitio web para conocer la ubicación y los horarios: https://panamanaturecenter.org/",
+          linkUrl: "https://panamanaturecenter.org/",
+          linkText: "SITIO WEB OFICIAL",
+          iconType: "nature"
+        },
+        {
+          id: 'albrook-swimming-pool',
+          name: "Albrook Swimming Pool (Piscina de Albrook)",
+          organization: "“La Piscina en la Selva” · Tamaño Olímpico (50 metros)",
+          category: "Deportes y Recreación",
+          categoryKey: "city",
+          distance: "Ubicada muy cerca en Paseo de la Iguana (~1 km)",
+          driveTime: "~1 minuto en auto, ~8 minutos caminando",
+          description: "La Piscina de Albrook es una instalación pública de tamaño olímpico (50 metros).\n\nSin embargo, antes de planificar su visita, tenga en cuenta que la instalación está atravesando un importante proyecto de remodelación y rehabilitación de $7.6 millones. El acceso puede estar limitado o totalmente cerrado al público general según el cronograma de construcción activo.\n\nCuando la piscina está operativa, es gratuita para el público. Sin embargo, se requiere un Certificado de Salud (obtenible localmente, cuesta aproximadamente $50 incluyendo un examen de sangre en la clínica local).\n\nA los turistas a veces se les permite usar la piscina sin costo y sin certificado de salud.",
+          highlights: [
+            "Instalación pública de natación de tamaño olímpico (50 metros)",
+            "Proyecto mayor de remodelación y rehabilitación de $7.6 millones en curso (acceso sujeto a construcción)",
+            "Acceso gratuito cuando está operativa (se suele requerir Certificado de Salud, ~$50 con examen de sangre)",
+            "A los turistas a veces se les permite el ingreso sin certificado de salud"
+          ],
+          futureNote: "Nota del Anfitrión:\nConsulte los horarios aquí: https://www.instagram.com/piscinaalbrook/\n\nLa piscina a veces cierra por entrenamientos y eventos deportivos competitivos. Si tiene el cabello largo, se le requerirá usar un gorro de baño (disponible en la recepción).",
+          linkUrl: "https://www.instagram.com/piscinaalbrook/",
+          linkText: "CONSULTAR HORARIOS",
+          iconType: "services"
         },
         {
           id: 'cinta-costera',
@@ -2171,84 +2497,6 @@ export const content = {
           driveTime: "~8 minutos",
           description: "Tome el histórico ferrocarril del Canal de Panamá a través del istmo, a lo largo del Canal de Panamá y cruzando la selva tropical. Su destino de una hora es Colón, en el lado caribeño. Puede regresar en este mismo tren más tarde ese día.\nConsulte los detalles aquí: https://www.panarail.com/",
           futureNote: "Este es un viaje maravilloso que vale la pena hacer. Elija el vagón con cúpula (Dome Car) para disfrutar de la mejor vista. Considere contratar a José, el taxista de confianza de Greg, para que lo reciba, le dé un recorrido por Colón, lo lleve al Centro de Visitantes de las Esclusas de Gatún y luego a Portobelo para conocer el pueblo histórico y su fuerte, almorzar en Portobelo y regresarlo a Greg’s Place.",
-          iconType: "train"
-        },
-        {
-          id: 'stores-and-facilities',
-          name: "Tiendas e Instalaciones (Stores and Facilities)",
-          category: "Servicios del Vecindario",
-          categoryKey: "city",
-          distance: "Comunidad de Albrook",
-          driveTime: "2–7 min en auto o caminando",
-          description: "Servicios esenciales diarios, compras y centros profesionales ubicados en las inmediaciones de Greg's Place:",
-          facilities: [
-            {
-              name: "Aeropuerto Marcos A. Gelabert",
-              time: "~3 minutos en auto o ~12 minutos caminando"
-            },
-            {
-              name: "Embajada de los Estados Unidos",
-              time: "~7 minutos en auto"
-            },
-            {
-              name: "Mercado Agrícola / de Productores (frutas, verduras, huevos)",
-              time: "~2 minutos en auto u 8 minutos caminando"
-            },
-            {
-              name: "Supermercado El Rey",
-              note: "(el supermercado más grande de Albrook, donde suele comprar el anfitrión)",
-              time: "~3 minutos en auto o ~12 minutos caminando"
-            },
-            {
-              name: "Supermercado Super Carnes",
-              time: "~3 minutos en auto o ~12 minutos caminando"
-            },
-            {
-              name: "Kotowa Coffee House",
-              time: "~3 minutos en auto o ~12 minutos caminando"
-            },
-            {
-              name: "Alquiler de Autos (Car Rentals)",
-              time: "~3 minutos en auto o ~12 minutos caminando"
-            },
-            {
-              name: "Gimnasio Power Club",
-              time: "~4 minutos en auto o ~16 minutos caminando"
-            },
-            {
-              name: "Full Tech (Servicio técnico teléfonos/computadoras)",
-              time: "~3 minutos en auto o ~12 minutos caminando"
-            },
-            {
-              name: "Farmacia Arrocha",
-              time: "~2 minutos en auto u 8 minutos caminando"
-            },
-            {
-              name: "Clínica Médica (Clínica Albrook)",
-              time: "~2 minutos en auto u 8 minutos caminando"
-            },
-            {
-              name: "Dentista (Clínica Arango Orillac Albrook)",
-              time: "~2 minutos en auto u 8 minutos caminando"
-            },
-            {
-              name: "Barberías",
-              time: "~2 minutos en auto u 8 minutos caminando"
-            },
-            {
-              name: "Salones de Belleza",
-              time: "~2 minutos en auto u 8 minutos caminando"
-            },
-            {
-              name: "Tintorería / Costurera (Dry Cleaners/Seamstress)",
-              time: "~2 minutos en auto u 8 minutos caminando"
-            },
-            {
-              name: "Mail Boxes, Etc.",
-              time: "~2 minutos en auto u 8 minutos caminando"
-            }
-          ],
-          iconType: "services"
         }
       ],
       diningCallout: {

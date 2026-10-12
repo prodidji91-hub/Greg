@@ -123,40 +123,70 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
 
         {/* Wildlife Field Guide Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredAnimals.map((animal) => (
-            <div
-              key={animal.id}
-              className="bg-white p-6 border border-[#1B3022]/10 hover:border-[#C5A059]/60 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-2">
-                  <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 bg-[#1B3022]/5 text-[#1B3022] font-semibold">
-                    {animal.category}
-                  </span>
-                  <span className="text-[11px] text-[#8C583E] font-medium italic">
-                    {animal.frequency}
-                  </span>
+          {filteredAnimals.map((animalItem) => {
+            const animal = animalItem as unknown as WildlifeAnimal;
+            const isFullWidth = animal.id === 'tropical-birds' || Boolean(animal.birdSpeciesList);
+
+            return (
+              <div
+                key={animal.id}
+                className={`bg-white p-6 border border-[#1B3022]/10 hover:border-[#C5A059]/60 shadow-sm hover:shadow-md transition-all flex flex-col justify-between ${
+                  isFullWidth ? 'col-span-1 md:col-span-2 lg:col-span-3' : ''
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 bg-[#1B3022]/5 text-[#1B3022] font-semibold">
+                      {animal.category}
+                    </span>
+                    <span className="text-[11px] text-[#8C583E] font-medium italic">
+                      {animal.frequency}
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif text-xl sm:text-2xl font-medium text-[#1B3022] mb-1">
+                    {animal.name}
+                  </h3>
+
+                  {animal.scientificOrLocal && (
+                    <p className="text-xs sm:text-sm font-serif italic text-[#8C583E] mb-3">
+                      {animal.scientificOrLocal}
+                    </p>
+                  )}
+
+                  <p className="text-xs sm:text-sm text-[#1B3022]/85 leading-relaxed mb-3 font-normal whitespace-pre-line">
+                    {animal.description}
+                  </p>
+
+                  {/* 18 Bird Species Grid */}
+                  {animal.birdSpeciesList && animal.birdSpeciesList.length > 0 && (
+                    <div className="my-4 p-4 sm:p-5 bg-[#FAF8F5] border border-[#1B3022]/10 rounded-xs">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                        {animal.birdSpeciesList.map((bird, idx) => (
+                          <div key={idx} className="flex items-center gap-2 text-xs sm:text-[13px] text-[#1B3022] font-medium">
+                            <Feather className="w-3.5 h-3.5 text-[#C5A059] shrink-0" />
+                            <span>{bird}</span>
+                          </div>
+                        ))}
+                      </div>
+                      {animal.birdFooter && (
+                        <p className="text-xs sm:text-sm text-[#8C583E] italic mt-4 pt-3 border-t border-[#1B3022]/10 font-serif font-medium">
+                          {animal.birdFooter}
+                        </p>
+                      )}
+                    </div>
+                  )}
                 </div>
 
-                <h3 className="font-serif text-xl font-medium text-[#1B3022] mb-1">
-                  {animal.name}
-                </h3>
-
-                <p className="text-[11px] font-serif italic text-[#8C583E] mb-3">
-                  {animal.scientificOrLocal}
-                </p>
-
-                <p className="text-xs sm:text-sm text-[#1B3022]/80 leading-relaxed mb-4">
-                  {animal.description}
-                </p>
+                <div className="pt-3 border-t border-[#1B3022]/10 flex items-center justify-between text-[11px] text-[#1B3022]/70">
+                  <span className="truncate">
+                    {animal.habitat ? `Habitat: ${animal.habitat}` : "Greg's Place · Albrook, Panama"}
+                  </span>
+                  <Eye className="w-3.5 h-3.5 text-[#C5A059] shrink-0" />
+                </div>
               </div>
-
-              <div className="pt-3 border-t border-[#1B3022]/10 flex items-center justify-between text-[11px] text-[#1B3022]/70">
-                <span className="truncate">Habitat: {animal.habitat}</span>
-                <Eye className="w-3.5 h-3.5 text-[#C5A059] shrink-0" />
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>
