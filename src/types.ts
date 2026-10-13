@@ -88,6 +88,8 @@ export interface WildlifeAnimal {
   category: 'birds' | 'mammals' | 'reptiles';
   birdSpeciesList?: readonly string[];
   birdFooter?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface Destination {

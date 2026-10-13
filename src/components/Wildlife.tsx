@@ -1,9 +1,58 @@
-import React, { useState } from 'react';
-import { Compass, Info, Sparkles, Eye, Feather, MapPin } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Compass, Info, Sparkles, Eye, Feather, MapPin, X, Maximize2 } from 'lucide-react';
 import { Language, WildlifeAnimal } from '../types';
 import { content } from '../data/content';
 import { localPictures } from '../data/images';
 import { LocalImage } from './LocalImage';
+
+interface WildlifeCardPhoto {
+  src: string;
+  alt: string;
+  title?: string;
+}
+
+const wildlifeCardPhotos: Record<string, { src: string; defaultAlt: string; defaultTitle: string }> = {
+  'tropical-slider-turtle': {
+    src: '/pictures/turtles.jpg',
+    defaultAlt: 'Tropical Slider Turtle (Trachemys venusta) in Albrook, Panama',
+    defaultTitle: 'Tropical Slider Turtle',
+  },
+  'sloth': {
+    src: '/pictures/slothhhhh.jpg',
+    defaultAlt: "Two and Three-toed Sloth in tropical tree canopy around Greg's Place",
+    defaultTitle: 'Two and Three-toed Sloths',
+  },
+  'capybara': {
+    src: '/pictures/Lesser-Capybaras.jpg',
+    defaultAlt: 'Lesser Capybara around Crocodile Creek in Albrook, Panama',
+    defaultTitle: 'Capybara',
+  },
+  'iguana': {
+    src: '/pictures/iguanaaa.jpg',
+    defaultAlt: "Green Iguana in tropical foliage around Greg's Place",
+    defaultTitle: 'Iguana',
+  },
+  'monkeys': {
+    src: '/pictures/Geograys.jpg',
+    defaultAlt: "Geoffroy's Tamarin Monkeys around Greg's Place in Albrook, Panama",
+    defaultTitle: 'Geoffroy’s Tamarin Monkeys',
+  },
+  'caiman': {
+    src: '/pictures/crocodiles.jpg',
+    defaultAlt: "Crocodile and Caiman along Crocodile Creek near Greg's Place",
+    defaultTitle: 'Crocodiles (Short Walk)',
+  },
+  'agouti': {
+    src: '/pictures/mouses.jpg',
+    defaultAlt: "Central American Agouti (Ñeque) foraging around Greg's Place in Albrook, Panama",
+    defaultTitle: 'Central American Agoutis (Ñeques)',
+  },
+  'jesus-christ-lizard': {
+    src: '/pictures/basilik.jpg',
+    defaultAlt: "Common Basilisk (Jesus Christ Lizard) along Crocodile Creek near Greg's Place",
+    defaultTitle: 'Common Basilisk (Jesus Christ Lizard)',
+  },
+};
 
 interface WildlifeProps {
   lang: Language;
@@ -12,6 +61,26 @@ interface WildlifeProps {
 export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
   const t = content[lang].wildlife;
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'birds' | 'mammals' | 'reptiles'>('all');
+  const [lightboxImage, setLightboxImage] = useState<WildlifeCardPhoto | null>(null);
+
+  useEffect(() => {
+    if (!lightboxImage) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setLightboxImage(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [lightboxImage]);
 
   const filteredAnimals = selectedCategory === 'all'
     ? t.animals
@@ -126,6 +195,20 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
           {filteredAnimals.map((animalItem) => {
             const animal = animalItem as unknown as WildlifeAnimal;
             const isFullWidth = animal.id === 'tropical-birds' || Boolean(animal.birdSpeciesList);
+            const cardPhotoConfig = wildlifeCardPhotos[animal.id];
+            const cardPhoto: WildlifeCardPhoto | undefined = animal.image
+              ? {
+                  src: animal.image,
+                  alt: animal.imageAlt || animal.name,
+                  title: animal.name,
+                }
+              : cardPhotoConfig
+              ? {
+                  src: cardPhotoConfig.src,
+                  alt: `${animal.name} · Greg's Place Albrook`,
+                  title: animal.name,
+                }
+              : undefined;
 
             return (
               <div
@@ -152,6 +235,35 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
                     <p className="text-xs sm:text-sm font-serif italic text-[#8C583E] mb-3">
                       {animal.scientificOrLocal}
                     </p>
+                  )}
+
+                  {/* Small Landscape Photo Feature with Click-to-Expand Lightbox */}
+                  {cardPhoto && (
+                    <div className="mb-3.5">
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          e.preventDefault();
+                          setLightboxImage(cardPhoto);
+                        }}
+                        className="w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059]/60 cursor-pointer block rounded-[2px]"
+                        aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${cardPhoto.title || animal.name}`}
+                      >
+                        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#1B3022]/15 bg-[#FAF8F5] shadow-xs group-hover/photo:border-[#C5A059] group-hover/photo:shadow-md transition-all duration-300">
+                          <img
+                            src={cardPhoto.src}
+                            alt={cardPhoto.alt}
+                            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-102"
+                            loading="lazy"
+                          />
+                          <div className="absolute bottom-2 right-2 bg-black/65 hover:bg-black/85 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1 opacity-90 group-hover/photo:opacity-100 transition-opacity shadow-xs">
+                            <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
+                            <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
                   )}
 
                   <p className="text-xs sm:text-sm text-[#1B3022]/85 leading-relaxed mb-3 font-normal whitespace-pre-line">
@@ -190,6 +302,51 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
         </div>
 
       </div>
+
+      {/* Reusable Lightbox Modal for Wildlife Photos */}
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-black/85 backdrop-blur-xs animate-in fade-in duration-200"
+          onClick={() => setLightboxImage(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={lightboxImage.title || lightboxImage.alt}
+        >
+          {/* Close button positioned top-right for easy one-tap access */}
+          <button
+            type="button"
+            onClick={() => setLightboxImage(null)}
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 p-2.5 text-white/90 hover:text-white bg-black/60 hover:bg-black/90 rounded-full border border-white/25 transition-all shadow-lg hover:border-[#C5A059] focus:outline-none focus:ring-2 focus:ring-[#C5A059] cursor-pointer"
+            aria-label="Close image preview"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
+          {/* Modal Container: clicking inside prevents backdrop dismiss */}
+          <div
+            className="relative max-w-5xl max-h-[90vh] flex flex-col items-center justify-center animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative overflow-hidden bg-black/60 border border-[#C5A059]/50 shadow-2xl rounded-[2px] flex flex-col">
+              <img
+                src={lightboxImage.src}
+                alt={lightboxImage.alt}
+                className="max-h-[75vh] sm:max-h-[80vh] max-w-[92vw] sm:max-w-[85vw] md:max-w-4xl w-auto h-auto object-contain block select-none"
+              />
+              {lightboxImage.title && (
+                <div className="py-2.5 px-4 bg-[#1B3022] border-t border-[#C5A059]/30 flex items-center justify-between gap-3 text-xs sm:text-sm">
+                  <span className="font-serif text-[#FAF8F5] font-light truncate">
+                    {lightboxImage.title}
+                  </span>
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#C5A059] shrink-0">
+                    Greg&apos;s Place · Wildlife
+                  </span>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

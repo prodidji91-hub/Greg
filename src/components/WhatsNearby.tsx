@@ -73,6 +73,16 @@ const nearbyCardPhotos: Record<string, { src: string; defaultAlt: string; defaul
     defaultAlt: 'Walk and Explore the Neighborhood in Albrook, Panama City',
     defaultTitle: 'Walk and Explore the Neighborhood',
   },
+  'artesan-center': {
+    src: '/pictures/Artisan Center.jpg',
+    defaultAlt: 'Artesan Center in Panama City',
+    defaultTitle: 'Artesan Center',
+  },
+  'cinta-costera': {
+    src: '/pictures/Cinta Costera Alt 2.jpg',
+    defaultAlt: 'Cinta Costera (Coastal Ribbon) in Panama City',
+    defaultTitle: 'Cinta Costera (Coastal Ribbon)',
+  },
 };
 
 interface WhatsNearbyProps {
