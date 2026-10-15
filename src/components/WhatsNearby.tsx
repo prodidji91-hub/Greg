@@ -83,6 +83,26 @@ const nearbyCardPhotos: Record<string, { src: string; defaultAlt: string; defaul
     defaultAlt: 'Cinta Costera (Coastal Ribbon) in Panama City',
     defaultTitle: 'Cinta Costera (Coastal Ribbon)',
   },
+  'panama-canal': {
+    src: '/pictures/Panamacanale.jpg',
+    defaultAlt: 'Panama Canal – Miraflores Locks Visitor Center',
+    defaultTitle: 'Panama Canal – Miraflores Locks',
+  },
+  'kotowa-coffee-house': {
+    src: '/pictures/kotowa coffee shop.jpg',
+    defaultAlt: 'Kotowa Coffee House in Panama',
+    defaultTitle: 'Kotowa Coffee House',
+  },
+  'punta-culebra': {
+    src: '/pictures/puebla.jpg',
+    defaultAlt: 'Punta Culebra Nature Center (Smithsonian Tropical Research Institute)',
+    defaultTitle: 'Punta Culebra Nature Center',
+  },
+  'panama-nature-center': {
+    src: '/pictures/panama nature center.jpg',
+    defaultAlt: 'Panama Nature Center (APPC) and Tamandua sanctuary',
+    defaultTitle: 'Panama Nature Center',
+  },
 };
 
 interface WhatsNearbyProps {

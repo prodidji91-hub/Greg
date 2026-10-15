@@ -52,6 +52,26 @@ const wildlifeCardPhotos: Record<string, { src: string; defaultAlt: string; defa
     defaultAlt: "Common Basilisk (Jesus Christ Lizard) along Crocodile Creek near Greg's Place",
     defaultTitle: 'Common Basilisk (Jesus Christ Lizard)',
   },
+  'variegated-squirrel': {
+    src: '/pictures/Squirel Panama.jpg',
+    defaultAlt: "Variegated Squirrel in tropical tree canopy at Greg's Place in Albrook, Panama",
+    defaultTitle: 'Variegated Squirrel',
+  },
+  'toucans': {
+    src: '/pictures/Tucannn.jpg',
+    defaultAlt: "Keel-billed Toucan perched at Greg's Place in Albrook, Panama",
+    defaultTitle: 'Keel-billed Toucans',
+  },
+  'coatimundi': {
+    src: '/pictures/CoatiMundiiiiii.jpg',
+    defaultAlt: "White-nosed Coatimundi (Gato Solo) around Greg's Place in Albrook, Panama",
+    defaultTitle: 'White-nosed Coatimundis (Gatos Solos)',
+  },
+  'tropical-birds': {
+    src: '/pictures/red woodpecker.jpg',
+    defaultAlt: "Crimson-crested Woodpecker and tropical birdlife around Greg's Place in Albrook, Panama",
+    defaultTitle: 'Tropical Birds',
+  },
 };
 
 interface WildlifeProps {
@@ -247,7 +267,7 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
                           e.preventDefault();
                           setLightboxImage(cardPhoto);
                         }}
-                        className="w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059]/60 cursor-pointer block rounded-[2px]"
+                        className={`w-full ${isFullWidth ? 'max-w-md' : ''} text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059]/60 cursor-pointer block rounded-[2px]`}
                         aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${cardPhoto.title || animal.name}`}
                       >
                         <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#1B3022]/15 bg-[#FAF8F5] shadow-xs group-hover/photo:border-[#C5A059] group-hover/photo:shadow-md transition-all duration-300">
