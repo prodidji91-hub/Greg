@@ -22,7 +22,7 @@ export const localPictures = {
   barredAntshrikeMale: '/pictures/male barred.jpg',
   blueGrayTanager: '/pictures/22-blue-gray-tanager-on-wire.jpg',
   crimsonBackedTanager: '/pictures/redbird.jpeg',
-  variegatedSquirrel: '/pictures/jumpsquirel.jpg',
+  variegatedSquirrel: '/pictures/squirel3.jpg',
   greenHoneycreeper: '/pictures/green honeycreeper11.jpg',
   rustyMarginedFlycatcher: '/pictures/rustyyyyy.jpg',
   tropicalBirds: '/pictures/tropical-birds.jpg',
@@ -54,6 +54,7 @@ export const localPictures = {
   gregBirdLogo: '/pictures/greg-bird-logo.png',
   puntaCulebra: '/pictures/PuntaCulebraNaturefrog.jpg',
   panamaCanalRailway: '/pictures/panpanamarailway.jpg',
+  nightWalk: '/pictures/paca.jpg',
 } as const;
 
 export type ImageKey = keyof typeof localPictures;

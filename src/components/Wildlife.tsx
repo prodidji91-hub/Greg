@@ -53,7 +53,7 @@ const wildlifeCardPhotos: Record<string, { src: string; defaultAlt: string; defa
     defaultTitle: 'Common Basilisk (Jesus Christ Lizard)',
   },
   'variegated-squirrel': {
-    src: '/pictures/Squirel Panama.jpg',
+    src: '/pictures/squirel3.jpg',
     defaultAlt: "Variegated Squirrel in tropical tree canopy at Greg's Place in Albrook, Panama",
     defaultTitle: 'Variegated Squirrel',
   },

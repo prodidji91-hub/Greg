@@ -108,6 +108,11 @@ const nearbyCardPhotos: Record<string, { src: string; defaultAlt: string; defaul
     defaultAlt: 'Panama Canal Railway',
     defaultTitle: 'Panama Canal Railway',
   },
+  'night-walk': {
+    src: '/pictures/paca.jpg',
+    defaultAlt: 'Night Walk & Nocturnal Wildlife in Albrook',
+    defaultTitle: 'Night Walk',
+  },
 };
 
 interface WhatsNearbyProps {
