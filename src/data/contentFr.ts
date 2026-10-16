@@ -485,6 +485,27 @@ export const contentFr = {
         "desc": "Observez agoutis (ñeques), Rocky le coati, paresseux et lézards tropicaux évoluant dans le jardin."
       }
     ],
+    "birdSpeciesList": [
+      "Crimson-backed Tanager",
+      "Yellow-backed Oriole",
+      "Blue-gray Tanager",
+      "Barred Ant Shrike",
+      "Red-legged Honeycreeper",
+      "Rufous-tailed Hummingbird",
+      "Red-crowned Woodpecker",
+      "Palm Tanager",
+      "Clay-colored Thrush",
+      "Rock Pigeon",
+      "Pale-vented Pigeon",
+      "Ruddy Ground Dove",
+      "Plain-colored Tanager",
+      "Gray-headed Chachalaca",
+      "Great-tailed Grackle",
+      "Orange-chinned Parakeet",
+      "Rusty-margined Flycatcher",
+      "Variable Seedeater",
+      "Tropical Mockingbird"
+    ],
     "offers": [
       {
         "id": "visitor",
@@ -510,14 +531,14 @@ export const contentFr = {
       {
         "id": "guest",
         "title": "Hôtes Résidents à Greg's Place",
-        "badge": "TARIF SPÉCIAL POUR HÔTES RÉSIDENTS",
+        "badge": "POUR LES HÔTES ENREGISTRÉS",
         "pricingTiers": [
           { "amount": "25 $", "label": "1 personne" },
-          { "amount": "20 $ / personne", "label": "2 personnes ou plus" }
+          { "amount": "20 $ / personne", "label": "2+ personnes" }
         ],
         "followOnNote": "Après votre première expérience, les prix ci-dessus sont réduits de 15 $ par personne pour les petits-déjeuners suivants.",
         "audience": "Offre exclusive pour les hôtes séjournant dans la maison",
-        "tagline": "RÉVEILLEZ-VOUS AU CŒUR DE LA NATURE ET PROFITEZ DU PETIT-DÉJEUNER",
+        "tagline": "PETIT-DÉJEUNER OPTIONNEL DANS LA PROPRIÉTÉ",
         "description": "Les hôtes profitent de notre expérience complète oiseaux, petit-déjeuner et faune au tarif préférentiel, juste à quelques pas de leur chambre.",
         "features": [
           "Tarif préférentiel exclusif pour les hôtes séjournant sur place",
@@ -650,7 +671,8 @@ export const contentFr = {
           "Great-tailed Grackle",
           "Orange-chinned Parakeet",
           "Rusty-margined Flycatcher",
-          "Variable Seedeater"
+          "Variable Seedeater",
+          "Tropical Mockingbird"
         ],
         "birdFooter": "De nombreuses autres espèces passent de temps en temps."
       },
@@ -764,12 +786,87 @@ export const contentFr = {
         "categoryKey": "shopping",
         "distance": "Accessible à pied / 2–4 min de route",
         "driveTime": "Très proche",
-        "description": "Albrook dispose d'une excellente infrastructure avec pharmacies, supermarchés, boulangeries, distributeurs automatiques et restaurants directement dans le quartier.",
-        "highlights": [
-          "Supermarchés Riba Smith & Rey avec produits internationaux",
-          "Boulangeries locales et cafés de spécialité réputés",
-          "Pharmacies ouvertes 24h/24 et agences bancaires",
-          "Plus de 15 restaurants et food trucks accessibles à pied"
+        "description": "Albrook dispose d'une excellente infrastructure avec pharmacies, supermarchés, boulangeries, distributeurs automatiques et restaurants directement dans le quartier :",
+        "facilities": [
+          {
+            "name": "Aéroport Marcos A. Gelabert",
+            "time": "~3 minutes en voiture ou ~12 minutes à pied"
+          },
+          {
+            "name": "Ambassade des États-Unis",
+            "time": "~7 minutes en voiture"
+          },
+          {
+            "name": "Marché Fermier (fruits, légumes, œufs)",
+            "time": "~2 minutes en voiture ou 8 minutes à pied"
+          },
+          {
+            "name": "Petites Épiceries de Proximité (2)",
+            "time": "~2 minutes en voiture ou 8 minutes à pied"
+          },
+          {
+            "name": "Supermarché El Rey",
+            "note": "(le plus grand supermarché d'Albrook, où l'hôte fait habituellement ses courses)",
+            "time": "~3 minutes en voiture ou ~12 minutes à pied"
+          },
+          {
+            "name": "Supermarché Super Carnes",
+            "time": "~3 minutes en voiture ou ~12 minutes à pied"
+          },
+          {
+            "name": "Boutique Reprosa (Reprosa Store)",
+            "note": "(boutique Reprosa qui vend de magnifiques et superbes répliques d'artéfacts panaméens)",
+            "time": "~7 minutes en voiture"
+          },
+          {
+            "name": "Multiplaza Pacific Mall",
+            "note": "(centre commercial de luxe par excellence avec marques de créateurs internationaux)",
+            "time": "~15 minutes en voiture"
+          },
+          {
+            "name": "Kotowa Coffee House",
+            "time": "~3 minutes en voiture ou ~12 minutes à pied"
+          },
+          {
+            "name": "Location de Voitures (Car Rentals)",
+            "time": "~3 minutes en voiture ou ~12 minutes à pied"
+          },
+          {
+            "name": "Centre de Fitness Power Club",
+            "time": "~4 minutes en voiture ou ~16 minutes à pied"
+          },
+          {
+            "name": "Full Tech (Service téléphones/ordinateurs)",
+            "time": "~3 minutes en voiture ou ~12 minutes à pied"
+          },
+          {
+            "name": "Pharmacie Arrocha",
+            "time": "~2 minutes en voiture ou 8 minutes à pied"
+          },
+          {
+            "name": "Clinique Médicale (Clínica Albrook)",
+            "time": "~2 minutes en voiture ou 8 minutes à pied"
+          },
+          {
+            "name": "Dentiste (Clínica Arango Orillac Albrook)",
+            "time": "~2 minutes en voiture ou 8 minutes à pied"
+          },
+          {
+            "name": "Barbiers",
+            "time": "~2 minutes en voiture ou 8 minutes à pied"
+          },
+          {
+            "name": "Salons de Beauté",
+            "time": "~2 minutes en voiture ou 8 minutes à pied"
+          },
+          {
+            "name": "Pressing & Retouches",
+            "time": "~2 minutes en voiture ou 8 minutes à pied"
+          },
+          {
+            "name": "Mail Boxes, Etc.",
+            "time": "~2 minutes en voiture ou 8 minutes à pied"
+          }
         ],
         "iconType": "services"
       },
@@ -789,6 +886,8 @@ export const contentFr = {
           "Documentaire 3D/IMAX primé",
           "Horaire du transit des navires (change chaque matin) :\nhttps://visitcanaldepanama.com/en/#horarios-barcos"
         ],
+        "linkUrl": "https://visitcanaldepanama.com/en/points-of-interest/miraflores-visitor-center/",
+        "linkText": "SITE OFFICIEL",
         "iconType": "canal"
       },
       {
@@ -853,6 +952,8 @@ export const contentFr = {
           "Magnifique parc botanique avec essences indigènes",
           "Situé à l'entrée du canal de Panama sur le Causeway d'Amador"
         ],
+        "linkUrl": "https://biomuseo.org/",
+        "linkText": "SITE OFFICIEL",
         "iconType": "nature"
       },
       {
@@ -992,18 +1093,16 @@ export const contentFr = {
         "id": "panama-city-base",
         "name": "Point de Départ Idéal à Panama City",
         "category": "Avantage Emplacement",
-        "categoryKey": "canal",
+        "categoryKey": "city",
         "distance": "Au cœur d'Albrook",
         "driveTime": "Accès rapide à toutes les attractions",
         "description": "Grâce à l'emplacement privilégié de Greg's Place, vous rejoignez tous les points d'intérêt majeurs de la capitale en très peu de temps, tout en retrouvant le soir la paix totale d'un quartier arboré.",
         "futureNote": "L'application Uber est vivement recommandée. Téléchargez-la avant votre voyage et associez-y votre carte bancaire.",
         "highlights": [
-          "Prise en charge Uber et InDrive directe devant le portail de la propriété",
-          "Aucun embouteillage urbain étouffant devant chez vous",
-          "Courses Uber économiques (3 à 8 $) vers la plupart des sites majeurs",
-          "Accès direct et fluide à l'autoroute Corredor Norte"
+          "Accès rapide aux quartiers d'affaires, gastronomiques, culturels et de nombreuses opportunités de shopping",
+          "Prise en charge Uber et InDrive directe devant le portail de la propriété"
         ],
-        "iconType": "landmark"
+        "iconType": "city"
       },
       {
         "id": "walk-neighborhood",
@@ -1045,6 +1144,70 @@ export const contentFr = {
         "iconType": "night"
       },
       {
+        "id": "monkey-island",
+        "name": "Tour Nature de l'Île aux Singes en Bateau Privé",
+        "category": "Excursion Nature",
+        "categoryKey": "nature",
+        "distance": "Embarquement dans la jungle de Gamboa",
+        "driveTime": "40 minutes de route depuis Greg's Place",
+        "description": "C'est un voyage magnifique car vous embarquerez à bord d'un petit bateau depuis la zone de forêt tropicale de Gamboa dans la rivière Chagres. Vous serez juste à côté des navires géants qui viennent de sortir des écluses de Pedro Miguel alors qu'ils continuent vers le lac Gatun.\n\nRoberto part tôt pour que son bateau soit le premier sur place, les singes ont donc faim. De plus, vous entendrez les singes hurleurs retentir tôt le matin. Roberto peut généralement trouver au moins 3 espèces de singes différentes (ils ne sont pas tous sur l'île !). Il y a aussi beaucoup d'oiseaux aquatiques intéressants. Roberto peut généralement trouver un crocodile marin aussi.",
+        "futureNote": "avec Roberto, l'ami de Greg\nDépart de chez Greg vers Gamboa (40 minutes)",
+        "highlights": [
+          "Pêche au bar-paon dans le lac Gatun, suivie d'un barbecue de poisson chez Greg.",
+          "Visite du zoo du parc national Soberanía au retour de Gamboa. Ne manquez pas l'exposition sur la Harpie féroce."
+        ],
+        "iconType": "canal"
+      },
+      {
+        "id": "artesan-center",
+        "name": "Centre Artisanal (Artesan Center)",
+        "category": "Souvenirs & Artisanat",
+        "categoryKey": "shopping",
+        "distance": "env. 5 km",
+        "driveTime": "env. 6 minutes en voiture",
+        "description": "Un centre artisanal très prisé dédié à l'artisanat panaméen authentique, aux textiles traditionnels et aux trésors culturels, comptant environ 100 stands tenus par des artisans autochtones vêtus de leurs costumes traditionnels.",
+        "futureNote": "Note de l'hôte :\nSur Uber, il est répertorié sous le nom de « Centro de artesanias Cardenas ». Un endroit unique pour acheter d'authentiques cadeaux et souvenirs panaméens faits main. À deux pas du restaurant préféré de Greg : Maagoos Fish Tacos and More (tenu par une famille de chasseurs sous-marins).",
+        "highlights": [
+          "Environ 100 stands tenus par des peuples autochtones en tenue traditionnelle",
+          "Artisanat panaméen authentique fait main, molas, vannerie et textiles traditionnels",
+          "Un lieu unique pour dénicher d'authentiques souvenirs panaméens faits main",
+          "À distance de marche du restaurant préféré de Greg : Maagoos Fish Tacos and More"
+        ],
+        "iconType": "crafts"
+      },
+      {
+        "id": "multiplaza-mall",
+        "name": "Multiplaza Pacific Mall",
+        "category": "Shopping de Luxe & Gastronomie",
+        "categoryKey": "shopping",
+        "distance": "env. 10 km",
+        "driveTime": "env. 15 minutes en voiture",
+        "description": "Le centre commercial de luxe et haut de gamme incontournable de Panama City abritant de grandes enseignes internationales, des grands magasins prestigieux, des restaurants gastronomiques, des cafés et des cinémas VIP.",
+        "futureNote": "Note de l'hôte :\nLe premier centre commercial de luxe au Panama. Idéal pour les marques internationales, le shopping haut de gamme et les belles tables.",
+        "highlights": [
+          "Boutiques de grands créateurs internationaux et haute couture",
+          "Environnement de shopping raffiné et climatisé",
+          "Grands magasins réputés (Felix B. Maduro)",
+          "Large choix de restaurants gastronomiques et cafés élégants"
+        ],
+        "linkUrl": "https://multiplaza.com.pa/",
+        "linkText": "SITE OFFICIEL",
+        "iconType": "shopping"
+      },
+      {
+        "id": "panama-canal-railway",
+        "name": "Panama Canal Railway Station",
+        "category": "Chemin de Fer Historique & Excursion",
+        "categoryKey": "canal",
+        "distance": "~ 5 km",
+        "driveTime": "~8 minutes",
+        "description": "Empruntez l'historique chemin de fer du canal de Panama à travers l'isthme, le long du canal et au cœur de la jungle tropicale. Votre trajet d'une heure vous mène à Colón, côté Caraïbes. Vous pouvez revenir par le même train plus tard dans la journée.\nConsultez les détails ici : https://www.panarail.com/",
+        "futureNote": "C'est un voyage magnifique qui en vaut vraiment la peine. Choisissez la voiture panoramique (Dome Car) pour profiter de la meilleure vue. Pensez à demander à Jose, le chauffeur de taxi de confiance de Greg, de vous accueillir pour visiter Colón, vous conduire au centre des visiteurs des écluses de Gatún, puis à Portobelo pour découvrir la ville historique et son fort, déjeuner à Portobelo et vous ramener à Greg's Place.",
+        "linkUrl": "https://www.panarail.com/",
+        "linkText": "SITE OFFICIEL",
+        "iconType": "train"
+      },
+      {
         "id": "51-fun-things",
         "name": "51 Activités Incontournables à Panama City avec Photos",
         "category": "Guides & Conseils",
@@ -1060,32 +1223,6 @@ export const contentFr = {
         ],
         "linkUrl": "https://tourscanner.com/blog/things-to-do-in-panama-city-panama/",
         "iconType": "link"
-      },
-      {
-        "id": "artesan-center",
-        "name": "Centre Artisanal de Balboa (YMCA)",
-        "category": "Souvenirs & Artisanat",
-        "categoryKey": "shopping",
-        "distance": "env. 3 km",
-        "driveTime": "env. 6 minutes en voiture",
-        "description": "Le lieu idéal pour trouver de l'artisanat panaméen authentique, des toiles brodées traditionnelles Mola du peuple Guna, des paniers tressés à la main par les Emberá et des sculptures sur bois.",
-        "highlights": [
-          "Artisanat indigène authentique directement issu des créateurs",
-          "Prix justes et grand choix de véritables chapeaux Panama",
-          "Sculptures miniatures en noix de tagua (ivoire végétal) et vannerie",
-          "Bâtiment historique situé dans le quartier voisin de Balboa"
-        ],
-        "iconType": "crafts"
-      },
-      {
-        "id": "panama-canal-railway",
-        "name": "Panama Canal Railway Station",
-        "category": "Chemin de Fer Historique & Excursion",
-        "categoryKey": "canal",
-        "distance": "~ 5 km",
-        "driveTime": "~8 minutes",
-        "description": "Empruntez l'historique chemin de fer du canal de Panama à travers l'isthme, le long du canal et au cœur de la jungle tropicale. Votre trajet d'une heure vous mène à Colón, côté Caraïbes. Vous pouvez revenir par le même train plus tard dans la journée.\nConsultez les détails ici : https://www.panarail.com/",
-        "futureNote": "C'est un voyage magnifique qui en vaut vraiment la peine. Choisissez la voiture panoramique (Dome Car) pour profiter de la meilleure vue. Pensez à demander à Jose, le chauffeur de taxi de confiance de Greg, de vous accueillir pour visiter Colón, vous conduire au centre des visiteurs des écluses de Gatún, puis à Portobelo pour découvrir la ville historique et son fort, déjeuner à Portobelo et vous ramener à Greg's Place.",
       }
     ],
     "diningCallout": {
@@ -1447,9 +1584,9 @@ export const contentFr = {
     "forwardBtn": "Vérifier la Disponibilité sur Lodgify",
     "cancelBtn": "Fermer",
     "birdingTitle": "Réserver Votre Matinée Nature",
-    "birdingLead": "Savourez un petit-déjeuner au cœur de la nature tropicale. 25 $ pour 1 personne, ou 20 $ par personne pour 2 personnes ou plus.",
-    "visitorOption": "25 $ pour 1 Personne",
-    "guestOption": "20 $ par personne (2+ personnes)",
+    "birdingLead": "Savourez un petit-déjeuner au cœur de la nature tropicale. Choisissez entre l'Expérience Visiteur (39 $) ou le Tarif pour Hôtes Résidents (25 $ pour 1 personne / 20 $ par personne pour 2+).",
+    "visitorOption": "Expérience Visiteur (39 $ / personne)",
+    "guestOption": "Tarif Hôte Résident (25 $ pour 1 personne / 20 $ par personne pour 2+)",
     "reserveBirdingBtn": "Réserver par WhatsApp avec Greg"
   },
   "contact": {

@@ -252,29 +252,29 @@ export const BirdingBreakfast: React.FC<BirdingBreakfastProps> = ({
                       </div>
                     ) : (
                       <div className="mb-6 pb-6 border-b border-white/10 space-y-3">
-                        <div className="grid grid-cols-2 gap-3 bg-white/5 border border-white/15 p-3.5 rounded-xs">
+                        <div className="grid grid-cols-2 gap-3 bg-white/5 border border-white/15 p-3.5">
                           <div className="text-center border-r border-white/15 pr-2">
-                            <span className="text-2xl sm:text-3xl font-serif text-white font-medium block">
-                              $25 <span className="text-[10px] text-[#C5A059] font-mono">USD</span>
+                            <span className="text-3xl sm:text-4xl font-serif text-white font-medium block">
+                              $25
                             </span>
-                            <span className="text-[11px] text-white/80 font-mono uppercase tracking-wider block mt-0.5">
+                            <span className="text-xs text-white/80 font-mono uppercase tracking-wider block mt-1">
                               {lang === 'fr' ? '1 personne' : lang === 'de' ? '1 Person' : lang === 'es' ? '1 persona' : '1 person'}
                             </span>
                           </div>
                           <div className="text-center pl-2">
-                            <span className="text-2xl sm:text-3xl font-serif text-[#C5A059] font-medium block">
-                              $20 <span className="text-[10px] text-white/70 font-mono">{lang === 'fr' ? '/ pers' : lang === 'de' ? '/ Pers' : lang === 'es' ? '/ pers' : '/ person'}</span>
+                            <span className="text-3xl sm:text-4xl font-serif text-[#C5A059] font-medium block">
+                              $20 <span className="text-xs font-mono font-normal text-white/70">{lang === 'fr' ? '/ pers.' : lang === 'de' ? '/ Pers.' : lang === 'es' ? '/ pers.' : '/ person'}</span>
                             </span>
-                            <span className="text-[11px] text-white/80 font-mono uppercase tracking-wider block mt-0.5">
-                              {lang === 'fr' ? '2+ personnes' : lang === 'de' ? 'ab 2 Personen' : lang === 'es' ? '2+ personas' : '2+ people'}
+                            <span className="text-xs text-white/80 font-mono uppercase tracking-wider block mt-1">
+                              {lang === 'fr' ? '2+ personnes' : lang === 'de' ? '2+ Personen' : lang === 'es' ? '2+ personas' : '2+ people'}
                             </span>
                           </div>
                         </div>
 
-                        {/* Follow-on Breakfasts Note */}
+                        {/* Follow-on Breakfasts Reduction Note */}
                         {offer.followOnNote && (
                           <div className="px-3.5 py-2.5 bg-[#C5A059]/15 border border-[#C5A059]/40 text-center">
-                            <p className="text-[11px] text-[#FAF8F5] leading-relaxed font-sans italic">
+                            <p className="text-xs text-[#FAF8F5] leading-relaxed font-sans">
                               ✨ {offer.followOnNote}
                             </p>
                           </div>

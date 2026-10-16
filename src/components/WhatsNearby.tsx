@@ -113,6 +113,11 @@ const nearbyCardPhotos: Record<string, { src: string; defaultAlt: string; defaul
     defaultAlt: 'Night Walk & Nocturnal Wildlife in Albrook',
     defaultTitle: 'Night Walk',
   },
+  'multiplaza-mall': {
+    src: '/pictures/Panama City.jpg',
+    defaultAlt: 'Multiplaza Pacific Mall in Panama City',
+    defaultTitle: 'Multiplaza Pacific Mall',
+  },
 };
 
 interface WhatsNearbyProps {
@@ -274,7 +279,7 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                     </div>
 
                     {/* Detailed Narrative Paragraphs */}
-                    <div className="text-xs sm:text-[13px] text-[#1B3022]/85 leading-relaxed space-y-3 font-normal mb-6">
+                    <div className="text-sm sm:text-base text-[#1B3022]/85 leading-relaxed space-y-3 font-normal mb-6">
                       <p>
                         {lang === 'fr'
                           ? "C'est un voyage magnifique car vous embarquerez à bord d'un petit bateau depuis la zone de forêt tropicale de Gamboa dans la rivière Chagres. Vous serez juste à côté des navires géants qui viennent de sortir des écluses de Pedro Miguel alors qu'ils continuent vers le lac Gatun."
@@ -327,7 +332,7 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                         </span>
                       </div>
 
-                      <div className="space-y-3 text-xs sm:text-[13px] text-[#1B3022]">
+                      <div className="space-y-3 text-xs sm:text-sm text-[#1B3022]">
                         <div className="p-3.5 bg-[#FAF8F5] border-l-2 border-[#C5A059] space-y-3">
                           <div className="overflow-hidden border border-[#1B3022]/15 bg-white shadow-xs rounded-[2px]">
                             <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full overflow-hidden">
@@ -391,14 +396,14 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                                 ? 'en el camino de regreso desde Gamboa.'
                                 : 'on the way back from Gamboa.'}
                             </p>
-                            <p className="text-[#8C583E] font-medium text-xs mt-1 italic">
+                            <p className="text-[#8C583E] font-medium text-xs sm:text-sm mt-1 italic">
                               {lang === 'fr'
-                                ? "Ne manquez pas l'exposition sur l'Aigle Harpie (Harpe Eagle)."
+                                ? "Ne manquez pas l'exposition sur l'Aigle Harpie (Harpy Eagle)."
                                 : lang === 'de'
-                                ? 'Verpassen Sie nicht die Harpe Eagle-Ausstellung.'
+                                ? 'Verpassen Sie nicht die Harpy Eagle-Ausstellung.'
                                 : lang === 'es'
-                                ? 'No se pierda la exhibición del Harpe Eagle.'
-                                : 'Don’t miss the Harpe Eagle exhibit.'}
+                                ? 'No se pierda la exhibición del Harpy Eagle.'
+                                : 'Don’t miss the Harpy Eagle exhibit.'}
                             </p>
 
                             {/* Zoo Price visually connected */}

@@ -122,8 +122,12 @@ export interface BirdingOffer {
   id: 'visitor' | 'guest';
   title: string;
   badge: string;
-  price: number;
-  priceNote: string;
+  price?: number;
+  priceDisplay?: string;
+  pricePeriod?: string;
+  priceNote?: string;
+  pricingTiers?: { amount: string; label: string }[];
+  followOnNote?: string;
   audience: string;
   tagline: string;
   description: string;

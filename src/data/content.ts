@@ -405,6 +405,27 @@ export const content = {
         { title: "Tropical Breakfast", desc: "Freshly brewed Panama coffee, teas, seasonal fruit smoothies, and homemade morning specialties prepared by Maria, our Panamanian cook." },
         { title: "Wildlife & Critters Viewing", desc: "Spot Agoutis, Coatimundis, Geoffrey’s Tamarin Monkeys, Iguanas, and Variegated Squirrels exploring the garden." }
       ],
+      birdSpeciesList: [
+        "Crimson-backed Tanager",
+        "Yellow-backed Oriole",
+        "Blue-gray Tanager",
+        "Barred Ant Shrike",
+        "Red-legged Honeycreeper",
+        "Rufous-tailed Hummingbird",
+        "Red-crowned Woodpecker",
+        "Palm Tanager",
+        "Clay-colored Thrush",
+        "Rock Pigeon",
+        "Pale-vented Pigeon",
+        "Ruddy Ground Dove",
+        "Plain-colored Tanager",
+        "Gray-headed Chachalaca",
+        "Great-tailed Grackle",
+        "Orange-chinned Parakeet",
+        "Rusty-margined Flycatcher",
+        "Variable Seedeater",
+        "Tropical Mockingbird"
+      ],
       offers: [
         {
           id: 'visitor',
@@ -430,14 +451,14 @@ export const content = {
         {
           id: 'guest',
           title: "Greg's Place Overnight Guests",
-          badge: "SPECIAL OVERNIGHT GUEST RATE",
+          badge: "FOR REGISTERED OVERNIGHT GUESTS",
           pricingTiers: [
             { amount: "$25", label: "1 person" },
             { amount: "$20 / person", label: "2+ people" }
           ],
           followOnNote: "After your first experience, the prices above are reduced by $15 per person for follow-on breakfasts.",
           audience: "Exclusive offer for staying guests of the house",
-          tagline: "WAKE UP TO NATURE AND ENJOY THE BREAKFAST EXPERIENCE",
+          tagline: "OPTIONAL BREAKFAST ON PROPERTY",
           description: "Guests staying at Greg's Place enjoy our full birding, breakfast & critters experience at a preferred rate, just steps from their bedroom door.",
           features: [
             "Special preferred rate exclusively for staying guests",
@@ -570,7 +591,8 @@ export const content = {
             "Great-tailed Grackle",
             "Orange-chinned Parakeet",
             "Rusty-margined Flycatcher",
-            "Variable Seedeater"
+            "Variable Seedeater",
+            "Tropical Mockingbird"
           ],
           birdFooter: "Many other species drop by from time-to-time."
         },
@@ -681,6 +703,10 @@ export const content = {
               time: "~2 minutes by car or 8 minutes walking"
             },
             {
+              name: "Small Grocery Stores (2)",
+              time: "~2 minutes by car or 8 minutes walking"
+            },
+            {
               name: "El Rey Supermarket",
               note: "(the largest grocery store in Albrook, where Host normally shops)",
               time: "~3 minutes by car or ~12 minutes walking"
@@ -688,6 +714,16 @@ export const content = {
             {
               name: "Super Carnes Supermarket",
               time: "~3 minutes by car or ~12 minutes walking"
+            },
+            {
+              name: "Reprosa Store",
+              note: "(Reprosa store that sells beautiful and amazing replicas of Panamanian artifacts)",
+              time: "~7 minutes by car"
+            },
+            {
+              name: "Multiplaza Pacific Mall",
+              note: "(premier luxury shopping mall with international designer brands)",
+              time: "~15 minutes by car"
             },
             {
               name: "Kotowa Coffee House",
@@ -752,6 +788,8 @@ export const content = {
             "Award winning 3D/IMAX documentary movie",
             "Ship Transit Schedule (changes every morning):\nhttps://visitcanaldepanama.com/en/#horarios-barcos"
           ],
+          linkUrl: "https://visitcanaldepanama.com/en/points-of-interest/miraflores-visitor-center/",
+          linkText: "OFFICIAL WEBSITE",
           iconType: "canal"
         },
         {
@@ -818,6 +856,8 @@ export const content = {
             "Living aquarium tanks showcasing Caribbean and Pacific marine life",
             "Surrounding botanical park featuring native flora"
           ],
+          linkUrl: "https://biomuseo.org/",
+          linkText: "OFFICIAL WEBSITE",
           iconType: "nature"
         },
         {
@@ -962,10 +1002,8 @@ export const content = {
           description: "Greg’s Place serves as the perfect springboard to explore the wider metropolis. Return home each evening to peaceful greenery, fresh breezes, and calm residential streets after discovering financial districts, museums, waterfront sights and downtown nightlife.",
           futureNote: "Uber is highly recommended. Download the app before you travel. Set it up to pay by credit card (Uber Cash) so you are not fumbling for cash. Drivers never have change!",
           highlights: [
-            "Quick access to financial, culinary, and cultural districts",
-            "Direct Uber and InDrive connectivity to/from Host’s front door",
-            "Tranquil haven far removed from downtown traffic jams",
-            "Safe, secure, and peaceful retreat to recharge every night"
+            "Quick access to financial, culinary, and cultural districts, and lots of shopping",
+            "Direct Uber and InDrive connectivity to/from Host’s front door"
           ],
           iconType: "city"
         },
@@ -1021,7 +1059,7 @@ export const content = {
           futureNote: "with Greg’s friend Roberto\nLeaves from Greg’s Place to Gamboa (40 minutes)",
           highlights: [
             "Fishing in Gatun Lake for Peacock Bass, followed by a fish barbecue at Greg’s Place.",
-            "Visit the Soberanía National Park Zoo on the way back from Gamboa. Don’t miss the Harpe Eagle exhibit."
+            "Visit the Soberanía National Park Zoo on the way back from Gamboa. Don’t miss the Harpy Eagle exhibit."
           ],
           iconType: "canal"
         },
@@ -1032,9 +1070,34 @@ export const content = {
           categoryKey: "shopping",
           distance: "~5 km",
           driveTime: "~6 minutes",
-          description: "A popular arts and crafts center dedicated to authentic Panamanian handmade goods, traditional textiles, and cultural treasures.",
-          futureNote: "On Uber it’s called “Centro de artesanias Cardenas”. It’s within walking distance of Greg’s favorite restaurant: Maagoos Fish Tacos and More (run by a spearfishing family).",
+          description: "A popular arts and crafts center dedicated to authentic Panamanian handmade goods, traditional textiles, and cultural treasures, featuring approximately 100 booths hosted by indigenous peoples in their traditional attire.",
+          futureNote: "Host Note:\nOn Uber it’s called “Centro de artesanias Cardenas”. A unique place to purchase authentic Panamanian handmade gifts to take home. Within walking distance of Greg’s favorite restaurant: Maagoos Fish Tacos and More (run by a spearfishing family).",
+          highlights: [
+            "Approximately 100 artisan booths hosted by indigenous peoples in their traditional attire",
+            "Authentic handmade Panamanian crafts, molas, woven baskets, and cultural treasures",
+            "A unique place to purchase authentic Panamanian handmade gifts to take home",
+            "Within walking distance of Greg’s favorite restaurant: Maagoos Fish Tacos and More"
+          ],
           iconType: "crafts"
+        },
+        {
+          id: 'multiplaza-mall',
+          name: "Multiplaza Pacific Mall",
+          category: "Luxury Shopping & Dining",
+          categoryKey: "shopping",
+          distance: "~10 km",
+          driveTime: "~15 minutes by car",
+          description: "Panama City’s premier luxury and upscale shopping destination featuring high-end international designer boutiques, department stores, gourmet restaurants, cafes, and entertainment.",
+          futureNote: "Host Note:\nPanama's top luxury shopping mall. Great for finding international brands, high-end shopping, and fine dining.",
+          highlights: [
+            "Luxury international fashion boutiques & designer brands",
+            "Full air-conditioned upscale shopping experience",
+            "High-end department stores (Felix B. Maduro)",
+            "Wide selection of gourmet restaurants and cafes"
+          ],
+          linkUrl: "https://multiplaza.com.pa/",
+          linkText: "OFFICIAL WEBSITE",
+          iconType: "shopping"
         },
         {
           id: 'panama-canal-railway',
@@ -1045,6 +1108,9 @@ export const content = {
           driveTime: "~8 minutes",
           description: "Take the historic Panama Canal Railway across the Isthmus of Panama, along the Panama Canal and through the jungle. Your one-hour destination is Colon, on the Caribbean side. You can return by this same train later in the day.\nCheck out the details here: https://www.panarail.com/",
           futureNote: "This is a wonderful trip worth doing. Get the Dome Car for the best viewing. Consider having Greg’s taxi driver, Jose, meet you to give you a tour of Colon, take you to the Gatun Locks Visitor Center, and then on to Portobelo to see the historic town and fort, have lunch in Portobelo and return you to Greg’s Place.",
+          linkUrl: "https://www.panarail.com/",
+          linkText: "OFFICIAL WEBSITE",
+          iconType: "train"
         },
         {
           id: '51-fun-things',
@@ -1424,9 +1490,9 @@ export const content = {
       forwardBtn: "Check Availability on Lodgify",
       cancelBtn: "Close",
       birdingTitle: "Reserve Your Birding Breakfast",
-      birdingLead: "Enjoy breakfast in the middle of nature. Choose between the $39 Visitor Experience or the $25 Special Guest Rate.",
+      birdingLead: "Enjoy breakfast in the middle of nature. Choose between the $39 Visitor Experience or the Overnight Guest Rate ($25 for 1 person / $20 per person for 2+).",
       visitorOption: "Visitor Experience ($39/person)",
-      guestOption: "Staying Guest Rate ($25/person)",
+      guestOption: "Overnight Guest Rate ($25 for 1 person / $20 per person for 2+)",
       reserveBirdingBtn: "Reserve via WhatsApp with Greg"
     },
     contact: {
@@ -1861,6 +1927,27 @@ export const content = {
         { title: "Desayuno Tropical", desc: "Café panameño recién colado, infusiones, batidos con frutas de temporada y platos matutinos caseros." },
         { title: "Avistamiento de Fauna y Animales", desc: "Descubra agoutis (ñeques), Rocky el coatí, perezosos y lagartijas en los jardines." }
       ],
+      birdSpeciesList: [
+        "Crimson-backed Tanager",
+        "Yellow-backed Oriole",
+        "Blue-gray Tanager",
+        "Barred Ant Shrike",
+        "Red-legged Honeycreeper",
+        "Rufous-tailed Hummingbird",
+        "Red-crowned Woodpecker",
+        "Palm Tanager",
+        "Clay-colored Thrush",
+        "Rock Pigeon",
+        "Pale-vented Pigeon",
+        "Ruddy Ground Dove",
+        "Plain-colored Tanager",
+        "Gray-headed Chachalaca",
+        "Great-tailed Grackle",
+        "Orange-chinned Parakeet",
+        "Rusty-margined Flycatcher",
+        "Variable Seedeater",
+        "Tropical Mockingbird"
+      ],
       offers: [
         {
           id: 'visitor',
@@ -1886,14 +1973,14 @@ export const content = {
         {
           id: 'guest',
           title: "Huéspedes en Greg's Place",
-          badge: "TARIFA ESPECIAL PARA HUÉSPEDES",
+          badge: "PARA HUÉSPEDES REGISTRADOS",
           pricingTiers: [
             { amount: "$25", label: "1 persona" },
             { amount: "$20 / persona", label: "2+ personas" }
           ],
-          followOnNote: "Después de su primera experiencia, los precios anteriores se reducen en $15 por persona para los desayunos siguientes.",
+          followOnNote: "Después de su primera experiencia, los precios anteriores se reducen en $15 por persona para los desayunos posteriores.",
           audience: "Oferta exclusiva para huéspedes alojados en la casa",
-          tagline: "DESPIERTE CON LA NATURALEZA Y DISFRUTE EL DESAYUNO",
+          tagline: "DESAYUNO OPCIONAL EN LA PROPIEDAD",
           description: "Los huéspedes alojados en Greg's Place disfrutan de nuestra experiencia completa de aves, desayuno y fauna a una tarifa preferencial a solo unos pasos de su habitación.",
           features: [
             "Tarifa preferencial exclusiva para huéspedes alojados",
@@ -2026,7 +2113,8 @@ export const content = {
             "Great-tailed Grackle",
             "Orange-chinned Parakeet",
             "Rusty-margined Flycatcher",
-            "Variable Seedeater"
+            "Variable Seedeater",
+            "Tropical Mockingbird"
           ],
           birdFooter: "Muchas otras especies pasan de vez en cuando."
         },
@@ -2137,6 +2225,10 @@ export const content = {
               time: "~2 minutos en auto u 8 minutos caminando"
             },
             {
+              name: "Pequeñas Tiendas de Abarrotes / Minisúper (2)",
+              time: "~2 minutos en auto u 8 minutos caminando"
+            },
+            {
               name: "Supermercado El Rey",
               note: "(el supermercado más grande de Albrook, donde suele comprar el anfitrión)",
               time: "~3 minutos en auto o ~12 minutos caminando"
@@ -2144,6 +2236,16 @@ export const content = {
             {
               name: "Supermercado Super Carnes",
               time: "~3 minutos en auto o ~12 minutos caminando"
+            },
+            {
+              name: "Tienda Reprosa (Reprosa Store)",
+              note: "(tienda Reprosa que vende hermosas y asombrosas réplicas de artefactos panameños)",
+              time: "~7 minutos en auto"
+            },
+            {
+              name: "Multiplaza Pacific Mall",
+              note: "(centro comercial de lujo con exclusivas marcas internacionales y gastronomía)",
+              time: "~15 minutos en auto"
             },
             {
               name: "Kotowa Coffee House",
@@ -2208,6 +2310,8 @@ export const content = {
             "Película documental galardonada en 3D / IMAX",
             "Horario de Tránsito de Barcos (cambia cada mañana):\nhttps://visitcanaldepanama.com/en/#horarios-barcos"
           ],
+          linkUrl: "https://visitcanaldepanama.com/en/points-of-interest/miraflores-visitor-center/",
+          linkText: "SITIO WEB OFICIAL",
           iconType: "canal"
         },
         {
@@ -2274,6 +2378,8 @@ export const content = {
             "Acuarios marinos gigantes del Caribe y del Pacífico",
             "Parque botánico con senderos de vegetación tropical autóctona"
           ],
+          linkUrl: "https://biomuseo.org/",
+          linkText: "SITIO WEB OFICIAL",
           iconType: "nature"
         },
         {
@@ -2418,10 +2524,8 @@ export const content = {
           description: "Greg’s Place funciona como el trampolín perfecto para recorrer la metrópoli panameña. Tras explorar los distritos financieros, museos, paseos costeros y la vida nocturna del centro, regrese a descansar a un vecindario fresco, lleno de árboles y en total serenidad.",
           futureNote: "Se recomienda ampliamente usar Uber. Descargue la aplicación antes de viajar. Configúrela para pagar con tarjeta de crédito (Uber Cash) para evitar líos con el efectivo. ¡Los conductores nunca tienen cambio!",
           highlights: [
-            "Rápido acceso a zonas financieras, culturales y gastronómicas",
-            "Servicio directo de Uber e InDrive hacia y desde la puerta del anfitrión",
-            "Un refugio sereno completamente aislado del tráfico denso del centro",
-            "Seguridad, aire puro y descanso garantizado al volver a casa"
+            "Rápido acceso a zonas financieras, culturales y gastronómicas, y muchas opciones de compras",
+            "Servicio directo de Uber e InDrive hacia y desde la puerta del anfitrión"
           ],
           iconType: "city"
         },
@@ -2467,6 +2571,70 @@ export const content = {
           iconType: "night"
         },
         {
+          id: 'monkey-island',
+          name: "Tour de Naturaleza a la Isla de Monos en Bote Privado",
+          category: "Excursión de Naturaleza",
+          categoryKey: "nature",
+          distance: "Salida desde la Selva de Gamboa",
+          driveTime: "40 min en auto desde Greg’s Place",
+          description: "Este es un viaje maravilloso, ya que zarpará en un pequeño bote desde el área de la selva tropical de Gamboa hacia el río Chagres. Estará justo al lado de los barcos gigantes que acaban de salir de las esclusas de Pedro Miguel mientras continúan hacia el Lago Gatún.\n\nRoberto sale temprano para que su bote sea el primero en llegar y los monos tengan hambre. Además, escuchará a los monos aulladores cantar temprano en la mañana. Roberto suele encontrar al menos 3 especies diferentes de monos (¡no todos están en la isla!). También hay muchas aves acuáticas interesantes. Roberto suele encontrar un cocodrilo de agua salada también.",
+          futureNote: "con Roberto, el amigo de Greg\nSalida de Greg’s Place hacia Gamboa (40 minutos)",
+          highlights: [
+            "Pesca de sargento en el Lago Gatún, seguida de un asado de pescado en Greg’s Place.",
+            "Visita al zoológico del Parque Nacional Soberanía de regreso de Gamboa. No se pierda la exhibición del Águila Arpía."
+          ],
+          iconType: "canal"
+        },
+        {
+          id: 'artesan-center',
+          name: "Centro de Artesanías (Artesan Center)",
+          category: "Artesanías y Cultura",
+          categoryKey: "shopping",
+          distance: "~5 km",
+          driveTime: "~6 minutos",
+          description: "Un concurrido centro artesanal dedicado a las auténticas artesanías panameñas hechas a mano, textiles tradicionales y tesoros culturales, con aproximadamente 100 puestos atendidos por artesanos indígenas en su vestimenta tradicional.",
+          futureNote: "Nota del Anfitrión:\nEn Uber se llama “Centro de artesanias Cardenas”. Un lugar único para adquirir auténticos recuerdos panameños hechos a mano. Queda a poca distancia a pie del restaurante favorito de Greg: Maagoos Fish Tacos and More (atendido por una familia de pescadores submarinos).",
+          highlights: [
+            "Aproximadamente 100 puestos artesanales atendidos por indígenas con su vestimenta tradicional",
+            "Auténticas artesanías panameñas hechas a mano, molas, canastas tejidas y textiles tradicionales",
+            "Un lugar único para comprar auténticos regalos hechos a mano en Panamá",
+            "A poca distancia a pie del restaurante favorito de Greg: Maagoos Fish Tacos and More"
+          ],
+          iconType: "crafts"
+        },
+        {
+          id: 'multiplaza-mall',
+          name: "Multiplaza Pacific Mall",
+          category: "Compras de Lujo y Gastronomía",
+          categoryKey: "shopping",
+          distance: "~10 km",
+          driveTime: "~15 minutos en auto",
+          description: "El principal centro comercial de lujo de la Ciudad de Panamá con exclusivas marcas internacionales, tiendas departamentales de prestigio, restaurantes gourmet y salas de cine VIP.",
+          futureNote: "Nota del Anfitrión:\nEl centro comercial de lujo por excelencia en Panamá. Ideal para marcas internacionales, compras exclusivas y alta gastronomía.",
+          highlights: [
+            "Boutiques de moda de diseñadores internacionales de lujo",
+            "Ambiente de compras exclusivo con aire acondicionado integral",
+            "Tiendas departamentales de prestigio (Felix B. Maduro)",
+            "Excelente selección de restaurantes gourmet, cafeterías y bistrós"
+          ],
+          linkUrl: "https://multiplaza.com.pa/",
+          linkText: "SITIO WEB OFICIAL",
+          iconType: "shopping"
+        },
+        {
+          id: 'panama-canal-railway',
+          name: "Panama Canal Railway Station",
+          category: "Ferrocarril Histórico y Excursión",
+          categoryKey: "canal",
+          distance: "~ 5 km",
+          driveTime: "~8 minutos",
+          description: "Tome el histórico ferrocarril del Canal de Panamá a través del istmo, a lo largo del Canal de Panamá y cruzando la selva tropical. Su destino de una hora es Colón, en el lado caribeño. Puede regresar en este mismo tren más tarde ese día.\nConsulte los detalles aquí: https://www.panarail.com/",
+          futureNote: "Este es un viaje maravilloso que vale la pena hacer. Elija el vagón con cúpula (Dome Car) para disfrutar de la mejor vista. Considere contratar a José, el taxista de confianza de Greg, para que lo reciba, le dé un recorrido por Colón, lo lleve al Centro de Visitantes de las Esclusas de Gatún y luego a Portobelo para conocer el pueblo histórico y su fuerte, almorzar en Portobelo y regresarlo a Greg’s Place.",
+          linkUrl: "https://www.panarail.com/",
+          linkText: "SITIO WEB OFICIAL",
+          iconType: "train"
+        },
+        {
           id: '51-fun-things',
           name: "51+ Cosas Divertidas para Hacer en la Ciudad de Panamá con Fotos",
           category: "Exploración Urbana",
@@ -2483,27 +2651,6 @@ export const content = {
           ],
           linkUrl: "https://tourscanner.com/things-to-do-in-panama-city-panama",
           iconType: "link"
-        },
-        {
-          id: 'artesan-center',
-          name: "Centro de Artesanías (Artesan Center)",
-          category: "Artesanías y Cultura",
-          categoryKey: "shopping",
-          distance: "~5 km",
-          driveTime: "~6 minutos",
-          description: "Centro artesanal representativo con amplia oferta de artesanías auténticas panameñas, textiles tradicionales y recuerdos culturales.",
-          futureNote: "En Uber se llama “Centro de artesanias Cardenas”. Queda a poca distancia a pie del restaurante favorito de Greg: Maagoos Fish Tacos and More (atendido por una familia de pescadores submarinos).",
-          iconType: "crafts"
-        },
-        {
-          id: 'panama-canal-railway',
-          name: "Panama Canal Railway Station",
-          category: "Ferrocarril Histórico y Excursión",
-          categoryKey: "canal",
-          distance: "~ 5 km",
-          driveTime: "~8 minutos",
-          description: "Tome el histórico ferrocarril del Canal de Panamá a través del istmo, a lo largo del Canal de Panamá y cruzando la selva tropical. Su destino de una hora es Colón, en el lado caribeño. Puede regresar en este mismo tren más tarde ese día.\nConsulte los detalles aquí: https://www.panarail.com/",
-          futureNote: "Este es un viaje maravilloso que vale la pena hacer. Elija el vagón con cúpula (Dome Car) para disfrutar de la mejor vista. Considere contratar a José, el taxista de confianza de Greg, para que lo reciba, le dé un recorrido por Colón, lo lleve al Centro de Visitantes de las Esclusas de Gatún y luego a Portobelo para conocer el pueblo histórico y su fuerte, almorzar en Portobelo y regresarlo a Greg’s Place.",
         }
       ],
       diningCallout: {
@@ -2865,9 +3012,9 @@ export const content = {
       forwardBtn: "Ver Disponibilidad en Lodgify",
       cancelBtn: "Cerrar",
       birdingTitle: "Reserve Su Desayuno con Aves",
-      birdingLead: "Disfrute del desayuno en medio de la naturaleza. Elija entre la Experiencia de Visitante ($39) o la Tarifa Especial para Huéspedes ($25).",
+      birdingLead: "Disfrute del desayuno en medio de la naturaleza. Elija entre la Experiencia de Visitante ($39) o la Tarifa para Huéspedes ($25 para 1 persona / $20 por persona para 2+).",
       visitorOption: "Experiencia Visitante ($39/persona)",
-      guestOption: "Tarifa Huésped ($25/persona)",
+      guestOption: "Tarifa Huésped ($25 para 1 persona / $20 por persona para 2+)",
       reserveBirdingBtn: "Reservar por WhatsApp con Greg"
     },
     contact: {
