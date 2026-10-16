@@ -18,7 +18,7 @@ const wildlifeCardPhotos: Record<string, { src: string; defaultAlt: string; defa
     defaultTitle: 'Tropical Slider Turtle',
   },
   'sloth': {
-    src: '/pictures/slothhhhh.jpg',
+    src: '/pictures/Slothhhh.jpg',
     defaultAlt: "Two and Three-toed Sloth in tropical tree canopy around Greg's Place",
     defaultTitle: 'Two and Three-toed Sloths',
   },

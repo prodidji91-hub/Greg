@@ -192,15 +192,6 @@ export const BirdingBreakfast: React.FC<BirdingBreakfastProps> = ({
 
         {/* TWO DEDICATED OFFERS / PRICING CARDS */}
         <div className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="font-serif text-2xl sm:text-3xl text-white font-light mb-2">
-              {lang === 'fr' ? 'Choisissez votre expérience : Oiseaux, Petit-déjeuner & Faune' : lang === 'de' ? 'Wählen Sie Ihr Erlebnis: Vogelbeobachtung, Frühstück & Tierwelt' : lang === 'en' ? 'Choose Your Birding, Breakfast & Critters Experience' : 'Elija Su Experiencia de Aves, Desayuno y Fauna'}
-            </h3>
-            <p className="text-xs sm:text-sm text-[#C5A059] uppercase tracking-wider font-mono">
-              {lang === 'fr' ? 'Disponible pour les visiteurs extérieurs et les hôtes résidents' : lang === 'de' ? 'Verfügbar für Tagesbesucher und Übernachtungsgäste' : lang === 'en' ? 'Available for both non-staying visitors and overnight guests' : 'Disponible para visitantes y huéspedes alojados'}
-            </p>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {t.offers.map((offer) => {
               const isHighlight = offer.highlighted;
@@ -229,7 +220,7 @@ export const BirdingBreakfast: React.FC<BirdingBreakfastProps> = ({
                       {isHighlight && (
                         <span className="text-[11px] text-[#C5A059] flex items-center gap-1 font-sans">
                           <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
-                          <span>{lang === 'fr' ? 'Tarif Résident' : lang === 'de' ? 'Tarif für Hausgäste' : lang === 'en' ? 'Staying Guest Rate' : 'Tarifa Huésped'}</span>
+                          <span>{lang === 'fr' ? 'Sonderpreis' : lang === 'de' ? 'Gästerabatt' : lang === 'es' ? 'Tarifa Especial' : 'Special Guest Rate'}</span>
                         </span>
                       )}
                     </div>
@@ -245,19 +236,51 @@ export const BirdingBreakfast: React.FC<BirdingBreakfastProps> = ({
                     </div>
 
                     {/* Pricing Display */}
-                    <div className="mb-6 pb-6 border-b border-white/10">
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-4xl sm:text-5xl font-serif font-light text-white">
-                          ${offer.price}
-                        </span>
-                        <span className="text-xs sm:text-sm text-white/70 font-light">
-                          {lang === 'fr' ? 'USD / personne' : lang === 'de' ? 'USD / Person' : lang === 'en' ? 'USD / person' : 'USD / persona'}
-                        </span>
+                    {offer.id === 'visitor' ? (
+                      <div className="mb-6 pb-6 border-b border-white/10">
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-4xl sm:text-5xl font-serif font-light text-white">
+                            {offer.priceDisplay || '$39 USD'}
+                          </span>
+                          <span className="text-xs sm:text-sm text-white/70 font-light">
+                            {offer.pricePeriod || '/ person'}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-[#C5A059] mt-2 font-mono uppercase tracking-wider">
+                          {offer.priceNote}
+                        </p>
                       </div>
-                      <p className="text-[11px] text-white/60 mt-1 font-light">
-                        {offer.priceNote}
-                      </p>
-                    </div>
+                    ) : (
+                      <div className="mb-6 pb-6 border-b border-white/10 space-y-3">
+                        <div className="grid grid-cols-2 gap-3 bg-white/5 border border-white/15 p-3.5 rounded-xs">
+                          <div className="text-center border-r border-white/15 pr-2">
+                            <span className="text-2xl sm:text-3xl font-serif text-white font-medium block">
+                              $25 <span className="text-[10px] text-[#C5A059] font-mono">USD</span>
+                            </span>
+                            <span className="text-[11px] text-white/80 font-mono uppercase tracking-wider block mt-0.5">
+                              {lang === 'fr' ? '1 personne' : lang === 'de' ? '1 Person' : lang === 'es' ? '1 persona' : '1 person'}
+                            </span>
+                          </div>
+                          <div className="text-center pl-2">
+                            <span className="text-2xl sm:text-3xl font-serif text-[#C5A059] font-medium block">
+                              $20 <span className="text-[10px] text-white/70 font-mono">{lang === 'fr' ? '/ pers' : lang === 'de' ? '/ Pers' : lang === 'es' ? '/ pers' : '/ person'}</span>
+                            </span>
+                            <span className="text-[11px] text-white/80 font-mono uppercase tracking-wider block mt-0.5">
+                              {lang === 'fr' ? '2+ personnes' : lang === 'de' ? 'ab 2 Personen' : lang === 'es' ? '2+ personas' : '2+ people'}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Follow-on Breakfasts Note */}
+                        {offer.followOnNote && (
+                          <div className="px-3.5 py-2.5 bg-[#C5A059]/15 border border-[#C5A059]/40 text-center">
+                            <p className="text-[11px] text-[#FAF8F5] leading-relaxed font-sans italic">
+                              ✨ {offer.followOnNote}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    )}
 
                     {/* Description */}
                     <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-light mb-6">

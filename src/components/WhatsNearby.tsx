@@ -84,7 +84,7 @@ const nearbyCardPhotos: Record<string, { src: string; defaultAlt: string; defaul
     defaultTitle: 'Cinta Costera (Coastal Ribbon)',
   },
   'panama-canal': {
-    src: '/pictures/Panamacanale.jpg',
+    src: '/pictures/PanamaCanalss.jpg',
     defaultAlt: 'Panama Canal – Miraflores Locks Visitor Center',
     defaultTitle: 'Panama Canal – Miraflores Locks',
   },
@@ -94,7 +94,7 @@ const nearbyCardPhotos: Record<string, { src: string; defaultAlt: string; defaul
     defaultTitle: 'Kotowa Coffee House',
   },
   'punta-culebra': {
-    src: '/pictures/puebla.jpg',
+    src: '/pictures/PuntaCulebraNaturefrog.jpg',
     defaultAlt: 'Punta Culebra Nature Center (Smithsonian Tropical Research Institute)',
     defaultTitle: 'Punta Culebra Nature Center',
   },
@@ -102,6 +102,11 @@ const nearbyCardPhotos: Record<string, { src: string; defaultAlt: string; defaul
     src: '/pictures/panama nature center.jpg',
     defaultAlt: 'Panama Nature Center (APPC) and Tamandua sanctuary',
     defaultTitle: 'Panama Nature Center',
+  },
+  'panama-canal-railway': {
+    src: '/pictures/panpanamarailway.jpg',
+    defaultAlt: 'Panama Canal Railway',
+    defaultTitle: 'Panama Canal Railway',
   },
 };
 
@@ -232,7 +237,7 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                 <div
                   key={place.id}
                   id={place.id}
-                  className="p-7 transition-all flex flex-col justify-between group relative bg-white border border-[#1B3022]/10 hover:border-[#C5A059] shadow-sm hover:shadow-md col-span-1 md:col-span-2 lg:col-span-2"
+                  className="p-7 transition-all flex flex-col justify-between group relative bg-white border border-[#1B3022]/10 hover:border-[#C5A059] shadow-sm hover:shadow-md col-span-1 md:col-span-2 lg:col-span-3"
                 >
                   <div>
                     {/* Card Top: Icon & Category */}
@@ -626,7 +631,7 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                       >
                         <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#1B3022]/15 bg-[#FAF8F5] shadow-xs group-hover/photo:border-[#C5A059] group-hover/photo:shadow-md transition-all duration-300">
                           <img
-                            src={cardPhoto.src}
+                            src={encodeURI(cardPhoto.src)}
                             alt={cardPhoto.alt}
                             className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-102"
                             loading="lazy"
@@ -969,7 +974,7 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
           >
             <div className="relative overflow-hidden bg-black/60 border border-[#C5A059]/50 shadow-2xl rounded-[2px] flex flex-col">
               <img
-                src={lightboxImage.src}
+                src={encodeURI(lightboxImage.src)}
                 alt={lightboxImage.alt}
                 className="max-h-[75vh] sm:max-h-[80vh] max-w-[92vw] sm:max-w-[85vw] md:max-w-4xl w-auto h-auto object-contain block select-none"
               />

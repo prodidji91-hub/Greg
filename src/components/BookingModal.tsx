@@ -49,7 +49,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
   const handleBirdingWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
-    const experienceType = birdingOffer === 'visitor' ? 'Visitor Breakfast ($39/person)' : 'Staying Guest Breakfast ($25/person)';
+    const experienceType = birdingOffer === 'visitor' ? 'Outside Visitors ($39/person)' : 'Overnight Guests ($25 for 1p / $20/p for 2+p)';
     const textMsg = `Hello Greg! I would like to reserve the Birding & Breakfast experience at Greg's Place in Albrook.%0A%0AExperience: ${experienceType}%0APreferred Date: ${birdingDate || 'Flexible'}%0ANumber of Guests: ${birdingGuests}%0AName: ${guestName || 'Guest'}`;
     
     const targetUrl = `https://wa.me/50765037828?text=${textMsg}`;
@@ -178,12 +178,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 >
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#8C583E]">
-                      {lang === 'fr' ? 'Visiteurs' : lang === 'de' ? 'Tagesbesucher' : lang === 'en' ? 'Visitors' : 'Visitantes'}
+                      {lang === 'fr' ? 'Visiteurs Extérieurs' : lang === 'de' ? 'Tagesbesucher' : lang === 'en' ? 'Outside Visitors' : 'Visitantes de un Día'}
                     </span>
-                    <span className="text-sm font-serif font-bold text-[#1B3022]">$39</span>
+                    <span className="text-sm font-serif font-bold text-[#1B3022]">$39<span className="text-[11px] font-normal text-[#1B3022]/70">/p</span></span>
                   </div>
                   <p className="text-[11px] text-[#1B3022]/80 leading-snug">
-                    {lang === 'fr' ? 'Pour les visiteurs sans hébergement' : lang === 'de' ? 'Für Besucher ohne Übernachtung' : lang === 'en' ? 'For visitors not staying overnight' : 'Para visitantes sin alojamiento'}
+                    {lang === 'fr' ? '39 $ USD / personne' : lang === 'de' ? '39 $ USD / Person' : lang === 'en' ? '$39 USD / person' : '$39 USD / persona'}
                   </p>
                 </button>
 
@@ -198,12 +198,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 >
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#C5A059]">
-                      {lang === 'fr' ? 'Hôtes Résidents' : lang === 'de' ? 'Übernachtungsgäste' : lang === 'en' ? 'Staying Guests' : 'Huéspedes Alojados'}
+                      {lang === 'fr' ? 'Hôtes Résidents' : lang === 'de' ? 'Übernachtungsgäste' : lang === 'en' ? 'Overnight Guests' : 'Huéspedes del Hospedaje'}
                     </span>
-                    <span className="text-sm font-serif font-bold text-[#1B3022]">$25</span>
+                    <span className="text-sm font-serif font-bold text-[#1B3022]">$25<span className="text-[11px] font-normal text-[#1B3022]/70"> / $20</span></span>
                   </div>
                   <p className="text-[11px] text-[#1B3022]/80 leading-snug">
-                    {lang === 'fr' ? 'Tarif préférentiel exclusif pour nos hôtes' : lang === 'de' ? 'Bevorzugter Sondertarif für unsere Gäste' : lang === 'en' ? 'Special preferred rate for our guests' : 'Tarifa preferencial para huéspedes'}
+                    {lang === 'fr' ? '25 $ (1 pers) · 20 $/p (2+ pers)' : lang === 'de' ? '25 $ (1 Pers) · 20 $/p (ab 2 Pers)' : lang === 'en' ? '$25 (1 person) · $20/p (2+ people)' : '$25 (1 persona) · $20/p (2+ personas)'}
                   </p>
                 </button>
               </div>

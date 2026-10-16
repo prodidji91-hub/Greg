@@ -488,12 +488,13 @@ export const contentFr = {
     "offers": [
       {
         "id": "visitor",
-        "title": "Visiteurs d'un Jour",
-        "badge": "Pour les visiteurs sans nuitée",
-        "price": 39,
-        "priceNote": "par personne · Réservation la veille requise",
-        "audience": "Pour les voyageurs ne séjournant pas dans la maison",
-        "tagline": "Déjeuner au cœur de la nature",
+        "title": "Visiteurs Extérieurs",
+        "badge": "POUR LES VISITEURS SANS HÉBERGEMENT",
+        "priceDisplay": "39 $ USD",
+        "pricePeriod": "/ personne",
+        "priceNote": "Réservation requise avant 20h la veille de l'événement",
+        "audience": "Pour les visiteurs ne séjournant pas dans la maison",
+        "tagline": "PETIT-DÉJEUNER AU CŒUR DE LA NATURE",
         "description": "Vivez une matinée privilégiée à Albrook alliant observation ornithologique, petit-déjeuner tropical frais et observation de la faune sur notre véranda protégée.",
         "features": [
           "Observation ornithologique avec plus de 100 espèces recensées dans la canopée d'Albrook",
@@ -508,26 +509,28 @@ export const contentFr = {
       },
       {
         "id": "guest",
-        "title": "Voyageurs Résidant à Greg's Place",
-        "badge": "Tarif préférentiel résidents",
-        "price": 25,
-        "priceNote": "par personne · Tarif exclusif pour hôtes hébergés",
-        "audience": "Offre exclusive pour les voyageurs séjournant dans la maison",
-        "tagline": "Réveillez-vous au cœur de la nature, directement au petit-déjeuner",
-        "description": "Les hôtes de Greg's Place bénéficient du programme complet ornithologie, petit-déjeuner et faune sauvage à tarif très avantageux, à quelques pas de leur chambre.",
+        "title": "Hôtes Résidents à Greg's Place",
+        "badge": "TARIF SPÉCIAL POUR HÔTES RÉSIDENTS",
+        "pricingTiers": [
+          { "amount": "25 $", "label": "1 personne" },
+          { "amount": "20 $ / personne", "label": "2 personnes ou plus" }
+        ],
+        "followOnNote": "Après votre première expérience, les prix ci-dessus sont réduits de 15 $ par personne pour les petits-déjeuners suivants.",
+        "audience": "Offre exclusive pour les hôtes séjournant dans la maison",
+        "tagline": "RÉVEILLEZ-VOUS AU CŒUR DE LA NATURE ET PROFITEZ DU PETIT-DÉJEUNER",
+        "description": "Les hôtes profitent de notre expérience complète oiseaux, petit-déjeuner et faune au tarif préférentiel, juste à quelques pas de leur chambre.",
         "features": [
-          "Tarif spécial résident privilégié (25 $ au lieu de 39 $)",
+          "Tarif préférentiel exclusif pour les hôtes séjournant sur place",
           "Observation d'oiseaux, petit-déjeuner et rencontres avec la faune",
           "Petit-déjeuner frais préparé sur la véranda protégée",
           "Café du Panama, thés & smoothies frais aux fruits tropicaux",
-          "Important : les hôtes doivent prévenir Greg la veille au soir et régler en espèces (dollars US)",
           "Parlez-en simplement à Greg pour ajouter cette expérience à vos matinées"
         ],
         "cta": "Contacter Greg pour Réserver",
         "highlighted": true
       }
     ],
-    "importantNotice": "Note aux voyageurs résidant sur place : veuillez confirmer votre petit-déjeuner auprès de Greg la veille au soir et régler en espèces (dollars US).",
+    "importantNotice": "Important : Les hôtes séjournant dans la maison doivent prévenir Greg avant 20h la veille et régler en espèces en dollars américains.",
     "quote": "« S'asseoir le matin sur la véranda avec un café tout en observant les toucans dans les cimes a été le moment le plus magique de notre voyage. »",
     "ctaGeneral": "Réserver Votre Matinée",
     "bullets": [
@@ -789,18 +792,6 @@ export const contentFr = {
         "iconType": "canal"
       },
       {
-        "id": "kotowa-coffee-house",
-        "name": "Kotowa Coffee House",
-        "organization": "En face de l'aéroport Marcos Gelabert",
-        "category": "Café & Pâtisserie",
-        "categoryKey": "city",
-        "distance": "~1,2 km",
-        "driveTime": "~3 minutes en voiture ou ~12 minutes à pied",
-        "description": "Un café très agréable servant un excellent café panaméen. Si vous aimez le café, c'est l'endroit où aller.",
-        "futureNote": "Mon café préféré. Vous pouvez également acheter leur café emballé à emporter chez vous. Ils en ont deux types, un dans un paquet vert et un dans un paquet rouge, tous deux excellents. Ils servent celui dans le paquet vert aux clients. Ce sont d'excellents cadeaux à rapporter à la maison.",
-        "iconType": "services"
-      },
-      {
         "id": "casco-viejo",
         "name": "Casco Viejo (Quartier Historique / Casco Antiguo)",
         "category": "Histoire Coloniale & Culture",
@@ -817,6 +808,19 @@ export const contentFr = {
         ],
         "iconType": "heritage"
       },
+      {
+        "id": "kotowa-coffee-house",
+        "name": "Kotowa Coffee House",
+        "organization": "En face de l'aéroport Marcos Gelabert",
+        "category": "Café & Pâtisserie",
+        "categoryKey": "city",
+        "distance": "~1,2 km",
+        "driveTime": "~3 minutes en voiture ou ~12 minutes à pied",
+        "description": "Un café très agréable servant un excellent café panaméen. Si vous aimez le café, c'est l'endroit où aller.",
+        "futureNote": "Mon café préféré. Vous pouvez également acheter leur café emballé à emporter chez vous. Ils en ont deux types, un dans un paquet vert et un dans un paquet rouge, tous deux excellents. Ils servent celui dans le paquet vert aux clients. Ce sont d'excellents cadeaux à rapporter à la maison.",
+        "iconType": "services"
+      },
+      
       {
         "id": "amador-causeway",
         "name": "Amador Causeway (Calzada de Amador)",
@@ -1443,9 +1447,9 @@ export const contentFr = {
     "forwardBtn": "Vérifier la Disponibilité sur Lodgify",
     "cancelBtn": "Fermer",
     "birdingTitle": "Réserver Votre Matinée Nature",
-    "birdingLead": "Savourez un petit-déjeuner au cœur de la nature tropicale. Choisissez entre l'expérience Visiteur (39 $) ou le tarif préférentiel Hôtes Résidents (25 $).",
-    "visitorOption": "Expérience Visiteur (39 $ / personne)",
-    "guestOption": "Tarif Hôte Résident (25 $ / personne)",
+    "birdingLead": "Savourez un petit-déjeuner au cœur de la nature tropicale. 25 $ pour 1 personne, ou 20 $ par personne pour 2 personnes ou plus.",
+    "visitorOption": "25 $ pour 1 Personne",
+    "guestOption": "20 $ par personne (2+ personnes)",
     "reserveBirdingBtn": "Réserver par WhatsApp avec Greg"
   },
   "contact": {

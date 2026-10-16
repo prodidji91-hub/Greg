@@ -52,6 +52,8 @@ export const localPictures = {
   location: '/pictures/location.jpg',
   logo: '/pictures/greg-bird-logo.png',
   gregBirdLogo: '/pictures/greg-bird-logo.png',
+  puntaCulebra: '/pictures/PuntaCulebraNaturefrog.jpg',
+  panamaCanalRailway: '/pictures/panpanamarailway.jpg',
 } as const;
 
 export type ImageKey = keyof typeof localPictures;

@@ -409,14 +409,15 @@ export const content = {
         {
           id: 'visitor',
           title: "Outside Visitors",
-          badge: "For Non-Staying Visitors",
-          price: 39,
-          priceNote: "Reservation required by 8PM the evening before the event",
-          audience: "For visitors who are not staying at the property",
-          tagline: "Breakfast in the middle of nature",
+          badge: "FOR NON-STAYING VISITORS",
+          priceDisplay: "$39 USD",
+          pricePeriod: "/ person",
+          priceNote: "Reservation required by 8 PM the evening before",
+          audience: "For visitors not staying overnight in the house",
+          tagline: "BREAKFAST IN THE MIDDLE OF NATURE",
           description: "Join us for a special morning experience in Albrook combining bird watching, fresh tropical breakfast, and wildlife viewing on our screened garden patio.",
           features: [
-            "Bird watching with 100+ species active in Albrook canopy",
+            "Bird watching with 100+ active species in Albrook canopy",
             "Complete handcrafted tropical breakfast with fresh Panama coffee",
             "Fresh home-grown fruit smoothies with seasonal fruits",
             "Wildlife & critter viewing around the garden grounds",
@@ -429,14 +430,17 @@ export const content = {
         {
           id: 'guest',
           title: "Greg's Place Overnight Guests",
-          badge: "Special Overnight Guest Rate",
-          price: 25,
-          priceNote: "per person · Exclusive guest rate",
-          audience: "Exclusive offer for guests staying overnight at the property",
-          tagline: "Wake up to nature and enjoy the breakfast experience",
+          badge: "SPECIAL OVERNIGHT GUEST RATE",
+          pricingTiers: [
+            { amount: "$25", label: "1 person" },
+            { amount: "$20 / person", label: "2+ people" }
+          ],
+          followOnNote: "After your first experience, the prices above are reduced by $15 per person for follow-on breakfasts.",
+          audience: "Exclusive offer for staying guests of the house",
+          tagline: "WAKE UP TO NATURE AND ENJOY THE BREAKFAST EXPERIENCE",
           description: "Guests staying at Greg's Place enjoy our full birding, breakfast & critters experience at a preferred rate, just steps from their bedroom door.",
           features: [
-            "Special preferred rate exclusively for staying guests ($25 vs $39)",
+            "Special preferred rate exclusively for staying guests",
             "Bird watching, breakfast, and wildlife viewing",
             "Freshly prepared breakfast served in the screened garden patio",
             "Panama coffee, teas & fresh fruit smoothies",
@@ -751,18 +755,6 @@ export const content = {
           iconType: "canal"
         },
         {
-          id: 'kotowa-coffee-house',
-          name: "Kotowa Coffee House",
-          organization: "Across the street from the Marcos Gelabert Airport",
-          category: "Coffee & Bakery",
-          categoryKey: "city",
-          distance: "~1.2 km",
-          driveTime: "~3 minutes by car or ~12 minutes walking",
-          description: "A nice coffee shop with Excellent Panamanian coffee. If you like coffee, this is the place to go.",
-          futureNote: "My favorite coffee. You can also buy their packaged coffee to take home. They have two types, one in a green package and one in a red package, both excellent. They serve the one in the green package to customers. These make great gifts to take home.",
-          iconType: "services"
-        },
-        {
           id: 'casco-viejo',
           name: "Casco Viejo (Historic Old Town or Casco Antiguo)",
           category: "Culture & Heritage",
@@ -779,6 +771,18 @@ export const content = {
             "Museums"
           ],
           iconType: "heritage"
+        },
+        {
+          id: 'kotowa-coffee-house',
+          name: "Kotowa Coffee House",
+          organization: "Across the street from the Marcos Gelabert Airport",
+          category: "Coffee & Bakery",
+          categoryKey: "city",
+          distance: "~1.2 km",
+          driveTime: "~3 minutes by car or ~12 minutes walking",
+          description: "A nice coffee shop with Excellent Panamanian coffee. If you like coffee, this is the place to go.",
+          futureNote: "My favorite coffee. You can also buy their packaged coffee to take home. They have two types, one in a green package and one in a red package, both excellent. They serve the one in the green package to customers. These make great gifts to take home.",
+          iconType: "services"
         },
         {
           id: 'amador-causeway',
@@ -1178,16 +1182,6 @@ export const content = {
           icon: "TrainTrack"
         },
         {
-          id: 'casco-viejo',
-          name: "Casco Viejo (Historic Old Town or Casco Antiguo)",
-          categoryKey: 'history',
-          categoryLabel: "Heritage & Dining",
-          distance: "~ 9 km",
-          driveTime: "10-20 minutes by car depending on traffic",
-          notes: "UNESCO World Heritage colonial center with historic architecture, brick plazas, and fine restaurants.",
-          icon: "Landmark"
-        },
-        {
           id: 'miraflores-locks',
           name: "Panama Canal – Miraflores Locks Visitor Center",
           categoryKey: 'canal',
@@ -1196,6 +1190,16 @@ export const content = {
           driveTime: "~10 minutes",
           notes: "World-famous visitor center with lock observation terraces and maritime museum.",
           icon: "Ship"
+        },
+        {
+          id: 'casco-viejo',
+          name: "Casco Viejo (Historic Old Town or Casco Antiguo)",
+          categoryKey: 'history',
+          categoryLabel: "Heritage & Dining",
+          distance: "~ 9 km",
+          driveTime: "10-20 minutes by car depending on traffic",
+          notes: "UNESCO World Heritage colonial center with historic architecture, brick plazas, and fine restaurants.",
+          icon: "Landmark"
         },
         {
           id: 'cinta-costera',
@@ -1860,16 +1864,17 @@ export const content = {
       offers: [
         {
           id: 'visitor',
-          title: "Visitantes Externos",
-          badge: "Para Visitantes Sin Alojamiento",
-          price: 39,
-          priceNote: "por persona · Requiere reserva matutina",
-          audience: "Para visitantes que no se hospedan en la propiedad",
-          tagline: "Desayuno en medio de la naturaleza",
-          description: "Acompáñenos en una experiencia matutina especial en Albrook que combina observación de aves, desayuno tropical fresco y avistamiento de fauna en nuestro patio con malla.",
+          title: "Visitantes de un Día",
+          badge: "PARA VISITANTES SIN HOSPEDAJE",
+          priceDisplay: "$39 USD",
+          pricePeriod: "/ persona",
+          priceNote: "Se requiere reserva antes de las 8 PM del día anterior",
+          audience: "Para personas que no se hospedan en la casa",
+          tagline: "DESAYUNO EN MEDIO DE LA NATURALEZA",
+          description: "Acompáñenos en una experiencia matutina especial en Albrook combinando observación de aves, desayuno tropical fresco y avistamiento de fauna en nuestro patio con malla.",
           features: [
             "Observación de aves con más de 100 especies activas en Albrook",
-            "Desayuno tropical completo con café panameño recién colado",
+            "Desayuno artesanal completo con café fresco de Panamá",
             "Batidos elaborados con frutas cultivadas en el jardín",
             "Avistamiento de fauna y animales en el jardín y alrededores",
             "Desayuno en patio con malla — 100% libre de insectos",
@@ -1880,26 +1885,28 @@ export const content = {
         },
         {
           id: 'guest',
-          title: "Huéspedes Alojados en Greg's Place",
-          badge: "Tarifa Especial para Huéspedes",
-          price: 25,
-          priceNote: "por persona · Tarifa preferencial exclusiva",
-          audience: "Oferta exclusiva para huéspedes hospedados en la casa",
-          tagline: "Despierte con la naturaleza, disfrute el desayuno",
-          description: "Los huéspedes que se alojan en Greg's Place disfrutan de la experiencia completa de aves, desayuno y fauna a una tarifa preferencial exclusiva, a pasos de su habitación.",
+          title: "Huéspedes en Greg's Place",
+          badge: "TARIFA ESPECIAL PARA HUÉSPEDES",
+          pricingTiers: [
+            { amount: "$25", label: "1 persona" },
+            { amount: "$20 / persona", label: "2+ personas" }
+          ],
+          followOnNote: "Después de su primera experiencia, los precios anteriores se reducen en $15 por persona para los desayunos siguientes.",
+          audience: "Oferta exclusiva para huéspedes alojados en la casa",
+          tagline: "DESPIERTE CON LA NATURALEZA Y DISFRUTE EL DESAYUNO",
+          description: "Los huéspedes alojados en Greg's Place disfrutan de nuestra experiencia completa de aves, desayuno y fauna a una tarifa preferencial a solo unos pasos de su habitación.",
           features: [
-            "Tarifa especial con descuento exclusiva para huéspedes ($25 vs $39)",
+            "Tarifa preferencial exclusiva para huéspedes alojados",
             "Observación de aves, desayuno artesanal y avistamiento de fauna",
             "Desayuno fresco servido en el apacible patio con malla",
-            "Café de Panamá, infusiones y batidos naturales de frutas",
-            "Importante: Los huéspedes que pernocten deben avisar a Greg la noche anterior y pagar en efectivo en USD",
-            "Contacte a Greg para añadirlo a su mañana"
+            "Café panameño, infusiones y batidos con frutas frescas",
+            "Contacte a Greg para añadirlo a su itinerario matutino"
           ],
           cta: "Contacte a Greg para Organizar la Experiencia",
           highlighted: true
         }
       ],
-      importantNotice: "Importante: Los huéspedes que pernocten en Greg's Place deben avisar a Greg la noche anterior y pagar en efectivo en dólares estadounidenses (USD).",
+      importantNotice: "Importante: Los huéspedes del hospedaje deben avisar a Greg antes de las 8 PM de la noche anterior y pagar en efectivo (Dólares de EE. UU.).",
       quote: "Observar aves tropicales mientras saborea café fresco de Panamá en el patio con malla es una vivencia difícil de olvidar.",
       ctaGeneral: "Reserve Su Desayuno con Aves",
       bullets: [
@@ -2204,18 +2211,6 @@ export const content = {
           iconType: "canal"
         },
         {
-          id: 'kotowa-coffee-house',
-          name: "Kotowa Coffee House",
-          organization: "Frente al Aeropuerto Marcos A. Gelabert",
-          category: "Café y Repostería",
-          categoryKey: "city",
-          distance: "~1.2 km",
-          driveTime: "~3 minutos en auto o ~12 minutos caminando",
-          description: "Un café muy agradable con excelente café panameño. Si le gusta el café, este es el lugar para ir.",
-          futureNote: "Mi café favorito. También puede comprar su café empaquetado para llevar a casa. Tienen dos tipos, uno en paquete verde y otro en paquete rojo, ambos excelentes. Sirven el del paquete verde a los clientes. Son excelentes regalos para llevar a casa.",
-          iconType: "services"
-        },
-        {
           id: 'casco-viejo',
           name: "Casco Viejo (Casco Antiguo o Centro Histórico)",
           category: "Cultura y Patrimonio",
@@ -2232,6 +2227,18 @@ export const content = {
             "Museos"
           ],
           iconType: "heritage"
+        },
+        {
+          id: 'kotowa-coffee-house',
+          name: "Kotowa Coffee House",
+          organization: "Frente al Aeropuerto Marcos A. Gelabert",
+          category: "Café y Repostería",
+          categoryKey: "city",
+          distance: "~1.2 km",
+          driveTime: "~3 minutos en auto o ~12 minutos caminando",
+          description: "Un café muy agradable con excelente café panameño. Si le gusta el café, este es el lugar para ir.",
+          futureNote: "Mi café favorito. También puede comprar su café empaquetado para llevar a casa. Tienen dos tipos, uno en paquete verde y otro en paquete rojo, ambos excelentes. Sirven el del paquete verde a los clientes. Son excelentes regalos para llevar a casa.",
+          iconType: "services"
         },
         {
           id: 'amador-causeway',
@@ -2616,16 +2623,6 @@ export const content = {
           icon: "TrainTrack"
         },
         {
-          id: 'casco-viejo',
-          name: "Casco Viejo (Casco Antiguo o Centro Histórico)",
-          categoryKey: 'history',
-          categoryLabel: "Patrimonio y Gastronomía",
-          distance: "~ 9 km",
-          driveTime: "10-20 minutos en auto según el tráfico",
-          notes: "Centro colonial Patrimonio de la Humanidad con arquitectura histórica, plazas y alta gastronomía.",
-          icon: "Landmark"
-        },
-        {
           id: 'miraflores-locks',
           name: "Canal de Panamá – Centro de Visitantes de Miraflores",
           categoryKey: 'canal',
@@ -2634,6 +2631,16 @@ export const content = {
           driveTime: "~10 minutos",
           notes: "Famoso centro de visitantes con terrazas de observación del paso de barcos y museo del Canal.",
           icon: "Ship"
+        },
+        {
+          id: 'casco-viejo',
+          name: "Casco Viejo (Casco Antiguo o Centro Histórico)",
+          categoryKey: 'history',
+          categoryLabel: "Patrimonio y Gastronomía",
+          distance: "~ 9 km",
+          driveTime: "10-20 minutos en auto según el tráfico",
+          notes: "Centro colonial Patrimonio de la Humanidad con arquitectura histórica, plazas y alta gastronomía.",
+          icon: "Landmark"
         },
         {
           id: 'cinta-costera',
@@ -2858,9 +2865,9 @@ export const content = {
       forwardBtn: "Ver Disponibilidad en Lodgify",
       cancelBtn: "Cerrar",
       birdingTitle: "Reserve Su Desayuno con Aves",
-      birdingLead: "Disfrute de un desayuno en medio de la naturaleza. Elija entre la Experiencia para Visitantes ($39) o la Tarifa Especial para Huéspedes ($25).",
-      visitorOption: "Experiencia para Visitantes ($39/persona)",
-      guestOption: "Tarifa para Huéspedes Alojados ($25/persona)",
+      birdingLead: "Disfrute del desayuno en medio de la naturaleza. Elija entre la Experiencia de Visitante ($39) o la Tarifa Especial para Huéspedes ($25).",
+      visitorOption: "Experiencia Visitante ($39/persona)",
+      guestOption: "Tarifa Huésped ($25/persona)",
       reserveBirdingBtn: "Reservar por WhatsApp con Greg"
     },
     contact: {

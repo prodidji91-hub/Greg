@@ -489,11 +489,12 @@ export const contentDe = {
       {
         "id": "visitor",
         "title": "Tagesbesucher",
-        "badge": "Für Besucher ohne Übernachtung",
-        "price": 39,
-        "priceNote": "pro Person · Reservierung am Vortag erforderlich",
+        "badge": "FÜR BESUCHER OHNE ÜBERNACHTUNG",
+        "priceDisplay": "39 $ USD",
+        "pricePeriod": "/ Person",
+        "priceNote": "Reservierung bis 20 Uhr am Vorabend erforderlich",
         "audience": "Für Besucher, die nicht in der Unterkunft übernachten",
-        "tagline": "Frühstücken mitten in der Natur",
+        "tagline": "FRÜHSTÜCKEN MITTEN IN DER NATUR",
         "description": "Erleben Sie einen besonderen Morgen in Albrook mit Vogelbeobachtung, frischem tropischem Frühstück und Tierbeobachtungen auf unserer geschützten Veranda.",
         "features": [
           "Vogelbeobachtung mit über 100 aktiven Arten im Baumkronendach von Albrook",
@@ -509,25 +510,27 @@ export const contentDe = {
       {
         "id": "guest",
         "title": "Übernachtungsgäste bei Greg's Place",
-        "badge": "Sonderpreis für Übernachtungsgäste",
-        "price": 25,
-        "priceNote": "pro Person · Exklusiver Gästepreis",
+        "badge": "SONDERPREIS FÜR ÜBERNACHTUNGSGÄSTE",
+        "pricingTiers": [
+          { "amount": "25 $", "label": "1 Person" },
+          { "amount": "20 $ / Person", "label": "ab 2 Personen" }
+        ],
+        "followOnNote": "Nach Ihrem ersten Erlebnis reduzieren sich die oben genannten Preise für weitere Frühstücksangebote um 15 $ pro Person.",
         "audience": "Exklusives Angebot für Übernachtungsgäste des Hauses",
-        "tagline": "Erwachen in der Natur, direkt zum Frühstück",
+        "tagline": "ERWACHEN IN DER NATUR UND DAS FRÜHSTÜCK GENIESSEN",
         "description": "Gäste von Greg's Place genießen das volle Programm aus Vogelbeobachtung, Frühstück & Tierwelt zum Vorzugspreis, nur wenige Schritte von ihrer Zimmertür entfernt.",
         "features": [
-          "Bevorzugter Sondertarif exklusiv für Hausgäste (25 $ statt 39 $)",
+          "Bevorzugter Sondertarif exklusiv für Hausgäste",
           "Vogelbeobachtung, Frühstück und Tierbeobachtung",
           "Frisch zubereitetes Frühstück auf der geschützten Veranda",
-          "Panama-Kaffee, Tees & frische Tropenfrucht-Smoothies",
-          "Wichtig: Übernachtungsgäste müssen Greg am Vorabend Bescheid geben und bar in US-Dollar zahlen",
-          "Sprechen Sie Greg an, um dies zu Ihrem Morgen hinzuzufügen"
+          "Panama-Kaffee, Tees & frische Frucht-Smoothies",
+          "Kontaktieren Sie Greg, um dies zu Ihrem Morgenprogramm hinzuzufügen"
         ],
         "cta": "Greg für das Erlebnis Kontaktieren",
         "highlighted": true
       }
     ],
-    "importantNotice": "Hinweis für Übernachtungsgäste: Bitte melden Sie Ihr Frühstück am Vorabend bei Greg an und zahlen Sie in bar (US-Dollar).",
+    "importantNotice": "Wichtig: Übernachtungsgäste informieren Greg bitte bis 20 Uhr am Vorabend und zahlen bar in US-Dollar.",
     "quote": "„Morgens mit einem Kaffee auf der Veranda zu sitzen und Tukane in den Baumkronen zu beobachten, war der schönste Moment unserer Reise.“",
     "ctaGeneral": "Morgenerlebnis Reservieren",
     "bullets": [
@@ -789,18 +792,6 @@ export const contentDe = {
         "iconType": "canal"
       },
       {
-        "id": "kotowa-coffee-house",
-        "name": "Kotowa Coffee House",
-        "organization": "Gegenüber dem Flughafen Marcos Gelabert",
-        "category": "Kaffee & Bäckerei",
-        "categoryKey": "city",
-        "distance": "~1,2 km",
-        "driveTime": "~3 Minuten mit dem Auto oder ~12 Minuten zu Fuß",
-        "description": "Ein schönes Café mit exzellentem panamaischem Kaffee. Wenn Sie Kaffee mögen, ist dies der richtige Ort.",
-        "futureNote": "Mein Lieblingskaffee. Sie können auch abgepackten Kaffee für zu Hause kaufen. Sie haben zwei Sorten, eine in einer grünen Verpackung und eine in einer roten Verpackung, beide exzellent. Den in der grünen Verpackung servieren sie den Kunden. Dies sind tolle Geschenke für zu Hause.",
-        "iconType": "services"
-      },
-      {
         "id": "casco-viejo",
         "name": "Casco Viejo (Historische Altstadt / Casco Antiguo)",
         "category": "Kolonialgeschichte & Kultur",
@@ -817,6 +808,19 @@ export const contentDe = {
         ],
         "iconType": "heritage"
       },
+      {
+        "id": "kotowa-coffee-house",
+        "name": "Kotowa Coffee House",
+        "organization": "Gegenüber dem Flughafen Marcos Gelabert",
+        "category": "Kaffee & Bäckerei",
+        "categoryKey": "city",
+        "distance": "~1,2 km",
+        "driveTime": "~3 Minuten mit dem Auto oder ~12 Minuten zu Fuß",
+        "description": "Ein schönes Café mit exzellentem panamaischem Kaffee. Wenn Sie Kaffee mögen, ist dies der richtige Ort.",
+        "futureNote": "Mein Lieblingskaffee. Sie können auch abgepackten Kaffee für zu Hause kaufen. Sie haben zwei Sorten, eine in einer grünen Verpackung und eine in einer roten Verpackung, beide exzellent. Den in der grünen Verpackung servieren sie den Kunden. Dies sind tolle Geschenke für zu Hause.",
+        "iconType": "services"
+      },
+      
       {
         "id": "amador-causeway",
         "name": "Amador Causeway (Calzada de Amador)",
@@ -1443,9 +1447,9 @@ export const contentDe = {
     "forwardBtn": "Verfügbarkeit auf Lodgify Prüfen",
     "cancelBtn": "Schließen",
     "birdingTitle": "Morgenerlebnis Reservieren",
-    "birdingLead": "Genießen Sie Frühstück mitten in der Natur. Wählen Sie zwischen dem Besucher-Erlebnis (39 $) und dem Vorzugspreis für Übernachtungsgäste (25 $).",
-    "visitorOption": "Besucher-Erlebnis (39 $ / Person)",
-    "guestOption": "Übernachtungsgast-Tarif (25 $ / Person)",
+    "birdingLead": "Genießen Sie Frühstück mitten in der Natur. 25 $ für 1 Person, oder 20 $ pro Person ab 2 Personen.",
+    "visitorOption": "25 $ für 1 Person",
+    "guestOption": "20 $ pro Person ab 2 Personen",
     "reserveBirdingBtn": "Per WhatsApp mit Greg Reservieren"
   },
   "contact": {
