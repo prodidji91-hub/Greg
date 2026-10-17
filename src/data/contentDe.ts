@@ -649,6 +649,19 @@ export const contentDe = {
         "description": "Berühmt für ihre Fähigkeit, bei Gefahr über die Wasseroberfläche zu flitzen. Diese faszinierenden Echsen sind am nahen Bach leicht zu entdecken."
       },
       {
+        "id": "tropical-slider-turtle",
+        "name": "Tropische Schmuckschildkröte (Tropical Slider Turtle)",
+        "frequency": "Häufig im Crocodile Creek",
+        "category": "reptiles",
+        "description": "Junge tropische Schmuckschildkröten (grün mit einem roten Streifen am Ohr) wurden viele Jahre lang in den gesamten USA verkauft. Vielleicht hatten Sie als Kind auch eine als Haustier?\n\nBitten Sie Greg, Ihnen die Schildkrötentrommel zu zeigen, die er von einem indigenen Emberá erhalten hat."
+      },
+      {
+        "id": "iguana",
+        "name": "Iguana",
+        "category": "reptiles",
+        "description": "Leguane verschiedener Größe krabbeln jeden Tag über die Affenbrücke zu unseren Vogelfutterstellen. Nachdem die Vögel und Nasenbären mit den Früchten fertig sind, sind die Leguane das Reinigungsteam, das die restlichen Papaya- und Bananenschalen frisst. Manchmal sieht man einen großen Leguan, der Vögel oder einen kleineren Leguan verjagt. Die kleineren Leguane haben die intensivere grüne Farbe."
+      },
+      {
         "id": "tropical-birds",
         "name": "Tropische Vögel",
         "category": "birds",
@@ -683,23 +696,16 @@ export const contentDe = {
         "description": "Selten in Albrook – wir hatten über 10 Jahre lang keines gesehen. Aber jetzt besuchen ein oder zwei jeden Tag Greg's Place. Sie lieben frischen Maiskolben, geröstete Erdnüsse in der Schale und Sonnenblumenkerne in der Schale."
       },
       {
-        "id": "tropical-slider-turtle",
-        "name": "Tropische Schmuckschildkröte (Tropical Slider Turtle)",
-        "frequency": "Häufig im Crocodile Creek",
-        "category": "reptiles",
-        "description": "Junge tropische Schmuckschildkröten (grün mit einem roten Streifen am Ohr) wurden viele Jahre lang in den gesamten USA verkauft. Vielleicht hatten Sie als Kind auch eine als Haustier?\n\nBitten Sie Greg, Ihnen die Schildkrötentrommel zu zeigen, die er von einem indigenen Emberá erhalten hat."
-      },
-      {
-        "id": "iguana",
-        "name": "Iguana",
-        "category": "reptiles",
-        "description": "Leguane verschiedener Größe krabbeln jeden Tag über die Affenbrücke zu unseren Vogelfutterstellen. Nachdem die Vögel und Nasenbären mit den Früchten fertig sind, sind die Leguane das Reinigungsteam, das die restlichen Papaya- und Bananenschalen frisst. Manchmal sieht man einen großen Leguan, der Vögel oder einen kleineren Leguan verjagt. Die kleineren Leguane haben die intensivere grüne Farbe."
-      },
-      {
         "id": "capybara",
         "name": "Wasserschwein (Capybara)",
         "category": "mammals",
         "description": "Panama ist die Heimat des Kleinen Wasserschweins (Lesser Capybara), einer kleineren Art als das berühmte südamerikanische Gemeine Wasserschwein. Sie werden etwa 80 bis 105 cm lang und wiegen etwa 28 bis 40 kg.\n\nGleich die Straße hinunter von Greg’s Place liegt der Crocodile Creek. Wann immer der untere Abschnitt der kleinen Brücke über den Crocodile Creek blockiert ist, bildet sich eine wunderschöne Lagune. Jede Nacht schwimmen die Wasserschweine den Fluss hinunter zur Brücke. Hier klettern sie an Land und überqueren die Straße, um auf der anderen Seite wieder in den Fluss zu gelangen. Greg musste schon mehr als einmal mit dem Auto anhalten, um die Wasserschweine vor sich die Straße überqueren zu lassen. Manchmal halten sie etwa 20 Minuten lang an, um am Straßenrand Gras zu fressen."
+      },
+      {
+        "id": "paca",
+        "name": "Paca",
+        "category": "mammals",
+        "description": "Der Gastgeber hat folgende nachtaktive Tiere in der Nähe seines Hauses gesehen: Aguti, Ameisenbär, Gürteltier, Capybara, Stachelschwein, Hirsch, Kojote, Kletterratten, Wiesel und Paca."
       }
     ]
   },
@@ -1144,23 +1150,8 @@ export const contentDe = {
         "iconType": "night"
       },
       {
-        "id": "monkey-island",
-        "name": "Affeninsel-Naturtour im Privatboot",
-        "category": "Naturausflug",
-        "categoryKey": "nature",
-        "distance": "Abfahrt im Gamboa-Regenwald",
-        "driveTime": "40 Minuten von Greg's Place",
-        "description": "Dies ist ein wunderbarer Ausflug, da Sie mit einem kleinen Boot vom Regenwaldgebiet Gamboa aus in den Chagres-Fluss starten. Sie befinden sich direkt neben den riesigen Schiffen, die gerade die Pedro-Miguel-Schleusen verlassen haben und ihre Fahrt zum Gatun-See fortsetzen.\n\nRoberto fährt früh los, so dass sein Boot das erste vor Ort ist und die Affen hungrig sind. Außerdem werden Sie am frühen Morgen das Heulen der Brüllaffen hören. Roberto kann normalerweise mindestens 3 verschiedene Affenarten finden (sie sind nicht alle auf der Insel!). Es gibt auch viele interessante Wasservögel. Roberto kann normalerweise auch ein Salzwasserkrokodil finden.",
-        "futureNote": "mit Gregs Freund Roberto\nAbfahrt von Greg's Place nach Gamboa (40 Minuten)",
-        "highlights": [
-          "Angeln auf Pfauenbarsch im Gatun-See, gefolgt von einem Fisch-Grillabend bei Greg's Place.",
-          "Besuch des Soberanía-Nationalpark-Zoos auf dem Rückweg von Gamboa. Verpassen Sie nicht die Harpyien-Ausstellung."
-        ],
-        "iconType": "canal"
-      },
-      {
         "id": "artesan-center",
-        "name": "Kunsthandwerkszentrum (Artesan Center)",
+        "name": "Kunsthandwerkszentrum (Artisan Center)",
         "category": "Souvenirs & Handwerkskunst",
         "categoryKey": "shopping",
         "distance": "ca. 5 km",
@@ -1176,25 +1167,6 @@ export const contentDe = {
         "iconType": "crafts"
       },
       {
-        "id": "multiplaza-mall",
-        "name": "Multiplaza Pacific Mall",
-        "category": "Luxus-Shopping & Gastronomie",
-        "categoryKey": "shopping",
-        "distance": "ca. 10 km",
-        "driveTime": "ca. 15 Minuten mit dem Auto",
-        "description": "Panama-Stadts führendes Luxus- und Premium-Einkaufszentrum mit internationalen Designer-Boutiquen, Kaufhäusern, Gourmet-Restaurants, Cafés und Unterhaltung.",
-        "futureNote": "Hinweis des Gastgebers:\nDas beste Luxus-Einkaufszentrum Panamas. Ideal für internationale Marken, gehobenes Shopping und feine Gastronomie.",
-        "highlights": [
-          "Internationale Luxus-Designermarken & Haute Couture",
-          "Voll klimatisiertes, exklusives Shopping-Erlebnis",
-          "Gehobene Warenhäuser (Felix B. Maduro)",
-          "Große Auswahl an Gourmet-Restaurants und Cafés"
-        ],
-        "linkUrl": "https://multiplaza.com.pa/",
-        "linkText": "OFFIZIELLE WEBSITE",
-        "iconType": "shopping"
-      },
-      {
         "id": "panama-canal-railway",
         "name": "Panama Canal Railway Station",
         "category": "Historische Eisenbahn & Ausflug",
@@ -1206,6 +1178,21 @@ export const contentDe = {
         "linkUrl": "https://www.panarail.com/",
         "linkText": "OFFIZIELLE WEBSITE",
         "iconType": "train"
+      },
+      {
+        "id": "monkey-island",
+        "name": "Affeninsel-Naturtour im Privatboot",
+        "category": "Naturausflug",
+        "categoryKey": "nature",
+        "distance": "Abfahrt im Gamboa-Regenwald",
+        "driveTime": "40 Minuten von Greg's Place",
+        "description": "Dies ist ein wunderbarer Ausflug, da Sie mit einem kleinen Boot vom Regenwaldgebiet Gamboa aus in den Chagres-Fluss starten. Sie befinden sich direkt neben den riesigen Schiffen, die gerade die Pedro-Miguel-Schleusen verlassen haben und ihre Fahrt zum Gatun-See fortsetzen.\n\nRoberto fährt früh los, so dass sein Boot das erste vor Ort ist und die Affen hungrig sind. Außerdem werden Sie am frühen Morgen das Heulen der Brüllaffen hören. Roberto kann normalerweise mindestens 3 verschiedene Affenarten finden (sie sind nicht alle auf der Insel!). Es gibt auch viele interessante Wasservögel. Roberto kann normalerweise auch ein Salzwasserkrokodil finden.",
+        "futureNote": "mit Gregs Freund Roberto\nAbfahrt von Greg's Place nach Gamboa (40 Minuten)",
+        "highlights": [
+          "Angeln auf Pfauenbarsch im Gatun-See, gefolgt von einem Fisch-Grillabend bei Greg's Place.",
+          "Besuch des Soberanía-Nationalpark-Zoos auf dem Rückweg von Gamboa. Verpassen Sie nicht die Harpyien-Ausstellung."
+        ],
+        "iconType": "canal"
       },
       {
         "id": "51-fun-things",

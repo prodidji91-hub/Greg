@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Compass, Info, Sparkles, Eye, Feather, MapPin, X, Maximize2 } from 'lucide-react';
 import { Language, WildlifeAnimal } from '../types';
 import { content } from '../data/content';
@@ -11,7 +11,7 @@ interface WildlifeCardPhoto {
   title?: string;
 }
 
-const wildlifeCardPhotos: Record<string, { src: string; defaultAlt: string; defaultTitle: string }> = {
+const wildlifeCardPhotos: Record<string, { src: string; defaultAlt: string; defaultTitle: string; secondarySrc?: string; secondaryAlt?: string; secondaryTitle?: string }> = {
   'tropical-slider-turtle': {
     src: '/pictures/turtles.jpg',
     defaultAlt: 'Tropical Slider Turtle (Trachemys venusta) in Albrook, Panama',
@@ -71,12 +71,91 @@ const wildlifeCardPhotos: Record<string, { src: string; defaultAlt: string; defa
     src: '/pictures/red woodpecker.jpg',
     defaultAlt: "Crimson-crested Woodpecker and tropical birdlife around Greg's Place in Albrook, Panama",
     defaultTitle: 'Tropical Birds',
+    secondarySrc: '/pictures/15-yellow-backed-oriole-yelling.jpg',
+    secondaryAlt: "Yellow-backed Oriole (Icterus chrysater) at Greg's Place in Albrook, Panama",
+    secondaryTitle: 'Yellow-backed Oriole',
+  },
+  'paca': {
+    src: '/pictures/paca.jpg',
+    defaultAlt: 'Paca (Cuniculus paca) in Albrook, Panama',
+    defaultTitle: 'Paca',
   },
 };
 
 interface WildlifeProps {
   lang: Language;
 }
+
+const FlyingBird: React.FC = () => {
+  const [isFlying, setIsFlying] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mediaQuery.matches);
+    const handleMotionChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mediaQuery.addEventListener('change', handleMotionChange);
+
+    return () => mediaQuery.removeEventListener('change', handleMotionChange);
+  }, []);
+
+  useEffect(() => {
+    if (reducedMotion) return;
+
+    let timeoutId: NodeJS.Timeout;
+    let isVisible = false;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+      },
+      { threshold: 0.2 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    const runFlight = () => {
+      if (isVisible) {
+        setIsFlying(true);
+        timeoutId = setTimeout(() => {
+          setIsFlying(false);
+          timeoutId = setTimeout(runFlight, 9000 + Math.random() * 4000);
+        }, 9500);
+      } else {
+        timeoutId = setTimeout(runFlight, 3000);
+      }
+    };
+
+    timeoutId = setTimeout(runFlight, 2500);
+
+    return () => {
+      if (containerRef.current) observer.unobserve(containerRef.current);
+      clearTimeout(timeoutId);
+    };
+  }, [reducedMotion]);
+
+  if (reducedMotion) return null;
+
+  return (
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none z-20 rounded-[inherit]">
+      {isFlying && (
+        <div className="absolute top-10 right-[-140px] animate-tropical-flight w-[85px] sm:w-[120px] md:w-[135px] text-[#C5A059] opacity-95 filter drop-shadow-sm">
+          <div style={{ transform: 'scaleX(-1)' }} className="w-full h-full">
+            <svg viewBox="0 0 120 70" className="w-full h-full fill-current">
+              <path d="M40,35 C45,30 55,28 65,30 C75,32 85,25 95,18 C90,28 80,35 70,38 C55,42 45,40 40,35 Z" />
+              <path d="M92,18 C102,15 115,20 118,25 C112,28 102,24 92,22 Z" />
+              <path d="M50,33 Q70,5 90,20 Q70,35 50,33 Z" className="animate-tropical-wing" />
+              <path d="M38,36 L15,42 L35,39 Z" />
+            </svg>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
   const t = content[lang].wildlife;
@@ -233,10 +312,11 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
             return (
               <div
                 key={animal.id}
-                className={`bg-white p-6 border border-[#1B3022]/10 hover:border-[#C5A059]/60 shadow-sm hover:shadow-md transition-all flex flex-col justify-between ${
+                className={`relative bg-white p-6 border border-[#1B3022]/10 hover:border-[#C5A059]/60 shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden ${
                   isFullWidth ? 'col-span-1 md:col-span-2 lg:col-span-3' : ''
                 }`}
               >
+                {animal.id === 'tropical-birds' && <FlyingBird />}
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
                     <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 bg-[#1B3022]/5 text-[#1B3022] font-semibold">
@@ -260,29 +340,85 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
                   {/* Small Landscape Photo Feature with Click-to-Expand Lightbox */}
                   {cardPhoto && (
                     <div className="mb-3.5">
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          e.preventDefault();
-                          setLightboxImage(cardPhoto);
-                        }}
-                        className={`w-full ${isFullWidth ? 'max-w-md' : ''} text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059]/60 cursor-pointer block rounded-[2px]`}
-                        aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${cardPhoto.title || animal.name}`}
-                      >
-                        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#1B3022]/15 bg-[#FAF8F5] shadow-xs group-hover/photo:border-[#C5A059] group-hover/photo:shadow-md transition-all duration-300">
-                          <img
-                            src={cardPhoto.src}
-                            alt={cardPhoto.alt}
-                            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-102"
-                            loading="lazy"
-                          />
-                          <div className="absolute bottom-2 right-2 bg-black/65 hover:bg-black/85 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1 opacity-90 group-hover/photo:opacity-100 transition-opacity shadow-xs">
-                            <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
-                            <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>
-                          </div>
+                      {cardPhotoConfig?.secondarySrc ? (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              e.preventDefault();
+                              setLightboxImage(cardPhoto);
+                            }}
+                            className="w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059]/60 cursor-pointer block rounded-[2px]"
+                            aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${cardPhoto.title || animal.name}`}
+                          >
+                            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#1B3022]/15 bg-[#FAF8F5] shadow-xs group-hover/photo:border-[#C5A059] group-hover/photo:shadow-md transition-all duration-300">
+                              <img
+                                src={cardPhoto.src}
+                                alt={cardPhoto.alt}
+                                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-102"
+                                loading="lazy"
+                              />
+                              <div className="absolute bottom-2 right-2 bg-black/65 hover:bg-black/85 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1 opacity-90 group-hover/photo:opacity-100 transition-opacity shadow-xs">
+                                <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
+                                <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>
+                              </div>
+                            </div>
+                          </button>
+
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              e.preventDefault();
+                              setLightboxImage({
+                                src: cardPhotoConfig.secondarySrc!,
+                                alt: cardPhotoConfig.secondaryAlt || 'Yellow-backed Oriole',
+                                title: cardPhotoConfig.secondaryTitle || 'Yellow-backed Oriole',
+                              });
+                            }}
+                            className="w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059]/60 cursor-pointer block rounded-[2px]"
+                            aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${cardPhotoConfig.secondaryTitle || 'Yellow-backed Oriole'}`}
+                          >
+                            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#1B3022]/15 bg-[#FAF8F5] shadow-xs group-hover/photo:border-[#C5A059] group-hover/photo:shadow-md transition-all duration-300">
+                              <img
+                                src={cardPhotoConfig.secondarySrc}
+                                alt={cardPhotoConfig.secondaryAlt || 'Yellow-backed Oriole'}
+                                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-102"
+                                loading="lazy"
+                              />
+                              <div className="absolute bottom-2 right-2 bg-black/65 hover:bg-black/85 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1 opacity-90 group-hover/photo:opacity-100 transition-opacity shadow-xs">
+                                <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
+                                <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>
+                              </div>
+                            </div>
+                          </button>
                         </div>
-                      </button>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            setLightboxImage(cardPhoto);
+                          }}
+                          className={`w-full ${isFullWidth ? 'max-w-md' : ''} text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059]/60 cursor-pointer block rounded-[2px]`}
+                          aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${cardPhoto.title || animal.name}`}
+                        >
+                          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#1B3022]/15 bg-[#FAF8F5] shadow-xs group-hover/photo:border-[#C5A059] group-hover/photo:shadow-md transition-all duration-300">
+                            <img
+                              src={cardPhoto.src}
+                              alt={cardPhoto.alt}
+                              className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-102"
+                              loading="lazy"
+                            />
+                            <div className="absolute bottom-2 right-2 bg-black/65 hover:bg-black/85 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1 opacity-90 group-hover/photo:opacity-100 transition-opacity shadow-xs">
+                              <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
+                              <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>
+                            </div>
+                          </div>
+                        </button>
+                      )}
                     </div>
                   )}
 

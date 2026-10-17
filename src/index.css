@@ -315,4 +315,39 @@
   }
 }
 
+@keyframes tropicalBirdFlight {
+  0% {
+    transform: translate(100px, 0px) scale(0.9);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(calc(-100vw - 120px), -20px) scale(0.95);
+    opacity: 0;
+  }
+}
+
+@keyframes tropicalWingFlap {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.65);
+  }
+}
+
+.animate-tropical-flight {
+  animation: tropicalBirdFlight 9.5s cubic-bezier(0.37, 0, 0.63, 1) forwards;
+}
+
+.animate-tropical-wing {
+  animation: tropicalWingFlap 0.55s ease-in-out infinite;
+  transform-origin: 60px 30px;
+}
+
 

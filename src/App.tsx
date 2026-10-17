@@ -34,7 +34,8 @@ const VALID_GALLERY_CATEGORY_IDS = [
   'shared-living-spaces',
   'shared-kitchen-laundry',
   'upstairs-guest-bathroom',
-  'screen-room-bbq',
+  'screen-room',
+  'barbecue-area',
   'exterior-premises',
 ] as const;
 
@@ -82,23 +83,16 @@ export default function App() {
       const galleryInfo = parseGalleryFromPath(window.location.pathname);
       setCurrentRoomId(room);
       setGalleryCategoryId(galleryInfo.categoryId);
-      if (galleryInfo.isGallery) {
-        setTimeout(() => {
-          scrollToSectionById('photo-gallery');
-        }, 60);
-      }
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  // Handle direct links to /gallery or /photo-gallery by scrolling down to the Photo Gallery section
+  // Handle direct links to /gallery or /photo-gallery
   useEffect(() => {
     const galleryInfo = parseGalleryFromPath(window.location.pathname);
-    if (galleryInfo.isGallery) {
-      setTimeout(() => {
-        scrollToSectionById('photo-gallery');
-      }, 150);
+    if (galleryInfo.isGallery && galleryInfo.categoryId) {
+      setGalleryCategoryId(galleryInfo.categoryId);
     }
   }, []);
 

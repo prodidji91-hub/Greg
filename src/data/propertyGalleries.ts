@@ -210,27 +210,27 @@ export const propertyGalleryCategories: PropertyGalleryCategory[] = [
     ],
   },
   {
-    id: 'screen-room-bbq',
-    titleEn: 'Screen Room and Barbecue Area',
-    titleEs: 'Terraza con Malla y Área de Barbacoa',
-    titleDe: 'Fliegengitter-Veranda & Grillbereich',
-    titleFr: 'Véranda Moustiquaire et Espace Barbecue',
-    badgeEn: 'Veranda & Outdoor Dining',
-    badgeEs: 'Terraza y Comedor al Aire Libre',
-    badgeDe: 'Veranda & Essen im Freien',
-    badgeFr: 'Véranda & Repas en Plein Air',
-    subtitleEn: 'Mosquito-free screened veranda & covered tropical barbecue terrace',
-    subtitleEs: 'Terraza protegida con malla antimosquitos y área de barbacoa techada',
-    subtitleDe: 'Insektengeschützte Veranda & überdachte tropische Grillterrasse',
-    subtitleFr: 'Véranda tropicale protégée des insectes et terrasse couverte pour barbecue',
+    id: 'screen-room',
+    titleEn: 'Screen Room',
+    titleEs: 'Terraza con Mosquitero',
+    titleDe: 'Abgeschirmter Raum',
+    titleFr: 'Véranda Moustiquaire',
+    badgeEn: 'Veranda & Wildlife Viewing',
+    badgeEs: 'Terraza y Observación de Fauna',
+    badgeDe: 'Veranda & Wildbeobachtung',
+    badgeFr: 'Véranda & Observation de la Faune',
+    subtitleEn: 'Mosquito-free screened tropical veranda overlooking the garden',
+    subtitleEs: 'Terraza tropical protegida con malla antimosquitos con vista al jardín',
+    subtitleDe: 'Insektengeschützte Tropenveranda mit Blick in den Garten',
+    subtitleFr: 'Véranda tropicale grillagée protégée des insectes avec vue sur le jardin',
     descriptionEn:
-      'Our signature screened tropical veranda allows you to immerse yourself in the sights and sounds of nature without insect disturbance. Overlooks the garden to view birds and wildlife. Enjoy morning coffee/tea while spotting a variety of tropical birds and critters as they come into the garden. This is a great place to dine for all you home base meals, play board games, and enjoy your cell phone or laptop. The outdoor barbecue area features both propane and charcoal barbecue grills. Both are available for complimentary guest use, although guests will need to provide their own charcoal if they use that grill.',
+      'Our signature screened tropical veranda allows you to immerse yourself in the sights and sounds of nature without insect disturbance. Overlooks the garden to view birds and wildlife. Enjoy morning coffee while spotting a variety of tropical birds and critters as they come into the garden. A wonderful space to relax, read, or enjoy your laptop.',
     descriptionEs:
-      'Nuestra emblemática terraza tropical con malla protectora le permite sumergirse en las vistas y sonidos de la naturaleza sin molestias de insectos. Tiene vista al jardín para observar aves y vida silvestre. Disfrute del café o té matutino mientras observa una variedad de aves tropicales y criaturas a medida que llegan al jardín. Este es un lugar ideal para disfrutar de todas sus comidas principales, jugar juegos de mesa y usar su teléfono celular o computadora portátil. El área de barbacoa al aire libre cuenta con parrillas tanto de propano como de carbón. Ambas están disponibles de forma gratuita para los huéspedes, aunque deberán proporcionar su propio carbón si desean utilizar esa parrilla.',
+      'Nuestra emblemática terraza tropical con malla protectora le permite sumergirse en las vistas y sonidos de la naturaleza sin molestias de insectos. Tiene vista al jardín para observar aves y vida silvestre. Disfrute del café matutino mientras observa aves tropicales y criaturas a medida que llegan al jardín.',
     descriptionDe:
-      'Unsere markante geschützte Tropenveranda ermöglicht es Ihnen, die Natur und ihre Geräusche ohne Insektenstörungen zu genießen. Sie überblickt den Garten, um Vögel und Wildtiere zu beobachten. Genießen Sie morgendlichen Kaffee oder Tee, während Sie eine Vielzahl tropischer Vögel und Tiere beobachten, die in den Garten kommen. Dies ist ein wunderbarer Ort für Ihre Mahlzeiten, für Brettspiele sowie für die Nutzung Ihres Smartphones oder Laptops. Der Außengrillbereich bietet sowohl Propangas- als auch Holzkohlegrills. Beide stehen unseren Gästen kostenlos zur Verfügung, wobei Gäste bei Nutzung des Holzkohlegrills ihre eigene Kohle mitbringen.',
+      'Unsere markante geschützte Tropenveranda ermöglicht es Ihnen, die Natur ohne Insektenstörungen zu genießen. Sie überblickt den Garten zur Tier- und Vogelbeobachtung.',
     descriptionFr:
-      'Notre véranda tropicale grillagée signature vous permet de vous immerger au cœur des sons et des paysages de la nature sans la gêne des insectes. Donnant sur le jardin pour observer oiseaux et animaux sauvages. Idéal pour savourer votre café matinal, partager vos repas, faire des jeux de société ou utiliser votre ordinateur. L\'espace barbecue extérieur propose des barbecues au gaz propane et au charbon de bois en accès libre.',
+      'Notre véranda tropicale grillagée signature vous permet de vous immerger au cœur des sons et des paysages de la nature sans la gêne des insectes. Donnant sur le jardin pour observer oiseaux et animaux sauvages.',
     coverImage: '/pictures/screenroom2.jpeg',
     images: [
       '/pictures/screenroom2.jpeg',
@@ -243,30 +243,81 @@ export const propertyGalleryCategories: PropertyGalleryCategory[] = [
     featuresEn: [
       'Full mosquito mesh screening for all-day insect-free comfort',
       'Prime viewing angle of garden bird feeders & visiting wildlife',
-      'Covered outdoor barbecue grilling area and utensils',
-      'Al fresco dining table and comfortable tropical loungers',
-      'Atmospheric evening lighting and natural rainforest breezes'
+      'Comfortable tropical seating and reading space',
+      'Atmospheric lighting and natural rainforest breezes'
     ],
     featuresEs: [
       'Malla protectora antimosquitos completa para confort total sin insectos',
-      'Ángulo privilegiado hacia comederos de aves y vida silvestre visitante',
-      'Área techada de barbacoa con parrilla y utensilios',
-      'Mesa de comedor al aire libre y cómodos sillones tropicales',
-      'Iluminación nocturna ambiental y brisa natural del bosque'
+      'Ángulo privilegiado hacia comederos de aves y vida silvestre',
+      'Cómodos asientos tropicales y espacio de lectura',
+      'Iluminación ambiental y brisa natural del bosque'
     ],
     featuresDe: [
       'Vollständiger Insektenschutz für ganztägigen Komfort ohne Mücken',
       'Bester Blick auf die Futterstellen und Tiere im Garten',
-      'Überdachter Grillplatz mit Grill und Utensilien',
-      'Esstisch im Freien und bequeme tropische Liegesessel',
-      'Stimmungsvolle Abendbeleuchtung und frische Waldbrisen'
+      'Bequeme Sitzgelegenheiten und Lesebereich',
+      'Stimmungsvolle Beleuchtung und frische Waldbrisen'
     ],
     featuresFr: [
       'Moustiquaire intégrale pour un confort absolu sans aucun insecte',
-      'Point de vue privilégié sur les mangeoires d\'oiseaux et la faune du jardin',
-      'Espace barbecue couvert avec équipements et ustensiles',
-      'Grande table de repas en plein air et chaises longues tropicales',
-      'Éclairage d\'ambiance en soirée et douces brises de la forêt'
+      'Point de vue privilégié sur les mangeoires d\'oiseaux',
+      'Sièges confortables et espace lecture',
+      'Éclairage d\'ambiance et douces brises de la forêt'
+    ],
+  },
+  {
+    id: 'barbecue-area',
+    titleEn: 'Barbecue Area',
+    titleEs: 'Área de Barbacoa',
+    titleDe: 'Grillbereich',
+    titleFr: 'Espace Barbecue',
+    badgeEn: 'Outdoor Cooking & Dining',
+    badgeEs: 'Cocina y Comedor al Aire Libre',
+    badgeDe: 'Kochen & Essen im Freien',
+    badgeFr: 'Cuisine & Repas en Plein Air',
+    subtitleEn: 'Covered tropical barbecue terrace with propane and charcoal grills',
+    subtitleEs: 'Terraza de barbacoa tropical techada con parrillas de propano y carbón',
+    subtitleDe: 'Überdachte tropische Grillterrasse mit Propangas- und Holzkohlegrills',
+    subtitleFr: 'Terrasse barbecue tropicale couverte avec barbecues au gaz et au charbon',
+    descriptionEn:
+      'The outdoor barbecue area features both propane and charcoal barbecue grills available for complimentary guest use. Perfect for preparing al fresco meals surrounded by tropical greenery and bird sounds. Guests using the charcoal grill are kindly asked to provide their own charcoal.',
+    descriptionEs:
+      'El área de barbacoa al aire libre cuenta con parrillas tanto de propano como de carbón disponibles de uso gratuito para los huéspedes. Perfectas para preparar comidas al aire libre rodeados de vegetación tropical.',
+    descriptionDe:
+      'Der Außengrillbereich bietet sowohl Propangas- als auch Holzkohlegrills zur kostenlosen Nutzung für Gäste. Perfekt für Mahlzeiten im Freien.',
+    descriptionFr:
+      'L\'espace barbecue extérieur propose des barbecues au gaz propane et au charbon de bois en accès libre pour les hôtes. Idéal pour préparer des repas en plein air.',
+    coverImage: '/pictures/exterior3.jpg',
+    images: [
+      '/pictures/exterior3.jpg',
+      '/pictures/exterior4.jpg',
+      '/pictures/exterior2.jpg',
+      '/pictures/barbecue4.jpg',
+      '/pictures/barbecue5.jpg',
+    ],
+    featuresEn: [
+      'Propane gas barbecue grill for fast, easy grilling',
+      'Charcoal barbecue grill (guests provide own charcoal)',
+      'Covered outdoor dining area and seating',
+      'Utensils and grilling accessories provided'
+    ],
+    featuresEs: [
+      'Parrilla de barbacoa a gas propano rápida y fácil',
+      'Parrilla de carbón (los huéspedes proporcionan su propio carbón)',
+      'Área de comedor exterior techada y asientos',
+      'Utensilios y accesorios de parrilla proporcionados'
+    ],
+    featuresDe: [
+      'Propangas-Grill für schnelles und einfaches Grillen',
+      'Holzkohlegrill (Gäste bringen eigene Kohle mit)',
+      'Überdachter Essbereich im Freien mit Sitzgelegenheiten',
+      'Utensilien und Grillzubehör vorhanden'
+    ],
+    featuresFr: [
+      'Barbecue au gaz propane rapide et facile d\'utilisation',
+      'Barbecue au charbon de bois (charbon non fourni)',
+      'Espace repas extérieur couvert et coin salon',
+      'Ustensiles et accessoires de grillade fournis'
     ],
   },
   {
@@ -295,9 +346,11 @@ export const propertyGalleryCategories: PropertyGalleryCategory[] = [
     images: [
       '/pictures/exterior.jpg',
       '/pictures/exterior1.jpg',
-      '/pictures/exterior2.jpg',
-      '/pictures/exterior3.jpg',
-      '/pictures/exterior4.jpg',
+      '/pictures/prem1.jpg',
+      '/pictures/prem2.jpg',
+      '/pictures/prem3.jpg',
+      '/pictures/prem4.jpg',
+      '/pictures/prem5.jpg',
     ],
     featuresEn: [
       'Secure off-street private guest parking',

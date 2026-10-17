@@ -12,7 +12,8 @@ import {
   Compass,
   Bed,
   ShieldCheck,
-  Building
+  Building,
+  X
 } from 'lucide-react';
 import { Language } from '../types';
 import { propertyGalleryCategories, PropertyGalleryCategory } from '../data/propertyGalleries';
@@ -96,17 +97,33 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
       ? cat.featuresEs
       : cat.featuresEn;
 
+  // Scroll lock & escape key handling when dedicated gallery modal is open
+  useEffect(() => {
+    if (isDedicatedMode) {
+      const prevBodyOverflow = document.body.style.overflow;
+      const prevHtmlOverflow = document.documentElement.style.overflow;
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          handleBackToGalleryHub();
+        }
+      };
+      window.addEventListener('keydown', handleKeyDown);
+
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+        document.body.style.overflow = prevBodyOverflow;
+        document.documentElement.style.overflow = prevHtmlOverflow;
+      };
+    }
+  }, [isDedicatedMode]);
+
   const handleOpenCategory = (categoryId: string) => {
     setActiveCategoryId(categoryId);
     if (onSelectCategory) {
       onSelectCategory(categoryId);
-    }
-    const el = document.getElementById('photo-gallery');
-    if (el) {
-      const navOffset = 80;
-      const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
   };
 
@@ -115,13 +132,6 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
     if (onSelectCategory) {
       onSelectCategory(undefined);
     }
-    const el = document.getElementById('photo-gallery');
-    if (el) {
-      const navOffset = 80;
-      const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-    }
   };
 
   return (
@@ -129,307 +139,305 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ========================================================================= */}
-        {/* DEDICATED GALLERY MODE: /gallery/[category-id]                             */}
+        {/* DEDICATED GALLERY MODAL OVERLAY                                           */}
         {/* ========================================================================= */}
-        {isDedicatedMode ? (
-          <div>
-            {/* Top Navigation & Breadcrumbs Bar */}
-            <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 border-b border-[#1B3022]/10 pb-4 sm:pb-5">
-              <div className="flex items-center gap-3">
-                <button
-                  type="button"
-                  onClick={handleBackToGalleryHub}
-                  className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2.5 min-h-[44px] bg-white border border-[#1B3022]/20 hover:border-[#C5A059] text-[#1B3022] hover:text-[#C5A059] text-xs sm:text-sm font-bold uppercase tracking-wider shadow-xs hover:shadow-md transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-[#C5A059]/40 active:scale-[0.98]"
-                  id="btn-back-to-gallery-hub"
-                >
-                  <ArrowLeft className="w-4 h-4 text-[#C5A059] group-hover:-translate-x-1 transition-transform shrink-0" />
-                  <span>{isFrench ? 'Retour à la Galerie Photos' : isGerman ? 'Zurück zur Fotogalerie' : isSpanish ? 'Volver a la Galería de Fotos' : 'Back to Photo Gallery'}</span>
-                </button>
-              </div>
-
-              <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[11px] sm:text-xs text-[#1B3022]/60 font-medium pl-1 sm:pl-0">
-                <button
-                  type="button"
-                  onClick={() => onBackToHome()}
-                  className="hover:text-[#1B3022] hover:underline transition-colors focus:outline-none"
-                >
-                  {isFrench ? 'Accueil' : isGerman ? 'Startseite' : isSpanish ? 'Inicio' : 'Home'}
-                </button>
-                <span className="text-[#1B3022]/30">/</span>
-                <button
-                  type="button"
-                  onClick={handleBackToGalleryHub}
-                  className="hover:text-[#1B3022] hover:underline transition-colors focus:outline-none"
-                >
-                  {isFrench ? 'Galerie Photos' : isGerman ? 'Fotogalerie' : isSpanish ? 'Galería de Fotos' : 'Photo Gallery'}
-                </button>
-                <span className="text-[#1B3022]/30">/</span>
-                <span className="text-[#1B3022] font-semibold truncate max-w-[200px] sm:max-w-none">
-                  {getCatTitle(activeCategory)}
-                </span>
-              </nav>
-            </div>
-
-            {/* Dedicated Gallery Header */}
-            <div className="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-              <div>
-                <div className="flex flex-wrap items-center gap-2.5 mb-2.5">
-                  <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#C5A059] bg-[#FAF8F5] border border-[#C5A059]/40 px-3 py-1">
-                    {getCatBadge(activeCategory)}
-                  </span>
-
-                  {activeCategory.id === 'upstairs-guest-bathroom' && (
-                    <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white bg-[#8C583E] px-3 py-1 shadow-xs flex items-center gap-1.5">
-                      <Info className="w-3.5 h-3.5 shrink-0" />
-                      <span>{isFrench ? 'Spécifique aux chambres Coati & Owl' : isGerman ? 'Speziell für Coati & Owl Rooms' : isSpanish ? 'Específico para Coati y Owl Rooms' : 'Specifically for Coati and Owl Rooms'}</span>
-                    </span>
-                  )}
-                </div>
-
-                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#1B3022] tracking-tight">
-                  {getCatTitle(activeCategory)}
-                </h1>
-                
-                <p className="text-sm sm:text-base text-[#C5A059] font-serif italic mt-1.5">
-                  {getCatSubtitle(activeCategory)}
-                </p>
-              </div>
-
-              {/* Photo Counter Pill */}
-              <div className="self-start md:self-auto shrink-0">
-                <span className="text-xs font-mono font-medium px-3.5 py-1.5 bg-white border border-[#1B3022]/15 text-[#1B3022]/80 flex items-center gap-2 shadow-xs">
-                  <Camera className="w-3.5 h-3.5 text-[#C5A059]" />
-                  <span>
-                    {activeCategory.images.length}{' '}
-                    {isFrench ? 'Photos' : isGerman ? 'Fotos' : isSpanish ? 'Fotografías' : 'Photographs'}
-                  </span>
-                </span>
-              </div>
-            </div>
-
-            {/* Special Callout specifically for the Upstairs Guest Bathroom */}
-            {activeCategory.id === 'upstairs-guest-bathroom' && (
-              <div className="mb-8 p-5 sm:p-6 bg-white border-l-4 border-[#8C583E] border-y border-r border-[#1B3022]/10 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-5">
-                <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-full bg-[#8C583E]/15 flex items-center justify-center shrink-0 mt-0.5">
-                    <Bed className="w-5 h-5 text-[#8C583E]" />
-                  </div>
-                  <div>
-                    <p className="text-xs sm:text-sm font-bold text-[#1B3022] uppercase tracking-wider">
-                      {isFrench ? 'Configuration Exclusive de la Salle de Bain à l\'Étage' : isGerman ? 'Exklusive Badezimmerkonfiguration im Obergeschoss' : isSpanish ? 'Configuración Exclusiva del Baño en Planta Alta' : 'Dedicated Upstairs Bathroom Configuration'}
-                    </p>
-                    <p className="text-xs sm:text-sm text-[#1B3022]/80 mt-1 leading-relaxed max-w-2xl">
-                      {isFrench
-                        ? 'Cette salle de bain est réservée exclusivement aux hôtes des chambres Coati et Owl. La Master Bedroom et la chambre Cayuca disposent chacune de leur propre salle de bain privée attenante.'
-                        : isGerman
-                        ? 'Dieses Gästebad steht ausschließlich den Gästen der Zimmer Coati und Owl zur Verfügung. Das Master Bedroom und das Cayuca Room verfügen jeweils über ein eigenes privates En-Suite-Badezimmer.'
-                        : isSpanish
-                        ? 'Este baño para huéspedes está dedicado exclusivamente a las personas alojadas en las habitaciones Coati Room y Owl Room. La Master Bedroom y la Cayuca Room cuentan con sus propios baños privados en suite.'
-                        : 'This guest bathroom is dedicated exclusively for visitors staying in the Coati Room and Owl Room. The Master Bedroom and Cayuca Room each feature their own independent private en-suite bathrooms.'}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2.5 shrink-0">
-                  <button
-                    type="button"
-                    onClick={() => onSelectRoom ? onSelectRoom('coati-room') : onBackToHome('rooms')}
-                    className="px-3.5 py-2 bg-[#FAF8F5] hover:bg-white border border-[#1B3022]/20 hover:border-[#C5A059] text-[11px] font-bold uppercase tracking-wider text-[#1B3022] transition-all shadow-2xs"
-                  >
-                    {isFrench ? 'Voir Coati Room' : isGerman ? 'Coati Room ansehen' : isSpanish ? 'Ver Coati Room' : 'View Coati Room'}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => onSelectRoom ? onSelectRoom('owl-room') : onBackToHome('rooms')}
-                    className="px-3.5 py-2 bg-[#FAF8F5] hover:bg-white border border-[#1B3022]/20 hover:border-[#C5A059] text-[11px] font-bold uppercase tracking-wider text-[#1B3022] transition-all shadow-2xs"
-                  >
-                    {isFrench ? 'Voir Owl Room' : isGerman ? 'Owl Room ansehen' : isSpanish ? 'Ver Owl Room' : 'View Owl Room'}
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {/* SECTION A: Large Photo Gallery (Centerpiece) */}
-            <div className="mb-10">
-              <RoomGallery
-                images={activeCategory.images}
-                title={getCatTitle(activeCategory)}
-                subtitle={getCatSubtitle(activeCategory)}
-                emptyTitle={getCatTitle(activeCategory)}
-                emptySubtitle={
-                  isFrench
-                    ? 'Les photographies locales de cet espace apparaîtront ici.'
-                    : isGerman
-                    ? 'Lokale Fotos dieses Raumes werden hier angezeigt.'
-                    : isSpanish
-                    ? 'Las fotografías locales de este espacio se mostrarán aquí una vez colocadas en su carpeta.'
-                    : 'Local photographs for this space will appear here once placed into their folder.'
-                }
-                lang={lang}
-                galleryId={`dedicated-gallery-${activeCategory.id}`}
-              />
-            </div>
-
-            {/* SECTION B: Architectural Details & Description */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14">
-              
-              {/* Left 2 Cols: Description & Historic Heritage */}
-              <div className="lg:col-span-2 space-y-6">
-                <div className="bg-white p-6 sm:p-8 border border-solid border-[#1B3022]/10 shadow-xs">
-                  <div className="flex items-center gap-2.5 mb-3 text-[#C5A059]">
-                    <Building className="w-4 h-4" />
-                    <span className="text-[11px] uppercase tracking-widest font-bold">
-                      {isFrench ? 'À propos de cet espace' : isGerman ? 'Über diesen Bereich' : isSpanish ? 'Sobre este Espacio' : 'About This Space'}
-                    </span>
-                  </div>
-
-                  <h3 className="font-serif text-2xl font-light text-[#1B3022] mb-3">
-                    {getCatTitle(activeCategory)}
-                  </h3>
-
-                  <p className="text-sm sm:text-base text-[#1B3022]/85 leading-relaxed">
-                    {getCatDescription(activeCategory)}
-                  </p>
-
-                  <div className="mt-6 pt-5 border-t border-[#1B3022]/10 flex items-center gap-2.5 text-xs text-[#1B3022]/70">
-                    <ShieldCheck className="w-4 h-4 text-[#C5A059] shrink-0" />
-                    <span>
-                      {isFrench
-                        ? 'Fait partie des logements historiques d\'officiers de la Zone du Canal (plus de 80 ans) à Greg\'s Place à Albrook.'
-                        : isGerman
-                        ? 'Teil der historischen Offiziersunterkünfte der Kanalzone (über 80 Jahre alt) bei Greg\'s Place in Albrook.'
-                        : isSpanish
-                        ? 'Parte de las históricas viviendas de oficiales de la Zona del Canal (más de 80 años de antigüedad) en Albrook.'
-                        : "Part of the historic Canal Zone Officers Quarters (built over 80 years ago) at Greg's Place in Albrook."}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Features & Amenities */}
-                {activeCategory.featuresEn && activeCategory.featuresEn.length > 0 && (
-                  <div className="bg-white p-6 sm:p-8 border border-solid border-[#1B3022]/10 shadow-xs">
-                    <h4 className="font-serif text-xl font-light text-[#1B3022] mb-4">
-                      {isFrench ? 'Équipements & Caractéristiques' : isGerman ? 'Ausstattung & Besonderheiten' : isSpanish ? 'Características y Comodidades' : 'Features & Amenities'}
-                    </h4>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                      {getCatFeatures(activeCategory)?.map((feat, idx) => (
-                        <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#1B3022]/85">
-                          <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
-                          <span className="whitespace-pre-line">{feat}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Right Col: Quick Category Switcher & Reservation */}
-              <div className="space-y-6">
-                
-                {/* Switch to other Photo Gallery categories */}
-                <div className="bg-white p-6 border border-solid border-[#1B3022]/10 shadow-xs">
-                  <h4 className="font-serif text-lg font-medium text-[#1B3022] mb-1">
-                    {isFrench ? 'Autres Espaces du Domaine' : isGerman ? 'Weitere Bereiche des Anwesens' : isSpanish ? 'Otras Áreas de la Propiedad' : 'Other Property Areas'}
-                  </h4>
-                  <p className="text-xs text-[#1B3022]/60 mb-4">
-                    {isFrench ? 'Découvrez les autres galeries photos' : isGerman ? 'Erkunden Sie die weiteren Fotogalerien' : isSpanish ? 'Explore las demás galerías' : 'Explore the other photo galleries'}
-                  </p>
-
-                  <div className="space-y-2">
-                    {propertyGalleryCategories.map((cat) => {
-                      const isCurrent = cat.id === activeCategory.id;
-                      const title = getCatTitle(cat);
-                      return (
-                        <button
-                          key={cat.id}
-                          type="button"
-                          onClick={() => handleOpenCategory(cat.id)}
-                          className={`w-full text-left p-2.5 transition-all flex items-center justify-between border ${
-                            isCurrent
-                              ? 'bg-[#1B3022] text-[#C5A059] border-[#C5A059] shadow-xs'
-                              : 'bg-[#FAF8F5] text-[#1B3022] border-[#1B3022]/10 hover:border-[#C5A059] hover:bg-white'
-                          }`}
-                        >
-                          <div className="flex items-center gap-2 min-w-0">
-                            <Camera className={`w-3.5 h-3.5 shrink-0 ${isCurrent ? 'text-[#C5A059]' : 'text-[#1B3022]/50'}`} />
-                            <span className="text-xs font-medium truncate">{title}</span>
-                          </div>
-                          <span className={`text-[10px] font-mono px-1.5 py-0.5 ${
-                            isCurrent ? 'text-[#C5A059]' : 'text-[#1B3022]/60'
-                          }`}>
-                            {cat.images.length}
-                          </span>
-                        </button>
-                      );
-                    })}
-                  </div>
-
+        {isDedicatedMode && (
+          <div 
+            className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4 md:p-6 bg-black/75 backdrop-blur-sm overflow-y-auto animate-fade-in"
+            onClick={handleBackToGalleryHub}
+            role="dialog"
+            aria-modal="true"
+          >
+            <div 
+              className="relative w-full max-w-6xl max-h-[96vh] bg-[#FAF8F5] text-[#1B3022] shadow-2xl flex flex-col overflow-hidden sm:rounded-xl border border-[#C5A059]/40 my-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Sticky Header / Top Bar */}
+              <div className="sticky top-0 z-30 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#1B3022]/10 px-4 sm:px-8 py-4 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3 min-w-0">
                   <button
                     type="button"
                     onClick={handleBackToGalleryHub}
-                    className="mt-4 w-full py-2 bg-transparent hover:bg-[#FAF8F5] border border-solid border-[#1B3022]/20 text-[11px] uppercase tracking-wider font-semibold text-[#1B3022]/80 text-center transition-colors block"
+                    className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-white border border-[#1B3022]/20 hover:border-[#C5A059] text-[#1B3022] hover:text-[#C5A059] text-xs font-bold uppercase tracking-wider shadow-2xs transition-all shrink-0"
                   >
-                    {isFrench ? 'Voir les 5 catégories' : isGerman ? 'Alle 5 Kategorien ansehen' : isSpanish ? 'Ver Todas las 5 Categorías' : 'View All 5 Categories'}
+                    <ArrowLeft className="w-4 h-4 text-[#C5A059]" />
+                    <span className="hidden sm:inline">{isFrench ? 'Retour' : isGerman ? 'Zurück' : isSpanish ? 'Volver' : 'Back'}</span>
                   </button>
+                  <h2 className="font-serif text-lg sm:text-2xl font-light text-[#1B3022] truncate">
+                    {getCatTitle(activeCategory)}
+                  </h2>
                 </div>
 
-                {/* Stay at Greg's Place Box */}
-                <div className="bg-[#1B3022] p-6 text-white border border-[#C5A059]/40 shadow-md text-left">
-                  <span className="text-[10px] uppercase tracking-widest text-[#C5A059] font-bold block mb-1">
-                    {isFrench ? 'Réserver Votre Séjour' : isGerman ? 'Aufenthalt Buchen' : isSpanish ? 'Reserva de Estadía' : 'Reserve Your Stay'}
-                  </span>
-                  <h4 className="font-serif text-xl font-light mb-2">
-                    {isFrench ? "Vivez l'expérience Greg's Place" : isGerman ? "Erleben Sie Greg's Place" : isSpanish ? "Viva la Experiencia en Greg's Place" : "Experience Greg's Place"}
-                  </h4>
-                  <p className="text-xs text-white/80 leading-relaxed mb-4 font-light">
-                    {isFrench
-                      ? 'Profitez de tous ces espaces partagés lors de votre séjour chez nous à Albrook.'
-                      : isGerman
-                      ? 'Genießen Sie alle diese Gemeinschaftsbereiche während Ihres Aufenthalts bei uns in Albrook.'
-                      : isSpanish
-                      ? 'Disfrute de estas áreas comunes durante su estancia con nosotros en Albrook.'
-                      : 'Enjoy all of these shared spaces during your personal stay with us in Albrook.'}
-                  </p>
+                <button
+                  type="button"
+                  onClick={handleBackToGalleryHub}
+                  className="p-2 sm:px-4 sm:py-2 bg-[#1B3022] hover:bg-[#C5A059] text-white text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-2 shadow shrink-0"
+                  aria-label="Close dedicated gallery"
+                >
+                  <X className="w-5 h-5" />
+                  <span className="hidden sm:inline">{isFrench ? 'Fermer' : isGerman ? 'Schließen' : isSpanish ? 'Cerrar' : 'Close'}</span>
+                </button>
+              </div>
+
+              {/* Modal Scrollable Content Body */}
+              <div className="p-4 sm:p-8 overflow-y-auto flex-1">
+                {/* Dedicated Gallery Header */}
+                <div className="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2.5 mb-2.5">
+                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#C5A059] bg-[#FAF8F5] border border-[#C5A059]/40 px-3 py-1">
+                        {getCatBadge(activeCategory)}
+                      </span>
+
+                      {activeCategory.id === 'upstairs-guest-bathroom' && (
+                        <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white bg-[#8C583E] px-3 py-1 shadow-xs flex items-center gap-1.5">
+                          <Info className="w-3.5 h-3.5 shrink-0" />
+                          <span>{isFrench ? 'Spécifique aux chambres Coati & Owl' : isGerman ? 'Speziell für Coati & Owl Rooms' : isSpanish ? 'Específico para Coati y Owl Rooms' : 'Specifically for Coati and Owl Rooms'}</span>
+                        </span>
+                      )}
+                    </div>
+
+                    <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#1B3022] tracking-tight">
+                      {getCatTitle(activeCategory)}
+                    </h1>
+                    
+                    <p className="text-sm sm:text-base text-[#C5A059] font-serif italic mt-1.5">
+                      {getCatSubtitle(activeCategory)}
+                    </p>
+                  </div>
+
+                  {/* Photo Counter Pill */}
+                  <div className="self-start md:self-auto shrink-0">
+                    <span className="text-xs font-mono font-medium px-3.5 py-1.5 bg-white border border-[#1B3022]/15 text-[#1B3022]/80 flex items-center gap-2 shadow-xs">
+                      <Camera className="w-3.5 h-3.5 text-[#C5A059]" />
+                      <span>
+                        {activeCategory.images.length}{' '}
+                        {isFrench ? 'Photos' : isGerman ? 'Fotos' : isSpanish ? 'Fotografías' : 'Photographs'}
+                      </span>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Special Callout specifically for the Upstairs Guest Bathroom */}
+                {activeCategory.id === 'upstairs-guest-bathroom' && (
+                  <div className="mb-8 p-5 sm:p-6 bg-white border-l-4 border-[#8C583E] border-y border-r border-[#1B3022]/10 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-5">
+                    <div className="flex items-start gap-3.5">
+                      <div className="w-10 h-10 rounded-full bg-[#8C583E]/15 flex items-center justify-center shrink-0 mt-0.5">
+                        <Bed className="w-5 h-5 text-[#8C583E]" />
+                      </div>
+                      <div>
+                        <p className="text-xs sm:text-sm font-bold text-[#1B3022] uppercase tracking-wider">
+                          {isFrench ? 'Configuration Exclusive de la Salle de Bain à l\'Étage' : isGerman ? 'Exklusive Badezimmerkonfiguration im Obergeschoss' : isSpanish ? 'Configuración Exclusiva del Baño en Planta Alta' : 'Dedicated Upstairs Bathroom Configuration'}
+                        </p>
+                        <p className="text-xs sm:text-sm text-[#1B3022]/80 mt-1 leading-relaxed max-w-2xl">
+                          {isFrench
+                            ? 'Cette salle de bain est réservée exclusivement aux hôtes des chambres Coati et Owl. La Master Bedroom et la chambre Cayuca disposent chacune de leur propre salle de bain privée attenante.'
+                            : isGerman
+                            ? 'Dieses Gästebad steht ausschließlich den Gästen der Zimmer Coati und Owl zur Verfügung. Das Master Bedroom und das Cayuca Room verfügen jeweils über ein eigenes privates En-Suite-Badezimmer.'
+                            : isSpanish
+                            ? 'Este baño para huéspedes está dedicado exclusivamente a las personas alojadas en las habitaciones Coati Room y Owl Room. La Master Bedroom y la Cayuca Room cuentan con sus propios baños privados en suite.'
+                            : 'This guest bathroom is dedicated exclusively for visitors staying in the Coati Room and Owl Room. The Master Bedroom and Cayuca Room each feature their own independent private en-suite bathrooms.'}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2.5 shrink-0">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          handleBackToGalleryHub();
+                          if (onSelectRoom) onSelectRoom('coati-room');
+                          else onBackToHome('rooms');
+                        }}
+                        className="px-3.5 py-2 bg-[#FAF8F5] hover:bg-white border border-[#1B3022]/20 hover:border-[#C5A059] text-[11px] font-bold uppercase tracking-wider text-[#1B3022] transition-all shadow-2xs"
+                      >
+                        {isFrench ? 'Voir Coati Room' : isGerman ? 'Coati Room ansehen' : isSpanish ? 'Ver Coati Room' : 'View Coati Room'}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          handleBackToGalleryHub();
+                          if (onSelectRoom) onSelectRoom('owl-room');
+                          else onBackToHome('rooms');
+                        }}
+                        className="px-3.5 py-2 bg-[#FAF8F5] hover:bg-white border border-[#1B3022]/20 hover:border-[#C5A059] text-[11px] font-bold uppercase tracking-wider text-[#1B3022] transition-all shadow-2xs"
+                      >
+                        {isFrench ? 'Voir Owl Room' : isGerman ? 'Owl Room ansehen' : isSpanish ? 'Ver Owl Room' : 'View Owl Room'}
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {/* SECTION A: Large Photo Gallery (Centerpiece) */}
+                <div className="mb-10">
+                  <RoomGallery
+                    images={activeCategory.images}
+                    title={getCatTitle(activeCategory)}
+                    subtitle={getCatSubtitle(activeCategory)}
+                    emptyTitle={getCatTitle(activeCategory)}
+                    emptySubtitle={
+                      isFrench
+                        ? 'Les photographies locales de cet espace apparaîtront ici.'
+                        : isGerman
+                        ? 'Lokale Fotos dieses Raumes werden hier angezeigt.'
+                        : isSpanish
+                        ? 'Las fotografías locales de este espacio se mostrarán aquí una vez colocadas en su carpeta.'
+                        : 'Local photographs for this space will appear here once placed into their folder.'
+                    }
+                    lang={lang}
+                    galleryId={`modal-dedicated-gallery-${activeCategory.id}`}
+                  />
+                </div>
+
+                {/* SECTION B: Architectural Details & Description */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14">
+                  
+                  {/* Left 2 Cols: Description & Historic Heritage */}
+                  <div className="lg:col-span-2 space-y-6">
+                    <div className="bg-white p-6 sm:p-8 border border-solid border-[#1B3022]/10 shadow-xs">
+                      <div className="flex items-center gap-2.5 mb-3 text-[#C5A059]">
+                        <Building className="w-4 h-4" />
+                        <span className="text-[11px] uppercase tracking-widest font-bold">
+                          {isFrench ? 'À propos de cet espace' : isGerman ? 'Über diesen Bereich' : isSpanish ? 'Sobre este Espacio' : 'About This Space'}
+                        </span>
+                      </div>
+
+                      <h3 className="font-serif text-2xl font-light text-[#1B3022] mb-3">
+                        {getCatTitle(activeCategory)}
+                      </h3>
+
+                      <p className="text-sm sm:text-base text-[#1B3022]/85 leading-relaxed">
+                        {getCatDescription(activeCategory)}
+                      </p>
+
+                      <div className="mt-6 pt-5 border-t border-[#1B3022]/10 flex items-center gap-2.5 text-xs text-[#1B3022]/70">
+                        <ShieldCheck className="w-4 h-4 text-[#C5A059] shrink-0" />
+                        <span>
+                          {isFrench
+                            ? 'Fait partie des logements historiques d\'officiers de la Zone du Canal (plus de 80 ans) à Greg\'s Place à Albrook.'
+                            : isGerman
+                            ? 'Teil der historischen Offiziersunterkünfte der Kanalzone (über 80 Jahre alt) bei Greg\'s Place in Albrook.'
+                            : isSpanish
+                            ? 'Parte de las históricas viviendas de oficiales de la Zona del Canal (más de 80 años de antigüedad) en Albrook.'
+                            : "Part of the historic Canal Zone Officers Quarters (built over 80 years ago) at Greg's Place in Albrook."}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Features & Amenities */}
+                    {activeCategory.featuresEn && activeCategory.featuresEn.length > 0 && (
+                      <div className="bg-white p-6 sm:p-8 border border-solid border-[#1B3022]/10 shadow-xs">
+                        <h4 className="font-serif text-xl font-light text-[#1B3022] mb-4">
+                          {isFrench ? 'Équipements & Caractéristiques' : isGerman ? 'Ausstattung & Besonderheiten' : isSpanish ? 'Características y Comodidades' : 'Features & Amenities'}
+                        </h4>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                          {getCatFeatures(activeCategory)?.map((feat, idx) => (
+                            <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#1B3022]/85">
+                              <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
+                              <span className="whitespace-pre-line">{feat}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Right Col: Quick Category Switcher & Reservation */}
+                  <div className="space-y-6">
+                    
+                    {/* Switch to other Photo Gallery categories */}
+                    <div className="bg-white p-6 border border-solid border-[#1B3022]/10 shadow-xs">
+                      <h4 className="font-serif text-lg font-medium text-[#1B3022] mb-1">
+                        {isFrench ? 'Autres Espaces du Domaine' : isGerman ? 'Weitere Bereiche des Anwesens' : isSpanish ? 'Otras Áreas de la Propiedad' : 'Other Property Areas'}
+                      </h4>
+                      <p className="text-xs text-[#1B3022]/60 mb-4">
+                        {isFrench ? 'Découvrez les autres galeries photos' : isGerman ? 'Erkunden Sie die weiteren Fotogalerien' : isSpanish ? 'Explore las demás galerías' : 'Explore the other photo galleries'}
+                      </p>
+
+                      <div className="space-y-2">
+                        {propertyGalleryCategories.map((cat) => {
+                          const isCurrent = cat.id === activeCategory.id;
+                          const title = getCatTitle(cat);
+                          return (
+                            <button
+                              key={cat.id}
+                              type="button"
+                              onClick={() => handleOpenCategory(cat.id)}
+                              className={`w-full text-left p-2.5 transition-all flex items-center justify-between border ${
+                                isCurrent
+                                  ? 'bg-[#1B3022] text-[#C5A059] border-[#C5A059] shadow-xs'
+                                  : 'bg-[#FAF8F5] text-[#1B3022] border-[#1B3022]/10 hover:border-[#C5A059] hover:bg-white'
+                              }`}
+                            >
+                              <div className="flex items-center gap-2 min-w-0">
+                                <Camera className={`w-3.5 h-3.5 shrink-0 ${isCurrent ? 'text-[#C5A059]' : 'text-[#1B3022]/50'}`} />
+                                <span className="text-xs font-medium truncate">{title}</span>
+                              </div>
+                              <span className={`text-[10px] font-mono px-1.5 py-0.5 ${
+                                isCurrent ? 'text-[#C5A059]' : 'text-[#1B3022]/60'
+                              }`}>
+                                {cat.images.length}
+                              </span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Stay at Greg's Place Box */}
+                    <div className="bg-[#1B3022] p-6 text-white border border-[#C5A059]/40 shadow-md text-left">
+                      <span className="text-[10px] uppercase tracking-widest text-[#C5A059] font-bold block mb-1">
+                        {isFrench ? 'Réserver Votre Séjour' : isGerman ? 'Aufenthalt Buchen' : isSpanish ? 'Reserva de Estadía' : 'Reserve Your Stay'}
+                      </span>
+                      <h4 className="font-serif text-xl font-light mb-2">
+                        {isFrench ? "Vivez l'expérience Greg's Place" : isGerman ? "Erleben Sie Greg's Place" : isSpanish ? "Viva la Experiencia en Greg's Place" : "Experience Greg's Place"}
+                      </h4>
+                      <p className="text-xs text-white/80 leading-relaxed mb-4 font-light">
+                        {isFrench
+                          ? 'Profitez de tous ces espaces partagés lors de votre séjour chez nous à Albrook.'
+                          : isGerman
+                          ? 'Genießen Sie alle diese Gemeinschaftsbereiche während Ihres Aufenthalts bei uns in Albrook.'
+                          : isSpanish
+                          ? 'Disfrute de estas áreas comunes durante su estancia con nosotros en Albrook.'
+                          : 'Enjoy all of these shared spaces during your personal stay with us in Albrook.'}
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          handleBackToGalleryHub();
+                          onOpenBooking();
+                        }}
+                        className="w-full py-3 bg-[#C5A059] hover:bg-[#A68648] text-white font-bold text-xs uppercase tracking-widest transition-all shadow flex items-center justify-center gap-2"
+                      >
+                        <Calendar className="w-3.5 h-3.5" />
+                        <span>{isFrench ? 'Vérifier la Disponibilité' : isGerman ? 'Verfügbarkeit Prüfen' : isSpanish ? 'Ver Disponibilidad' : 'Check Availability'}</span>
+                      </button>
+                    </div>
+
+                  </div>
+                </div>
+
+                {/* Bottom Navigation: Back to Photo Gallery Button */}
+                <div className="pt-8 border-t border-[#1B3022]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <button
                     type="button"
-                    onClick={onOpenBooking}
-                    className="w-full py-3 bg-[#C5A059] hover:bg-[#A68648] text-white font-bold text-xs uppercase tracking-widest transition-all shadow flex items-center justify-center gap-2"
+                    onClick={handleBackToGalleryHub}
+                    className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2.5 min-h-[44px] bg-white border border-[#1B3022]/20 hover:border-[#C5A059] text-[#1B3022] hover:text-[#C5A059] text-xs sm:text-sm font-bold uppercase tracking-wider shadow-xs hover:shadow-md transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-[#C5A059]/40 active:scale-[0.98]"
                   >
-                    <Calendar className="w-3.5 h-3.5" />
-                    <span>{isFrench ? 'Vérifier la Disponibilité' : isGerman ? 'Verfügbarkeit Prüfen' : isSpanish ? 'Ver Disponibilidad' : 'Check Availability'}</span>
+                    <ArrowLeft className="w-4 h-4 text-[#C5A059] group-hover:-translate-x-1 transition-transform shrink-0" />
+                    <span>{isFrench ? 'Fermer la Galerie' : isGerman ? 'Galerie Schließen' : isSpanish ? 'Cerrar Galería' : 'Close Gallery'}</span>
                   </button>
                 </div>
-
               </div>
             </div>
-
-            {/* Bottom Navigation: Back to Photo Gallery Button */}
-            <div className="pt-8 border-t border-[#1B3022]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <button
-                type="button"
-                onClick={handleBackToGalleryHub}
-                className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2.5 min-h-[44px] bg-white border border-[#1B3022]/20 hover:border-[#C5A059] text-[#1B3022] hover:text-[#C5A059] text-xs sm:text-sm font-bold uppercase tracking-wider shadow-xs hover:shadow-md transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-[#C5A059]/40 active:scale-[0.98]"
-                id="btn-back-to-gallery-hub-bottom"
-              >
-                <ArrowLeft className="w-4 h-4 text-[#C5A059] group-hover:-translate-x-1 transition-transform shrink-0" />
-                <span>{isFrench ? 'Retour à la Galerie Photos' : isGerman ? 'Zurück zur Fotogalerie' : isSpanish ? 'Volver a la Galería de Fotos' : 'Back to Photo Gallery'}</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={handleBackToGalleryHub}
-                className="text-xs text-[#1B3022]/60 hover:text-[#C5A059] font-medium transition-colors hidden sm:block"
-              >
-                ↑ {isFrench ? 'Retour en haut de la galerie' : isGerman ? 'Zurück zur Galerieübersicht' : isSpanish ? 'Volver al inicio de la galería' : 'Back to main gallery overview'}
-              </button>
-            </div>
           </div>
-        ) : (
-          /* ========================================================================= */
-          /* MAIN PHOTO GALLERY HUB: Homepage Section View                              */
-          /* ========================================================================= */
-          <div>
+        )}
+
+        {/* ========================================================================= */}
+        {/* MAIN PHOTO GALLERY HUB: Homepage Section View                              */}
+        {/* ========================================================================= */}
+        <div>
 
             {/* Header Section */}
             <div className="mb-8 text-left max-w-4xl">
@@ -559,7 +567,6 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
               </div>
             </div>
           </div>
-        )}
 
         {/* Accommodations & Booking Editorial Card */}
         <div className="bg-[#1B3022] p-8 sm:p-12 text-white border border-[#C5A059]/30 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">

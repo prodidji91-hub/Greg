@@ -75,8 +75,8 @@ const nearbyCardPhotos: Record<string, { src: string; defaultAlt: string; defaul
   },
   'artesan-center': {
     src: '/pictures/Artisan Center.jpg',
-    defaultAlt: 'Artesan Center in Panama City',
-    defaultTitle: 'Artesan Center',
+    defaultAlt: 'Artisan Center in Panama City',
+    defaultTitle: 'Artisan Center',
   },
   'cinta-costera': {
     src: '/pictures/Cinta Costera Alt 2.jpg',
@@ -112,11 +112,6 @@ const nearbyCardPhotos: Record<string, { src: string; defaultAlt: string; defaul
     src: '/pictures/paca.jpg',
     defaultAlt: 'Night Walk & Nocturnal Wildlife in Albrook',
     defaultTitle: 'Night Walk',
-  },
-  'multiplaza-mall': {
-    src: '/pictures/Panama City.jpg',
-    defaultAlt: 'Multiplaza Pacific Mall in Panama City',
-    defaultTitle: 'Multiplaza Pacific Mall',
   },
 };
 
@@ -864,7 +859,7 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                 <div
                   key={funThingsPlace.id}
                   id={funThingsPlace.id}
-                  className="p-7 h-full transition-all flex flex-col justify-between group relative bg-gradient-to-b from-red-50/90 via-white to-red-50/40 border-2 border-red-600 shadow-xl ring-4 ring-red-500/15 hover:border-red-700 hover:shadow-2xl cursor-pointer hover:-translate-y-1 block"
+                  className="p-7 h-full transition-all flex flex-col justify-between group relative bg-white border-2 border-red-600 shadow-xl ring-4 ring-red-500/15 hover:border-red-700 hover:shadow-2xl cursor-pointer hover:-translate-y-1 block"
                   onClick={(e) => {
                     if (funThingsPlace.linkUrl) {
                       if ((e.target as HTMLElement).closest('a')) return;

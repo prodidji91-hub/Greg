@@ -569,6 +569,19 @@ export const content = {
           description: "Famous for their ability to run across the water's surface when startled, these remarkable lizards are easily spotted along the creek."
         },
         {
+          id: 'tropical-slider-turtle',
+          name: "Tropical Slider Turtle",
+          frequency: "Common in Crocodile Creek",
+          category: 'reptiles',
+          description: "Baby Tropical Slider Turtles (green with a red stripe by the ear) were sold throughout the United States for many years. Maybe you had one as a pet when you were a kid?\n\nAsk Greg to show you the turtle drum he received from an indigenous Embarra native."
+        },
+        {
+          id: 'iguana',
+          name: "Iguana",
+          category: 'reptiles',
+          description: "Different size iguanas crawl across the Monkey Bridge to our bird feeders every day. After the birds and coatimundis have finished with the fruit, the iguanas are the clean-up crew that eat the remaining papaya and banana skins. Sometimes you will see a large iguana chase birds or a smaller iguana away. The smaller iguanas have the more intense green color."
+        },
+        {
           id: 'tropical-birds',
           name: "Tropical Birds",
           category: 'birds',
@@ -603,23 +616,16 @@ export const content = {
           description: "Rare in Albrook, we had not seen one in over 10 years. But now, one or two visit Greg’s Place every day. They love fresh corn-on-the-cob, roasted peanuts in the shell, and sunflower seeds in the shell."
         },
         {
-          id: 'tropical-slider-turtle',
-          name: "Tropical Slider Turtle",
-          frequency: "Common in Crocodile Creek",
-          category: 'reptiles',
-          description: "Baby Tropical Slider Turtles (green with a red stripe by the ear) were sold throughout the United States for many years. Maybe you had one as a pet when you were a kid?\n\nAsk Greg to show you the turtle drum he received from an indigenous Embarra native."
-        },
-        {
-          id: 'iguana',
-          name: "Iguana",
-          category: 'reptiles',
-          description: "Different size iguanas crawl across the Monkey Bridge to our bird feeders every day. After the birds and coatimundis have finished with the fruit, the iguanas are the clean-up crew that eat the remaining papaya and banana skins. Sometimes you will see a large iguana chase birds or a smaller iguana away. The smaller iguanas have the more intense green color."
-        },
-        {
           id: 'capybara',
           name: "Capybara",
           category: 'mammals',
           description: "Panama is home to the Lesser Capybara, a smaller species than the famous South American common capybara. They grow to about 80 to 105 cm (31 to 41 inches) in length and weigh roughly 28 to 40 kg (62 to 88 lbs).\n\nJust down the street from Greg’s Place is Crocodile Creek. Whenever the lower section of the small bridge over Crocodile Creek becomes blocked, a beautiful lagoon forms. Then, every night, the Capybaras swim down the river to the bridge. Here they climb onto land and cross the street in order to re-enter the river on the other side. Greg has had to stop his car more than once in order to let the Capybaras cross the street in front of him. Sometimes they will stop for 20 minutes or so to munch on grass along the side of the road."
+        },
+        {
+          id: 'paca',
+          name: "Paca",
+          category: 'mammals',
+          description: "The host has seen the following nighttime animals close to his home: Agouti, anteater, armadillo, capybara, porcupine, deer, coyote, climbing rats, weasel, and paca."
         }
       ]
     },
@@ -1049,23 +1055,8 @@ export const content = {
           iconType: "night"
         },
         {
-          id: 'monkey-island',
-          name: "Monkey Island Nature Tour by Private Boat",
-          category: "Rainforest Excursion",
-          categoryKey: "nature",
-          distance: "Gamboa Rainforest Launch",
-          driveTime: "40 min drive from Greg’s Place",
-          description: "This is a wonderful trip as you will launch in a small boat from the Gamboa rainforest area into the Chagres River. You will be right next to the giant ships that have just exited the Pedro Miguel locks as they continue on to Gatun Lake.\n\nRoberto leaves early so his boat will be the first one out there so the monkeys are will be hungry. Plus, you will hear the early morning howler monkeys going off. Roberto can usually find at least 3 different species of monkeys (they are not all on the island!). There’s lots of interesting waterfowl too. Roberto can usually find a saltwater crocodile too.",
-          futureNote: "with Greg’s friend Roberto\nLeaves from Greg’s Place to Gamboa (40 minutes)",
-          highlights: [
-            "Fishing in Gatun Lake for Peacock Bass, followed by a fish barbecue at Greg’s Place.",
-            "Visit the Soberanía National Park Zoo on the way back from Gamboa. Don’t miss the Harpy Eagle exhibit."
-          ],
-          iconType: "canal"
-        },
-        {
           id: 'artesan-center',
-          name: "Artesan Center",
+          name: "Artisan Center",
           category: "Artisan & Culture",
           categoryKey: "shopping",
           distance: "~5 km",
@@ -1081,25 +1072,6 @@ export const content = {
           iconType: "crafts"
         },
         {
-          id: 'multiplaza-mall',
-          name: "Multiplaza Pacific Mall",
-          category: "Luxury Shopping & Dining",
-          categoryKey: "shopping",
-          distance: "~10 km",
-          driveTime: "~15 minutes by car",
-          description: "Panama City’s premier luxury and upscale shopping destination featuring high-end international designer boutiques, department stores, gourmet restaurants, cafes, and entertainment.",
-          futureNote: "Host Note:\nPanama's top luxury shopping mall. Great for finding international brands, high-end shopping, and fine dining.",
-          highlights: [
-            "Luxury international fashion boutiques & designer brands",
-            "Full air-conditioned upscale shopping experience",
-            "High-end department stores (Felix B. Maduro)",
-            "Wide selection of gourmet restaurants and cafes"
-          ],
-          linkUrl: "https://multiplaza.com.pa/",
-          linkText: "OFFICIAL WEBSITE",
-          iconType: "shopping"
-        },
-        {
           id: 'panama-canal-railway',
           name: "Panama Canal Railway Station",
           category: "Historic Railway & Excursion",
@@ -1111,6 +1083,21 @@ export const content = {
           linkUrl: "https://www.panarail.com/",
           linkText: "OFFICIAL WEBSITE",
           iconType: "train"
+        },
+        {
+          id: 'monkey-island',
+          name: "Monkey Island Nature Tour by Private Boat",
+          category: "Rainforest Excursion",
+          categoryKey: "nature",
+          distance: "Gamboa Rainforest Launch",
+          driveTime: "40 min drive from Greg’s Place",
+          description: "This is a wonderful trip as you will launch in a small boat from the Gamboa rainforest area into the Chagres River. You will be right next to the giant ships that have just exited the Pedro Miguel locks as they continue on to Gatun Lake.\n\nRoberto leaves early so his boat will be the first one out there so the monkeys are will be hungry. Plus, you will hear the early morning howler monkeys going off. Roberto can usually find at least 3 different species of monkeys (they are not all on the island!). There’s lots of interesting waterfowl too. Roberto can usually find a saltwater crocodile too.",
+          futureNote: "with Greg’s friend Roberto\nLeaves from Greg’s Place to Gamboa (40 minutes)",
+          highlights: [
+            "Fishing in Gatun Lake for Peacock Bass, followed by a fish barbecue at Greg’s Place.",
+            "Visit the Soberanía National Park Zoo on the way back from Gamboa. Don’t miss the Harpy Eagle exhibit."
+          ],
+          iconType: "canal"
         },
         {
           id: '51-fun-things',
@@ -2571,23 +2558,8 @@ export const content = {
           iconType: "night"
         },
         {
-          id: 'monkey-island',
-          name: "Tour de Naturaleza a la Isla de Monos en Bote Privado",
-          category: "Excursión de Naturaleza",
-          categoryKey: "nature",
-          distance: "Salida desde la Selva de Gamboa",
-          driveTime: "40 min en auto desde Greg’s Place",
-          description: "Este es un viaje maravilloso, ya que zarpará en un pequeño bote desde el área de la selva tropical de Gamboa hacia el río Chagres. Estará justo al lado de los barcos gigantes que acaban de salir de las esclusas de Pedro Miguel mientras continúan hacia el Lago Gatún.\n\nRoberto sale temprano para que su bote sea el primero en llegar y los monos tengan hambre. Además, escuchará a los monos aulladores cantar temprano en la mañana. Roberto suele encontrar al menos 3 especies diferentes de monos (¡no todos están en la isla!). También hay muchas aves acuáticas interesantes. Roberto suele encontrar un cocodrilo de agua salada también.",
-          futureNote: "con Roberto, el amigo de Greg\nSalida de Greg’s Place hacia Gamboa (40 minutos)",
-          highlights: [
-            "Pesca de sargento en el Lago Gatún, seguida de un asado de pescado en Greg’s Place.",
-            "Visita al zoológico del Parque Nacional Soberanía de regreso de Gamboa. No se pierda la exhibición del Águila Arpía."
-          ],
-          iconType: "canal"
-        },
-        {
           id: 'artesan-center',
-          name: "Centro de Artesanías (Artesan Center)",
+          name: "Centro de Artesanías (Artisan Center)",
           category: "Artesanías y Cultura",
           categoryKey: "shopping",
           distance: "~5 km",
@@ -2603,25 +2575,6 @@ export const content = {
           iconType: "crafts"
         },
         {
-          id: 'multiplaza-mall',
-          name: "Multiplaza Pacific Mall",
-          category: "Compras de Lujo y Gastronomía",
-          categoryKey: "shopping",
-          distance: "~10 km",
-          driveTime: "~15 minutos en auto",
-          description: "El principal centro comercial de lujo de la Ciudad de Panamá con exclusivas marcas internacionales, tiendas departamentales de prestigio, restaurantes gourmet y salas de cine VIP.",
-          futureNote: "Nota del Anfitrión:\nEl centro comercial de lujo por excelencia en Panamá. Ideal para marcas internacionales, compras exclusivas y alta gastronomía.",
-          highlights: [
-            "Boutiques de moda de diseñadores internacionales de lujo",
-            "Ambiente de compras exclusivo con aire acondicionado integral",
-            "Tiendas departamentales de prestigio (Felix B. Maduro)",
-            "Excelente selección de restaurantes gourmet, cafeterías y bistrós"
-          ],
-          linkUrl: "https://multiplaza.com.pa/",
-          linkText: "SITIO WEB OFICIAL",
-          iconType: "shopping"
-        },
-        {
           id: 'panama-canal-railway',
           name: "Panama Canal Railway Station",
           category: "Ferrocarril Histórico y Excursión",
@@ -2633,6 +2586,21 @@ export const content = {
           linkUrl: "https://www.panarail.com/",
           linkText: "SITIO WEB OFICIAL",
           iconType: "train"
+        },
+        {
+          id: 'monkey-island',
+          name: "Tour de Naturaleza a la Isla de Monos en Bote Privado",
+          category: "Excursión de Naturaleza",
+          categoryKey: "nature",
+          distance: "Salida desde la Selva de Gamboa",
+          driveTime: "40 min en auto desde Greg’s Place",
+          description: "Este es un viaje maravilloso, ya que zarpará en un pequeño bote desde el área de la selva tropical de Gamboa hacia el río Chagres. Estará justo al lado de los barcos gigantes que acaban de salir de las esclusas de Pedro Miguel mientras continúan hacia el Lago Gatún.\n\nRoberto sale temprano para que su bote sea el primero en llegar y los monos tengan hambre. Además, escuchará a los monos aulladores cantar temprano en la mañana. Roberto suele encontrar al menos 3 especies diferentes de monos (¡no todos están en la isla!). También hay muchas aves acuáticas interesantes. Roberto suele encontrar un cocodrilo de agua salada también.",
+          futureNote: "con Roberto, el amigo de Greg\nSalida de Greg’s Place hacia Gamboa (40 minutos)",
+          highlights: [
+            "Pesca de sargento en el Lago Gatún, seguida de un asado de pescado en Greg’s Place.",
+            "Visita al zoológico del Parque Nacional Soberanía de regreso de Gamboa. No se pierda la exhibición del Águila Arpía."
+          ],
+          iconType: "canal"
         },
         {
           id: '51-fun-things',

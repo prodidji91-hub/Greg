@@ -649,6 +649,19 @@ export const contentFr = {
         "description": "Fameux pour leur incroyable capacité à courir sur la surface de l'eau en cas d'alerte, ces lézards spectaculaires s'observent aisément le long du ruisseau voisin."
       },
       {
+        "id": "tropical-slider-turtle",
+        "name": "Trachémyde Tropicale (Tropical Slider Turtle)",
+        "frequency": "Fréquente dans la crique Crocodile Creek",
+        "category": "reptiles",
+        "description": "Les bébés tortues trachyde tropicales (vertes avec une rayure rouge près de l'oreille) ont été vendues aux États-Unis pendant de nombreuses années. Peut-être en aviez-vous une comme animal de compagnie quand vous étiez enfant ?\n\nDemandez à Greg de vous montrer le tambour en tortue qu'il a reçu d'un autochtone Emberá."
+      },
+      {
+        "id": "iguana",
+        "name": "Iguana",
+        "category": "reptiles",
+        "description": "Des iguanes de différentes tailles rampent chaque jour sur le pont des singes jusqu'à nos mangeoires à oiseaux. Une fois que les oiseaux et les coatis ont fini les fruits, les iguanes forment l'équipe de nettoyage qui mange les restes de peau de papaye et de banane. Parfois, vous verrez un grand iguane chasser les oiseaux ou un plus petit iguane. Les plus petits iguanes ont la couleur verte la plus intense."
+      },
+      {
         "id": "tropical-birds",
         "name": "Oiseaux Tropicaux",
         "category": "birds",
@@ -683,23 +696,16 @@ export const contentFr = {
         "description": "Rare à Albrook — nous n'en avions pas vu depuis plus de 10 ans. Mais maintenant, un ou deux visitent Greg's Place chaque jour. Ils adorent le maïs frais en épi, les cacahuètes grillées dans leur coque et les graines de tournesol en coque."
       },
       {
-        "id": "tropical-slider-turtle",
-        "name": "Trachémyde Tropicale (Tropical Slider Turtle)",
-        "frequency": "Fréquente dans la crique Crocodile Creek",
-        "category": "reptiles",
-        "description": "Les bébés tortues trachyde tropicales (vertes avec une rayure rouge près de l'oreille) ont été vendues aux États-Unis pendant de nombreuses années. Peut-être en aviez-vous une comme animal de compagnie quand vous étiez enfant ?\n\nDemandez à Greg de vous montrer le tambour en tortue qu'il a reçu d'un autochtone Emberá."
-      },
-      {
-        "id": "iguana",
-        "name": "Iguana",
-        "category": "reptiles",
-        "description": "Des iguanes de différentes tailles rampent chaque jour sur le pont des singes jusqu'à nos mangeoires à oiseaux. Une fois que les oiseaux et les coatis ont fini les fruits, les iguanes forment l'équipe de nettoyage qui mange les restes de peau de papaye et de banane. Parfois, vous verrez un grand iguane chasser les oiseaux ou un plus petit iguane. Les plus petits iguanes ont la couleur verte la plus intense."
-      },
-      {
         "id": "capybara",
         "name": "Capybara (Grand Cabiai)",
         "category": "mammals",
         "description": "Le Panama abrite le petit capybara (Lesser Capybara), une espèce plus petite que le célèbre capybara commun d'Amérique du Sud. Ils mesurent environ 80 à 105 cm de longueur et pèsent environ 28 à 40 kg.\n\nJuste au bas de la rue de Greg’s Place se trouve Crocodile Creek. Chaque fois que la partie inférieure du petit pont sur Crocodile Creek est bloquée, un magnifique lagon se forme. Ensuite, chaque nuit, les capybaras descendent la rivière jusqu'au pont. Ici, ils grimpent sur la terre ferme et traversent la rue afin de revenir dans la rivière de l'autre côté. Greg a dû arrêter sa voiture plus d'une fois pour laisser les capybaras traverser la rue devant lui. Parfois, ils s'arrêtent pendant une vingtaine de minutes pour brouter l'herbe au bord de la route."
+      },
+      {
+        "id": "paca",
+        "name": "Paca",
+        "category": "mammals",
+        "description": "L'hôte a observé les animaux nocturnes suivants près de chez lui : agouti, tamandua, armadillo, capybara, porc-épic, cerf, coyote, rats grimpeurs, belette et paca."
       }
     ]
   },
@@ -1144,23 +1150,8 @@ export const contentFr = {
         "iconType": "night"
       },
       {
-        "id": "monkey-island",
-        "name": "Tour Nature de l'Île aux Singes en Bateau Privé",
-        "category": "Excursion Nature",
-        "categoryKey": "nature",
-        "distance": "Embarquement dans la jungle de Gamboa",
-        "driveTime": "40 minutes de route depuis Greg's Place",
-        "description": "C'est un voyage magnifique car vous embarquerez à bord d'un petit bateau depuis la zone de forêt tropicale de Gamboa dans la rivière Chagres. Vous serez juste à côté des navires géants qui viennent de sortir des écluses de Pedro Miguel alors qu'ils continuent vers le lac Gatun.\n\nRoberto part tôt pour que son bateau soit le premier sur place, les singes ont donc faim. De plus, vous entendrez les singes hurleurs retentir tôt le matin. Roberto peut généralement trouver au moins 3 espèces de singes différentes (ils ne sont pas tous sur l'île !). Il y a aussi beaucoup d'oiseaux aquatiques intéressants. Roberto peut généralement trouver un crocodile marin aussi.",
-        "futureNote": "avec Roberto, l'ami de Greg\nDépart de chez Greg vers Gamboa (40 minutes)",
-        "highlights": [
-          "Pêche au bar-paon dans le lac Gatun, suivie d'un barbecue de poisson chez Greg.",
-          "Visite du zoo du parc national Soberanía au retour de Gamboa. Ne manquez pas l'exposition sur la Harpie féroce."
-        ],
-        "iconType": "canal"
-      },
-      {
         "id": "artesan-center",
-        "name": "Centre Artisanal (Artesan Center)",
+        "name": "Centre Artisanal (Artisan Center)",
         "category": "Souvenirs & Artisanat",
         "categoryKey": "shopping",
         "distance": "env. 5 km",
@@ -1176,25 +1167,6 @@ export const contentFr = {
         "iconType": "crafts"
       },
       {
-        "id": "multiplaza-mall",
-        "name": "Multiplaza Pacific Mall",
-        "category": "Shopping de Luxe & Gastronomie",
-        "categoryKey": "shopping",
-        "distance": "env. 10 km",
-        "driveTime": "env. 15 minutes en voiture",
-        "description": "Le centre commercial de luxe et haut de gamme incontournable de Panama City abritant de grandes enseignes internationales, des grands magasins prestigieux, des restaurants gastronomiques, des cafés et des cinémas VIP.",
-        "futureNote": "Note de l'hôte :\nLe premier centre commercial de luxe au Panama. Idéal pour les marques internationales, le shopping haut de gamme et les belles tables.",
-        "highlights": [
-          "Boutiques de grands créateurs internationaux et haute couture",
-          "Environnement de shopping raffiné et climatisé",
-          "Grands magasins réputés (Felix B. Maduro)",
-          "Large choix de restaurants gastronomiques et cafés élégants"
-        ],
-        "linkUrl": "https://multiplaza.com.pa/",
-        "linkText": "SITE OFFICIEL",
-        "iconType": "shopping"
-      },
-      {
         "id": "panama-canal-railway",
         "name": "Panama Canal Railway Station",
         "category": "Chemin de Fer Historique & Excursion",
@@ -1206,6 +1178,21 @@ export const contentFr = {
         "linkUrl": "https://www.panarail.com/",
         "linkText": "SITE OFFICIEL",
         "iconType": "train"
+      },
+      {
+        "id": "monkey-island",
+        "name": "Tour Nature de l'Île aux Singes en Bateau Privé",
+        "category": "Excursion Nature",
+        "categoryKey": "nature",
+        "distance": "Embarquement dans la jungle de Gamboa",
+        "driveTime": "40 minutes de route depuis Greg's Place",
+        "description": "C'est un voyage magnifique car vous embarquerez à bord d'un petit bateau depuis la zone de forêt tropicale de Gamboa dans la rivière Chagres. Vous serez juste à côté des navires géants qui viennent de sortir des écluses de Pedro Miguel alors qu'ils continuent vers le lac Gatun.\n\nRoberto part tôt pour que son bateau soit le premier sur place, les singes ont donc faim. De plus, vous entendrez les singes hurleurs retentir tôt le matin. Roberto peut généralement trouver au moins 3 espèces de singes différentes (ils ne sont pas tous sur l'île !). Il y a aussi beaucoup d'oiseaux aquatiques intéressants. Roberto peut généralement trouver un crocodile marin aussi.",
+        "futureNote": "avec Roberto, l'ami de Greg\nDépart de chez Greg vers Gamboa (40 minutes)",
+        "highlights": [
+          "Pêche au bar-paon dans le lac Gatun, suivie d'un barbecue de poisson chez Greg.",
+          "Visite du zoo du parc national Soberanía au retour de Gamboa. Ne manquez pas l'exposition sur la Harpie féroce."
+        ],
+        "iconType": "canal"
       },
       {
         "id": "51-fun-things",
