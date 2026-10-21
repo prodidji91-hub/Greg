@@ -71,14 +71,19 @@ const wildlifeCardPhotos: Record<string, { src: string; defaultAlt: string; defa
     src: '/pictures/red woodpecker.jpg',
     defaultAlt: "Crimson-crested Woodpecker and tropical birdlife around Greg's Place in Albrook, Panama",
     defaultTitle: 'Tropical Birds',
-    secondarySrc: '/pictures/15-yellow-backed-oriole-yelling.jpg',
-    secondaryAlt: "Yellow-backed Oriole (Icterus chrysater) at Greg's Place in Albrook, Panama",
-    secondaryTitle: 'Yellow-backed Oriole',
+    secondarySrc: '/pictures/summertanager.jpg',
+    secondaryAlt: "Summer Tanager at Greg's Place in Albrook, Panama",
+    secondaryTitle: 'Summer Tanager',
   },
   'paca': {
     src: '/pictures/paca.jpg',
     defaultAlt: 'Paca (Cuniculus paca) in Albrook, Panama',
     defaultTitle: 'Paca',
+  },
+  'northern-tamandua': {
+    src: '/pictures/Northern Tamandua Anteater.jpg',
+    defaultAlt: 'Northern Tamandua Anteater in Albrook, Panama',
+    defaultTitle: 'Northern Tamandua Anteater',
   },
 };
 
@@ -359,6 +364,9 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
                                 className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-102"
                                 loading="lazy"
                               />
+                              <div className="absolute bottom-2 left-2 bg-black/65 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 shadow-xs pointer-events-none opacity-90">
+                                Crimson-crested Woodpecker
+                              </div>
                               <div className="absolute bottom-2 right-2 bg-black/65 hover:bg-black/85 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1 opacity-90 group-hover/photo:opacity-100 transition-opacity shadow-xs">
                                 <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
                                 <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>
@@ -373,20 +381,23 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
                               e.preventDefault();
                               setLightboxImage({
                                 src: cardPhotoConfig.secondarySrc!,
-                                alt: cardPhotoConfig.secondaryAlt || 'Yellow-backed Oriole',
-                                title: cardPhotoConfig.secondaryTitle || 'Yellow-backed Oriole',
+                                alt: cardPhotoConfig.secondaryAlt || 'Summer Tanager',
+                                title: cardPhotoConfig.secondaryTitle || 'Summer Tanager',
                               });
                             }}
                             className="w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059]/60 cursor-pointer block rounded-[2px]"
-                            aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${cardPhotoConfig.secondaryTitle || 'Yellow-backed Oriole'}`}
+                            aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${cardPhotoConfig.secondaryTitle || 'Summer Tanager'}`}
                           >
                             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#1B3022]/15 bg-[#FAF8F5] shadow-xs group-hover/photo:border-[#C5A059] group-hover/photo:shadow-md transition-all duration-300">
                               <img
                                 src={cardPhotoConfig.secondarySrc}
-                                alt={cardPhotoConfig.secondaryAlt || 'Yellow-backed Oriole'}
+                                alt={cardPhotoConfig.secondaryAlt || 'Summer Tanager'}
                                 className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-102"
                                 loading="lazy"
                               />
+                              <div className="absolute bottom-2 left-2 bg-black/65 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 shadow-xs pointer-events-none opacity-90">
+                                Summer Tanager
+                              </div>
                               <div className="absolute bottom-2 right-2 bg-black/65 hover:bg-black/85 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1 opacity-90 group-hover/photo:opacity-100 transition-opacity shadow-xs">
                                 <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
                                 <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>

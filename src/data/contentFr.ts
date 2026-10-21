@@ -706,6 +706,15 @@ export const contentFr = {
         "name": "Paca",
         "category": "mammals",
         "description": "L'hôte a observé les animaux nocturnes suivants près de chez lui : agouti, tamandua, armadillo, capybara, porc-épic, cerf, coyote, rats grimpeurs, belette et paca."
+      },
+      {
+        "id": "northern-tamandua",
+        "name": "Tamandua du Nord (Fourmilier)",
+        "scientificOrLocal": "Tamandua mexicana · Fourmilier",
+        "frequency": "Résident rare nocturne et crépusculaire",
+        "habitat": "Canopée et près du pont de Crocodile Creek",
+        "category": "mammals",
+        "description": "Les tamanduas du nord se nourrissent presque exclusivement de fourmis et de termites. Ils peuvent consommer jusqu'à 9 000 insectes par jour, provenant de 50 à 80 nids différents qu'ils repèrent grâce à leur odorat avant de creuser avec leurs puissantes griffes. Ils capturent les insectes à l'aide de leur longue langue étroite et visqueuse. L'un d'eux vit près du pont sur Crocodile Creek, non loin de Greg's Place, mais on le voit très rarement."
       }
     ]
   },

@@ -706,6 +706,15 @@ export const contentDe = {
         "name": "Paca",
         "category": "mammals",
         "description": "Der Gastgeber hat folgende nachtaktive Tiere in der Nähe seines Hauses gesehen: Aguti, Ameisenbär, Gürteltier, Capybara, Stachelschwein, Hirsch, Kojote, Kletterratten, Wiesel und Paca."
+      },
+      {
+        "id": "northern-tamandua",
+        "name": "Nördlicher Tamandua Ameisenbär",
+        "scientificOrLocal": "Tamandua mexicana · Ameisenbär",
+        "frequency": "Seltenes nacht- und dämmerungsaktives Tier",
+        "habitat": "Baumkronen und nahe der Crocodile-Creek-Brücke",
+        "category": "mammals",
+        "description": "Nördliche Tamanduas ernähren sich fast ausschließlich von Ameisen und Termiten. Sie fressen bis zu 9.000 Insekten pro Tag aus 50 bis 80 verschiedenen Nestern, die sie mit ihrem Geruchssinn aufspüren und mit ihren kräftigen Krallen aufgraben. Mit ihren langen, schmalen, klebrigen Zungen extrahieren sie die Ameisen. Einer lebt in der Nähe der Brücke über den Crocodile Creek nahe Greg's Place, ist jedoch nur selten zu sehen."
       }
     ]
   },

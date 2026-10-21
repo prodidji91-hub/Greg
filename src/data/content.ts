@@ -626,6 +626,15 @@ export const content = {
           name: "Paca",
           category: 'mammals',
           description: "The host has seen the following nighttime animals close to his home: Agouti, anteater, armadillo, capybara, porcupine, deer, coyote, climbing rats, weasel, and paca."
+        },
+        {
+          id: 'northern-tamandua',
+          name: "Northern Tamandua Anteater",
+          scientificOrLocal: "Tamandua mexicana · Oso hormiguero",
+          frequency: "Rare nocturnal & twilight resident",
+          habitat: "Canopy and near Crocodile Creek bridge",
+          category: 'mammals',
+          description: "Northern Tamanduas subsist almost entirely on diets of ants and termites. They may eat up to 9,000 insects per day, from 50 to 80 different nests, which they locate by scent and then dig into with their powerful claws. They extract the ants with their long, narrow, sticky tongues. One lives close to the bridge over Crocodile Creek near Greg's Place, but he is seldom seen."
         }
       ]
     },
