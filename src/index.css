@@ -70,7 +70,12 @@
 
 /* Specific focal alignment for slider 3 Agouti on mobile screens */
 .object-agouti-pos {
-  object-position: 35% center;
+  object-position: 74% 40%;
+  width: 112% !important;
+  max-width: none !important;
+  height: 112% !important;
+  top: -6% !important;
+  left: -6% !important;
 }
 
 /* Specific focal alignment for slider 6 Gray-headed Chachalaca */
@@ -130,7 +135,7 @@
 
 /* Specific focal alignment for slider 11 Variegated Squirrel (jumpsquirel.jpg) */
 .object-squirrel-pos {
-  object-position: 28% 38%;
+  object-position: 92% 38% !important;
 }
 
 /* Specific focal alignment for slider 12 Green Honeycreeper */
@@ -162,10 +167,18 @@
   }
   .object-squirrel-pos {
     object-position: center center;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
   }
   .object-antshrike-pos,
   .object-agouti-pos {
     object-position: center;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
   }
   .object-antshrike-male-pos {
     object-position: 48% 30%;
