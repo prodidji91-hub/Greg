@@ -515,24 +515,20 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
 
                           {/* Top Badges */}
                           <div className="absolute top-3 left-3 right-3 flex items-start justify-between gap-2 pointer-events-none z-10">
-                            <span className="px-2.5 py-1 bg-black/80 backdrop-blur-md border border-white/20 text-white text-[10px] uppercase tracking-wider font-semibold">
-                              {getCatBadge(cat)}
-                            </span>
+                            {isUpstairsBathroom ? (
+                              <span className="px-2.5 py-1 bg-[#8C583E] backdrop-blur-md border border-white/20 text-white text-[10px] uppercase tracking-wider font-bold shadow-xs">
+                                {getCatBadge(cat)}
+                              </span>
+                            ) : (
+                              <span className="px-2.5 py-1 bg-black/80 backdrop-blur-md border border-white/20 text-white text-[10px] uppercase tracking-wider font-semibold">
+                                {getCatBadge(cat)}
+                              </span>
+                            )}
 
                             <span className="px-2.5 py-1 bg-black/75 backdrop-blur-md border border-white/20 text-white text-[10px] font-mono">
                               {photoCount} {isFrench ? 'Photos' : isGerman ? 'Fotos' : isSpanish ? 'Fotos' : 'Photos'}
                             </span>
                           </div>
-
-                          {/* Upstairs bathroom notification */}
-                          {isUpstairsBathroom && (
-                            <div className="absolute bottom-3 left-3 right-3 z-10">
-                              <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#8C583E]/95 backdrop-blur-md text-white text-[10px] uppercase tracking-wider font-bold border border-white/20 shadow">
-                                <Info className="w-3 h-3 text-[#C5A059]" />
-                                <span>{isFrench ? 'Pour Chambres Coati & Owl' : isGerman ? 'Für Coati & Owl Rooms' : isSpanish ? 'Para Coati y Owl Rooms' : 'For Coati & Owl Rooms'}</span>
-                              </span>
-                            </div>
-                          )}
                         </div>
 
                         {/* Card Body */}

@@ -68,12 +68,12 @@ const wildlifeCardPhotos: Record<string, { src: string; defaultAlt: string; defa
     defaultTitle: 'White-nosed Coatimundis (Gatos Solos)',
   },
   'tropical-birds': {
-    src: '/pictures/red woodpecker.jpg',
-    defaultAlt: "Crimson-crested Woodpecker and tropical birdlife around Greg's Place in Albrook, Panama",
-    defaultTitle: 'Tropical Birds',
-    secondarySrc: '/pictures/summertanager.jpg',
-    secondaryAlt: "Summer Tanager at Greg's Place in Albrook, Panama",
-    secondaryTitle: 'Summer Tanager',
+    src: '/pictures/summertanager.jpg',
+    defaultAlt: "Crested Oropendola at Greg's Place in Albrook, Panama",
+    defaultTitle: 'Crested Oropendola',
+    secondarySrc: '/pictures/Red-crowned Woodpecker - .jpg',
+    secondaryAlt: "Red-crowned Woodpecker at Greg's Place in Albrook, Panama",
+    secondaryTitle: 'Red-crowned Woodpecker',
   },
   'paca': {
     src: '/pictures/paca.jpg',
@@ -84,6 +84,16 @@ const wildlifeCardPhotos: Record<string, { src: string; defaultAlt: string; defa
     src: '/pictures/Northern Tamandua Anteater.jpg',
     defaultAlt: 'Northern Tamandua Anteater in Albrook, Panama',
     defaultTitle: 'Northern Tamandua Anteater',
+  },
+  'panama-house-gecko': {
+    src: '/pictures/geko.jpg',
+    defaultAlt: 'Panama House Gecko (Hemidactylus frenatus) in Albrook, Panama',
+    defaultTitle: 'Panama House Gecko',
+  },
+  'armadillo': {
+    src: '/pictures/Armadillo.jpg',
+    defaultAlt: 'Nine-banded Armadillo (Dasypus novemcinctus) in Albrook, Panama',
+    defaultTitle: 'Nine-banded Armadillo',
   },
 };
 
@@ -347,63 +357,71 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
                     <div className="mb-3.5">
                       {cardPhotoConfig?.secondarySrc ? (
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                          <button
-                            type="button"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              e.preventDefault();
-                              setLightboxImage(cardPhoto);
-                            }}
-                            className="w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059]/60 cursor-pointer block rounded-[2px]"
-                            aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${cardPhoto.title || animal.name}`}
-                          >
-                            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#1B3022]/15 bg-[#FAF8F5] shadow-xs group-hover/photo:border-[#C5A059] group-hover/photo:shadow-md transition-all duration-300">
-                              <img
-                                src={cardPhoto.src}
-                                alt={cardPhoto.alt}
-                                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-102"
-                                loading="lazy"
-                              />
-                              <div className="absolute bottom-2 left-2 bg-black/65 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 shadow-xs pointer-events-none opacity-90">
-                                Crimson-crested Woodpecker
+                          <div>
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                setLightboxImage(cardPhoto);
+                              }}
+                              className="w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059]/60 cursor-pointer block rounded-[2px]"
+                              aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${cardPhoto.title || animal.name}`}
+                            >
+                              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#1B3022]/15 bg-[#FAF8F5] shadow-xs group-hover/photo:border-[#C5A059] group-hover/photo:shadow-md transition-all duration-300">
+                                <img
+                                  src={cardPhoto.src}
+                                  alt={cardPhoto.alt}
+                                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-102"
+                                  loading="lazy"
+                                />
+                                <div className="absolute bottom-2 right-2 bg-black/65 hover:bg-black/85 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1 opacity-90 group-hover/photo:opacity-100 transition-opacity shadow-xs">
+                                  <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
+                                  <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>
+                                </div>
                               </div>
-                              <div className="absolute bottom-2 right-2 bg-black/65 hover:bg-black/85 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1 opacity-90 group-hover/photo:opacity-100 transition-opacity shadow-xs">
-                                <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
-                                <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>
-                              </div>
-                            </div>
-                          </button>
+                            </button>
+                            <p className="mt-1.5 text-xs font-serif italic text-[#8C583E] text-center">
+                              {animal.id === 'tropical-birds'
+                                ? (lang === 'es' ? 'Oropéndola Crestada' : lang === 'de' ? 'Haubenoropendola' : lang === 'fr' ? 'Cassique huppé' : 'Crested Oropendola')
+                                : (cardPhoto.title || animal.name)}
+                            </p>
+                          </div>
 
-                          <button
-                            type="button"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              e.preventDefault();
-                              setLightboxImage({
-                                src: cardPhotoConfig.secondarySrc!,
-                                alt: cardPhotoConfig.secondaryAlt || 'Summer Tanager',
-                                title: cardPhotoConfig.secondaryTitle || 'Summer Tanager',
-                              });
-                            }}
-                            className="w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059]/60 cursor-pointer block rounded-[2px]"
-                            aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${cardPhotoConfig.secondaryTitle || 'Summer Tanager'}`}
-                          >
-                            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#1B3022]/15 bg-[#FAF8F5] shadow-xs group-hover/photo:border-[#C5A059] group-hover/photo:shadow-md transition-all duration-300">
-                              <img
-                                src={cardPhotoConfig.secondarySrc}
-                                alt={cardPhotoConfig.secondaryAlt || 'Summer Tanager'}
-                                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-102"
-                                loading="lazy"
-                              />
-                              <div className="absolute bottom-2 left-2 bg-black/65 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 shadow-xs pointer-events-none opacity-90">
-                                Summer Tanager
+                          <div>
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                setLightboxImage({
+                                  src: cardPhotoConfig.secondarySrc!,
+                                  alt: cardPhotoConfig.secondaryAlt || 'Red-crowned Woodpecker',
+                                  title: cardPhotoConfig.secondaryTitle || 'Red-crowned Woodpecker',
+                                });
+                              }}
+                              className="w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059]/60 cursor-pointer block rounded-[2px]"
+                              aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${cardPhotoConfig.secondaryTitle || 'Red-crowned Woodpecker'}`}
+                            >
+                              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#1B3022]/15 bg-[#FAF8F5] shadow-xs group-hover/photo:border-[#C5A059] group-hover/photo:shadow-md transition-all duration-300">
+                                <img
+                                  src={cardPhotoConfig.secondarySrc}
+                                  alt={cardPhotoConfig.secondaryAlt || 'Red-crowned Woodpecker'}
+                                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-102"
+                                  loading="lazy"
+                                />
+                                <div className="absolute bottom-2 right-2 bg-black/65 hover:bg-black/85 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1 opacity-90 group-hover/photo:opacity-100 transition-opacity shadow-xs">
+                                  <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
+                                  <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>
+                                </div>
                               </div>
-                              <div className="absolute bottom-2 right-2 bg-black/65 hover:bg-black/85 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1 opacity-90 group-hover/photo:opacity-100 transition-opacity shadow-xs">
-                                <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
-                                <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>
-                              </div>
-                            </div>
-                          </button>
+                            </button>
+                            <p className="mt-1.5 text-xs font-serif italic text-[#8C583E] text-center">
+                              {animal.id === 'tropical-birds'
+                                ? (lang === 'es' ? 'Carpintero Coronirrojo' : lang === 'de' ? 'Rotkappenspecht' : lang === 'fr' ? 'Pic à couronne rouge' : 'Red-crowned Woodpecker')
+                                : (cardPhotoConfig.secondaryTitle || '')}
+                            </p>
+                          </div>
                         </div>
                       ) : (
                         <button
@@ -433,9 +451,32 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
                     </div>
                   )}
 
-                  <p className="text-xs sm:text-sm text-[#1B3022]/85 leading-relaxed mb-3 font-normal whitespace-pre-line">
-                    {animal.description}
-                  </p>
+                  {animal.id === 'tropical-birds' ? (
+                    <div className="text-xs sm:text-sm text-[#1B3022]/85 leading-relaxed mb-3 font-normal space-y-2">
+                      <p>
+                        {lang === 'de' ? 'Gut über 100 Arten leben in der Nachbarschaft.' : lang === 'fr' ? 'Bien plus de 100 espèces vivent dans le quartier.' : 'Well over 100 species live in the neighborhood.'}
+                      </p>
+                      <p>
+                        {lang === 'de' ? (
+                          <>Folgende Vögel besuchen Greg&apos;s Place <strong className="font-bold text-[#1B3022]">jeden Tag</strong>:</>
+                        ) : lang === 'fr' ? (
+                          <>Les oiseaux suivants visitent Greg&apos;s Place <strong className="font-bold text-[#1B3022]">chaque jour</strong> :</>
+                        ) : (
+                          <>The following birds visit Greg&apos;s Place <strong className="font-bold text-[#1B3022]">every day</strong>:</>
+                        )}
+                      </p>
+                    </div>
+                  ) : animal.id === 'panama-house-gecko' || animal.id === 'armadillo' ? (
+                    <div className="max-h-64 sm:max-h-72 overflow-y-auto pr-2 mb-3 scrollbar-thin scrollbar-thumb-[#C5A059]/40 hover:scrollbar-thumb-[#C5A059]">
+                      <p className="text-xs sm:text-sm text-[#1B3022]/85 leading-relaxed font-normal whitespace-pre-line">
+                        {animal.description}
+                      </p>
+                    </div>
+                  ) : (
+                    <p className="text-xs sm:text-sm text-[#1B3022]/85 leading-relaxed mb-3 font-normal whitespace-pre-line">
+                      {animal.description}
+                    </p>
+                  )}
 
                   {/* 18 Bird Species Grid */}
                   {animal.birdSpeciesList && animal.birdSpeciesList.length > 0 && (

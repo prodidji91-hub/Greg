@@ -38,10 +38,10 @@ export interface PropertyGalleryCategory {
 export const propertyGalleryCategories: PropertyGalleryCategory[] = [
   {
     id: 'shared-living-spaces',
-    titleEn: 'Shared Living Room and Lounge',
-    titleEs: 'Sala de Estar y Salón Compartido',
-    titleDe: 'Gemeinsames Wohnzimmer & Lounge',
-    titleFr: 'Salon et Espace Lounge Partagés',
+    titleEn: 'Shared Living Room, Dining Room and Lounge',
+    titleEs: 'Sala de Estar, Comedor y Lounge Compartidos',
+    titleDe: 'Gemeinsames Wohnzimmer, Esszimmer und Lounge',
+    titleFr: 'Salon, Salle à Manger et Espace Détente Partagés',
     badgeEn: 'Common Areas',
     badgeEs: 'Áreas Comunes',
     badgeDe: 'Gemeinschaftsbereiche',

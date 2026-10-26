@@ -295,7 +295,7 @@ export const contentFr = {
         "capacity": "Jusqu'à 2 personnes",
         "locationInHouse": "Située au premier étage",
         "bathroomArrangement": "Grande salle de bain privée attenante (baignoire et douche combinées)",
-        "nightlyPrice": 53,
+        "nightlyPrice": 54,
         "cleaningFee": 15,
         "monthlyRate": 1075,
         "airbnbRef": "https://airbnb.com/rooms/51522415"
@@ -365,7 +365,7 @@ export const contentFr = {
         "capacity": "Jusqu'à 2 personnes",
         "locationInHouse": "Située au premier étage",
         "bathroomArrangement": "Grande salle de bain partagée avec douche immédiatement adjacente",
-        "nightlyPrice": 36,
+        "nightlyPrice": 37,
         "cleaningFee": 15,
         "monthlyRate": 745,
         "airbnbRef": "https://airbnb.com/h/greg-owl"
@@ -536,7 +536,7 @@ export const contentFr = {
           { "amount": "25 $", "label": "1 personne" },
           { "amount": "20 $ / personne", "label": "2+ personnes" }
         ],
-        "followOnNote": "Après votre première expérience, les prix ci-dessus sont réduits de 15 $ par personne pour les petits-déjeuners suivants.",
+        "followOnNote": "Après votre première expérience de petit-déjeuner, les petits-déjeuners suivants sont réduits à 20 $ pour une personne ou 15 $ par personne pour plusieurs.",
         "audience": "Offre exclusive pour les hôtes séjournant dans la maison",
         "tagline": "PETIT-DÉJEUNER OPTIONNEL DANS LA PROPRIÉTÉ",
         "description": "Les hôtes profitent de notre expérience complète oiseaux, petit-déjeuner et faune au tarif préférentiel, juste à quelques pas de leur chambre.",
@@ -705,7 +705,7 @@ export const contentFr = {
         "id": "paca",
         "name": "Paca",
         "category": "mammals",
-        "description": "L'hôte a observé les animaux nocturnes suivants près de chez lui : agouti, tamandua, armadillo, capybara, porc-épic, cerf, coyote, rats grimpeurs, belette et paca."
+        "description": "L'hôte a observé les animaux nocturnes suivants près de chez lui : agouti, tamandua, armadillo, capybara, porc-épic, cerf, coyote, rats grimpeurs, belette et paca (ci-dessus)."
       },
       {
         "id": "northern-tamandua",
@@ -715,6 +715,20 @@ export const contentFr = {
         "habitat": "Canopée et près du pont de Crocodile Creek",
         "category": "mammals",
         "description": "Les tamanduas du nord se nourrissent presque exclusivement de fourmis et de termites. Ils peuvent consommer jusqu'à 9 000 insectes par jour, provenant de 50 à 80 nids différents qu'ils repèrent grâce à leur odorat avant de creuser avec leurs puissantes griffes. Ils capturent les insectes à l'aide de leur longue langue étroite et visqueuse. L'un d'eux vit près du pont sur Crocodile Creek, non loin de Greg's Place, mais on le voit très rarement."
+      },
+      {
+        "id": "armadillo",
+        "name": "Armadillo à neuf bandes",
+        "scientificOrLocal": "Dasypus novemcinctus",
+        "category": "mammals",
+        "description": "Nous les apercevons de temps en temps lors de promenades nocturnes. Si vous entendez beaucoup de bruissements dans les buissons, c'est probablement l'un d'eux.\n\nJ'en ai eu un qui a vécu sous ma maison (« Freddy the Freeloader ») pendant deux ans avant que je ne réussisse finalement à le convaincre de partir.\n\nMon chien en a attrapé un une fois. Quand il a essayé de le soulever, l'animal a glissé de sa gueule en raison de son corps lisse et anguleux. J'ai retenu mon chien et l'armadillo s'est enfui à toute vitesse, indemne.\n\nIls sont connus pour avoir une mauvaise vue. Une fois, un bébé armadillo s'est approché de l'endroit exact où je me tenais debout sans jamais me voir. Quand son museau a touché mes orteils, il a enfin réalisé ma présence et a détalé dans les buissons !"
+      },
+      {
+        "id": "panama-house-gecko",
+        "name": "Gecko de Maison du Panama",
+        "scientificOrLocal": "Hemidactylus frenatus",
+        "category": "reptiles",
+        "description": "On considère que c'est un porte-bonheur d'avoir des geckos dans et autour de sa maison au Panama. On peut les voir et les entendre le soir chasser les insectes, en particulier près des lumières. Ils aiment aussi boire des jus de fruits sucrés ; j'en ai occasionnellement surpris en train de siroter des gouttes renversées d'un smoothie aux fruits. L'article ci-dessous est fascinant. En voici un extrait :\n\n« Contrairement à de nombreux lézards, les geckos n'ont pas de paupières. Au lieu de cela, ils nettoient et humidifient leurs yeux en les léchant avec leur langue, un comportement que beaucoup trouvent à la fois étrange et curieusement adorable.\n\nLeurs capacités d'escalade sont encore plus remarquables. Les geckos de maison peuvent courir sans effort sur les murs verticaux, les vitres et les plafonds grâce à des millions de structures microscopiques ressemblant à des poils sur leurs orteils, appelées soies. »\n\nSource : « The Secret Life of House Geckos in Panama » — The Lost and Found Jungle Hostel"
       }
     ]
   },
@@ -794,433 +808,464 @@ export const contentFr = {
       }
     ],
     "places": [
-      {
-        "id": "stores-and-facilities",
-        "name": "Commerces & Services à Albrook",
-        "category": "Services de Proximité",
-        "categoryKey": "shopping",
-        "distance": "Accessible à pied / 2–4 min de route",
-        "driveTime": "Très proche",
-        "description": "Albrook dispose d'une excellente infrastructure avec pharmacies, supermarchés, boulangeries, distributeurs automatiques et restaurants directement dans le quartier :",
-        "facilities": [
-          {
-            "name": "Aéroport Marcos A. Gelabert",
-            "time": "~3 minutes en voiture ou ~12 minutes à pied"
-          },
-          {
-            "name": "Ambassade des États-Unis",
-            "time": "~7 minutes en voiture"
-          },
-          {
-            "name": "Marché Fermier (fruits, légumes, œufs)",
-            "time": "~2 minutes en voiture ou 8 minutes à pied"
-          },
-          {
-            "name": "Petites Épiceries de Proximité (2)",
-            "time": "~2 minutes en voiture ou 8 minutes à pied"
-          },
-          {
-            "name": "Supermarché El Rey",
-            "note": "(le plus grand supermarché d'Albrook, où l'hôte fait habituellement ses courses)",
-            "time": "~3 minutes en voiture ou ~12 minutes à pied"
-          },
-          {
-            "name": "Supermarché Super Carnes",
-            "time": "~3 minutes en voiture ou ~12 minutes à pied"
-          },
-          {
-            "name": "Boutique Reprosa (Reprosa Store)",
-            "note": "(boutique Reprosa qui vend de magnifiques et superbes répliques d'artéfacts panaméens)",
-            "time": "~7 minutes en voiture"
-          },
-          {
-            "name": "Multiplaza Pacific Mall",
-            "note": "(centre commercial de luxe par excellence avec marques de créateurs internationaux)",
-            "time": "~15 minutes en voiture"
-          },
-          {
-            "name": "Kotowa Coffee House",
-            "time": "~3 minutes en voiture ou ~12 minutes à pied"
-          },
-          {
-            "name": "Location de Voitures (Car Rentals)",
-            "time": "~3 minutes en voiture ou ~12 minutes à pied"
-          },
-          {
-            "name": "Centre de Fitness Power Club",
-            "time": "~4 minutes en voiture ou ~16 minutes à pied"
-          },
-          {
-            "name": "Full Tech (Service téléphones/ordinateurs)",
-            "time": "~3 minutes en voiture ou ~12 minutes à pied"
-          },
-          {
-            "name": "Pharmacie Arrocha",
-            "time": "~2 minutes en voiture ou 8 minutes à pied"
-          },
-          {
-            "name": "Clinique Médicale (Clínica Albrook)",
-            "time": "~2 minutes en voiture ou 8 minutes à pied"
-          },
-          {
-            "name": "Dentiste (Clínica Arango Orillac Albrook)",
-            "time": "~2 minutes en voiture ou 8 minutes à pied"
-          },
-          {
-            "name": "Barbiers",
-            "time": "~2 minutes en voiture ou 8 minutes à pied"
-          },
-          {
-            "name": "Salons de Beauté",
-            "time": "~2 minutes en voiture ou 8 minutes à pied"
-          },
-          {
-            "name": "Pressing & Retouches",
-            "time": "~2 minutes en voiture ou 8 minutes à pied"
-          },
-          {
-            "name": "Mail Boxes, Etc.",
-            "time": "~2 minutes en voiture ou 8 minutes à pied"
-          }
-        ],
-        "iconType": "services"
-      },
-      {
-        "id": "panama-canal",
-        "name": "Canal de Panama – Centre des Visiteurs de Miraflores",
-        "category": "Canal & Ingénierie",
-        "categoryKey": "canal",
-        "distance": "env. 7 km",
-        "driveTime": "env. 10 minutes en voiture",
-        "description": "La merveille d'ingénierie mondialement célèbre. Depuis les terrasses panoramiques du centre des visiteurs de Miraflores, observez de très près les gigantesques porte-conteneurs franchir les sas des écluses.",
-        "futureNote": "Ne manquez pas le documentaire 3D/IMAX de 45 minutes raconté par Morgan Freeman. Les horaires sont consultables sur https://visitcanaldepanama.com/en/points-of-interest/miraflores-visitor-center/",
-        "highlights": [
-          "Terrasses panoramiques sur plusieurs étages face aux écluses",
-          "Commentaires en direct en anglais et espagnol",
-          "Musée historique retraçant l'épopée de la construction du canal",
-          "Documentaire 3D/IMAX primé",
-          "Horaire du transit des navires (change chaque matin) :\nhttps://visitcanaldepanama.com/en/#horarios-barcos"
-        ],
-        "linkUrl": "https://visitcanaldepanama.com/en/points-of-interest/miraflores-visitor-center/",
-        "linkText": "SITE OFFICIEL",
-        "iconType": "canal"
-      },
-      {
-        "id": "casco-viejo",
-        "name": "Casco Viejo (Quartier Historique / Casco Antiguo)",
-        "category": "Histoire Coloniale & Culture",
-        "categoryKey": "history",
-        "distance": "env. 5,5 km",
-        "driveTime": "env. 10–15 minutes en voiture / Uber",
-        "description": "Le cœur historique de Panama et site classé au patrimoine mondial de l'UNESCO fondé au XVIIe siècle. Rues pavées, palais coloniaux espagnols restaurés, places animées, bars en rooftop et tables gastronomiques réputées.",
-        "futureNote": "Idéal pour une promenade en fin d'après-midi jusqu'à la soirée délicatement illuminée.",
-        "highlights": [
-          "Patrimoine mondial de l'UNESCO à l'architecture coloniale espagnole",
-          "Palais présidentiel (Palacio de las Garzas) & cathédrale historique",
-          "Restaurants renommés, cafés et bars en rooftop avec vue sur la skyline",
-          "Marchés artisanaux et musées captivants"
-        ],
-        "iconType": "heritage"
-      },
-      {
-        "id": "kotowa-coffee-house",
-        "name": "Kotowa Coffee House",
-        "organization": "En face de l'aéroport Marcos Gelabert",
-        "category": "Café & Pâtisserie",
-        "categoryKey": "city",
-        "distance": "~1,2 km",
-        "driveTime": "~3 minutes en voiture ou ~12 minutes à pied",
-        "description": "Un café très agréable servant un excellent café panaméen. Si vous aimez le café, c'est l'endroit où aller.",
-        "futureNote": "Mon café préféré. Vous pouvez également acheter leur café emballé à emporter chez vous. Ils en ont deux types, un dans un paquet vert et un dans un paquet rouge, tous deux excellents. Ils servent celui dans le paquet vert aux clients. Ce sont d'excellents cadeaux à rapporter à la maison.",
-        "iconType": "services"
-      },
-      
-      {
-        "id": "amador-causeway",
-        "name": "Amador Causeway (Calzada de Amador)",
-        "category": "Front de Mer & Loisirs",
-        "categoryKey": "waterfront",
-        "distance": "env. 7 km",
-        "driveTime": "env. 10–12 minutes en voiture",
-        "description": "Une chaussée-promenade de 6 kilomètres reliant quatre petites îles du Pacifique au continent. Construite avec les roches excavées lors du percement du canal, elle offre une vue saisissante sur les navires en attente et les gratte-ciel de la cité.",
-        "futureNote": "Vous pouvez louer des vélos ou des rosalies directement sur place.",
-        "highlights": [
-          "6 km de promenade piétonne pour marcher, courir ou pédaler",
-          "Vue panoramique sur l'entrée pacifique du canal et la silhouette urbaine",
-          "Nombreux restaurants de fruits de mer et terrasses de cafés",
-          "Embarcadère pour les ferries vers l'archipel des Perles (Taboga & Contadora)"
-        ],
-        "iconType": "landmark"
-      },
-      {
-        "id": "biomuseo",
-        "name": "Biomuseo (Musée de la Biodiversité)",
-        "category": "Nature, Science & Architecture",
-        "categoryKey": "nature",
-        "distance": "env. 6,5 km",
-        "driveTime": "env. 10 minutes en voiture",
-        "description": "Conçu par le célèbre architecte Frank Gehry, cet édifice aux formes audacieuses et colorées célèbre l'émergence de l'isthme de Panama, qui a réuni deux continents et séparé deux océans.",
-        "futureNote": "Le stationnement étant limité, il est conseillé de s'y rendre en Uber.\nLe musée est entièrement climatisé, idéal en milieu de journée. Vous pouvez ensuite prolonger votre balade sur le Causeway pour vous restaurer.",
-        "highlights": [
-          "Chef-d'œuvre architectural unique signé Frank Gehry",
-          "Galeries interactives sur la biodiversité et l'histoire géologique",
-          "Magnifique parc botanique avec essences indigènes",
-          "Situé à l'entrée du canal de Panama sur le Causeway d'Amador"
-        ],
-        "linkUrl": "https://biomuseo.org/",
-        "linkText": "SITE OFFICIEL",
-        "iconType": "nature"
-      },
-      {
-        "id": "punta-culebra",
-        "name": "Punta Culebra Nature Center",
-        "organization": "Smithsonian Tropical Research Institute",
-        "category": "Nature & Science",
-        "categoryKey": "nature",
-        "distance": "Situé près de la fin du Causeway (~10 km)",
-        "driveTime": "~12-18 minutes en voiture",
-        "description": "Un centre de nature marine et côtière en plein air géré par le Smithsonian Tropical Research Institute, situé sur l'île Naos le long du Causeway d'Amador.",
-        "highlights": [
-          "Exposition Fabuleuses Grenouilles du Panama (Fabulous Frogs of Panama Exhibit)",
-          "Aquarium de Poissons Côtiers du Panama (Panama Coastal Fish Aquarium)",
-          "Aquarium de Poissons Tropicaux (Tropical Fish Aquarium)",
-          "Dôme aux Papillons (Butterfly Dome)",
-          "Expositions Écologiques (Ecological Exhibits)",
-          "Expositions Interactives & Éducatives (Interactive/Educational Exhibits)",
-          "Sentiers de promenade où observer paresseux, ratons laveurs, iguanas et oiseaux (Walking Trails)"
-        ],
-        "futureNote": "Note de l'hôte :\nConsultez leur site web pour connaître l'emplacement et les horaires : https://stri.si.edu/visit/punta-culebra",
-        "linkUrl": "https://stri.si.edu/visit/punta-culebra",
-        "linkText": "SITE WEB OFFICIEL",
-        "iconType": "nature"
-      },
-      {
-        "id": "panama-nature-center",
-        "name": "Panama Nature Center",
-        "organization": "Refuge & Centre de Réhabilitation Animale",
-        "category": "Refuge & Protection Animale",
-        "categoryKey": "nature",
-        "distance": "Situé à la Cité du Savoir / Cuidad del Saber (~10 km)",
-        "driveTime": "~10-12 minutes en voiture",
-        "description": "Ce centre de refuge et sanctuaire animalier accueille de magnifiques animaux locaux observables de très près. Parmi les animaux recueillis : toucans, tamanduas (fourmiliers), deux espèces de paresseux, porcs-épics et plusieurs espèces de singes.\n\nProfitez d'un déjeuner sur la grande esplanade de restauration de la Plaza Ciudad del Saber (La Plaza Cuidad del Saber). Un grand choix de stands propose plats et desserts à la carte à déguster dans la grande zone centrale.",
-        "highlights": [
-          "Observations rapprochées de la faune recueillie : toucans, fourmiliers, deux espèces de paresseux, porcs-épics et singes",
-          "Sanctuaire et centre de réhabilitation de la faune sauvage",
-          "Déjeuner et desserts à la carte à La Plaza Cuidad del Saber"
-        ],
-        "futureNote": "Note de l'hôte :\nConsultez leur site web pour connaître l'emplacement et les horaires : https://panamanaturecenter.org/",
-        "linkUrl": "https://panamanaturecenter.org/",
-        "linkText": "SITE WEB OFFICIEL",
-        "iconType": "nature"
-      },
-      {
-        "id": "albrook-swimming-pool",
-        "name": "Albrook Swimming Pool (Piscina de Albrook)",
-        "organization": "« La piscine dans la jungle » · Taille Olympique (50 mètres)",
-        "category": "Sports & Loisirs",
-        "categoryKey": "city",
-        "distance": "Située tout près sur le Paseo de la Iguana (~1 km)",
-        "driveTime": "~1 minute en voiture, ~8 minutes à pied",
-        "description": "La piscine d'Albrook est un équipement public de taille olympique (50 mètres).\n\nToutefois, notez avant de vous y rendre que le complexe fait l'objet d'un grand projet de rénovation et réhabilitation de 7,6 millions de dollars. L'accès peut être restreint ou fermé au public selon l'avancement des travaux.\n\nEn période d'ouverture, l'accès est gratuit. Un certificat médical (obtenable localement pour environ 50 $ avec prise de sang à la clinique locale) est normalement requis, bien que les touristes soient parfois autorisés sans certificat.",
-        "highlights": [
-          "Bassin olympique public de 50 mètres",
-          "Important chantier de rénovation de 7,6 millions $ en cours (accès possiblement limité)",
-          "Accès gratuit en période d'exploitation (certificat médical local à 50 $ parfois exigé)",
-          "Accès parfois toléré pour les touristes sans certificat"
-        ],
-        "futureNote": "Note de l'hôte :\nConsultez les horaires ici : https://www.instagram.com/piscinaalbrook/\n\nLa piscine est parfois fermée pour des entraînements ou compétitions. Si vous avez les cheveux longs, le bonnet de bain est obligatoire (disponible à l'accueil).",
-        "linkUrl": "https://www.instagram.com/piscinaalbrook/",
-        "linkText": "VÉRIFIER LES HORAIRES",
-        "iconType": "services"
-      },
-      {
-        "id": "cinta-costera",
-        "name": "Cinta Costera (Promenade Côtière)",
-        "category": "Front de Mer & Skyline",
-        "categoryKey": "waterfront",
-        "distance": "env. 7 km",
-        "driveTime": "env. 10–15 minutes en voiture",
-        "description": "La grande esplanade côtière de Panama longeant la baie du Pacifique, reliant le quartier historique de Casco Viejo aux tours de verre du quartier financier.",
-        "futureNote": "Mon itinéraire cyclable urbain préféré. Ne manquez pas de faire un tour au marché aux poissons (Mercado de Mariscos) — idéal le matin.",
-        "highlights": [
-          "7 km de pistes aménagées pour la course à pied et le vélo",
-          "Vue imprenable sur la ligne d'horizon ultramoderne de la ville",
-          "Tronçon marin de 2,5 km contournant la péninsule historique de Casco Viejo",
-          "Marché aux poissons traditionnel réputé pour ses ceviches ultra-frais",
-          "Terrains de sport, aires de jeux et stands gourmands en soirée"
-        ],
-        "iconType": "city"
-      },
-      {
-        "id": "parque-metropolitano",
-        "name": "Parc Naturel Métropolitain",
-        "category": "Forêt Tropicale & Randonnée",
-        "categoryKey": "nature",
-        "distance": "env. 2 km",
-        "driveTime": "env. 5 minutes en voiture",
-        "description": "La seule forêt tropicale primaire protégée située dans les limites d'une métropole en Amérique latine. Un véritable paradis pour les randonneurs, les naturalistes et les ornithologues.",
-        "futureNote": "Pensez à emprunter des jumelles de qualité auprès de Greg avant de partir. Présentez-vous d'abord au centre des visiteurs pour régler l'entrée (5 $ pour les touristes, 2 $ pour les résidents) et récupérer votre plan des sentiers.",
-        "highlights": [
-          "Sentiers de randonnée bien balisés au cœur de la forêt tropicale sèche",
-          "Paresseux, singes hurleurs, coatis et toucans observables en liberté",
-          "Belvédère « Mirador Cerro Cedro » avec vue panoramique sur la ville et le canal",
-          "À seulement quelques minutes de Greg's Place"
-        ],
-        "iconType": "mountain"
-      },
-      {
-        "id": "cerro-ancon",
-        "name": "Cerro Ancón (Colline d'Ancon)",
-        "category": "Point de Vue & Histoire",
-        "categoryKey": "nature",
-        "distance": "env. 4 km",
-        "driveTime": "env. 8 minutes en voiture",
-        "description": "Cette colline boisée emblématique culminant à 199 mètres domine Panama City et l'entrée pacifique du canal. À son sommet flotte l'immense drapeau national du Panama.",
-        "futureNote": "Empruntez des jumelles à Greg avant de vous y rendre. Si un guide naturaliste est présent au sommet, demandez-lui de vous montrer les animaux cachés dans les branches. Un pourboire sera très apprécié !",
-        "highlights": [
-          "Vue panoramique à 360 degrés sur la ville, le canal et le pont des Amériques",
-          "Immense drapeau national panaméen flottant au sommet",
-          "Route ombragée et goudronnée parfaite pour une marche matinale",
-          "Observations fréquentes de paresseux, daims et toucans le long du chemin"
-        ],
-        "iconType": "mountain"
-      },
-      {
-        "id": "albrook-mall",
-        "name": "Albrook Mall\n« Le plus grand centre commercial d'Amérique latine »",
-        "category": "Shopping & Gastronomie",
-        "categoryKey": "shopping",
-        "distance": "env. 1 km à vol d'oiseau",
-        "driveTime": "env. 7 minutes en voiture",
-        "description": "Cet immense complexe commercial entièrement climatisé compte plus de 700 boutiques et kiosques. Des visiteurs de tout le Panama et des pays voisins s'y rendent en bus ou en métro. On y trouve des centaines d'enseignes, de grands supermarchés, des pharmacies, des banques et des loisirs.",
-        "futureNote": "Une excellente sortie en journée s'il fait trop chaud (ou s'il pleut). Admirez les différentes entrées décorées d'immenses statues d'animaux !",
-        "highlights": [
-          "Plus de 700 boutiques & marques internationales",
-          "Entièrement climatisé",
-          "Supermarchés, pharmacies & essentiels de voyage",
-          "Vastes espaces de restauration et restaurants variés",
-          "Cinémas, bowling et espaces de divertissement",
-          "Connexion directe intérieure avec le terminal de bus d'Albrook et la station de métro"
-        ],
-        "iconType": "shopping"
-      },
-      {
-        "id": "panama-city-base",
-        "name": "Point de Départ Idéal à Panama City",
-        "category": "Avantage Emplacement",
-        "categoryKey": "city",
-        "distance": "Au cœur d'Albrook",
-        "driveTime": "Accès rapide à toutes les attractions",
-        "description": "Grâce à l'emplacement privilégié de Greg's Place, vous rejoignez tous les points d'intérêt majeurs de la capitale en très peu de temps, tout en retrouvant le soir la paix totale d'un quartier arboré.",
-        "futureNote": "L'application Uber est vivement recommandée. Téléchargez-la avant votre voyage et associez-y votre carte bancaire.",
-        "highlights": [
-          "Accès rapide aux quartiers d'affaires, gastronomiques, culturels et de nombreuses opportunités de shopping",
-          "Prise en charge Uber et InDrive directe devant le portail de la propriété"
-        ],
-        "iconType": "city"
-      },
-      {
-        "id": "walk-neighborhood",
-        "name": "Balades dans le Quartier",
-        "category": "Expérience Locale",
-        "categoryKey": "nature",
-        "distance": "Directement au pas de la porte",
-        "driveTime": "0 minute (à pied)",
-        "description": "Albrook est un quartier résidentiel arboré comme un parc, avec de larges trottoirs, des arbres centenaires et des jardins fleuris, parfait pour de paisibles promenades à pied.",
-        "futureNote": "N'hésitez pas à demander une bonne paire de jumelles à Greg pour votre sortie.",
-        "highlights": [
-          "Promenades totalement sécurisées à toute heure du jour et de la nuit",
-          "Belles demeures d'officiers d'époque coloniale",
-          "Parcs, aires de jeux et fleurs tropicales à chaque coin de rue",
-          "Coatis, agoutis et oiseaux exotiques bordant les allées",
-          "Crocodile Creek (ruisseau naturel) :",
-          "  Caïmans et crocodiles d'eau saumâtre",
-          "  Tortues aquatiques tropicales",
-          "  Lézards Jésus-Christ (basilics courant sur l'eau)",
-          "  Ragondins et loutres",
-          "  Oiseaux d'eau — hérons, aigrettes, cormorans, jacanas, vanneaux, etc."
-        ],
-        "iconType": "nature"
-      },
-      {
-        "id": "night-walk",
-        "name": "Promenades Nocturnes & Douceur du Soir",
-        "category": "Sécurité & Sérénité",
-        "categoryKey": "nature",
-        "distance": "Directement au pas de la porte",
-        "driveTime": "À pied",
-        "description": "Profitez de la fraîcheur nocturne et des bruits apaisants de la nature lors d'une promenade en toute quiétude après le coucher du soleil.",
-        "highlights": [
-          "Températures agréablement fraîches en soirée",
-          "Éclairage public doux et grand calme résidentiel",
-          "Lucioles scintillantes, grenouilles et oiseaux nocturnes",
-          "Croisez des voisins joggeurs et des promeneurs de chiens en toute sécurité"
-        ],
-        "iconType": "night"
-      },
-      {
-        "id": "artesan-center",
-        "name": "Centre Artisanal (Artisan Center)",
-        "category": "Souvenirs & Artisanat",
-        "categoryKey": "shopping",
-        "distance": "env. 5 km",
-        "driveTime": "env. 6 minutes en voiture",
-        "description": "Un centre artisanal très prisé dédié à l'artisanat panaméen authentique, aux textiles traditionnels et aux trésors culturels, comptant environ 100 stands tenus par des artisans autochtones vêtus de leurs costumes traditionnels.",
-        "futureNote": "Note de l'hôte :\nSur Uber, il est répertorié sous le nom de « Centro de artesanias Cardenas ». Un endroit unique pour acheter d'authentiques cadeaux et souvenirs panaméens faits main. À deux pas du restaurant préféré de Greg : Maagoos Fish Tacos and More (tenu par une famille de chasseurs sous-marins).",
-        "highlights": [
-          "Environ 100 stands tenus par des peuples autochtones en tenue traditionnelle",
-          "Artisanat panaméen authentique fait main, molas, vannerie et textiles traditionnels",
-          "Un lieu unique pour dénicher d'authentiques souvenirs panaméens faits main",
-          "À distance de marche du restaurant préféré de Greg : Maagoos Fish Tacos and More"
-        ],
-        "iconType": "crafts"
-      },
-      {
-        "id": "panama-canal-railway",
-        "name": "Panama Canal Railway Station",
-        "category": "Chemin de Fer Historique & Excursion",
-        "categoryKey": "canal",
-        "distance": "~ 5 km",
-        "driveTime": "~8 minutes",
-        "description": "Empruntez l'historique chemin de fer du canal de Panama à travers l'isthme, le long du canal et au cœur de la jungle tropicale. Votre trajet d'une heure vous mène à Colón, côté Caraïbes. Vous pouvez revenir par le même train plus tard dans la journée.\nConsultez les détails ici : https://www.panarail.com/",
-        "futureNote": "C'est un voyage magnifique qui en vaut vraiment la peine. Choisissez la voiture panoramique (Dome Car) pour profiter de la meilleure vue. Pensez à demander à Jose, le chauffeur de taxi de confiance de Greg, de vous accueillir pour visiter Colón, vous conduire au centre des visiteurs des écluses de Gatún, puis à Portobelo pour découvrir la ville historique et son fort, déjeuner à Portobelo et vous ramener à Greg's Place.",
-        "linkUrl": "https://www.panarail.com/",
-        "linkText": "SITE OFFICIEL",
-        "iconType": "train"
-      },
-      {
-        "id": "monkey-island",
-        "name": "Tour Nature de l'Île aux Singes en Bateau Privé",
-        "category": "Excursion Nature",
-        "categoryKey": "nature",
-        "distance": "Embarquement dans la jungle de Gamboa",
-        "driveTime": "40 minutes de route depuis Greg's Place",
-        "description": "C'est un voyage magnifique car vous embarquerez à bord d'un petit bateau depuis la zone de forêt tropicale de Gamboa dans la rivière Chagres. Vous serez juste à côté des navires géants qui viennent de sortir des écluses de Pedro Miguel alors qu'ils continuent vers le lac Gatun.\n\nRoberto part tôt pour que son bateau soit le premier sur place, les singes ont donc faim. De plus, vous entendrez les singes hurleurs retentir tôt le matin. Roberto peut généralement trouver au moins 3 espèces de singes différentes (ils ne sont pas tous sur l'île !). Il y a aussi beaucoup d'oiseaux aquatiques intéressants. Roberto peut généralement trouver un crocodile marin aussi.",
-        "futureNote": "avec Roberto, l'ami de Greg\nDépart de chez Greg vers Gamboa (40 minutes)",
-        "highlights": [
-          "Pêche au bar-paon dans le lac Gatun, suivie d'un barbecue de poisson chez Greg.",
-          "Visite du zoo du parc national Soberanía au retour de Gamboa. Ne manquez pas l'exposition sur la Harpie féroce."
-        ],
-        "iconType": "canal"
-      },
-      {
-        "id": "51-fun-things",
-        "name": "51 Activités Incontournables à Panama City avec Photos",
-        "category": "Guides & Conseils",
-        "categoryKey": "history",
-        "distance": "Inspiration pour votre séjour",
-        "driveTime": "Partout dans la ville",
-        "description": "Un guide complet des meilleures expériences, excursions d'une journée et coins secrets à explorer à Panama City et ses alentours.",
-        "highlights": [
-          "Téléphérique dans la forêt tropicale et ruines de forteresses historiques",
-          "Excursions en catamaran vers des îles paradisiaques",
-          "Dégustation de café Geisha d'exception dans le Casco Viejo",
-          "Sorties en kayak sur le lac Gatún"
-        ],
-        "linkUrl": "https://tourscanner.com/blog/things-to-do-in-panama-city-panama/",
-        "iconType": "link"
-      }
-    ],
+        {
+                "id": "stores-and-facilities",
+                "name": "Commerces & Services à Albrook",
+                "category": "Services de Proximité",
+                "categoryKey": "shopping",
+                "distance": "Accessible à pied / 2–4 min de route",
+                "driveTime": "Très proche",
+                "description": "Albrook dispose d'une excellente infrastructure avec pharmacies, supermarchés, boulangeries, distributeurs automatiques et restaurants directement dans le quartier :",
+                "facilities": [
+                  {
+                    "name": "Aéroport Marcos A. Gelabert",
+                    "time": "~3 minutes en voiture ou ~12 minutes à pied"
+                  },
+                  {
+                    "name": "Ambassade des États-Unis",
+                    "time": "~7 minutes en voiture"
+                  },
+                  {
+                    "name": "Marché Fermier (fruits, légumes, œufs)",
+                    "time": "~2 minutes en voiture ou 8 minutes à pied"
+                  },
+                  {
+                    "name": "Petites Épiceries de Proximité (2)",
+                    "time": "~2 minutes en voiture ou 8 minutes à pied"
+                  },
+                  {
+                    "name": "Supermarché El Rey",
+                    "note": "(le plus grand supermarché d'Albrook, où l'hôte fait habituellement ses courses)",
+                    "time": "~3 minutes en voiture ou ~12 minutes à pied"
+                  },
+                  {
+                    "name": "Supermarché Super Carnes",
+                    "time": "~3 minutes en voiture ou ~12 minutes à pied"
+                  },
+                  {
+                    "name": "Boutique Reprosa (Reprosa Store)",
+                    "note": "(boutique Reprosa qui vend de magnifiques et superbes répliques d'artéfacts panaméens)",
+                    "time": "~7 minutes en voiture"
+                  },
+                  {
+                    "name": "Multiplaza Pacific Mall",
+                    "note": "(centre commercial de luxe par excellence avec marques de créateurs internationaux)",
+                    "time": "~15 minutes en voiture"
+                  },
+                  {
+                    "name": "Kotowa Coffee House",
+                    "time": "~3 minutes en voiture ou ~12 minutes à pied"
+                  },
+                  {
+                    "name": "Location de Voitures (Car Rentals)",
+                    "time": "~3 minutes en voiture ou ~12 minutes à pied"
+                  },
+                  {
+                    "name": "Centre de Fitness Power Club",
+                    "time": "~4 minutes en voiture ou ~16 minutes à pied"
+                  },
+                  {
+                    "name": "Full Tech (Service téléphones/ordinateurs)",
+                    "time": "~3 minutes en voiture ou ~12 minutes à pied"
+                  },
+                  {
+                    "name": "Pharmacie Arrocha",
+                    "time": "~2 minutes en voiture ou 8 minutes à pied"
+                  },
+                  {
+                    "name": "Clinique Médicale (Clínica Albrook)",
+                    "time": "~2 minutes en voiture ou 8 minutes à pied"
+                  },
+                  {
+                    "name": "Dentiste (Clínica Arango Orillac Albrook)",
+                    "time": "~2 minutes en voiture ou 8 minutes à pied"
+                  },
+                  {
+                    "name": "Barbiers",
+                    "time": "~2 minutes en voiture ou 8 minutes à pied"
+                  },
+                  {
+                    "name": "Salons de Beauté",
+                    "time": "~2 minutes en voiture ou 8 minutes à pied"
+                  },
+                  {
+                    "name": "Pressing & Retouches",
+                    "time": "~2 minutes en voiture ou 8 minutes à pied"
+                  },
+                  {
+                    "name": "Mail Boxes, Etc.",
+                    "time": "~2 minutes en voiture ou 8 minutes à pied"
+                  }
+                ],
+                "iconType": "services"
+              },
+        {
+                "id": "panama-canal",
+                "name": "Canal de Panama – Centre des Visiteurs de Miraflores",
+                "category": "Canal & Ingénierie",
+                "categoryKey": "canal",
+                "distance": "env. 7 km",
+                "driveTime": "env. 10 minutes en voiture",
+                "description": "La merveille d'ingénierie mondialement célèbre. Depuis les terrasses panoramiques du centre des visiteurs de Miraflores, observez de très près les gigantesques porte-conteneurs franchir les sas des écluses.",
+                "futureNote": "Ne manquez pas le documentaire 3D/IMAX de 45 minutes raconté par Morgan Freeman. Les horaires sont consultables sur https://visitcanaldepanama.com/en/points-of-interest/miraflores-visitor-center/",
+                "highlights": [
+                  "Terrasses panoramiques sur plusieurs étages face aux écluses",
+                  "Commentaires en direct en anglais et espagnol",
+                  "Musée historique retraçant l'épopée de la construction du canal",
+                  "Documentaire 3D/IMAX primé",
+                  "Horaire du transit des navires (change chaque matin) :\nhttps://visitcanaldepanama.com/en/#horarios-barcos"
+                ],
+                "linkUrl": "https://visitcanaldepanama.com/en/points-of-interest/miraflores-visitor-center/",
+                "linkText": "SITE OFFICIEL",
+                "iconType": "canal"
+              },
+        {
+                "id": "casco-viejo",
+                "name": "Casco Viejo (Quartier Historique / Casco Antiguo)",
+                "category": "Histoire Coloniale & Culture",
+                "categoryKey": "history",
+                "distance": "env. 5,5 km",
+                "driveTime": "env. 10–15 minutes en voiture / Uber",
+                "description": "Le cœur historique de Panama et site classé au patrimoine mondial de l'UNESCO fondé au XVIIe siècle. Rues pavées, palais coloniaux espagnols restaurés, places animées, bars en rooftop et tables gastronomiques réputées.",
+                "futureNote": "Idéal pour une promenade en fin d'après-midi jusqu'à la soirée délicatement illuminée.",
+                "highlights": [
+                  "Patrimoine mondial de l'UNESCO à l'architecture coloniale espagnole",
+                  "Palais présidentiel (Palacio de las Garzas) & cathédrale historique",
+                  "Restaurants renommés, cafés et bars en rooftop avec vue sur la skyline",
+                  "Marchés artisanaux et musées captivants"
+                ],
+                "iconType": "heritage"
+              },
+        {
+                "id": "amador-causeway",
+                "name": "Amador Causeway (Calzada de Amador)",
+                "category": "Front de Mer & Loisirs",
+                "categoryKey": "waterfront",
+                "distance": "env. 7 km",
+                "driveTime": "env. 10–12 minutes en voiture",
+                "description": "Une chaussée-promenade de 6 kilomètres reliant quatre petites îles du Pacifique au continent. Construite avec les roches excavées lors du percement du canal, elle offre une vue saisissante sur les navires en attente et les gratte-ciel de la cité.",
+                "futureNote": "Vous pouvez louer des vélos ou des rosalies directement sur place.",
+                "highlights": [
+                  "6 km de promenade piétonne pour marcher, courir ou pédaler",
+                  "Vue panoramique sur l'entrée pacifique du canal et la silhouette urbaine",
+                  "Nombreux restaurants de fruits de mer et terrasses de cafés",
+                  "Embarcadère pour les ferries vers l'archipel des Perles (Taboga & Contadora)"
+                ],
+                "iconType": "landmark"
+              },
+        {
+                "id": "biomuseo",
+                "name": "Biomuseo (Musée de la Biodiversité)",
+                "category": "Nature, Science & Architecture",
+                "categoryKey": "nature",
+                "distance": "env. 6,5 km",
+                "driveTime": "env. 10 minutes en voiture",
+                "description": "Conçu par le célèbre architecte Frank Gehry, cet édifice aux formes audacieuses et colorées célèbre l'émergence de l'isthme de Panama, qui a réuni deux continents et séparé deux océans.",
+                "futureNote": "Le stationnement étant limité, il est conseillé de s'y rendre en Uber.\nLe musée est entièrement climatisé, idéal en milieu de journée. Vous pouvez ensuite prolonger votre balade sur le Causeway pour vous restaurer.",
+                "highlights": [
+                  "Chef-d'œuvre architectural unique signé Frank Gehry",
+                  "Galeries interactives sur la biodiversité et l'histoire géologique",
+                  "Magnifique parc botanique avec essences indigènes",
+                  "Situé à l'entrée du canal de Panama sur le Causeway d'Amador"
+                ],
+                "linkUrl": "https://biomuseo.org/",
+                "linkText": "SITE OFFICIEL",
+                "iconType": "nature"
+              },
+        {
+                "id": "punta-culebra",
+                "name": "Punta Culebra Nature Center",
+                "organization": "Smithsonian Tropical Research Institute",
+                "category": "Nature & Science",
+                "categoryKey": "nature",
+                "distance": "Situé près de la fin du Causeway (~10 km)",
+                "driveTime": "~12-18 minutes en voiture",
+                "description": "Un centre de nature marine et côtière en plein air géré par le Smithsonian Tropical Research Institute, situé sur l'île Naos le long du Causeway d'Amador.",
+                "highlights": [
+                  "Exposition Fabuleuses Grenouilles du Panama (Fabulous Frogs of Panama Exhibit)",
+                  "Aquarium de Poissons Côtiers du Panama (Panama Coastal Fish Aquarium)",
+                  "Aquarium de Poissons Tropicaux (Tropical Fish Aquarium)",
+                  "Dôme aux Papillons (Butterfly Dome)",
+                  "Expositions Écologiques (Ecological Exhibits)",
+                  "Expositions Interactives & Éducatives (Interactive/Educational Exhibits)",
+                  "Sentiers de promenade où observer paresseux, ratons laveurs, iguanas et oiseaux (Walking Trails)"
+                ],
+                "futureNote": "Note de l'hôte :\nConsultez leur site web pour connaître l'emplacement et les horaires : https://stri.si.edu/visit/punta-culebra",
+                "linkUrl": "https://stri.si.edu/visit/punta-culebra",
+                "linkText": "SITE WEB OFFICIEL",
+                "iconType": "nature"
+              },
+        {
+                "id": "cinta-costera",
+                "name": "Cinta Costera (Promenade Côtière)",
+                "category": "Front de Mer & Skyline",
+                "categoryKey": "waterfront",
+                "distance": "env. 7 km",
+                "driveTime": "env. 10–15 minutes en voiture",
+                "description": "La grande esplanade côtière de Panama longeant la baie du Pacifique, reliant le quartier historique de Casco Viejo aux tours de verre du quartier financier.",
+                "futureNote": "Mon itinéraire cyclable urbain préféré. Ne manquez pas de faire un tour au marché aux poissons (Mercado de Mariscos) — idéal le matin.",
+                "highlights": [
+                  "7 km de pistes aménagées pour la course à pied et le vélo",
+                  "Vue imprenable sur la ligne d'horizon ultramoderne de la ville",
+                  "Tronçon marin de 2,5 km contournant la péninsule historique de Casco Viejo",
+                  "Marché aux poissons traditionnel réputé pour ses ceviches ultra-frais",
+                  "Terrains de sport, aires de jeux et stands gourmands en soirée"
+                ],
+                "iconType": "city"
+              },
+        {
+                "id": "parque-metropolitano",
+                "name": "Parc Naturel Métropolitain",
+                "category": "Forêt Tropicale & Randonnée",
+                "categoryKey": "nature",
+                "distance": "env. 2 km",
+                "driveTime": "env. 5 minutes en voiture",
+                "description": "La seule forêt tropicale primaire protégée située dans les limites d'une métropole en Amérique latine. Un véritable paradis pour les randonneurs, les naturalistes et les ornithologues.",
+                "futureNote": "Pensez à emprunter des jumelles de qualité auprès de Greg avant de partir. Présentez-vous d'abord au centre des visiteurs pour régler l'entrée (5 $ pour les touristes, 2 $ pour les résidents) et récupérer votre plan des sentiers.",
+                "highlights": [
+                  "Sentiers de randonnée bien balisés au cœur de la forêt tropicale sèche",
+                  "Paresseux, singes hurleurs, coatis et toucans observables en liberté",
+                  "Belvédère « Mirador Cerro Cedro » avec vue panoramique sur la ville et le canal",
+                  "À seulement quelques minutes de Greg's Place"
+                ],
+                "iconType": "mountain"
+              },
+        {
+                "id": "cerro-ancon",
+                "name": "Cerro Ancón (Colline d'Ancon)",
+                "category": "Point de Vue & Histoire",
+                "categoryKey": "nature",
+                "distance": "env. 4 km",
+                "driveTime": "env. 8 minutes en voiture",
+                "description": "Cette colline boisée emblématique culminant à 199 mètres domine Panama City et l'entrée pacifique du canal. À son sommet flotte l'immense drapeau national du Panama.",
+                "futureNote": "Empruntez des jumelles à Greg avant de vous y rendre. Si un guide naturaliste est présent au sommet, demandez-lui de vous montrer les animaux cachés dans les branches. Un pourboire sera très apprécié !",
+                "highlights": [
+                  "Vue panoramique à 360 degrés sur la ville, le canal et le pont des Amériques",
+                  "Immense drapeau national panaméen flottant au sommet",
+                  "Route ombragée et goudronnée parfaite pour une marche matinale",
+                  "Observations fréquentes de paresseux, daims et toucans le long du chemin"
+                ],
+                "iconType": "mountain"
+              },
+        {
+                "id": "panama-nature-center",
+                "name": "Panama Nature Center",
+                "organization": "Refuge & Centre de Réhabilitation Animale",
+                "category": "Refuge & Protection Animale",
+                "categoryKey": "nature",
+                "distance": "Situé à la Cité du Savoir / Cuidad del Saber (~10 km)",
+                "driveTime": "~10-12 minutes en voiture",
+                "description": "Ce centre de refuge et sanctuaire animalier accueille de magnifiques animaux locaux observables de très près. Parmi les animaux recueillis : toucans, tamanduas (fourmiliers), deux espèces de paresseux, porcs-épics et plusieurs espèces de singes.\n\nProfitez d'un déjeuner sur la grande esplanade de restauration de la Plaza Ciudad del Saber (La Plaza Cuidad del Saber). Un grand choix de stands propose plats et desserts à la carte à déguster dans la grande zone centrale.",
+                "highlights": [
+                  "Observations rapprochées de la faune recueillie : toucans, fourmiliers, deux espèces de paresseux, porcs-épics et singes",
+                  "Sanctuaire et centre de réhabilitation de la faune sauvage",
+                  "Déjeuner et desserts à la carte à La Plaza Cuidad del Saber"
+                ],
+                "futureNote": "Note de l'hôte :\nConsultez leur site web pour connaître l'emplacement et les horaires : https://panamanaturecenter.org/",
+                "linkUrl": "https://panamanaturecenter.org/",
+                "linkText": "SITE WEB OFFICIEL",
+                "iconType": "nature"
+              },
+        {
+                "id": "albrook-mall",
+                "name": "Albrook Mall\n« Le plus grand centre commercial d'Amérique latine »",
+                "category": "Shopping & Gastronomie",
+                "categoryKey": "shopping",
+                "distance": "env. 1 km à vol d'oiseau",
+                "driveTime": "env. 7 minutes en voiture",
+                "description": "Cet immense complexe commercial entièrement climatisé compte plus de 700 boutiques et kiosques. Des visiteurs de tout le Panama et des pays voisins s'y rendent en bus ou en métro. On y trouve des centaines d'enseignes, de grands supermarchés, des pharmacies, des banques et des loisirs.",
+                "futureNote": "Une excellente sortie en journée s'il fait trop chaud (ou s'il pleut). Admirez les différentes entrées décorées d'immenses statues d'animaux !",
+                "highlights": [
+                  "Plus de 700 boutiques & marques internationales",
+                  "Entièrement climatisé",
+                  "Supermarchés, pharmacies & essentiels de voyage",
+                  "Vastes espaces de restauration et restaurants variés",
+                  "Cinémas, bowling et espaces de divertissement",
+                  "Connexion directe intérieure avec le terminal de bus d'Albrook et la station de métro"
+                ],
+                "iconType": "shopping"
+              },
+        {
+                "id": "albrook-swimming-pool",
+                "name": "Albrook Swimming Pool (Piscina de Albrook)",
+                "organization": "« La piscine dans la jungle » · Taille Olympique (50 mètres)",
+                "category": "Sports & Loisirs",
+                "categoryKey": "city",
+                "distance": "Située tout près sur le Paseo de la Iguana (~1 km)",
+                "driveTime": "~1 minute en voiture, ~8 minutes à pied",
+                "description": "La piscine d'Albrook est un équipement public de taille olympique (50 mètres).\n\nToutefois, notez avant de vous y rendre que le complexe fait l'objet d'un grand projet de rénovation et réhabilitation de 7,6 millions de dollars. L'accès peut être restreint ou fermé au public selon l'avancement des travaux.\n\nEn période d'ouverture, l'accès est gratuit. Un certificat médical (obtenable localement pour environ 50 $ avec prise de sang à la clinique locale) est normalement requis, bien que les touristes soient parfois autorisés sans certificat.",
+                "highlights": [
+                  "Bassin olympique public de 50 mètres",
+                  "Important chantier de rénovation de 7,6 millions $ en cours (accès possiblement limité)",
+                  "Accès gratuit en période d'exploitation (certificat médical local à 50 $ parfois exigé)",
+                  "Accès parfois toléré pour les touristes sans certificat"
+                ],
+                "futureNote": "Note de l'hôte :\nConsultez les horaires ici : https://www.instagram.com/piscinaalbrook/\n\nLa piscine est parfois fermée pour des entraînements ou compétitions. Si vous avez les cheveux longs, le bonnet de bain est obligatoire (disponible à l'accueil).",
+                "linkUrl": "https://www.instagram.com/piscinaalbrook/",
+                "linkText": "VÉRIFIER LES HORAIRES",
+                "iconType": "services"
+              },
+        {
+                "id": "kotowa-coffee-house",
+                "name": "Kotowa Coffee House",
+                "organization": "En face de l'aéroport Marcos Gelabert",
+                "category": "Café & Pâtisserie",
+                "categoryKey": "city",
+                "distance": "~1,2 km",
+                "driveTime": "~3 minutes en voiture ou ~12 minutes à pied",
+                "description": "Un café très agréable servant un excellent café panaméen. Si vous aimez le café, c'est l'endroit où aller.",
+                "futureNote": "Mon café préféré. Vous pouvez également acheter leur café emballé à emporter chez vous. Ils en ont deux types, un dans un paquet vert et un dans un paquet rouge, tous deux excellents. Ils servent celui dans le paquet vert aux clients. Ce sont d'excellents cadeaux à rapporter à la maison.",
+                "iconType": "services"
+              },
+        {
+                "id": "panama-city-base",
+                "name": "Point de Départ Idéal à Panama City",
+                "category": "Avantage Emplacement",
+                "categoryKey": "city",
+                "distance": "Au cœur d'Albrook",
+                "driveTime": "Accès rapide à toutes les attractions",
+                "description": "Grâce à l'emplacement privilégié de Greg's Place, vous rejoignez tous les points d'intérêt majeurs de la capitale en très peu de temps, tout en retrouvant le soir la paix totale d'un quartier arboré.",
+                "futureNote": "L'application Uber est vivement recommandée. Téléchargez-la avant votre voyage et associez-y votre carte bancaire.",
+                "highlights": [
+                  "Accès rapide aux quartiers d'affaires, gastronomiques, culturels et de nombreuses opportunités de shopping",
+                  "Prise en charge Uber et InDrive directe devant le portail de la propriété"
+                ],
+                "iconType": "city"
+              },
+        {
+                "id": "walk-neighborhood",
+                "name": "Balades dans le Quartier",
+                "category": "Expérience Locale",
+                "categoryKey": "nature",
+                "distance": "Directement au pas de la porte",
+                "driveTime": "0 minute (à pied)",
+                "description": "Albrook est un quartier résidentiel arboré comme un parc, avec de larges trottoirs, des arbres centenaires et des jardins fleuris, parfait pour de paisibles promenades à pied.",
+                "futureNote": "N'hésitez pas à demander une bonne paire de jumelles à Greg pour votre sortie.",
+                "highlights": [
+                  "Promenades totalement sécurisées à toute heure du jour et de la nuit",
+                  "Belles demeures d'officiers d'époque coloniale",
+                  "Parcs, aires de jeux et fleurs tropicales à chaque coin de rue",
+                  "Coatis, agoutis et oiseaux exotiques bordant les allées",
+                  "Crocodile Creek (ruisseau naturel) :",
+                  "  Caïmans et crocodiles d'eau saumâtre",
+                  "  Tortues aquatiques tropicales",
+                  "  Lézards Jésus-Christ (basilics courant sur l'eau)",
+                  "  Ragondins et loutres",
+                  "  Oiseaux d'eau — hérons, aigrettes, cormorans, jacanas, vanneaux, etc."
+                ],
+                "iconType": "nature"
+              },
+        {
+                "id": "night-walk",
+                "name": "Promenades Nocturnes & Douceur du Soir",
+                "category": "Sécurité & Sérénité",
+                "categoryKey": "nature",
+                "distance": "Directement au pas de la porte",
+                "driveTime": "À pied",
+                "description": "L'hôte a observé les animaux nocturnes suivants près de chez lui : agouti, tamandua, armadillo, capybara, porc-épic, cerf, coyote, rats grimpeurs, belette et paca (ci-dessus).",
+                "highlights": [
+                  "Températures agréablement fraîches en soirée",
+                  "Éclairage public doux et grand calme résidentiel",
+                  "Lucioles scintillantes, grenouilles et oiseaux nocturnes",
+                  "Croisez des voisins joggeurs et des promeneurs de chiens en toute sécurité"
+                ],
+                "iconType": "night"
+              },
+        {
+                "id": "artesan-center",
+                "name": "Centre Artisanal (Artisan Center)",
+                "category": "Souvenirs & Artisanat",
+                "categoryKey": "shopping",
+                "distance": "env. 5 km",
+                "driveTime": "env. 6 minutes en voiture",
+                "description": "Un centre artisanal très prisé dédié à l'artisanat panaméen authentique, aux textiles traditionnels et aux trésors culturels, comptant environ 100 stands tenus par des artisans autochtones vêtus de leurs costumes traditionnels.",
+                "futureNote": "Note de l'hôte :\nSur Uber, il est répertorié sous le nom de « Centro de artesanias Cardenas ». Un endroit unique pour acheter d'authentiques cadeaux et souvenirs panaméens faits main. À deux pas du restaurant préféré de Greg : Maagoos Fish Tacos and More (tenu par une famille de chasseurs sous-marins).",
+                "highlights": [
+                  "Environ 100 stands tenus par des peuples autochtones en tenue traditionnelle",
+                  "Artisanat panaméen authentique fait main, molas, vannerie et textiles traditionnels",
+                  "Un lieu unique pour dénicher d'authentiques souvenirs panaméens faits main",
+                  "À distance de marche du restaurant préféré de Greg : Maagoos Fish Tacos and More"
+                ],
+                "iconType": "crafts"
+              },
+        {
+                "id": "panama-canal-railway",
+                "name": "Panama Canal Railway Station",
+                "category": "Chemin de Fer Historique & Excursion",
+                "categoryKey": "canal",
+                "distance": "~ 5 km",
+                "driveTime": "~8 minutes",
+                "description": "Empruntez l'historique chemin de fer du canal de Panama à travers l'isthme, le long du canal et au cœur de la jungle tropicale. Votre trajet d'une heure vous mène à Colón, côté Caraïbes. Vous pouvez revenir par le même train plus tard dans la journée.\nConsultez les détails ici : https://www.panarail.com/",
+                "futureNote": "C'est un voyage magnifique qui en vaut vraiment la peine. Choisissez la voiture panoramique (Dome Car) pour profiter de la meilleure vue. Pensez à demander à Jose, le chauffeur de taxi de confiance de Greg, de vous accueillir pour visiter Colón, vous conduire au centre des visiteurs des écluses de Gatún, puis à Portobelo pour découvrir la ville historique et son fort, déjeuner à Portobelo et vous ramener à Greg's Place.\n\nC",
+                "linkUrl": "https://www.panarail.com/",
+                "linkText": "SITE OFFICIEL",
+                "iconType": "train"
+              },
+        {
+                "id": "multiplaza-mall",
+                "name": "Multiplaza Mall",
+                "category": "Shopping & Luxe",
+                "categoryKey": "shopping",
+                "distance": "~10 km",
+                "driveTime": "~15 minutes en voiture",
+                "description": "Le Multiplaza Mall est l'un des centres commerciaux les plus modernes et attrayants de la région, comprenant une section Luxury Avenue avec des boutiques haut de gamme. Il compte plus de 350 boutiques et kiosques sur 4 niveaux ainsi que d'excellents restaurants.\n\nC'est toujours un endroit agréable à visiter. Ils disposent d'excellentes salles de cinéma VIP (situées juste au-dessus du cinéma classique). Si vous souhaitez la bande originale en anglais, choisissez un film sous-titré (subtitulada). Les sous-titres seront en espagnol et le film sera dans sa langue d'origine (généralement l'anglais).\n\nLes films à l'affiche sortent généralement au Panama plusieurs semaines avant leur sortie aux États-Unis. Le prix ne représente également qu'une fraction des tarifs américains.",
+                "additionalLinks": [
+                  { "label": "Voir les Horaires du Cinépolis Multiplaza", "url": "https://www.cinepolis.com.pa/" }
+                ],
+                "iconType": "shopping"
+              },
+        {
+                "id": "metro",
+                "name": "Station de Métro d'Albrook\nMetro de Panamá Albrook",
+                "category": "Pôle de Transport",
+                "categoryKey": "shopping",
+                "distance": "~1 km (à vol d'oiseau)",
+                "driveTime": "~7 minutes en voiture + 5 minutes à pied (ou ~12 minutes tout en voiture)",
+                "description": "La station de métro est située juste à côté du terminal de bus d'Albrook (qui est adjacent à l'Albrook Mall).\n\nVoici un lien vers toutes les informations dont vous avez besoin en anglais et en espagnol, y compris les cartes, la description de tous les arrêts, les horaires, etc. :",
+                "futureNote": "Lorsque vous voyagez de Greg's Place à la station de métro d'Albrook, demandez à votre Uber de vous emmener à la gare routière d'Albrook (Gran Terminal Nacional de Transporte Albrook).",
+                "additionalLinks": [
+                  { "label": "Plan du Métro & Informations", "url": "https://elmetrodepanama.com/wp-content/uploads/2025/07/Mapa-Metro-L1L2-webmetro.pdf" }
+                ],
+                "highlights": [
+                  "Comment voyager de l'aéroport de Tocumen à l'Albrook Mall pour SEULEMENT 2 $ !",
+                  "Depuis l'Albrook Mall, vous pouvez prendre un Uber pour vous rendre à Greg's Place à Albrook (2 à 3 $).",
+                  "Commandez votre Uber depuis l'une de ces entrées du centre commercial : Tigre (Tiger), Kangourou (Kangaroo), Éléphant (Elephant)."
+                ],
+                "iconType": "train"
+              },
+        {
+                "id": "albrook-bus-terminal",
+                "name": "Gare Routière d'Albrook\n(Gran Terminal Nacional de Transporte Albrook)",
+                "category": "Pôle de Transport",
+                "categoryKey": "shopping",
+                "distance": "~1 km",
+                "driveTime": "~3-7 minutes en voiture ou adjacent à l'Albrook Mall",
+                "description": "La grande gare routière d'Albrook est le carrefour de tous les bus au Panama et est située juste à côté de l'Albrook Mall.",
+                "futureNote": "Vous pouvez également acheter votre billet en personne la veille, si vous souhaitez vous assurer que votre bus n'est pas complet. Portez un pantalon long et apportez une veste. La climatisation fonctionne généralement à fond pendant tout le trajet !",
+                "additionalLinks": [
+                  { "label": "Voir les Destinations de Bus", "url": "https://grantnt.com/destinos/" },
+                  { "label": "Horaires, Tarifs & Informations sur la Gare", "url": "https://www.google.com/search?q=Albrook+Bus+Terminal+schedule+Gran+Terminal+Nacional+de+Transporte" }
+                ],
+                "iconType": "services"
+              },
+        {
+                "id": "51-fun-things",
+                "name": "51 Activités Incontournables à Panama City avec Photos",
+                "category": "Guides & Conseils",
+                "categoryKey": "history",
+                "distance": "Inspiration pour votre séjour",
+                "driveTime": "Partout dans la ville",
+                "description": "Un guide complet des meilleures expériences, excursions d'une journée et coins secrets à explorer à Panama City et ses alentours.",
+                "highlights": [
+                  "Téléphérique dans la forêt tropicale et ruines de forteresses historiques",
+                  "Excursions en catamaran vers des îles paradisiaques",
+                  "Dégustation de café Geisha d'exception dans le Casco Viejo",
+                  "Sorties en kayak sur le lac Gatún"
+                ],
+                "linkUrl": "https://tourscanner.com/blog/things-to-do-in-panama-city-panama/",
+                "iconType": "link"
+              }
+      ],
     "diningCallout": {
       "title": "Plus de 15 restaurants & food trucks accessibles à pied",
       "description": "Les hôtes de Greg's Place profitent d'un large choix de restauration à proximité immédiate. Plus de 15 restaurants et food trucks sont accessibles à pied — proposant cuisine panaméenne, boulangerie artisanale, cafés de spécialité et plats internationaux. De nombreux autres sont à quelques minutes en Uber.",

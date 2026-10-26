@@ -156,6 +156,7 @@ export interface NearbyPlace {
   readonly iconType?: 'shopping' | 'flight' | 'nature' | 'heritage' | 'canal' | 'landmark' | 'mountain' | 'city' | 'night' | 'link' | 'crafts' | 'services' | 'train';
   readonly linkUrl?: string;
   readonly linkText?: string;
+  readonly additionalLinks?: readonly { readonly label: string; readonly url: string }[];
   readonly prominentTitleLines?: readonly string[];
   readonly facilities?: readonly FacilityItem[];
   readonly image?: string;

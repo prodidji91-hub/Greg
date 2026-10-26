@@ -375,12 +375,12 @@ export const Rooms: React.FC<RoomsProps> = ({
                 </h4>
                 <p className="text-xs sm:text-sm text-[#1B3022]/75 mt-1 leading-relaxed">
                   {lang === 'fr'
-                    ? 'Photographies du salon et lounge partagés, de la cuisine, de la salle de bain du haut (chambres Coati & Owl), de la véranda moustiquaire et des extérieurs.'
+                    ? "Photographies du salon, salle à manger et espace détente partagés, de la cuisine, de la salle de bain du haut (chambres Coati & Owl), de la véranda moustiquaire et des extérieurs."
                     : lang === 'de'
-                    ? 'Fotos des Gemeinschaftswohnzimmers, der Küche, des Gästebads im Obergeschoss (Coati & Owl), der Veranda und des Außengeländes.'
+                    ? "Fotos des Gemeinschaftswohnzimmers, Esszimmers und der Lounge, der Küche, des Gästebads im Obergeschoss (Coati & Owl), der Veranda und des Außengeländes."
                     : lang === 'en'
-                    ? 'Photographs of the Shared Living Room and Lounge, Guest Kitchen, Upstairs Guest Bathroom (Coati & Owl Rooms), Screen Room, and Grounds.'
-                    : 'Fotografías de la Sala de Estar y Salón Compartido, Cocina de Huéspedes, Baño en Planta Alta (Habitaciones Coati y Owl), Terraza con Malla y Jardines.'}
+                    ? "Photographs of the Shared Living Room, Dining Room and Lounge, Guest Kitchen, Upstairs Guest Bathroom (Coati & Owl Rooms), Screen Room, and Grounds."
+                    : "Fotografías de la Sala de Estar, Comedor y Lounge Compartidos, Cocina de Huéspedes, Baño en Planta Alta (Habitaciones Coati y Owl), Terraza con Malla y Jardines."}
                 </p>
               </div>
             </div>
