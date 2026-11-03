@@ -21,6 +21,65 @@ const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5'
   </svg>
 );
 
+const SPECIAL_MENU_I18N = {
+  en: {
+    'birding-breakfast': {
+      title: 'Birding Breakfast & Critters',
+      badge: 'EXPERIENCE',
+    },
+    'whats-nearby': {
+      title: "What's Nearby",
+      badge: 'EXPLORE',
+    },
+    '51-fun-things': {
+      title: '51+ Fun Things to Do in Panama',
+      badge: 'PANAMA',
+    },
+  },
+  es: {
+    'birding-breakfast': {
+      title: 'Observación de Aves, Desayuno y Fauna',
+      badge: 'EXPERIENCIA',
+    },
+    'whats-nearby': {
+      title: 'Qué Hay Cerca',
+      badge: 'EXPLORAR',
+    },
+    '51-fun-things': {
+      title: '51+ Cosas Divertidas para Hacer en Panamá',
+      badge: 'PANAMÁ',
+    },
+  },
+  de: {
+    'birding-breakfast': {
+      title: 'Vogelbeobachtung, Frühstück & Tierwelt',
+      badge: 'ERLEBNIS',
+    },
+    'whats-nearby': {
+      title: 'Was gibt es in der Nähe?',
+      badge: 'ENTDECKEN',
+    },
+    '51-fun-things': {
+      title: '51+ Unterhaltsame Aktivitäten in Panama',
+      badge: 'PANAMA',
+    },
+  },
+  fr: {
+    'birding-breakfast': {
+      title: 'Observation des Oiseaux, Petit-déjeuner & Faune',
+      badge: 'EXPÉRIENCE',
+    },
+    'whats-nearby': {
+      title: 'À Proximité',
+      badge: 'EXPLORER',
+    },
+    '51-fun-things': {
+      title: '51+ Activités Amusantes à Faire au Panama',
+      badge: 'PANAMA',
+    },
+  },
+} as const;
+
 interface NavbarProps {
   lang: Language;
   onLanguageChange: (lang: Language) => void;
@@ -361,9 +420,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex flex-col gap-2">
             {navItems.map((item) => {
               const isActive = isPhotoGalleryActive && item.id === 'photo-gallery';
+              const specialI18n = SPECIAL_MENU_I18N[lang];
 
               // Mobile 51+ Fun Things
               if (item.id === '51-fun-things' || item.id === '51-things') {
+                const data = specialI18n['51-fun-things'];
                 return (
                   <a
                     key={item.id}
@@ -371,14 +432,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-left text-xs uppercase tracking-wider font-bold py-2 border-b border-[#1B3022]/10 transition-colors text-[#DC2626] flex items-center justify-between"
+                    className="text-left text-xs uppercase tracking-wider font-bold py-2 border-b border-[#1B3022]/10 transition-colors text-[#DC2626] flex items-center justify-between gap-2"
                   >
-                    <div className="flex flex-col leading-tight">
-                      <span>51+ FUN THINGS</span>
-                      <span className="text-[10px] opacity-90">TO DO IN PANAMA</span>
-                    </div>
-                    <span className="text-[10px] font-mono px-1.5 py-0.5 border border-[#DC2626]/40 rounded-xs text-[#DC2626]">
-                      PANAMA
+                    <span className="leading-tight font-bold pr-1">{data.title}</span>
+                    <span className="text-[10px] font-mono px-1.5 py-0.5 border border-[#DC2626]/40 rounded-xs text-[#DC2626] shrink-0 font-semibold">
+                      {data.badge}
                     </span>
                   </a>
                 );
@@ -386,18 +444,16 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               // Mobile Birding Breakfast
               if (item.id === 'birding-breakfast') {
+                const data = specialI18n['birding-breakfast'];
                 return (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-left text-xs uppercase tracking-wider font-bold py-2 border-b border-[#1B3022]/10 transition-colors text-[#0284C7] flex items-center justify-between"
+                    className="text-left text-xs uppercase tracking-wider font-bold py-2 border-b border-[#1B3022]/10 transition-colors text-[#0284C7] flex items-center justify-between gap-2"
                   >
-                    <div className="flex flex-col leading-tight">
-                      <span>BIRDING</span>
-                      <span className="text-[10px] opacity-90">BREAKFAST & CRITTERS</span>
-                    </div>
-                    <span className="text-[10px] font-mono px-1.5 py-0.5 border border-[#0284C7]/40 rounded-xs text-[#0284C7]">
-                      EXPERIENCE
+                    <span className="leading-tight font-bold pr-1">{data.title}</span>
+                    <span className="text-[10px] font-mono px-1.5 py-0.5 border border-[#0284C7]/40 rounded-xs text-[#0284C7] shrink-0 font-semibold">
+                      {data.badge}
                     </span>
                   </button>
                 );
@@ -405,18 +461,16 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               // Mobile What's Nearby
               if (item.id === 'whats-nearby') {
+                const data = specialI18n['whats-nearby'];
                 return (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-left text-xs uppercase tracking-wider font-bold py-2 border-b border-[#15803D]/20 transition-colors text-[#15803D] hover:text-[#15803D] focus:text-[#15803D] active:text-[#15803D] visited:text-[#15803D] outline-none focus:outline-none flex items-center justify-between"
+                    className="text-left text-xs uppercase tracking-wider font-bold py-2 border-b border-[#15803D]/20 transition-colors text-[#15803D] hover:text-[#15803D] focus:text-[#15803D] active:text-[#15803D] visited:text-[#15803D] outline-none focus:outline-none flex items-center justify-between gap-2"
                   >
-                    <div className="flex flex-col leading-tight">
-                      <span>WHAT'S</span>
-                      <span className="text-[10px] opacity-90">NEARBY</span>
-                    </div>
-                    <span className="text-[10px] font-mono px-1.5 py-0.5 border border-[#15803D]/40 rounded-xs text-[#15803D]">
-                      EXPLORE
+                    <span className="leading-tight font-bold pr-1">{data.title}</span>
+                    <span className="text-[10px] font-mono px-1.5 py-0.5 border border-[#15803D]/40 rounded-xs text-[#15803D] shrink-0 font-semibold">
+                      {data.badge}
                     </span>
                   </button>
                 );

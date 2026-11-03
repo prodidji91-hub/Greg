@@ -80,7 +80,7 @@
 
 /* Specific focal alignment for slider 6 Gray-headed Chachalaca */
 .object-chachalaca-pos {
-  object-position: center center;
+  object-position: 58% 38%;
 }
 
 /* Specific focal alignment for slider 8 Orange-chinned Parakeet: moves image lower on the screen so the bird and its head are in full view */
@@ -103,9 +103,9 @@
   object-position: center 18%;
 }
 
-/* Specific focal alignment for slider 7 Yellow-backed Oriole: shifted slightly higher on screen */
+/* Specific focal alignment for slider 7 Yellow-backed Oriole */
 .object-oriole-pos {
-  object-position: center 65%;
+  object-position: 52% 48%;
 }
 
 /* Specific focal alignment for slider 2 Coatimundi: shifted slightly higher on screen */
