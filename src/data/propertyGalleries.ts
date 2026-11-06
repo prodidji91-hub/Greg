@@ -64,6 +64,7 @@ export const propertyGalleryCategories: PropertyGalleryCategory[] = [
       '/pictures/livingroom2.jpg',
       '/pictures/chess.jpg',
       '/pictures/couch.jpg',
+      '/pictures/livingroom11.jpeg',
     ],
     featuresEn: [
       'Quiet atmosphere',

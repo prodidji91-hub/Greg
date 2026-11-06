@@ -22,7 +22,7 @@ export const contentDe = {
     },
     {
       "id": "birding-breakfast",
-      "label": "Birding, Breakfast and Critters"
+      "label": "Vogelbeobachtung, Frühstück & Tierwelt"
     },
     {
       "id": "wildlife",
@@ -30,11 +30,11 @@ export const contentDe = {
     },
     {
       "id": "whats-nearby",
-      "label": "In der Nähe"
+      "label": "Was gibt es in der Nähe?"
     },
     {
       "id": "51-fun-things",
-      "label": "51+ Fun Things to Do in Panama"
+      "label": "51+ Unterhaltsame Aktivitäten in Panama"
     },
     {
       "id": "reviews",
@@ -705,7 +705,7 @@ export const contentDe = {
         "id": "paca",
         "name": "Paca",
         "category": "mammals",
-        "description": "Der Gastgeber hat folgende nachtaktive Tiere in der Nähe seines Hauses gesehen: Aguti, Ameisenbär, Gürteltier, Capybara, Stachelschwein, Hirsch, Kojote, Kletterratten, Wiesel und Paca (oben)."
+        "description": "Pacas sind große nachtaktive Nagetiere, die in ihrer Größe zwischen dem Kleinen Wasserschwein (Capybara) und dem Aguti liegen. Sie gelten als begehrtes Wild, und das gekochte Fleisch gilt unter Liebhabern von Wildfleisch als echte Delikatesse. In Belize wurden sie sogar Königin Elisabeth II. als „die königliche Ratte“ serviert.\n\nPacas fressen Früchte, Blätter, Knospen, Blüten, Pilze und Insekten. Sie spielen eine entscheidende Rolle bei der Samenverbreitung, und ihr Lebensraum ist oft um eine Gruppe von Fruchtbäumen zentriert. Pacas benutzen normalerweise nicht ihre Vorderpfoten, um Früchte zu handhaben (wie es Agutis tun)."
       },
       {
         "id": "northern-tamandua",

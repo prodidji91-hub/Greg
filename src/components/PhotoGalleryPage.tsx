@@ -516,7 +516,7 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
                           {/* Top Badges */}
                           <div className="absolute top-3 left-3 right-3 flex items-start justify-between gap-2 pointer-events-none z-10">
                             {isUpstairsBathroom ? (
-                              <span className="px-2.5 py-1 bg-[#8C583E] backdrop-blur-md border border-white/20 text-white text-[10px] uppercase tracking-wider font-bold shadow-xs">
+                              <span className="px-2 py-0.5 bg-[#8C583E] backdrop-blur-md border border-white/20 text-white text-[8.5px] sm:text-[9px] uppercase tracking-wide font-semibold leading-tight shadow-xs max-w-[150px] sm:max-w-[170px] block">
                                 {getCatBadge(cat)}
                               </span>
                             ) : (
@@ -525,7 +525,7 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
                               </span>
                             )}
 
-                            <span className="px-2.5 py-1 bg-black/75 backdrop-blur-md border border-white/20 text-white text-[10px] font-mono">
+                            <span className="px-2.5 py-1 bg-black/75 backdrop-blur-md border border-white/20 text-white text-[10px] font-mono shrink-0">
                               {photoCount} {isFrench ? 'Photos' : isGerman ? 'Fotos' : isSpanish ? 'Fotos' : 'Photos'}
                             </span>
                           </div>

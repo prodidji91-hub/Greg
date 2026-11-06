@@ -42,7 +42,7 @@ export const localPictures = {
   tropicalBreakfast: '/pictures/bbc1.jpg',
   birdWatching: '/pictures/red legged.jpg',
   wildlifeCritters: '/pictures/Gemini_Generated_Image_pjm5bgpjm5bgpjm5.jpg',
-  birding: '/pictures/summertanager.jpg',
+  birding: '/pictures/red legged.jpg',
   wildlife: '/pictures/geoffry tamaron.jpg',
   wildcat: '/pictures/tropical-nature.jpg',
   coalie: '/pictures/coalie.jpeg',

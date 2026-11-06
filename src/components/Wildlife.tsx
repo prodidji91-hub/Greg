@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Compass, Info, Sparkles, Eye, Feather, MapPin, X, Maximize2 } from 'lucide-react';
 import { Language, WildlifeAnimal } from '../types';
 import { content } from '../data/content';
@@ -76,7 +76,7 @@ const wildlifeCardPhotos: Record<string, { src: string; defaultAlt: string; defa
     secondaryTitle: 'Red-crowned Woodpecker',
   },
   'paca': {
-    src: '/pictures/paca.jpg',
+    src: '/pictures/pacca.jpeg',
     defaultAlt: 'Paca (Cuniculus paca) in Albrook, Panama',
     defaultTitle: 'Paca',
   },
@@ -101,76 +101,7 @@ interface WildlifeProps {
   lang: Language;
 }
 
-const FlyingBird: React.FC = () => {
-  const [isFlying, setIsFlying] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReducedMotion(mediaQuery.matches);
-    const handleMotionChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
-    mediaQuery.addEventListener('change', handleMotionChange);
-
-    return () => mediaQuery.removeEventListener('change', handleMotionChange);
-  }, []);
-
-  useEffect(() => {
-    if (reducedMotion) return;
-
-    let timeoutId: NodeJS.Timeout;
-    let isVisible = false;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        isVisible = entry.isIntersecting;
-      },
-      { threshold: 0.2 }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    const runFlight = () => {
-      if (isVisible) {
-        setIsFlying(true);
-        timeoutId = setTimeout(() => {
-          setIsFlying(false);
-          timeoutId = setTimeout(runFlight, 9000 + Math.random() * 4000);
-        }, 9500);
-      } else {
-        timeoutId = setTimeout(runFlight, 3000);
-      }
-    };
-
-    timeoutId = setTimeout(runFlight, 2500);
-
-    return () => {
-      if (containerRef.current) observer.unobserve(containerRef.current);
-      clearTimeout(timeoutId);
-    };
-  }, [reducedMotion]);
-
-  if (reducedMotion) return null;
-
-  return (
-    <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none z-20 rounded-[inherit]">
-      {isFlying && (
-        <div className="absolute top-10 right-[-140px] animate-tropical-flight w-[85px] sm:w-[120px] md:w-[135px] text-[#C5A059] opacity-95 filter drop-shadow-sm">
-          <div style={{ transform: 'scaleX(-1)' }} className="w-full h-full">
-            <svg viewBox="0 0 120 70" className="w-full h-full fill-current">
-              <path d="M40,35 C45,30 55,28 65,30 C75,32 85,25 95,18 C90,28 80,35 70,38 C55,42 45,40 40,35 Z" />
-              <path d="M92,18 C102,15 115,20 118,25 C112,28 102,24 92,22 Z" />
-              <path d="M50,33 Q70,5 90,20 Q70,35 50,33 Z" className="animate-tropical-wing" />
-              <path d="M38,36 L15,42 L35,39 Z" />
-            </svg>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
 
 export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
   const t = content[lang].wildlife;
@@ -331,7 +262,6 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
                   isFullWidth ? 'col-span-1 md:col-span-2 lg:col-span-3' : ''
                 }`}
               >
-                {animal.id === 'tropical-birds' && <FlyingBird />}
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
                     <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 bg-[#1B3022]/5 text-[#1B3022] font-semibold">

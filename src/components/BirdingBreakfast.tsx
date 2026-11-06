@@ -75,7 +75,7 @@ export const BirdingBreakfast: React.FC<BirdingBreakfastProps> = ({
               const isTropicalBreakfast = pIdx === 1 || pillar.title.toLowerCase().includes('breakfast') || pillar.title.toLowerCase().includes('desayuno');
               const isWildlifeCritters = pIdx === 2 || pillar.title.toLowerCase().includes('critter') || pillar.title.toLowerCase().includes('fauna') || pillar.title.toLowerCase().includes('animales') || pillar.title.toLowerCase().includes('wildlife');
               const pillarImg = isBirdWatching
-                ? '/pictures/Red-crowned Woodpecker - .jpg'
+                ? '/pictures/red-crowned-woodpecker.jpg'
                 : isTropicalBreakfast 
                 ? '/pictures/bbc1.jpg' 
                 : isWildlifeCritters 
@@ -100,7 +100,15 @@ export const BirdingBreakfast: React.FC<BirdingBreakfastProps> = ({
                       {isBirdWatching && (
                         <div className="absolute bottom-2 left-2 right-2 z-20 pointer-events-none">
                           <span className="block px-2.5 py-1 bg-black/75 backdrop-blur-md border border-white/20 text-white text-[11px] font-medium text-center shadow-xs">
-                            Red-crowned Woodpecker visits <strong className="font-bold text-[#C5A059]">every day</strong>
+                            {lang === 'fr' ? (
+                              <>Tangara vermillon nous rend visite <strong className="font-bold text-[#C5A059]">tous les jours</strong></>
+                            ) : lang === 'de' ? (
+                              <>Sommertangare besucht uns <strong className="font-bold text-[#C5A059]">jeden Tag</strong></>
+                            ) : lang === 'es' ? (
+                              <>Tángara Veranera nos visita <strong className="font-bold text-[#C5A059]">todos los días</strong></>
+                            ) : (
+                              <>Summer Tanager visits <strong className="font-bold text-[#C5A059]">every day</strong></>
+                            )}
                           </span>
                         </div>
                       )}
@@ -160,11 +168,19 @@ export const BirdingBreakfast: React.FC<BirdingBreakfastProps> = ({
           <div className="lg:col-span-5 space-y-4">
             <div className="relative overflow-hidden shadow-2xl border border-white/20">
               <LocalImage
-                src={localPictures.birding}
-                alt="Tropical bird watching from Greg's Place in Albrook"
+                src="/pictures/red legged.jpg"
+                alt="Red-legged Honeycreepers at Greg's Place in Albrook"
                 aspectRatio="aspect-[4/3]"
                 title={lang === 'fr' ? "Observation des oiseaux tropicaux et de la faune" : lang === 'de' ? "Vogel- und Tierbeobachtung" : lang === 'en' ? "Tropical Bird & Wildlife Watching" : "Observación de Aves y Fauna Tropical"}
-                subtitle={lang === 'fr' ? "Tangara d'été" : lang === 'de' ? "Sommer-Tangare" : lang === 'en' ? "Summer Tanager" : "Tángara Veranera"}
+                subtitle={
+                  lang === 'fr'
+                    ? "Les Guit-guits saï visitent tous les jours"
+                    : lang === 'de'
+                    ? "Rotfuß-Honigsauger besuchen uns jeden Tag"
+                    : lang === 'es'
+                    ? "Los mieleros patirrojos nos visitan todos los días"
+                    : "Red-legged Honeycreepers visit every day"
+                }
                 containerClassName="rounded-none shadow-none"
                 className="object-honeycreeper-pos"
               />

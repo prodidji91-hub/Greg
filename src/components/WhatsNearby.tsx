@@ -34,7 +34,7 @@ const nearbyCardPhotos: Record<string, { src: string; defaultAlt: string; defaul
     defaultTitle: 'Multiplaza Mall',
   },
   'metro': {
-    src: '/pictures/station.jpg',
+    src: '/pictures/metro.jpeg',
     defaultAlt: 'Albrook Metro Station',
     defaultTitle: 'Albrook Metro Station',
   },

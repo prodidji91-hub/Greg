@@ -625,7 +625,7 @@ export const content = {
           id: 'paca',
           name: "Paca",
           category: 'mammals',
-          description: "The host has seen the following nighttime animals close to his home: Agouti, anteater, armadillo, capybara, porcupine, deer, coyote, climbing rats, weasel, and paca (above)."
+          description: "Pacas are a large nocturnal rodent intermediate in size between the Lessor Capybarra and the Agouti. They are highly prized as game animals, the cooked meat being considered quite a delicacy among wild meat enthusiasts. In fact, they have been served in Belize to Queen Elizabeth II, as \"the royal rat”.\n\nPacas eat fruits, leaves, buds, flowers, fungi, and insects. They play a vital role in seed dispersal, and their home ranges are often centered on a group of fruit trees. Pacas normally do not use their fore-paws to manipulate fruits (as do agoutis)."
         },
         {
           id: 'northern-tamandua',
@@ -1572,12 +1572,12 @@ export const content = {
       { id: 'home', label: 'Inicio' },
       { id: 'rooms', label: 'Habitaciones' },
       { id: 'photo-gallery', label: 'Galería de Fotos' },
-      { id: 'story', label: 'The Home' },
+      { id: 'story', label: 'La Casa' },
       { id: 'why-albrook', label: '¿Por Qué Albrook?' },
-      { id: 'birding-breakfast', label: 'Birding, Breakfast and Critters' },
+      { id: 'birding-breakfast', label: 'Observación de Aves, Desayuno y Fauna' },
       { id: 'wildlife', label: 'Vida Silvestre' },
       { id: 'whats-nearby', label: 'Qué Hay Cerca' },
-      { id: '51-fun-things', label: '51+ Fun Things to Do in Panama' },
+      { id: '51-fun-things', label: '51+ Cosas Divertidas para Hacer en Panamá' },
       { id: 'reviews', label: 'Opiniones' },
       { id: 'contact', label: 'Contacto' },
     ],
@@ -2191,6 +2191,12 @@ export const content = {
           name: "Capibara (Poncho)",
           category: 'mammals',
           description: "Panamá es el hogar del Capibara Menor, una especie más pequeña que el famoso capibara común de América del Sur. Crecen hasta unos 80 a 105 cm (31 a 41 pulgadas) de longitud y pesan entre 28 y 40 kg (62 a 88 libras).\n\nJusto al final de la calle de Greg’s Place está Crocodile Creek. Cuando la sección inferior del puente pequeño sobre Crocodile Creek se bloquea, se forma una hermosa laguna. Luego, cada noche, los capibaras nadan río abajo hasta el puente. Aquí suben a tierra y cruzan la calle para volver a entrar al río al otro lado. Greg ha tenido que detener su automóvil más de una vez para dejar que los capibaras crucen la calle frente a él. A veces se detienen durante unos 20 minutos para morder la hierba a un lado del camino."
+        },
+        {
+          id: 'paca',
+          name: "Paca",
+          category: 'mammals',
+          description: "Las pacas son un roedor nocturno grande de tamaño intermedio entre el capibara menor y el agutí (ñeque). Son muy apreciadas como animales de caza, siendo su carne cocida considerada un manjar entre los entusiastas de la carne silvestre. De hecho, se han servido en Belice a la reina Isabel II como «la rata real».\n\nLas pacas comen frutas, hojas, brotes, flores, hongos e insectos. Desempeñan un papel fundamental en la dispersión de semillas, y sus dominios vitales a menudo se centran en un grupo de árboles frutales. Las pacas normalmente no usan sus patas delanteras para manipular las frutas (como sí lo hacen los agutíes)."
         },
         {
           id: 'armadillo',

@@ -22,7 +22,7 @@ export const contentFr = {
     },
     {
       "id": "birding-breakfast",
-      "label": "Birding, Breakfast and Critters"
+      "label": "Observation des Oiseaux, Petit-déjeuner & Faune"
     },
     {
       "id": "wildlife",
@@ -34,7 +34,7 @@ export const contentFr = {
     },
     {
       "id": "51-fun-things",
-      "label": "51+ Fun Things to Do in Panama"
+      "label": "51+ Activités Amusantes à Faire au Panama"
     },
     {
       "id": "reviews",
@@ -705,7 +705,7 @@ export const contentFr = {
         "id": "paca",
         "name": "Paca",
         "category": "mammals",
-        "description": "L'hôte a observé les animaux nocturnes suivants près de chez lui : agouti, tamandua, armadillo, capybara, porc-épic, cerf, coyote, rats grimpeurs, belette et paca (ci-dessus)."
+        "description": "Les pacas sont de grands rongeurs nocturnes de taille intermédiaire entre le petit capybara et l'agouti. Ils sont très prisés comme gibier, leur viande cuite étant considérée comme un véritable mets délicat parmi les amateurs de viande sauvage. En fait, ils ont été servis au Belize à la reine Élisabeth II sous le nom de « rat royal ».\n\nLes pacas consomment des fruits, des feuilles, des bourgeons, des fleurs, des champignons et des insectes. Ils jouent un rôle essentiel dans la dispersion des graines, et leur domaine vital est souvent centré sur un groupe d'arbres fruitiers. Les pacas n'utilisent généralement pas leurs pattes avant pour manipuler les fruits (contrairement aux agoutis)."
       },
       {
         "id": "northern-tamandua",
