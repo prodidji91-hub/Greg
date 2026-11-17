@@ -312,44 +312,27 @@ export const Rooms: React.FC<RoomsProps> = ({
                   <span>{t.ctaView}</span>
                   <span className="inline-block group-hover:translate-x-0.5 transition-transform">→</span>
                 </button>
-                 {rId === 'coati-room' ? (
-                  <button
-                    type="button"
-                    disabled
-                    onClick={(e) => e.stopPropagation()}
-                    className="flex-1 py-3 px-3 bg-gray-200 text-gray-500 text-[10px] font-bold uppercase tracking-widest cursor-not-allowed flex items-center justify-center gap-1"
-                  >
-                    <span>
-                      {lang === 'fr' 
-                        ? 'Indisponible' 
-                        : lang === 'de' 
-                        ? 'Nicht verfügbar' 
-                        : lang === 'en' 
-                        ? 'UNAVAILABLE' 
-                        : 'No disponible'}
-                    </span>
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      if (rId === 'master-bedroom') {
-                        window.open('https://gregsplaceinalbrook.com/en/special-tropical-home---master-bedroom', '_blank', 'noopener,noreferrer');
-                      } else if (rId === 'cayuca-room') {
-                        window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---cayuca-room', '_blank', 'noopener,noreferrer');
-                      } else if (rId === 'owl-room') {
-                        window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---owl-room', '_blank', 'noopener,noreferrer');
-                      } else {
-                        onBookRoom(rId);
-                      }
-                    }}
-                    className="flex-1 py-3 px-3 bg-[#1B3022] hover:bg-[#2A4533] text-white text-[10px] font-bold uppercase tracking-widest transition-colors shadow flex items-center justify-center gap-1"
-                  >
-                    <Calendar className="w-3 h-3 text-[#C5A059]" />
-                    <span>{lang === 'fr' ? 'Réserver' : lang === 'de' ? 'Anfragen' : lang === 'en' ? 'REQUEST' : 'Consultar'}</span>
-                  </button>
-                )}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (rId === 'master-bedroom') {
+                      window.open('https://gregsplaceinalbrook.com/en/special-tropical-home---master-bedroom', '_blank', 'noopener,noreferrer');
+                    } else if (rId === 'cayuca-room') {
+                      window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---cayuca-room', '_blank', 'noopener,noreferrer');
+                    } else if (rId === 'coati-room') {
+                      window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---coati-room-wbalcony', '_blank', 'noopener,noreferrer');
+                    } else if (rId === 'owl-room') {
+                      window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---owl-room', '_blank', 'noopener,noreferrer');
+                    } else {
+                      onBookRoom(rId);
+                    }
+                  }}
+                  className="flex-1 py-3 px-3 bg-[#1B3022] hover:bg-[#2A4533] text-white text-[10px] font-bold uppercase tracking-widest transition-colors shadow flex items-center justify-center gap-1"
+                >
+                  <Calendar className="w-3 h-3 text-[#C5A059]" />
+                  <span>{lang === 'fr' ? 'Réserver' : lang === 'de' ? 'Anfragen' : lang === 'en' ? 'REQUEST' : 'Consultar'}</span>
+                </button>
               </div>
             </div>
           );
@@ -437,7 +420,7 @@ export const Rooms: React.FC<RoomsProps> = ({
                 <div className="w-6 h-6 rounded-full bg-[#1B3022]/10 flex items-center justify-center shrink-0 mt-0.5 text-[#1B3022]">
                   <Check className="w-3.5 h-3.5 text-[#C5A059]" />
                 </div>
-                <span className="text-xs text-[#1B3022] font-medium leading-relaxed">
+                <span className="text-xs text-[#1B3022] font-medium leading-relaxed whitespace-pre-line">
                   {renderWithBoldNetflix(amenity)}
                 </span>
               </div>
@@ -495,35 +478,26 @@ export const Rooms: React.FC<RoomsProps> = ({
                           ${r.cleaningFee} <span className="text-[10px] text-[#1B3022]/60">{lang === 'fr' ? 'unique' : lang === 'de' ? 'einmalig' : lang === 'en' ? 'one-time' : 'única'}</span>
                         </td>
                         <td className="py-3.5 px-3 text-right">
-                          {r.id === 'coati-room' ? (
-                            <button
-                              type="button"
-                              disabled
-                              onClick={(e) => e.stopPropagation()}
-                              className="text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 bg-gray-200 text-gray-500 cursor-not-allowed"
-                            >
-                              {lang === 'fr' ? 'INDISPONIBLE' : lang === 'de' ? 'NICHT VERFÜGBAR' : lang === 'en' ? 'UNAVAILABLE' : 'NO DISPONIBLE'}
-                            </button>
-                          ) : (
-                            <button
-                              type="button"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                if (r.id === 'master-bedroom') {
-                                  window.open('https://gregsplaceinalbrook.com/en/special-tropical-home---master-bedroom', '_blank', 'noopener,noreferrer');
-                                } else if (r.id === 'cayuca-room') {
-                                  window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---cayuca-room', '_blank', 'noopener,noreferrer');
-                                } else if (r.id === 'owl-room') {
-                                  window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---owl-room', '_blank', 'noopener,noreferrer');
-                                } else {
-                                  onBookRoom(r.id);
-                                }
-                              }}
-                              className="text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 bg-[#C5A059] hover:bg-[#A68648] text-white transition-colors"
-                            >
-                              {lang === 'fr' ? 'Réserver' : lang === 'de' ? 'Anfragen' : lang === 'en' ? 'REQUEST' : 'Reservar'}
-                            </button>
-                          )}
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              if (r.id === 'master-bedroom') {
+                                window.open('https://gregsplaceinalbrook.com/en/special-tropical-home---master-bedroom', '_blank', 'noopener,noreferrer');
+                              } else if (r.id === 'cayuca-room') {
+                                window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---cayuca-room', '_blank', 'noopener,noreferrer');
+                              } else if (r.id === 'coati-room') {
+                                window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---coati-room-wbalcony', '_blank', 'noopener,noreferrer');
+                              } else if (r.id === 'owl-room') {
+                                window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---owl-room', '_blank', 'noopener,noreferrer');
+                              } else {
+                                onBookRoom(r.id);
+                              }
+                            }}
+                            className="text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 bg-[#C5A059] hover:bg-[#A68648] text-white transition-colors"
+                          >
+                            {lang === 'fr' ? 'Réserver' : lang === 'de' ? 'Anfragen' : lang === 'en' ? 'REQUEST' : 'Reservar'}
+                          </button>
                         </td>
                       </tr>
                     ))}
@@ -933,7 +907,11 @@ export const Rooms: React.FC<RoomsProps> = ({
                     onClick={() => {
                       const id = activeRoomDetail.id;
                       setActiveRoomDetail(null);
-                      onBookRoom(id);
+                      if (id === 'coati-room') {
+                        window.open('https://gregsplaceinalbrook.com/en/a-special-tropical-home---coati-room-wbalcony', '_blank', 'noopener,noreferrer');
+                      } else {
+                        onBookRoom(id);
+                      }
                     }}
                     className="flex-1 py-3.5 px-6 bg-[#C5A059] hover:bg-[#A68648] text-white text-[11px] font-bold uppercase tracking-widest transition-colors shadow text-center"
                   >

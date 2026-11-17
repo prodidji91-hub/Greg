@@ -376,10 +376,10 @@ export const contentDe = {
     "sharedAmenities": [
       "Klimaanlage",
       "Ventilator",
-      "Tisch",
-      "Stuhl",
-      "Lampe",
-      "Arbeitsbereich geeignet für Laptop & Computer",
+      "Arbeitsbereich geeignet für Laptop & Computer\n• Tisch\n• Stuhl\n• Lampe\n• Mehrfachsteckdose",
+      "Shampoo\nHaarspülung\nHand- und Körperseife",
+      "Haartrockner",
+      "Bügeleisen",
       "Großer Flachbildfernseher",
       "Highspeed-WLAN-Verbindung",
       "Zugang zu kostenlosen Streaming-Diensten wie YouTube in HD",
@@ -843,16 +843,6 @@ export const contentDe = {
                     "time": "~3 Minuten mit dem Auto oder ~12 Minuten zu Fuß"
                   },
                   {
-                    "name": "Reprosa Store (Reprosa-Geschäft)",
-                    "note": "(Reprosa-Geschäft, das wunderschöne und faszinierende Repliken panamaischer Artefakte verkauft)",
-                    "time": "~7 Minuten mit dem Auto"
-                  },
-                  {
-                    "name": "Multiplaza Pacific Mall",
-                    "note": "(erstklassiges Luxus-Einkaufszentrum mit internationalen Designermarken)",
-                    "time": "~15 Minuten mit dem Auto"
-                  },
-                  {
                     "name": "Kotowa Coffee House",
                     "time": "~3 Minuten mit dem Auto oder ~12 Minuten zu Fuß"
                   },
@@ -1209,8 +1199,10 @@ export const contentDe = {
                 "distance": "ca. 10 km",
                 "driveTime": "ca. 15 Minuten mit dem Auto",
                 "description": "Das Multiplaza Mall ist eines der modernsten und attraktivsten Einkaufszentren der Region und umfasst einen Luxury Avenue-Bereich mit gehobenen Geschäften. Es gibt über 350 Geschäfte und Kioske auf 4 Ebenen sowie einige hervorragende Restaurants.\n\nDies ist immer ein unterhaltsamer Ort. Es gibt hervorragende VIP-Kinos (direkt über dem regulären Kino). Wenn Sie den Originalton auf Englisch wünschen, wählen Sie einen untertitelten (subtitulada) Film. Die Untertitel sind auf Spanisch und der Film läuft in der Originalsprache (meistens Englisch).\n\nNeue Filme werden in Panama meist mehrere Wochen vor der Veröffentlichung in den USA gezeigt. Auch der Preis ist nur ein Bruchteil der US-Preise.",
+                "futureNote": "Schauen Sie unbedingt im Reprosa-Geschäft vorbei. Dort werden wunderschöne und faszinierende Repliken panamaischer Artefakte verkauft. Vielleicht möchten Sie eine Halskette oder Krawattennadel mit einem goldenen Frosch? Oder eine goldene Huaca-Replik? Vielleicht eine handgewebte Gesichtsmaske? Dies ist genau der richtige Ort, um solch außergewöhnliche Stücke zu finden.",
                 "additionalLinks": [
-                  { "label": "Cinépolis Multiplaza Spielzeiten anzeigen", "url": "https://www.cinepolis.com.pa/" }
+                  { "label": "Spielzeiten Standard-Kino", "url": "https://cinepolis.com.pa/cinema/cinepolis-multiplaza-pacific/" },
+                  { "label": "Spielzeiten VIP-Kino", "url": "https://cinepolis.com.pa/cinema/cinepolis-multiplaza-pacific-vip/" }
                 ],
                 "iconType": "shopping"
               },
@@ -1224,7 +1216,8 @@ export const contentDe = {
                 "description": "Die Metro-Station befindet sich direkt neben dem Albrook-Busbahnhof (welcher an die Albrook Mall angrenzt).\n\nHier finden Sie einen Link zu allen Informationen, die Sie auf Englisch und Spanisch benötigen, einschließlich Karten, Beschreibungen aller Haltestellen, Öffnungszeiten usw.:",
                 "futureNote": "Wenn Sie von Greg's Place zur Albrook Metro-Station reisen, lassen Sie sich von Ihrem Uber zum Albrook Busbahnhof (Gran Terminal Nacional de Transporte Albrook) bringen.",
                 "additionalLinks": [
-                  { "label": "Metro Map & Information", "url": "https://elmetrodepanama.com/wp-content/uploads/2025/07/Mapa-Metro-L1L2-webmetro.pdf" }
+                  { "label": "Metro Map & Information", "url": "https://elmetrodepanama.com/wp-content/uploads/2025/07/Mapa-Metro-L1L2-webmetro.pdf" },
+                  { "label": "Wie man vom Flughafen Tocumen für NUR 2 $ zur Albrook Mall reist!", "url": "https://share.google/aimode/DgdKVqKQv7PC0JM2Y" }
                 ],
                 "highlights": [
                   "Wie man vom Flughafen Tocumen für NUR 2 $ zur Albrook Mall reist!",
