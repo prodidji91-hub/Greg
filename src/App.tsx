@@ -10,6 +10,7 @@ import { RoomDetail } from './components/RoomDetail';
 import { BirdingBreakfast } from './components/BirdingBreakfast';
 import { Wildlife } from './components/Wildlife';
 import { WhatsNearby } from './components/WhatsNearby';
+import { FunThingsSection } from './components/FunThingsSection';
 import { Reviews } from './components/Reviews';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -220,8 +221,8 @@ export default function App() {
   };
 
   const scrollToSectionById = (id: string) => {
-    let el = document.getElementById(id);
-    if (!el && (id === '51-fun-things' || id === '51-things')) {
+    let el = document.getElementById(id === '51-things' ? '51-fun-things' : id);
+    if (!el && id === '51-fun-things') {
       el = document.getElementById('whats-nearby');
     }
     if (el) {
@@ -262,20 +263,20 @@ export default function App() {
           />
         ) : (
           <>
-            {/* 1. Header / Hero */}
+            {/* 1. Home */}
             <Hero
               lang={lang}
               onOpenBooking={() => handleOpenBooking()}
               onExplore={() => scrollToSectionById('why-albrook')}
             />
 
-            {/* 2. Why Albrook: Discover the Side of Panama City Most Visitors Never See */}
+            {/* 2. Why Albrook? */}
             <WhyAlbrook
               lang={lang}
               onExploreExperience={() => scrollToSectionById('birding-breakfast')}
             />
 
-            {/* 3. Rooms: Guest rooms & bathrooms offered for rental */}
+            {/* 3. Rooms */}
             <Rooms
               lang={lang}
               onBookRoom={(roomId) => handleOpenBooking(roomId)}
@@ -293,42 +294,46 @@ export default function App() {
               onSelectRoom={handleSelectRoom}
             />
 
-            {/* 5. Meet Greg: Personal hosting, local knowledge, authentic care */}
-            <AboutGreg
-              lang={lang}
-              onExploreExperience={() => scrollToSectionById('birding-breakfast')}
-            />
-
-            {/* Remaining sections in their existing order */}
-            {/* The Home: 80+ Years, U.S. Engineering, Protected Area, Rooms & Bathrooms for rent */}
-            <PropertyStory
-              lang={lang}
-              onExploreRooms={() => scrollToSectionById('rooms')}
-            />
-
-            {/* Birding & Breakfast Experience: Visitor & Staying Guest Offers */}
+            {/* 5. Birding Breakfast and Critters */}
             <BirdingBreakfast
               lang={lang}
               onExploreWildlife={() => scrollToSectionById('wildlife')}
               onReserveBirding={(offerId) => handleReserveBirding(offerId)}
             />
 
-            {/* Wildlife: Natural, unstaged native fauna */}
-            <Wildlife
-              lang={lang}
-            />
-
-            {/* What's Nearby: Explore Albrook & Panama City */}
+            {/* 6. What's Nearby (includes Roberto's Monkey Island Tour) */}
             <WhatsNearby
               lang={lang}
             />
 
-            {/* Verified Reviews */}
+            {/* 7. 51+ Fun Things to Do (Map & TourScanner Guide) */}
+            <FunThingsSection
+              lang={lang}
+            />
+
+            {/* 8. Wildlife */}
+            <Wildlife
+              lang={lang}
+            />
+
+            {/* 9. The Home */}
+            <PropertyStory
+              lang={lang}
+              onExploreRooms={() => scrollToSectionById('rooms')}
+            />
+
+            {/* 10. Your Host */}
+            <AboutGreg
+              lang={lang}
+              onExploreExperience={() => scrollToSectionById('birding-breakfast')}
+            />
+
+            {/* 11. Reviews */}
             <Reviews
               lang={lang}
             />
 
-            {/* Contact & Inquiries */}
+            {/* 12. Contact */}
             <Contact
               lang={lang}
               onOpenBooking={() => handleOpenBooking()}

@@ -52,7 +52,6 @@ export const roomGalleries: RoomGalleryConfig = {
     '/pictures/rooms/owl-room/o1.jpg',
     '/pictures/rooms/owl-room/o2.jpg',
     '/pictures/rooms/owl-room/o3.jpg',
-    '/pictures/rooms/owl-room/o4.jpg',
     '/pictures/rooms/owl-room/o5.jpg',
     '/pictures/rooms/owl-room/o6.jpg',
     '/pictures/rooms/owl-room/o7.jpg',

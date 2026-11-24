@@ -311,9 +311,15 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
                                 </div>
                               </div>
                             </button>
-                            <p className="mt-1.5 text-xs font-serif italic text-[#8C583E] text-center">
+                            <p className="mt-2.5 text-sm sm:text-base md:text-[17px] font-serif font-medium leading-snug text-[#1B3022] text-center px-1">
                               {animal.id === 'tropical-birds'
-                                ? (lang === 'es' ? 'Oropéndola Crestada' : lang === 'de' ? 'Haubenoropendola' : lang === 'fr' ? 'Cassique huppé' : 'Crested Oropendola')
+                                ? (lang === 'es'
+                                    ? 'Oropéndolas Crestadas viven en el vecindario'
+                                    : lang === 'de'
+                                    ? 'Haubenoropendolas leben in der Nachbarschaft'
+                                    : lang === 'fr'
+                                    ? 'Les cassiques huppés vivent dans le quartier'
+                                    : 'Crested Oropendula live in the neighborhood')
                                 : (cardPhoto.title || animal.name)}
                             </p>
                           </div>
@@ -346,9 +352,15 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
                                 </div>
                               </div>
                             </button>
-                            <p className="mt-1.5 text-xs font-serif italic text-[#8C583E] text-center">
+                            <p className="mt-2.5 text-sm sm:text-base md:text-[17px] font-serif font-medium leading-snug text-[#1B3022] text-center px-1">
                               {animal.id === 'tropical-birds'
-                                ? (lang === 'es' ? 'Carpintero Coronirrojo' : lang === 'de' ? 'Rotkappenspecht' : lang === 'fr' ? 'Pic à couronne rouge' : 'Red-crowned Woodpecker')
+                                ? (lang === 'es'
+                                    ? 'Carpinteros Coronirrojos nos visitan todos los días'
+                                    : lang === 'de'
+                                    ? 'Rotkappenspechte besuchen uns jeden Tag'
+                                    : lang === 'fr'
+                                    ? 'Les pics à couronne rouge visitent tous les jours'
+                                    : 'Red-crowned Woodpeckers visit every day')
                                 : (cardPhotoConfig.secondaryTitle || '')}
                             </p>
                           </div>
@@ -384,10 +396,18 @@ export const Wildlife: React.FC<WildlifeProps> = ({ lang }) => {
                   {animal.id === 'tropical-birds' ? (
                     <div className="text-xs sm:text-sm text-[#1B3022]/85 leading-relaxed mb-3 font-normal space-y-2">
                       <p>
-                        {lang === 'de' ? 'Gut über 100 Arten leben in der Nachbarschaft.' : lang === 'fr' ? 'Bien plus de 100 espèces vivent dans le quartier.' : 'Well over 100 species live in the neighborhood.'}
+                        {lang === 'es'
+                          ? 'Bien más de 100 especies viven en el vecindario.'
+                          : lang === 'de'
+                          ? 'Gut über 100 Arten leben in der Nachbarschaft.'
+                          : lang === 'fr'
+                          ? 'Bien plus de 100 espèces vivent dans le quartier.'
+                          : 'Well over 100 species live in the neighborhood.'}
                       </p>
                       <p>
-                        {lang === 'de' ? (
+                        {lang === 'es' ? (
+                          <>Las siguientes aves visitan Greg&apos;s Place <strong className="font-bold text-[#1B3022]">todos los días</strong>:</>
+                        ) : lang === 'de' ? (
                           <>Folgende Vögel besuchen Greg&apos;s Place <strong className="font-bold text-[#1B3022]">jeden Tag</strong>:</>
                         ) : lang === 'fr' ? (
                           <>Les oiseaux suivants visitent Greg&apos;s Place <strong className="font-bold text-[#1B3022]">chaque jour</strong> :</>

@@ -5,6 +5,10 @@ export const contentDe = {
       "label": "Startseite"
     },
     {
+      "id": "why-albrook",
+      "label": "Warum Albrook?"
+    },
+    {
       "id": "rooms",
       "label": "Zimmer"
     },
@@ -13,20 +17,8 @@ export const contentDe = {
       "label": "Fotogalerie"
     },
     {
-      "id": "story",
-      "label": "Das Haus"
-    },
-    {
-      "id": "why-albrook",
-      "label": "Warum Albrook?"
-    },
-    {
       "id": "birding-breakfast",
       "label": "Vogelbeobachtung, Frühstück & Tierwelt"
-    },
-    {
-      "id": "wildlife",
-      "label": "Tierwelt"
     },
     {
       "id": "whats-nearby",
@@ -34,7 +26,19 @@ export const contentDe = {
     },
     {
       "id": "51-fun-things",
-      "label": "51+ Unterhaltsame Aktivitäten in Panama"
+      "label": "51+ Unterhaltsame Aktivitäten"
+    },
+    {
+      "id": "wildlife",
+      "label": "Tierwelt"
+    },
+    {
+      "id": "story",
+      "label": "Das Haus"
+    },
+    {
+      "id": "about-greg",
+      "label": "Ihr Gastgeber"
     },
     {
       "id": "reviews",
@@ -598,7 +602,7 @@ export const contentDe = {
         "id": "coatimundi",
         "name": "Weißrüssel-Nasenbären (Coatimundis / Gatos Solos)",
         "scientificOrLocal": "Nasua narica · White-nosed Coati",
-        "frequency": "Regelmäßig auf Streifzügen beobachtet",
+        "frequency": "Besuchen uns jeden Tag",
         "habitat": "Gartenbegrenzung & Bodenflächen",
         "category": "mammals",
         "description": "Neugierige und gewandte Verwandte des Waschbären, die mit empfindlichen Schnauzen und geringelten Schwänzen die ruhigen Ränder des Gartens erkunden."
@@ -607,7 +611,7 @@ export const contentDe = {
         "id": "agouti",
         "name": "Mittelamerikanische Agutis (Ñeques)",
         "scientificOrLocal": "Dasyprocta punctata · Central American Agouti",
-        "frequency": "Sehr häufige tägliche Besucher",
+        "frequency": "Besuchen uns jeden Tag",
         "habitat": "Rasen & schattiges Unterholz",
         "category": "mammals",
         "description": "Diese sanften Tiere mit glänzendem Fell sind beliebte Dauergäste auf dem Rasen, die herabgefallene Samen knabbern und unsere Gäste beim Frühstück erfreuen."
@@ -616,7 +620,7 @@ export const contentDe = {
         "id": "sloth",
         "name": "Braunkehl-Dreifingerfaultiere",
         "scientificOrLocal": "Bradypus variegatus · Three-toed Sloth",
-        "frequency": "Gelegentliche friedliche Sichtungen",
+        "frequency": "Besuchen uns gelegentlich",
         "habitat": "Ameisenbäume (Cecropia) & hohe Äste",
         "category": "mammals",
         "description": "Gelegentlich sieht man sie gemächlich durch das obere Blätterdach wandern – ein wunderbares Sinnbild für die entspannte Ruhe der Natur Panamas."
@@ -625,7 +629,7 @@ export const contentDe = {
         "id": "monkeys",
         "name": "Geoffroy-Tamarinaffen & Brüllaffen",
         "scientificOrLocal": "Saguinus geoffroyi & Alouatta palliata",
-        "frequency": "Regelmäßige Besucher in den Baumkronen",
+        "frequency": "Besuchen uns jeden Tag",
         "habitat": "Grüne Baumkorridore quer durch Albrook",
         "category": "mammals",
         "description": "Kleine, quirlige Geoffroy-Tamarinaffen und die markanten Stimmen von Brüllaffen beleben regelmäßig die schattigen Baumkorridore rund um unser Viertel.\n\nEin geschlechtsreifes Weibchen paart sich mit mehreren Männchen und bringt häufig zweieiige Zwillinge zur Welt – zwei Geschwister, die gleichzeitig geboren werden, aber nicht identisch sind. Obwohl gewöhnlich nur eines das Erwachsenenalter erreicht, arbeiten die Männchen zusammen, um den Nachwuchs zu versorgen, und tragen die Jungtiere während ihrer ersten 10 Lebenswochen."
@@ -658,6 +662,7 @@ export const contentDe = {
       {
         "id": "iguana",
         "name": "Iguana",
+        "frequency": "Besuchen uns jeden Tag",
         "category": "reptiles",
         "description": "Leguane verschiedener Größe krabbeln jeden Tag über die Affenbrücke zu unseren Vogelfutterstellen. Nachdem die Vögel und Nasenbären mit den Früchten fertig sind, sind die Leguane das Reinigungsteam, das die restlichen Papaya- und Bananenschalen frisst. Manchmal sieht man einen großen Leguan, der Vögel oder einen kleineren Leguan verjagt. Die kleineren Leguane haben die intensivere grüne Farbe."
       },
@@ -818,12 +823,16 @@ export const contentDe = {
                 "description": "Albrook bietet eine hervorragende Infrastruktur mit Apotheken, Supermärkten, Bäckereien, Geldautomaten und Restaurants direkt im Viertel:",
                 "facilities": [
                   {
-                    "name": "Flughafen Marcos A. Gelabert",
+                    "name": "Flughafen Marcos A. Gelabert (PAC)",
                     "time": "~3 Minuten mit dem Auto oder ~12 Minuten zu Fuß"
                   },
                   {
                     "name": "Botschaft der Vereinigten Staaten",
                     "time": "~7 Minuten mit dem Auto"
+                  },
+                  {
+                    "name": "City of Knowledge (Ciudad del Saber)",
+                    "time": "~10 Minuten mit dem Auto (~15+ Minuten im Berufsverkehr)"
                   },
                   {
                     "name": "Bauernmarkt (Obst, Gemüse, Eier)",
@@ -1186,7 +1195,7 @@ export const contentDe = {
                 "distance": "~ 5 km",
                 "driveTime": "~8 Minuten",
                 "description": "Fahren Sie mit der historischen Panama-Kanal-Eisenbahn quer über den Isthmus von Panama, entlang des Kanals und durch den Dschungel. Ihre einstündige Fahrt führt nach Colón an der Karibikküste. Sie können am selben Tag mit demselben Zug zurückkehren.\nAlle Details finden Sie hier: https://www.panarail.com/",
-                "futureNote": "Dies ist ein wunderbarer Ausflug, der sich absolut lohnt. Wählen Sie den Dome Car (Panoramawagen) für die schönste Aussicht. Lassen Sie sich von Gregs vertrautem Taxifahrer Jose empfangen, um eine Tour durch Colón zu machen, das Gatun-Schleusen-Besucherzentrum zu besuchen und weiter nach Portobelo zu fahren, um die historische Festungsstadt zu sehen, dort zu Mittag zu essen und nach Greg's Place zurückzukehren.\n\nDies ist ein wunderbarer Ausflug, da Sie mit einem kleinen Boot vom Regenwaldgebiet Gamboa aus in den Chagres-Fluss starten. Sie befinden sich direkt neben den riesigen Schiffen, die gerade die Pedro-Miguel-Schleusen verlassen haben und ihre Fahrt zum Gatun-See fortsetzen.\n\nRoberto fährt früh los, so dass sein Boot das erste vor Ort ist und die Affen hungrig sind. Außerdem werden Sie am frühen Morgen das Heulen der Brüllaffen hören. Roberto kann normalerweise mindestens 3 verschiedene Affenarten finden (sie sind nicht alle auf der Insel!). Es gibt auch viele interessante Wasservögel. Roberto kann normalerweise auch ein Salzwasserkrokodil finden.",
+                "futureNote": "Dies ist ein wunderbarer Ausflug, der sich absolut lohnt. Wählen Sie den Dome Car (Panoramawagen) für die schönste Aussicht. Lassen Sie sich von Gregs vertrautem Taxifahrer Jose empfangen, um eine Tour durch Colón zu machen, das Gatun-Schleusen-Besucherzentrum zu besuchen und weiter nach Portobelo zu fahren, um die historische Festungsstadt zu sehen, dort zu Mittag zu essen und nach Greg's Place zurückzukehren.",
                 "linkUrl": "https://www.panarail.com/",
                 "linkText": "OFFIZIELLE WEBSITE",
                 "iconType": "train"
@@ -1240,6 +1249,21 @@ export const contentDe = {
                   { "label": "Fahrpläne, Tarife & Terminalinformationen", "url": "https://www.google.com/search?q=Albrook+Bus+Terminal+schedule+Gran+Terminal+Nacional+de+Transporte" }
                 ],
                 "iconType": "services"
+              },
+        {
+                "id": "monkey-island",
+                "name": "Robertos Affeninsel-Naturtour im Privatboot",
+                "category": "Naturausflug",
+                "categoryKey": "nature",
+                "distance": "Abfahrt vom Regenwald in Gamboa",
+                "driveTime": "40 Min. Fahrt ab Greg’s Place",
+                "description": "Dies ist ein wunderbarer Ausflug, da Sie mit einem kleinen Boot vom Regenwaldgebiet Gamboa aus in den Chagres-Fluss starten. Sie befinden sich direkt neben den riesigen Schiffen, die gerade die Pedro-Miguel-Schleusen verlassen haben und ihre Fahrt zum Gatun-See fortsetzen.\n\nRoberto fährt früh los, so dass sein Boot das erste vor Ort ist und die Affen hungrig sind. Außerdem werden Sie am frühen Morgen das Heulen der Brüllaffen hören. Roberto kann normalerweise mindestens 3 verschiedene Affenarten finden (sie sind nicht alle auf der Insel!). Es gibt auch viele interessante Wasservögel. Roberto kann normalerweise auch ein Salzwasserkrokodil finden.",
+                "futureNote": "mit Roberto, Gregs Freund\nAbfahrt von Greg’s Place nach Gamboa (40 Minuten)",
+                "highlights": [
+                  "Optionales Pfauenbarsch-Angeln (Peacock Bass) auf dem Gatun-See, gefolgt von einem Fisch-Barbecue bei Greg’s Place.",
+                  "Optionaler Besuch im Zoo des Nationalparks Soberanía auf dem Rückweg von Gamboa. Verpassen Sie nicht das Harpyien-Gehege."
+                ],
+                "iconType": "canal"
               },
         {
                 "id": "51-fun-things",

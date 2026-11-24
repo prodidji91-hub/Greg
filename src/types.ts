@@ -7,6 +7,7 @@ export type NavigationSectionId =
   | 'rooms'
   | 'photo-gallery'
   | 'story'
+  | 'about-greg'
   | 'why-albrook'
   | 'birding-breakfast'
   | 'wildlife'

@@ -25,33 +25,37 @@ const DESKTOP_TWO_LINE_ITEMS: Record<Language, Record<string, readonly [string, 
   en: {
     'photo-gallery': ['PHOTO', 'GALLERY'],
     'story': ['THE', 'HOME'],
+    'about-greg': ['YOUR', 'HOST'],
     'why-albrook': ['WHY', 'ALBROOK?'],
-    '51-fun-things': ['51+ FUN THINGS', 'TO DO IN PANAMA'],
-    'birding-breakfast': ['BIRDING', 'BREAKFAST & CRITTERS'],
+    '51-fun-things': ['51+ FUN THINGS', 'TO DO'],
+    'birding-breakfast': ['BIRDING BREAKFAST', 'AND CRITTERS'],
     'whats-nearby': ["WHAT'S", 'NEARBY'],
   },
   es: {
     'photo-gallery': ['GALERÍA DE', 'FOTOS'],
     'story': ['LA', 'CASA'],
+    'about-greg': ['SU', 'ANFITRIÓN'],
     'why-albrook': ['¿POR QUÉ', 'ALBROOK?'],
-    '51-fun-things': ['51+ COSAS DIVERTIDAS', 'PARA HACER EN PANAMÁ'],
+    '51-fun-things': ['51+ COSAS', 'DIVERTIDAS'],
     'birding-breakfast': ['OBSERVACIÓN DE AVES', 'DESAYUNO Y FAUNA'],
     'whats-nearby': ['QUÉ HAY', 'CERCA'],
   },
   de: {
     'photo-gallery': ['FOTO-', 'GALERIE'],
     'story': ['DAS', 'HAUS'],
+    'about-greg': ['IHR', 'GASTGEBER'],
     'why-albrook': ['WARUM', 'ALBROOK?'],
-    '51-fun-things': ['51+ UNTERHALTSAME', 'AKTIVITÄTEN IN PANAMA'],
+    '51-fun-things': ['51+ UNTERHALTSAME', 'AKTIVITÄTEN'],
     'birding-breakfast': ['VOGELBEOBACHTUNG', 'FRÜHSTÜCK & TIERWELT'],
     'whats-nearby': ['WAS GIBT ES', 'IN DER NÄHE?'],
   },
   fr: {
     'photo-gallery': ['GALERIE', 'PHOTOS'],
     'story': ['LA', 'DEMEURE'],
+    'about-greg': ['VOTRE', 'HÔTE'],
     'why-albrook': ['POURQUOI', 'ALBROOK ?'],
-    '51-fun-things': ['51+ ACTIVITÉS AMUSANTES', 'À FAIRE AU PANAMA'],
-    'birding-breakfast': ['OBSERVATION DES OISEAUX', 'PETIT-DÉJEUNER & FAUNE'],
+    '51-fun-things': ['51+ ACTIVITÉS', 'AMUSANTES'],
+    'birding-breakfast': ['OBSERVATION OISEAUX', 'DÉJEUNER & FAUNE'],
     'whats-nearby': ['À', 'PROXIMITÉ'],
   },
 };
@@ -59,7 +63,7 @@ const DESKTOP_TWO_LINE_ITEMS: Record<Language, Record<string, readonly [string, 
 const SPECIAL_MENU_I18N = {
   en: {
     'birding-breakfast': {
-      title: 'Birding Breakfast & Critters',
+      title: 'Birding Breakfast and Critters',
       badge: 'EXPERIENCE',
     },
     'whats-nearby': {
@@ -67,7 +71,7 @@ const SPECIAL_MENU_I18N = {
       badge: 'EXPLORE',
     },
     '51-fun-things': {
-      title: '51+ Fun Things to Do in Panama',
+      title: '51+ Fun Things to Do',
       badge: 'PANAMA',
     },
   },
@@ -81,7 +85,7 @@ const SPECIAL_MENU_I18N = {
       badge: 'EXPLORAR',
     },
     '51-fun-things': {
-      title: '51+ Cosas Divertidas para Hacer en Panamá',
+      title: '51+ Cosas Divertidas para Hacer',
       badge: 'PANAMÁ',
     },
   },
@@ -95,7 +99,7 @@ const SPECIAL_MENU_I18N = {
       badge: 'ENTDECKEN',
     },
     '51-fun-things': {
-      title: '51+ Unterhaltsame Aktivitäten in Panama',
+      title: '51+ Unterhaltsame Aktivitäten',
       badge: 'PANAMA',
     },
   },
@@ -109,7 +113,7 @@ const SPECIAL_MENU_I18N = {
       badge: 'EXPLORER',
     },
     '51-fun-things': {
-      title: '51+ Activités Amusantes à Faire au Panama',
+      title: '51+ Activités Amusantes à Faire',
       badge: 'PANAMA',
     },
   },
@@ -151,12 +155,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   // Single horizontal row navigation items from content
   const navItems: readonly NavItem[] = t.nav;
 
-  // Retrieve existing TourScanner URL from What's Nearby section content
-  const tourScannerUrl =
-    (t.whatsNearby?.places as readonly { id?: string; linkUrl?: string }[] | undefined)?.find(
-      (p) => p.id === 'tourscanner' || (p.linkUrl && p.linkUrl.includes('tourscanner'))
-    )?.linkUrl || 'https://tourscanner.com/things-to-do-in-panama-city-panama';
-
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
     if (id === 'photo-gallery') {
@@ -169,8 +167,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       onNavigateHome(id);
       return;
     }
-    let element = document.getElementById(id);
-    if (!element && (id === '51-fun-things' || id === '51-things')) {
+    let element = document.getElementById(id === '51-things' ? '51-fun-things' : id);
+    if (!element && id === '51-fun-things') {
       element = document.getElementById('whats-nearby');
     }
     if (element) {
@@ -212,7 +210,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </button>
 
         {/* Desktop Navigation Links - Kept strictly as ONE single horizontal row */}
-        <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2.5 2xl:gap-3 flex-nowrap shrink">
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-2 2xl:gap-2.5 flex-nowrap shrink">
           {navItems.map((item) => {
             const isActive = isPhotoGalleryActive && item.id === 'photo-gallery';
             const twoLineConfig = DESKTOP_TWO_LINE_ITEMS[lang]?.[item.id];
@@ -221,8 +219,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               return (
                 <div key={item.id} className="flex flex-col items-center shrink-0 self-center">
                   <button
+                    type="button"
                     onClick={() => scrollToSection(item.id)}
-                    className={`text-[12px] xl:text-[13px] 2xl:text-[14px] uppercase tracking-wider font-semibold transition-all py-0.5 border-b shrink-0 whitespace-nowrap ${
+                    className={`text-[11px] xl:text-[12px] 2xl:text-[13.5px] uppercase tracking-wider font-semibold transition-all py-0.5 border-b shrink-0 whitespace-nowrap cursor-pointer ${
                       isActive
                         ? 'text-[#C5A059] border-[#C5A059] font-bold'
                         : effectiveScrolled
@@ -249,16 +248,15 @@ export const Navbar: React.FC<NavbarProps> = ({
               );
             }
 
-            // Special Compact Two-Line Button: 51+ FUN THINGS TO DO IN PANAMA
+            // Special Compact Two-Line Button: 51+ FUN THINGS TO DO
             if (item.id === '51-fun-things' || item.id === '51-things') {
-              const lines = twoLineConfig || ['51+ FUN THINGS', 'TO DO IN PANAMA'];
+              const lines = twoLineConfig || ['51+ FUN THINGS', 'TO DO'];
               return (
-                <a
+                <button
                   key={item.id}
-                  href={tourScannerUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex flex-col items-center justify-center text-center px-1.5 xl:px-2 py-0.5 rounded-[3px] font-bold text-[10.5px] xl:text-[11.5px] 2xl:text-[12.5px] leading-[1.08] tracking-wide transition-all border shrink-0 ${
+                  type="button"
+                  onClick={() => scrollToSection('51-fun-things')}
+                  className={`inline-flex flex-col items-center justify-center text-center px-1.5 xl:px-2 py-0.5 rounded-[3px] font-bold text-[9.5px] xl:text-[10.5px] 2xl:text-[12px] leading-[1.08] tracking-wide transition-all border shrink-0 cursor-pointer ${
                     effectiveScrolled
                       ? 'text-[#DC2626] border-[#DC2626]/40 hover:border-[#DC2626] hover:bg-red-50/70 shadow-2xs'
                       : 'text-[#FF4D4D] border-[#FF4D4D]/50 hover:border-[#FF4D4D] hover:bg-black/35 drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]'
@@ -267,18 +265,19 @@ export const Navbar: React.FC<NavbarProps> = ({
                 >
                   <span className="font-bold whitespace-nowrap">{lines[0]}</span>
                   <span className="font-bold whitespace-nowrap">{lines[1]}</span>
-                </a>
+                </button>
               );
             }
 
-            // Special Compact Two-Line Button: BIRDING, BREAKFAST AND CRITTERS
+            // Special Compact Two-Line Button: BIRDING BREAKFAST AND CRITTERS
             if (item.id === 'birding-breakfast') {
-              const lines = twoLineConfig || ['BIRDING', 'BREAKFAST & CRITTERS'];
+              const lines = twoLineConfig || ['BIRDING BREAKFAST', 'AND CRITTERS'];
               return (
                 <button
                   key={item.id}
+                  type="button"
                   onClick={() => scrollToSection(item.id)}
-                  className={`inline-flex flex-col items-center justify-center text-center px-1.5 xl:px-2 py-0.5 rounded-[3px] font-bold text-[10.5px] xl:text-[11.5px] 2xl:text-[12.5px] leading-[1.08] tracking-wide transition-all border shrink-0 ${
+                  className={`inline-flex flex-col items-center justify-center text-center px-1.5 xl:px-2 py-0.5 rounded-[3px] font-bold text-[9.5px] xl:text-[10.5px] 2xl:text-[12px] leading-[1.08] tracking-wide transition-all border shrink-0 cursor-pointer ${
                     effectiveScrolled
                       ? 'text-[#0284C7] border-[#0284C7]/40 hover:border-[#0284C7] hover:bg-sky-50/70 shadow-2xs'
                       : 'text-[#38BDF8] border-[#38BDF8]/50 hover:border-[#38BDF8] hover:bg-black/35 drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]'
@@ -297,8 +296,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               return (
                 <button
                   key={item.id}
+                  type="button"
                   onClick={() => scrollToSection(item.id)}
-                  className={`inline-flex flex-col items-center justify-center text-center px-1.5 xl:px-2 py-0.5 rounded-[3px] font-bold text-[10.5px] xl:text-[11.5px] 2xl:text-[12.5px] leading-[1.08] tracking-wide transition-all border shrink-0 outline-none focus:outline-none focus:ring-0 ${
+                  className={`inline-flex flex-col items-center justify-center text-center px-1.5 xl:px-2 py-0.5 rounded-[3px] font-bold text-[9.5px] xl:text-[10.5px] 2xl:text-[12px] leading-[1.08] tracking-wide transition-all border shrink-0 outline-none focus:outline-none focus:ring-0 cursor-pointer ${
                     effectiveScrolled
                       ? 'text-[#15803D] border-[#15803D]/50 hover:border-[#15803D] hover:bg-[#15803D]/10 focus:text-[#15803D] focus:border-[#15803D] active:text-[#15803D] active:border-[#15803D] visited:text-[#15803D] shadow-2xs'
                       : 'text-[#4ADE80] border-[#4ADE80]/50 hover:border-[#4ADE80] hover:bg-black/35 focus:text-[#4ADE80] focus:border-[#4ADE80] active:text-[#4ADE80] active:border-[#4ADE80] visited:text-[#4ADE80] drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]'
@@ -311,13 +311,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               );
             }
 
-            // Two-Line Standard Items: photo-gallery, story, why-albrook
+            // Two-Line Standard Items: photo-gallery, story, about-greg, why-albrook
             if (twoLineConfig) {
               return (
                 <button
                   key={item.id}
+                  type="button"
                   onClick={() => scrollToSection(item.id)}
-                  className={`inline-flex flex-col items-center justify-center text-center text-[12px] xl:text-[13px] 2xl:text-[14px] leading-[1.08] uppercase tracking-wider font-semibold transition-all py-0.5 border-b shrink-0 ${
+                  className={`inline-flex flex-col items-center justify-center text-center text-[11px] xl:text-[12px] 2xl:text-[13.5px] leading-[1.08] uppercase tracking-wider font-semibold transition-all py-0.5 border-b shrink-0 cursor-pointer ${
                     isActive
                       ? 'text-[#C5A059] border-[#C5A059] font-bold'
                       : effectiveScrolled
@@ -335,8 +336,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             return (
               <button
                 key={item.id}
+                type="button"
                 onClick={() => scrollToSection(item.id)}
-                className={`text-[12px] xl:text-[13px] 2xl:text-[14px] uppercase tracking-wider font-semibold transition-all py-1 border-b shrink-0 whitespace-nowrap ${
+                className={`text-[11px] xl:text-[12px] 2xl:text-[13.5px] uppercase tracking-wider font-semibold transition-all py-1 border-b shrink-0 whitespace-nowrap cursor-pointer ${
                   isActive
                     ? 'text-[#C5A059] border-[#C5A059] font-bold'
                     : effectiveScrolled
@@ -482,19 +484,17 @@ export const Navbar: React.FC<NavbarProps> = ({
               if (item.id === '51-fun-things' || item.id === '51-things') {
                 const data = specialI18n['51-fun-things'];
                 return (
-                  <a
+                  <button
                     key={item.id}
-                    href={tourScannerUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-left text-xs sm:text-sm uppercase tracking-wider font-bold py-2.5 border-b border-[#1B3022]/10 transition-colors text-[#DC2626] flex items-center justify-between gap-2"
+                    type="button"
+                    onClick={() => scrollToSection('51-fun-things')}
+                    className="text-left text-xs sm:text-sm uppercase tracking-wider font-bold py-2.5 border-b border-[#1B3022]/10 transition-colors text-[#DC2626] flex items-center justify-between gap-2 cursor-pointer"
                   >
                     <span className="leading-tight font-bold pr-1">{data.title}</span>
                     <span className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 border border-[#DC2626]/40 rounded-xs text-[#DC2626] shrink-0 font-semibold">
                       {data.badge}
                     </span>
-                  </a>
+                  </button>
                 );
               }
 

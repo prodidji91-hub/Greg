@@ -13,7 +13,8 @@ import {
   Bed,
   ShieldCheck,
   Building,
-  X
+  X,
+  Maximize2
 } from 'lucide-react';
 import { Language } from '../types';
 import { propertyGalleryCategories, PropertyGalleryCategory } from '../data/propertyGalleries';
@@ -364,7 +365,7 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
                               key={cat.id}
                               type="button"
                               onClick={() => handleOpenCategory(cat.id)}
-                              className={`w-full text-left p-2.5 transition-all flex items-center justify-between border ${
+                              className={`w-full text-left p-2.5 transition-all flex items-center justify-between border cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A059] ${
                                 isCurrent
                                   ? 'bg-[#1B3022] text-[#C5A059] border-[#C5A059] shadow-xs'
                                   : 'bg-[#FAF8F5] text-[#1B3022] border-[#1B3022]/10 hover:border-[#C5A059] hover:bg-white'
@@ -482,36 +483,53 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
                   return (
                     <div
                       key={cat.id}
+                      role="button"
+                      tabIndex={0}
                       onClick={() => handleOpenCategory(cat.id)}
-                      className="bg-white border border-[#1B3022]/10 hover:border-[#C5A059] transition-all duration-300 flex flex-col justify-between group cursor-pointer shadow-xs hover:shadow-xl hover:-translate-y-1"
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          handleOpenCategory(cat.id);
+                        }
+                      }}
+                      aria-label={`${
+                        isFrench
+                          ? 'Voir les photos :'
+                          : isGerman
+                          ? 'Fotos ansehen:'
+                          : isSpanish
+                          ? 'Ver fotos:'
+                          : 'View photos:'
+                      } ${title} (${photoCount} ${
+                        isFrench ? 'photos' : isGerman ? 'Fotos' : isSpanish ? 'fotos' : 'photos'
+                      })`}
+                      className="bg-white border border-[#1B3022]/15 hover:border-[#C5A059] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A059] focus-visible:ring-offset-2 focus-visible:border-[#C5A059] transition-all duration-300 flex flex-col justify-between group cursor-pointer shadow-xs hover:shadow-xl hover:-translate-y-1 active:translate-y-0"
                     >
                       <div>
-                        {/* Cover Image */}
-                        <div className="relative aspect-[16/10] overflow-hidden bg-[#14231B]">
+                        {/* Cover Thumbnail */}
+                        <div className="relative aspect-[16/10] overflow-hidden bg-[#EDEAE4]">
                           <img
                             src={coverSrc}
                             alt={title}
-                            className={`w-full h-full object-cover group-hover:opacity-95 transition-opacity duration-300 ${
+                            className={`w-full h-full object-cover brightness-[1.04] group-hover:scale-[1.03] transition-transform duration-500 ${
                               isUpstairsBathroom || coverSrc.includes('bano1')
                                 ? 'object-[center_12%]'
                                 : 'object-center'
                             }`}
                             loading="lazy"
                             onError={(e) => {
-                              // Hide broken image and let parent background with icon show
+                              // Hide broken image and let fallback background with icon show
                               (e.target as HTMLImageElement).style.display = 'none';
                             }}
                           />
 
                           {/* Fallback under image */}
-                          <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-[#14231B] -z-1 pointer-events-none">
+                          <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-[#14231B] -z-10 pointer-events-none">
                             <Camera className="w-8 h-8 text-[#C5A059] mb-2 opacity-80" />
                             <span className="text-xs text-[#FAF8F5]/80 font-serif">
                               {title}
                             </span>
                           </div>
-
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent pointer-events-none" />
 
                           {/* Top Badges */}
                           <div className="absolute top-3 left-3 right-3 flex items-start justify-between gap-2 pointer-events-none z-10">
@@ -525,15 +543,32 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
                               </span>
                             )}
 
-                            <span className="px-2.5 py-1 bg-black/75 backdrop-blur-md border border-white/20 text-white text-[10px] font-mono shrink-0">
-                              {photoCount} {isFrench ? 'Photos' : isGerman ? 'Fotos' : isSpanish ? 'Fotos' : 'Photos'}
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/75 backdrop-blur-md border border-white/20 text-white text-[10px] font-mono shrink-0">
+                              <Camera className="w-3 h-3 text-[#C5A059] shrink-0" />
+                              <span>{photoCount} {isFrench ? 'Photos' : isGerman ? 'Fotos' : isSpanish ? 'Fotos' : 'Photos'}</span>
+                            </span>
+                          </div>
+
+                          {/* Restrained Always-Visible Expand Gallery Cue (Desktop + Mobile) */}
+                          <div className="absolute bottom-2.5 right-2.5 z-10 pointer-events-none">
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#1B3022]/90 group-hover:bg-[#C5A059] group-focus-visible:bg-[#C5A059] backdrop-blur-sm border border-white/25 text-white text-[10px] font-semibold uppercase tracking-wider shadow-sm transition-colors">
+                              <Maximize2 className="w-3 h-3 text-[#C5A059] group-hover:text-white group-focus-visible:text-white transition-colors shrink-0" />
+                              <span>
+                                {isFrench
+                                  ? 'Agrandir la galerie'
+                                  : isGerman
+                                  ? 'Galerie erweitern'
+                                  : isSpanish
+                                  ? 'Ampliar Galería'
+                                  : 'Expand Gallery'}
+                              </span>
                             </span>
                           </div>
                         </div>
 
                         {/* Card Body */}
                         <div className="p-6">
-                          <h3 className="font-serif text-xl sm:text-2xl font-light text-[#1B3022] group-hover:text-[#C5A059] transition-colors mb-2">
+                          <h3 className="font-serif text-xl sm:text-2xl font-light text-[#1B3022] group-hover:text-[#8C583E] group-focus-visible:text-[#8C583E] transition-colors mb-2">
                             {title}
                           </h3>
 
@@ -543,19 +578,24 @@ export const PhotoGalleryPage: React.FC<PhotoGalleryPageProps> = ({
                         </div>
                       </div>
 
-                      {/* Card Bottom CTA */}
+                      {/* Card Bottom Clickable Affordance */}
                       <div className="px-6 pb-6 pt-0">
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleOpenCategory(cat.id);
-                          }}
-                          className="w-full py-3 px-4 text-xs font-bold uppercase tracking-widest bg-[#FAF8F5] text-[#1B3022] border border-[#1B3022]/15 group-hover:border-[#C5A059] group-hover:bg-[#C5A059] group-hover:text-white transition-all flex items-center justify-center gap-2 shadow-2xs"
+                        <span
+                          aria-hidden="true"
+                          className="w-full py-3 px-4 min-h-[44px] text-xs font-bold uppercase tracking-widest bg-[#1B3022] text-white border border-[#1B3022] group-hover:bg-[#C5A059] group-hover:border-[#C5A059] group-focus-visible:bg-[#C5A059] group-focus-visible:border-[#C5A059] group-active:bg-[#A68648] transition-all flex items-center justify-center gap-2 shadow-sm"
                         >
-                          <span>{isFrench ? 'Voir la Galerie Dédiée' : isGerman ? 'Galerie Öffnen' : isSpanish ? 'Abrir Galería Dedicada' : 'View Dedicated Gallery'}</span>
-                          <ChevronRight className="w-4 h-4" />
-                        </button>
+                          <Camera className="w-3.5 h-3.5 text-[#C5A059] group-hover:text-white group-focus-visible:text-white transition-colors shrink-0" />
+                          <span>
+                            {isFrench
+                              ? 'Voir les Photos'
+                              : isGerman
+                              ? 'Fotos Ansehen'
+                              : isSpanish
+                              ? 'Ver Fotos'
+                              : 'View Photos'}
+                          </span>
+                          <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-focus-visible:translate-x-1 shrink-0" />
+                        </span>
                       </div>
                     </div>
                   );

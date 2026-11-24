@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { Language, NearbyPlace, FacilityItem } from '../types';
 import { content } from '../data/content';
+import { GunaYalaPromoCard } from './GunaYalaPromoCard';
 
 interface NearbyCardPhoto {
   src: string;
@@ -127,6 +128,11 @@ const nearbyCardPhotos: Record<string, { src: string; defaultAlt: string; defaul
     src: '/pictures/paca.jpg',
     defaultAlt: 'Night Walk & Nocturnal Wildlife in Albrook',
     defaultTitle: 'Night Walk',
+  },
+  'monkey-island': {
+    src: '/pictures/tamarin.jpeg',
+    defaultAlt: "Wild monkey observed during Roberto's Monkey Island Nature Tour",
+    defaultTitle: "Roberto’s Monkey Island Nature Tour",
   },
 };
 
@@ -268,6 +274,264 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                   title: place.name.split('\n')[0],
                 }
               : undefined;
+
+            if (place.id === 'monkey-island') {
+              const monkeyGallery = [
+                {
+                  src: '/pictures/tamarin.jpeg',
+                  alt:
+                    lang === 'fr'
+                      ? 'Singe observé lors de l’excursion à l’Île aux Singes avec Roberto'
+                      : lang === 'de'
+                      ? 'Wilder Affe auf Robertos Affeninsel-Naturtour'
+                      : lang === 'es'
+                      ? 'Mono observado durante el Tour a la Isla de Monos con Roberto'
+                      : 'Wild monkey observed on Roberto’s Monkey Island Nature Tour',
+                  title:
+                    lang === 'fr'
+                      ? 'Observation des singes sur le lac Gatún'
+                      : lang === 'de'
+                      ? 'Affenbeobachtung am Gatun-See'
+                      : lang === 'es'
+                      ? 'Avistamiento de monos en el Lago Gatún'
+                      : 'Wild Monkeys on Gatun Lake',
+                },
+                {
+                  src: '/pictures/natpark.jpg',
+                  alt:
+                    lang === 'fr'
+                      ? 'Fleuve Chagres et forêt tropicale au départ de Gamboa'
+                      : lang === 'de'
+                      ? 'Chagres-Fluss und Regenwald bei der Abfahrt in Gamboa'
+                      : lang === 'es'
+                      ? 'Río Chagres y selva tropical saliendo desde Gamboa'
+                      : 'Chagres River & Gamboa rainforest waterway',
+                  title:
+                    lang === 'fr'
+                      ? 'Navigation sur le fleuve Chagres depuis Gamboa'
+                      : lang === 'de'
+                      ? 'Bootsfahrt auf dem Chagres-Fluss ab Gamboa'
+                      : lang === 'es'
+                      ? 'Río Chagres desde la selva de Gamboa'
+                      : 'Chagres River Launch from Gamboa',
+                },
+                {
+                  src: '/pictures/basss.jpg',
+                  alt:
+                    lang === 'fr'
+                      ? 'Pêche au peacock bass (sargento) sur le lac Gatún'
+                      : lang === 'de'
+                      ? 'Pfauenbarsch (Peacock Bass) im Gatun-See'
+                      : lang === 'es'
+                      ? 'Pesca de sargento (Peacock Bass) en el Lago Gatún'
+                      : 'Peacock bass fishing on Gatun Lake',
+                  title:
+                    lang === 'fr'
+                      ? 'Pêche au peacock bass & barbecue à Greg’s Place'
+                      : lang === 'de'
+                      ? 'Pfauenbarsch-Angeln & Fisch-Barbecue'
+                      : lang === 'es'
+                      ? 'Pesca de sargento y asado en Greg’s Place'
+                      : 'Optional Peacock Bass Fishing & BBQ',
+                },
+                {
+                  src: '/pictures/crocodiles.jpg',
+                  alt:
+                    lang === 'fr'
+                      ? 'Crocodile observé le long des berges tropicales'
+                      : lang === 'de'
+                      ? 'Krokodilsichtung entlang der Flussufer'
+                      : lang === 'es'
+                      ? 'Cocodrilo observado en las orillas del río'
+                      : 'Saltwater crocodile and riverbank wildlife',
+                  title:
+                    lang === 'fr'
+                      ? 'Aves aquatiques & crocodile d’eau saumâtre'
+                      : lang === 'de'
+                      ? 'Wasservögel & Salzwasserkrokodil'
+                      : lang === 'es'
+                      ? 'Aves acuáticas y cocodrilo'
+                      : 'Waterfowl & Saltwater Crocodile',
+                },
+              ];
+
+              const spotlightLabel =
+                lang === 'fr'
+                  ? 'Excursion Recommandée · Bateau Privé'
+                  : lang === 'de'
+                  ? 'Empfohlener Ausflug · Privatboot'
+                  : lang === 'es'
+                  ? 'Excursión Recomendada · Bote Privado'
+                  : 'Featured Excursion · Private Boat';
+
+              const galleryHint =
+                lang === 'fr'
+                  ? 'Cliquez sur une photo pour l’agrandir'
+                  : lang === 'de'
+                  ? 'Klicken Sie auf ein Foto zum Vergrößern'
+                  : lang === 'es'
+                  ? 'Haga clic en cualquier foto para ampliarla'
+                  : 'Click any photo to expand';
+
+              const optionalHeading =
+                lang === 'fr'
+                  ? 'Expériences Optionnelles & Retour'
+                  : lang === 'de'
+                  ? 'Optionale Erlebnisse & Rückweg'
+                  : lang === 'es'
+                  ? 'Experiencias Opcionales y Regreso'
+                  : 'Optional Fishing & Nature Add-Ons';
+
+              return (
+                <div
+                  key={place.id}
+                  id={place.id}
+                  className="col-span-1 md:col-span-2 lg:col-span-3 bg-gradient-to-br from-[#1B3022] via-[#203828] to-[#15261B] text-[#FAF8F5] border-2 border-[#C5A059]/60 shadow-xl p-6 sm:p-8 lg:p-10 relative overflow-hidden"
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-9 items-start">
+                    {/* Left Column: Header, Metadata, Description, Host Note & Highlights */}
+                    <div className="lg:col-span-7 flex flex-col justify-between space-y-5">
+                      <div>
+                        {/* Top Badges */}
+                        <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                          <div className="flex items-center gap-2.5">
+                            <div className="w-10 h-10 bg-[#C5A059]/20 border border-[#C5A059]/50 flex items-center justify-center shrink-0">
+                              <Ship className="w-5 h-5 text-[#C5A059]" />
+                            </div>
+                            <span className="text-[11px] font-mono uppercase tracking-[0.2em] font-bold text-[#C5A059]">
+                              {spotlightLabel}
+                            </span>
+                          </div>
+                          <span className="text-[11px] font-mono uppercase tracking-widest font-bold px-2.5 py-1 bg-white/10 border border-white/15 text-[#FAF8F5]">
+                            {place.category}
+                          </span>
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-light text-white tracking-tight leading-snug mb-4">
+                          {place.name}
+                        </h3>
+
+                        {/* Departure & Drive Time Pills */}
+                        {(place.distance || place.driveTime) && (
+                          <div className="flex flex-wrap gap-3 mb-5">
+                            {place.distance && (
+                              <div className="inline-flex items-center gap-2 px-3.5 py-2 bg-white/10 border border-[#C5A059]/35 text-xs sm:text-sm font-semibold text-white">
+                                <MapPin className="w-4 h-4 text-[#C5A059] shrink-0" />
+                                <span>{place.distance}</span>
+                              </div>
+                            )}
+                            {place.driveTime && (
+                              <div className="inline-flex items-center gap-2 px-3.5 py-2 bg-white/10 border border-[#C5A059]/35 text-xs sm:text-sm font-medium text-[#E8D5A7]">
+                                <Clock className="w-4 h-4 text-[#C5A059] shrink-0" />
+                                <span>{place.driveTime}</span>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Narrative Description */}
+                        {place.description && (
+                          <div className="text-sm sm:text-[15.5px] text-white/90 leading-relaxed whitespace-pre-line font-light">
+                            {place.description}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Host Note */}
+                      {place.futureNote && (
+                        <div className="p-4 bg-black/25 border-l-3 border-[#C5A059] space-y-1">
+                          <div className="font-mono text-[10px] sm:text-[11px] text-[#C5A059] uppercase tracking-wider font-bold">
+                            {lang === 'fr' ? "Note de l'hôte" : lang === 'de' ? 'Hinweis des Gastgebers' : lang === 'en' ? 'Host Note' : 'Nota Local'}
+                          </div>
+                          <div className="italic text-xs sm:text-sm text-white/95 whitespace-pre-line leading-relaxed">
+                            {place.futureNote}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Optional Highlights: Fishing, BBQ, Soberanía National Park Zoo */}
+                      {place.highlights && place.highlights.length > 0 && (
+                        <div className="pt-4 border-t border-white/15 space-y-2.5">
+                          <div className="text-[11px] font-mono uppercase tracking-widest text-[#C5A059] font-bold">
+                            {optionalHeading}
+                          </div>
+                          <div className="space-y-2">
+                            {place.highlights.map((highlight: string, idx: number) => (
+                              <div
+                                key={idx}
+                                className="flex items-start gap-2.5 text-xs sm:text-sm text-white/90 leading-relaxed"
+                              >
+                                <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
+                                <span>{highlight}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Right Column: Authentic Wildlife, River & Fishing Photo Mosaic */}
+                    <div className="lg:col-span-5 space-y-3">
+                      {/* Primary Featured Photo */}
+                      <button
+                        type="button"
+                        onClick={() => setLightboxImage(monkeyGallery[0])}
+                        className="w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059] cursor-pointer block rounded-[2px]"
+                        aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${monkeyGallery[0].title}`}
+                      >
+                        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#C5A059]/40 bg-[#14231B] shadow-lg group-hover/photo:border-[#C5A059] transition-all duration-300">
+                          <img
+                            src={encodeURI(monkeyGallery[0].src)}
+                            alt={monkeyGallery[0].alt}
+                            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-103"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
+                          <div className="absolute bottom-2.5 left-3 right-12 text-xs sm:text-sm font-serif text-white drop-shadow">
+                            {monkeyGallery[0].title}
+                          </div>
+                          <div className="absolute bottom-2.5 right-2.5 bg-black/70 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1">
+                            <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
+                            <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>
+                          </div>
+                        </div>
+                      </button>
+
+                      {/* Supporting 3-Photo Strip */}
+                      <div className="grid grid-cols-3 gap-2.5">
+                        {monkeyGallery.slice(1).map((photo, pIdx) => (
+                          <button
+                            key={pIdx}
+                            type="button"
+                            onClick={() => setLightboxImage(photo)}
+                            className="w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059] cursor-pointer block rounded-[2px]"
+                            aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${photo.title}`}
+                          >
+                            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2px] border border-white/20 bg-[#14231B] group-hover/photo:border-[#C5A059] transition-all duration-300">
+                              <img
+                                src={encodeURI(photo.src)}
+                                alt={photo.alt}
+                                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-105"
+                                loading="lazy"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+                              <span className="absolute bottom-1 left-1.5 right-1.5 text-[10px] leading-tight text-white/95 font-medium line-clamp-2 drop-shadow">
+                                {photo.title}
+                              </span>
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+
+                      <p className="text-[11px] font-mono text-white/65 text-right">
+                        {galleryHint}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
 
             return (
               <div
@@ -589,134 +853,8 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
           })}
         </div>
 
-        {/* Location Map & 51+ Fun Things Card Row */}
-        {(() => {
-          const funThingsPlace = (t.places as readonly NearbyPlace[]).find((p) => p.id === '51-fun-things');
-          if (!funThingsPlace) return null;
-
-          const isClickable = Boolean(funThingsPlace.linkUrl);
-
-          return (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12 items-stretch">
-              {/* Left: Location Map */}
-              <div className="lg:col-span-7 bg-white p-7 border border-[#1B3022]/10 shadow-sm flex flex-col justify-between h-full group relative hover:border-[#C5A059] transition-all">
-                <div className="mb-4">
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <div className="flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] text-[#8C583E] uppercase tracking-wider font-bold">
-                      <MapPin className="w-3.5 h-3.5 text-[#C5A059] shrink-0" />
-                      <span>{lang === 'fr' ? 'Localisation interactive' : lang === 'de' ? 'Interaktive Karte' : lang === 'es' ? 'Ubicación de Greg’s Place' : 'Interactive Location Map'}</span>
-                    </div>
-                    <span className="text-[10px] uppercase font-mono tracking-wider px-2 py-0.5 bg-[#1B3022]/5 text-[#1B3022] font-semibold">
-                      Albrook Oasis
-                    </span>
-                  </div>
-                  <h3 className="font-serif text-xl font-medium text-[#1B3022] mb-1">
-                    {lang === 'fr' ? 'Greg’s Place à Albrook' : lang === 'de' ? 'Greg’s Place in Albrook' : lang === 'es' ? 'Greg’s Place en Albrook' : 'Greg’s Place in Albrook'}
-                  </h3>
-                  <p className="text-xs text-[#8C583E] italic">
-                    Calle Los Guayacanes 247, Albrook, Panama City, Panama
-                  </p>
-                </div>
-
-                <div className="flex-grow min-h-[350px] relative rounded-xs overflow-hidden border border-[#1B3022]/10 shadow-inner">
-                  <iframe
-                    title="Interactive Location Map of Greg's Place in Albrook"
-                    src="https://maps.google.com/maps?q=Calle%20Los%20Guayacanes%20247,%20Albrook,%20Panama%20City,%20Panama&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                    className="absolute inset-0 w-full h-full border-0"
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
-              </div>
-
-              {/* Right: 51+ Card */}
-              <div className="lg:col-span-5 flex flex-col h-full justify-between">
-                <div
-                  key={funThingsPlace.id}
-                  id={funThingsPlace.id}
-                  className="p-7 h-full transition-all flex flex-col justify-between group relative bg-white border-2 border-red-600 shadow-xl ring-4 ring-red-500/15 hover:border-red-700 hover:shadow-2xl cursor-pointer hover:-translate-y-1 block"
-                  onClick={(e) => {
-                    if (funThingsPlace.linkUrl) {
-                      if ((e.target as HTMLElement).closest('a')) return;
-                      window.open(funThingsPlace.linkUrl, '_blank', 'noopener,noreferrer');
-                    }
-                  }}
-                >
-                  {/* Red highlight badge */}
-                  <div className="absolute -top-3.5 left-6 bg-red-600 text-white text-[11px] font-mono uppercase tracking-widest font-bold px-3 py-0.5 shadow-md flex items-center gap-1.5">
-                    <span>★</span>
-                    <span>{lang === 'fr' ? 'À ne pas manquer' : lang === 'de' ? 'Must-Do Empfehlung' : lang === 'es' ? 'Imperdible' : 'Must-Do Guide'}</span>
-                  </div>
-
-                  <div>
-                    {/* Card Top: Icon & Category */}
-                    <div className="flex items-center justify-between gap-2 mb-4">
-                      <div className="w-10 h-10 flex items-center justify-center transition-colors bg-blue-50/70 border border-blue-200 group-hover:border-blue-400">
-                        {getPlaceIcon(funThingsPlace.iconType, true)}
-                      </div>
-                      <span className="text-[11px] font-mono uppercase tracking-widest font-bold px-2.5 py-1 text-white bg-red-600">
-                        {funThingsPlace.category}
-                      </span>
-                    </div>
-
-                    {/* Prominently Formatted Title */}
-                    {funThingsPlace.prominentTitleLines && (
-                      <div className="mb-4 p-5 text-center transition-all bg-blue-50/30 border-2 border-[#1E3A8A]/30 group-hover:border-[#1E3A8A]/50 group-hover:bg-blue-50/50 shadow-md">
-                        <div className="font-serif text-2xl sm:text-3xl font-bold leading-tight text-[#1E3A8A]">
-                          {funThingsPlace.prominentTitleLines[0]}
-                        </div>
-                        <div className="text-[11px] uppercase font-mono tracking-[0.25em] font-bold my-1.5 text-[#1E3A8A]">
-                          {funThingsPlace.prominentTitleLines[1]}
-                        </div>
-                        <div className="font-serif text-xl sm:text-2xl font-medium leading-tight text-[#1E3A8A]">
-                          {funThingsPlace.prominentTitleLines[2]}
-                        </div>
-                        <div className="text-[11px] uppercase font-mono tracking-[0.25em] font-bold my-1.5 text-[#1E3A8A]">
-                          {funThingsPlace.prominentTitleLines[3]}
-                        </div>
-                        <div className="font-serif text-2xl sm:text-3xl font-bold leading-tight text-[#1E3A8A]">
-                          {funThingsPlace.prominentTitleLines[4]}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Distance / Details Pill */}
-                    <div className="flex flex-col gap-1.5 mb-4 p-2.5 border bg-blue-50/60 border-blue-200">
-                      <div className="flex items-center gap-1.5 text-sm font-semibold text-[#1E3A8A]">
-                        <MapPin className="w-4 h-4 shrink-0 text-[#1E3A8A]" />
-                        <span>{funThingsPlace.distance}</span>
-                      </div>
-                      <div className="flex items-center gap-1.5 text-xs font-medium text-[#1E3A8A]">
-                        <Clock className="w-4 h-4 shrink-0 text-[#1E3A8A]" />
-                        <span>{funThingsPlace.driveTime}</span>
-                      </div>
-                    </div>
-
-                    {/* Description */}
-                    <div className="text-sm sm:text-[15px] text-[#1B3022]/90 leading-relaxed mb-4 font-normal">
-                      {funThingsPlace.description}
-                    </div>
-                  </div>
-
-                  {/* Link indicator */}
-                  <a
-                    href={funThingsPlace.linkUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="pt-3 border-t border-blue-200 text-[#0284C7] group-hover:text-[#0369A1] flex items-center justify-between gap-2 text-xs sm:text-[13px] font-semibold transition-colors mt-2"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <span className="underline underline-offset-4 decoration-[#0284C7] font-bold">
-                      {lang === 'fr' ? 'Voir 51+ activités sur tourscanner.com' : lang === 'de' ? '51+ Aktivitäten auf tourscanner.com ansehen' : lang === 'en' ? 'tourscanner.com/things-to-do-in-panama-city-panama' : 'Ver 51+ actividades en tourscanner.com'}
-                    </span>
-                    <ExternalLink className="w-4 h-4 shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-[#0284C7]" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          );
-        })()}
+        {/* Independent Partner Promotion: Petra's Guna Yala Panama Travel */}
+        <GunaYalaPromoCard lang={lang} />
 
         {/* Host Guidance Banner */}
         <div className="p-6 bg-white border-l-4 border-[#C5A059] shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm sm:text-[15px] text-[#1B3022]/90">

@@ -59,8 +59,15 @@ export const RoomGallery: React.FC<RoomGalleryProps> = ({
     src.includes('master-7.jpg') ||
     checkIsBano1(src);
 
+  const checkIsUnzoomedContain = (src: string) =>
+    src.includes('livingroom11') ||
+    src.includes('shared13') ||
+    src.includes('shared16') ||
+    src.includes('shared17');
+
   const isBano1 = checkIsBano1(currentImageSrc);
   const isShiftedLower = checkIsShiftedLower(currentImageSrc);
+  const isUnzoomedContain = checkIsUnzoomedContain(currentImageSrc);
 
   // Accessible labels
   const prevLabel =
@@ -300,7 +307,11 @@ export const RoomGallery: React.FC<RoomGalleryProps> = ({
                 ? "at Greg's Place in Albrook"
                 : "en Greg's Place en Albrook"
             }`}
-            className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-[1.02]"
+            className={`w-full h-full transition-all duration-700 ease-out ${
+              isUnzoomedContain
+                ? 'object-contain bg-[#14231B]'
+                : 'object-cover group-hover:scale-[1.02]'
+            }`}
             style={{
               objectPosition: isBano1
                 ? 'center 5%'
@@ -417,10 +428,10 @@ export const RoomGallery: React.FC<RoomGalleryProps> = ({
                   key={idx}
                   type="button"
                   onClick={() => handleThumbnailClick(idx)}
-                  className={`relative shrink-0 w-20 sm:w-24 md:w-28 aspect-[16/10] overflow-hidden border-2 transition-all duration-300 focus:outline-none ${
+                  className={`relative shrink-0 w-20 sm:w-24 md:w-28 aspect-[16/10] overflow-hidden border-2 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A059] focus-visible:ring-offset-1 ${
                     isActive
-                      ? 'border-[#C5A059] ring-2 ring-[#C5A059]/40 shadow-md scale-100 opacity-100'
-                      : 'border-transparent opacity-60 hover:opacity-100 hover:border-[#C5A059]/60'
+                      ? 'border-[#C5A059] ring-2 ring-[#C5A059]/45 shadow-md scale-100 opacity-100'
+                      : 'border-[#1B3022]/15 bg-[#EDEAE4] opacity-95 hover:opacity-100 hover:border-[#C5A059]'
                   }`}
                   aria-label={`${roomName} - ${
                     lang === 'fr'
@@ -443,7 +454,11 @@ export const RoomGallery: React.FC<RoomGalleryProps> = ({
                     <img
                       src={normalizedSrc}
                       alt={`${displayName} thumbnail ${idx + 1}`}
-                      className="w-full h-full object-cover"
+                      className={`w-full h-full brightness-[1.04] ${
+                        checkIsUnzoomedContain(normalizedSrc)
+                          ? 'object-contain bg-[#14231B]'
+                          : 'object-cover'
+                      }`}
                       style={{
                         objectPosition: checkIsBano1(normalizedSrc)
                           ? 'center 6%'
@@ -454,9 +469,6 @@ export const RoomGallery: React.FC<RoomGalleryProps> = ({
                       loading="lazy"
                       onError={() => setFailedImages((prev) => ({ ...prev, [normalizedSrc]: true }))}
                     />
-                  )}
-                  {isActive && (
-                    <div className="absolute inset-0 bg-[#C5A059]/15 pointer-events-none" />
                   )}
                   <span className="absolute bottom-0.5 right-1 px-1 bg-black/75 text-[9px] font-mono text-white">
                     {idx + 1}
@@ -616,10 +628,10 @@ export const RoomGallery: React.FC<RoomGalleryProps> = ({
                       key={idx}
                       type="button"
                       onClick={() => handleThumbnailClick(idx)}
-                      className={`relative shrink-0 w-16 sm:w-20 aspect-[16/10] overflow-hidden border-2 transition-all duration-200 ${
+                      className={`relative shrink-0 w-16 sm:w-20 aspect-[16/10] overflow-hidden border-2 transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A059] ${
                         isActive
                           ? 'border-[#C5A059] ring-2 ring-[#C5A059]/50 opacity-100 scale-105'
-                          : 'border-transparent opacity-50 hover:opacity-90'
+                          : 'border-white/25 opacity-90 hover:opacity-100 hover:border-[#C5A059]/80'
                       }`}
                       aria-label={`${roomName} - thumbnail ${idx + 1}`}
                     >
@@ -634,7 +646,11 @@ export const RoomGallery: React.FC<RoomGalleryProps> = ({
                         <img
                           src={normalizedSrc}
                           alt=""
-                          className="w-full h-full object-cover"
+                          className={`w-full h-full brightness-[1.04] ${
+                            checkIsUnzoomedContain(normalizedSrc)
+                              ? 'object-contain bg-[#14231B]'
+                              : 'object-cover'
+                          }`}
                           style={{
                             objectPosition: checkIsBano1(normalizedSrc)
                               ? 'center 6%'

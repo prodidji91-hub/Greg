@@ -81,7 +81,7 @@ export const BirdingBreakfast: React.FC<BirdingBreakfastProps> = ({
                 : isWildlifeCritters 
                 ? '/pictures/Gemini_Generated_Image_pjm5bgpjm5bgpjm5.jpg' 
                 : null;
-              const imgClassName = isBirdWatching ? 'object-center' : '';
+              const imgClassName = isBirdWatching ? 'object-[center_15%]' : '';
 
               return (
                 <div 

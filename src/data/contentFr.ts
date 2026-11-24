@@ -5,6 +5,10 @@ export const contentFr = {
       "label": "Accueil"
     },
     {
+      "id": "why-albrook",
+      "label": "Pourquoi Albrook ?"
+    },
+    {
       "id": "rooms",
       "label": "Chambres"
     },
@@ -13,20 +17,8 @@ export const contentFr = {
       "label": "Galerie Photos"
     },
     {
-      "id": "story",
-      "label": "La Demeure"
-    },
-    {
-      "id": "why-albrook",
-      "label": "Pourquoi Albrook ?"
-    },
-    {
       "id": "birding-breakfast",
       "label": "Observation des Oiseaux, Petit-déjeuner & Faune"
-    },
-    {
-      "id": "wildlife",
-      "label": "Faune Sauvage"
     },
     {
       "id": "whats-nearby",
@@ -34,7 +26,19 @@ export const contentFr = {
     },
     {
       "id": "51-fun-things",
-      "label": "51+ Activités Amusantes à Faire au Panama"
+      "label": "51+ Activités Amusantes à Faire"
+    },
+    {
+      "id": "wildlife",
+      "label": "Faune Sauvage"
+    },
+    {
+      "id": "story",
+      "label": "La Demeure"
+    },
+    {
+      "id": "about-greg",
+      "label": "Votre Hôte"
     },
     {
       "id": "reviews",
@@ -598,7 +602,7 @@ export const contentFr = {
         "id": "coatimundi",
         "name": "Coatis à Nez Blanc (Coatimundis / Gatos Solos)",
         "scientificOrLocal": "Nasua narica · Coati à nez blanc",
-        "frequency": "Observés régulièrement en promenade",
+        "frequency": "Visitent tous les jours",
         "habitat": "Bordures du jardin & sous-bois",
         "category": "mammals",
         "description": "Proches cousins curieux et agiles du raton laveur, ils explorent les limites paisibles du jardin avec leur museau mobile et leur queue annelée dressée."
@@ -607,7 +611,7 @@ export const contentFr = {
         "id": "agouti",
         "name": "Agoutis d'Amérique Centrale (Ñeques)",
         "scientificOrLocal": "Dasyprocta punctata · Agouti ponctué",
-        "frequency": "Visiteurs quotidiens constants",
+        "frequency": "Visitent tous les jours",
         "habitat": "Pelouse & sous-bois ombragés",
         "category": "mammals",
         "description": "Ces rongeurs paisibles au pelage roux luisant sont des habitués de notre pelouse, grignotant des graines tombées pour le plus grand plaisir des hôtes au petit-déjeuner."
@@ -616,7 +620,7 @@ export const contentFr = {
         "id": "sloth",
         "name": "Paresseux à Gorge Brune à Trois Doigts",
         "scientificOrLocal": "Bradypus variegatus · Paresseux tridactyle",
-        "frequency": "Observations paisibles occasionnelles",
+        "frequency": "Visitent occasionnellement",
         "habitat": "Cécropias (arbres parasols) & hautes branches",
         "category": "mammals",
         "description": "On les aperçoit parfois se déplaçant avec lenteur et sérénité dans la haute canopée — parfait symbole de la douceur de vivre tropicale du Panama."
@@ -625,7 +629,7 @@ export const contentFr = {
         "id": "monkeys",
         "name": "Tamarins de Geoffroy & Singes Hurleurs",
         "scientificOrLocal": "Saguinus geoffroyi & Alouatta palliata",
-        "frequency": "Visiteurs réguliers de la canopée",
+        "frequency": "Visitent tous les jours",
         "habitat": "Couloirs arborés protégés d'Albrook",
         "category": "mammals",
         "description": "De petits tamarins vifs et joueurs ainsi que les cris lointains des singes hurleurs animent régulièrement les corridors de verdure entourant notre quartier.\n\nUne femelle reproductrice s'accouple avec plusieurs mâles et donne souvent naissance à des faux jumeaux, deux frères et sœurs nés en même temps, mais non identiques. Même si généralement un seul survit jusqu'à l'âge adulte, les mâles s'associent pour s'occuper des petits, les portant sur leur dos durant leurs 10 premières semaines de vie."
@@ -658,6 +662,7 @@ export const contentFr = {
       {
         "id": "iguana",
         "name": "Iguana",
+        "frequency": "Visitent tous les jours",
         "category": "reptiles",
         "description": "Des iguanes de différentes tailles rampent chaque jour sur le pont des singes jusqu'à nos mangeoires à oiseaux. Une fois que les oiseaux et les coatis ont fini les fruits, les iguanes forment l'équipe de nettoyage qui mange les restes de peau de papaye et de banane. Parfois, vous verrez un grand iguane chasser les oiseaux ou un plus petit iguane. Les plus petits iguanes ont la couleur verte la plus intense."
       },
@@ -818,12 +823,16 @@ export const contentFr = {
                 "description": "Albrook dispose d'une excellente infrastructure avec pharmacies, supermarchés, boulangeries, distributeurs automatiques et restaurants directement dans le quartier :",
                 "facilities": [
                   {
-                    "name": "Aéroport Marcos A. Gelabert",
+                    "name": "Aéroport Marcos A. Gelabert (PAC)",
                     "time": "~3 minutes en voiture ou ~12 minutes à pied"
                   },
                   {
                     "name": "Ambassade des États-Unis",
                     "time": "~7 minutes en voiture"
+                  },
+                  {
+                    "name": "Cité du Savoir (Ciudad del Saber)",
+                    "time": "~10 minutes en voiture (~15+ minutes aux heures de pointe)"
                   },
                   {
                     "name": "Marché Fermier (fruits, légumes, œufs)",
@@ -1186,7 +1195,7 @@ export const contentFr = {
                 "distance": "~ 5 km",
                 "driveTime": "~8 minutes",
                 "description": "Empruntez l'historique chemin de fer du canal de Panama à travers l'isthme, le long du canal et au cœur de la jungle tropicale. Votre trajet d'une heure vous mène à Colón, côté Caraïbes. Vous pouvez revenir par le même train plus tard dans la journée.\nConsultez les détails ici : https://www.panarail.com/",
-                "futureNote": "C'est un voyage magnifique qui en vaut vraiment la peine. Choisissez la voiture panoramique (Dome Car) pour profiter de la meilleure vue. Pensez à demander à Jose, le chauffeur de taxi de confiance de Greg, de vous accueillir pour visiter Colón, vous conduire au centre des visiteurs des écluses de Gatún, puis à Portobelo pour découvrir la ville historique et son fort, déjeuner à Portobelo et vous ramener à Greg's Place.\n\nC",
+                "futureNote": "C'est un voyage magnifique qui en vaut vraiment la peine. Choisissez la voiture panoramique (Dome Car) pour profiter de la meilleure vue. Pensez à demander à Jose, le chauffeur de taxi de confiance de Greg, de vous accueillir pour visiter Colón, vous conduire au centre des visiteurs des écluses de Gatún, puis à Portobelo pour découvrir la ville historique et son fort, déjeuner à Portobelo et vous ramener à Greg's Place.",
                 "linkUrl": "https://www.panarail.com/",
                 "linkText": "SITE OFFICIEL",
                 "iconType": "train"
@@ -1240,6 +1249,21 @@ export const contentFr = {
                   { "label": "Horaires, Tarifs & Informations sur la Gare", "url": "https://www.google.com/search?q=Albrook+Bus+Terminal+schedule+Gran+Terminal+Nacional+de+Transporte" }
                 ],
                 "iconType": "services"
+              },
+        {
+                "id": "monkey-island",
+                "name": "Excursion Nature à l'Île aux Singes en Bateau Privé avec Roberto",
+                "category": "Excursion Nature",
+                "categoryKey": "nature",
+                "distance": "Départ de la forêt tropicale de Gamboa",
+                "driveTime": "40 min en voiture depuis Greg’s Place",
+                "description": "C'est une excursion merveilleuse : vous embarquez dans un petit bateau depuis la zone de forêt tropicale de Gamboa sur le fleuve Chagres. Vous naviguerez tout près des navires géants qui viennent de quitter les écluses de Pedro Miguel en direction du lac Gatún.\n\nRoberto part tôt afin que son bateau soit le premier sur place lorsque les singes ont faim. De plus, vous entendrez les singes hurleurs chanter tôt le matin. Roberto parvient généralement à repérer au moins 3 espèces différentes de singes (tous ne sont pas sur l'île !). On y observe aussi de nombreux oiseaux aquatiques fascinants, et Roberto réussit souvent à trouver un crocodile d'eau saumâtre.",
+                "futureNote": "avec Roberto, l'ami de Greg\nDépart de Greg’s Place vers Gamboa (40 minutes)",
+                "highlights": [
+                  "Pêche au peacock bass (sargento) sur le lac Gatún en option, suivie d'un barbecue de poisson à Greg’s Place.",
+                  "Visite optionnelle du zoo du Parc National Soberanía au retour de Gamboa. Ne manquez pas l'exposition de l'aigle harpie."
+                ],
+                "iconType": "canal"
               },
         {
                 "id": "51-fun-things",

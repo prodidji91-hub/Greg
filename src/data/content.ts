@@ -6,14 +6,15 @@ export const content = {
   en: {
     nav: [
       { id: 'home', label: 'Home' },
+      { id: 'why-albrook', label: 'Why Albrook?' },
       { id: 'rooms', label: 'Rooms' },
       { id: 'photo-gallery', label: 'Photo Gallery' },
-      { id: 'story', label: 'The Home' },
-      { id: 'why-albrook', label: 'Why Albrook?' },
-      { id: 'birding-breakfast', label: 'Birding, Breakfast and Critters' },
-      { id: 'wildlife', label: 'Wildlife' },
+      { id: 'birding-breakfast', label: 'Birding Breakfast and Critters' },
       { id: 'whats-nearby', label: "What's Nearby" },
-      { id: '51-fun-things', label: '51+ Fun Things to Do in Panama' },
+      { id: '51-fun-things', label: '51+ Fun Things to Do' },
+      { id: 'wildlife', label: 'Wildlife' },
+      { id: 'story', label: 'The Home' },
+      { id: 'about-greg', label: 'Your Host' },
       { id: 'reviews', label: 'Reviews' },
       { id: 'contact', label: 'Contact' },
     ],
@@ -518,7 +519,7 @@ export const content = {
           id: 'coatimundi',
           name: "White-nosed Coatimundis (Gatos Solos)",
           scientificOrLocal: "Nasua narica · Coati de nariz blanca",
-          frequency: "Regularly spotted passing through",
+          frequency: "Visit every day",
           habitat: "Fruit trees and ground foraging",
           category: 'mammals',
           description: "Curious and agile relatives of the raccoon, coatimundis use their sensitive snouts to forage. Several visit Greg’s Place every day. They are great climbers and adept at stealing from the bird feeders!"
@@ -527,7 +528,7 @@ export const content = {
           id: 'agouti',
           name: "Central American Agoutis (Ñeques)",
           scientificOrLocal: "Dasyprocta punctata · Ñeque",
-          frequency: "Common daily visitors",
+          frequency: "Visit every day",
           habitat: "Lawn and shaded undergrowth",
           category: 'mammals',
           description: "These gentle, glossy-furred creatures are beloved fixtures of the lawn, nibbling fallen fruits and seeds and entertaining guests during breakfast."
@@ -536,7 +537,7 @@ export const content = {
           id: 'sloth',
           name: "Two and Three-toed Sloths",
           scientificOrLocal: "Bradypus variegatus · Perezoso",
-          frequency: "Occasional peaceful sightings",
+          frequency: "Visit occasionally",
           habitat: "Cecropia trees & high branches",
           category: 'mammals',
           description: "Occasionally seen moving methodically through the upper canopy of surrounding trees, embodying the relaxed pace of Panama nature."
@@ -545,7 +546,7 @@ export const content = {
           id: 'monkeys',
           name: "Geoffroy’s Tamarin Monkeys (Monotitis)",
           scientificOrLocal: "Saguinus geoffroyi · Mono tití",
-          frequency: "Occasional visitors in tree corridors",
+          frequency: "Visit every day",
           habitat: "Canopy transit routes across Albrook",
           category: 'mammals',
           description: "Small, energetic Geoffroy’s Tamarin Monkeys make appearances along the leafy canopy corridors bordering the neighborhood. A troup of four visit Greg’s Place multiple times per day almost every day.\n\nOne breeding female mates with several males and often gives birth to fraternal twins, two siblings born at the same time, but that are not identical. Although usually only one survives to adulthood, the males work together to care for the babies, carrying them for their first 10 weeks of life."
@@ -578,6 +579,7 @@ export const content = {
         {
           id: 'iguana',
           name: "Iguana",
+          frequency: "Visit every day",
           category: 'reptiles',
           description: "Different size iguanas crawl across the Monkey Bridge to our bird feeders every day. After the birds and coatimundis have finished with the fruit, the iguanas are the clean-up crew that eat the remaining papaya and banana skins. Sometimes you will see a large iguana chase birds or a smaller iguana away. The smaller iguanas have the more intense green color."
         },
@@ -720,12 +722,16 @@ export const content = {
                           description: "Essential everyday facilities, shopping, and professional services located close to Greg's Place:",
                           facilities: [
                             {
-                              name: "Marcos Gelabert Airport",
+                              name: "Marcos Gelabert Airport (PAC)",
                               time: "~3 minutes by car or ~12 minutes walking"
                             },
                             {
                               name: "United States Embassy",
                               time: "~7 minutes by car"
+                            },
+                            {
+                              name: "City of Knowledge (Ciudad del Saber)",
+                              time: "~10 minutes by car (~15+ minutes during rush hour)"
                             },
                             {
                               name: "Farmer’s Market (fruit, vegetables, eggs)",
@@ -1092,7 +1098,7 @@ export const content = {
                           distance: "~ 5 km",
                           driveTime: "~8 minutes",
                           description: "Take the historic Panama Canal Railway across the Isthmus of Panama, along the Panama Canal and through the jungle. Your one-hour destination is Colon, on the Caribbean side. You can return by this same train later in the day.\nCheck out the details here: https://www.panarail.com/",
-                          futureNote: "This is a wonderful trip worth doing. Get the Dome Car for the best viewing. Consider having Greg’s taxi driver, Jose, meet you to give you a tour of Colon, take you to the Gatun Locks Visitor Center, and then on to Portobelo to see the historic town and fort, have lunch in Portobelo and return you to Greg’s Place.\n\nThis is a wonderful trip as you will launch in a small boat from the Gamboa rainforest area into the Chagres River. You will be right next to the giant ships that have just exited the Pedro Miguel locks as they continue on to Gatun Lake.\n\nRoberto leaves early so his boat will be the first one out there so the monkeys are will be hungry. Plus, you will hear the early morning howler monkeys going off. Roberto can usually find at least 3 different species of monkeys (they are not all on the island!). There’s lots of interesting waterfowl too. Roberto can usually find a saltwater crocodile too.",
+                          futureNote: "This is a wonderful trip worth doing. Get the Dome Car for the best viewing. Consider having Greg’s taxi driver, Jose, meet you to give you a tour of Colon, take you to the Gatun Locks Visitor Center, and then on to Portobelo to see the historic town and fort, have lunch in Portobelo and return you to Greg’s Place.",
                           linkUrl: "https://www.panarail.com/",
                           linkText: "OFFICIAL WEBSITE",
                           iconType: "train"
@@ -1146,6 +1152,21 @@ export const content = {
                             { label: "Schedules, Fares & Terminal Information", url: "https://www.google.com/search?q=Albrook+Bus+Terminal+schedule+Gran+Terminal+Nacional+de+Transporte" }
                           ],
                           iconType: "services"
+                        },
+        {
+                          id: 'monkey-island',
+                          name: "Roberto’s Monkey Island Nature Tour by Private Boat",
+                          category: "Nature Excursion",
+                          categoryKey: "nature",
+                          distance: "Gamboa Rainforest Launch",
+                          driveTime: "40 min drive from Greg’s Place",
+                          description: "This is a wonderful trip as you will launch in a small boat from the Gamboa rainforest area into the Chagres River. You will be right next to the giant ships that have just exited the Pedro Miguel locks as they continue on to Gatun Lake.\n\nRoberto leaves early so his boat will be the first one out there and the monkeys will be hungry. Plus, you will hear the early morning howler monkeys calling. Roberto can usually find at least 3 different species of monkeys (they are not all on the island!). There’s lots of interesting waterfowl too, and Roberto can usually find a saltwater crocodile as well.",
+                          futureNote: "With Roberto, Greg’s friend\nDepart Greg’s Place for Gamboa (40 minutes)",
+                          highlights: [
+                            "Optional peacock bass fishing on Gatun Lake, followed by a fish barbecue back at Greg’s Place.",
+                            "Optional visit to Soberanía National Park Zoo on the return from Gamboa. Don’t miss the Harpy Eagle exhibit."
+                          ],
+                          iconType: "canal"
                         },
         {
                           id: '51-fun-things',
@@ -1563,14 +1584,15 @@ export const content = {
   es: {
     nav: [
       { id: 'home', label: 'Inicio' },
+      { id: 'why-albrook', label: '¿Por Qué Albrook?' },
       { id: 'rooms', label: 'Habitaciones' },
       { id: 'photo-gallery', label: 'Galería de Fotos' },
-      { id: 'story', label: 'La Casa' },
-      { id: 'why-albrook', label: '¿Por Qué Albrook?' },
       { id: 'birding-breakfast', label: 'Observación de Aves, Desayuno y Fauna' },
-      { id: 'wildlife', label: 'Vida Silvestre' },
       { id: 'whats-nearby', label: 'Qué Hay Cerca' },
-      { id: '51-fun-things', label: '51+ Cosas Divertidas para Hacer en Panamá' },
+      { id: '51-fun-things', label: '51+ Cosas Divertidas para Hacer' },
+      { id: 'wildlife', label: 'Vida Silvestre' },
+      { id: 'story', label: 'La Casa' },
+      { id: 'about-greg', label: 'Su Anfitrión' },
       { id: 'reviews', label: 'Opiniones' },
       { id: 'contact', label: 'Contacto' },
     ],
@@ -2075,7 +2097,7 @@ export const content = {
           id: 'coatimundi',
           name: "Coatimundis (Gatos Solos)",
           scientificOrLocal: "Nasua narica · White-nosed Coati",
-          frequency: "Avistamientos habituales de paso",
+          frequency: "Visitan todos los días",
           habitat: "Perímetro del jardín y suelo",
           category: 'mammals',
           description: "Parientes curiosos y ágiles del mapache, recorren los bordes del jardín buscando alimento con sus característicos hocicos y colas anilladas."
@@ -2084,7 +2106,7 @@ export const content = {
           id: 'agouti',
           name: "Ñeques (Agutíes Centroamericanos)",
           scientificOrLocal: "Dasyprocta punctata · Central American Agouti",
-          frequency: "Visitantes diarios muy comunes",
+          frequency: "Visitan todos los días",
           habitat: "Césped y sombra de arbustos",
           category: 'mammals',
           description: "Estos simpáticos roedores de pelaje brillante son visitantes diarios del césped, mordisqueando semillas caídas durante el desayuno."
@@ -2093,7 +2115,7 @@ export const content = {
           id: 'sloth',
           name: "Perezosos de Tres Dedos",
           scientificOrLocal: "Bradypus variegatus · Three-toed Sloth",
-          frequency: "Avistamientos pacíficos ocasionales",
+          frequency: "Visitan ocasionalmente",
           habitat: "Árboles de guarumo y ramas altas",
           category: 'mammals',
           description: "Ocasionalmente se observan desplazándose con calma por la copa de los árboles circundantes, símbolo de la tranquilidad de la selva panameña."
@@ -2102,7 +2124,7 @@ export const content = {
           id: 'monkeys',
           name: "Monos Tití y Monos Aulladores",
           scientificOrLocal: "Saguinus geoffroyi & Alouatta palliata",
-          frequency: "Visitantes ocasionales en corredores arbóreos",
+          frequency: "Visitan todos los días",
           habitat: "Corredores de vegetación en Albrook",
           category: 'mammals',
           description: "Pequeños monos tití y aulladores hacen apariciones periódicas a lo largo de los árboles que bordean el vecindario residencial.\n\nUna hembra reproductora se aparea con varios machos y a menudo da a luz a mellizos, dos hermanos nacidos al mismo tiempo, pero que no son idénticos. Aunque por lo general solo uno sobrevive hasta la edad adulta, los machos colaboran para cuidar a los bebés, cargándolos durante sus primeras 10 semanas de vida."
@@ -2124,6 +2146,20 @@ export const content = {
           habitat: "Ramas sobre el agua y rocas ribereñas",
           category: 'reptiles',
           description: "Famoso por su capacidad de correr sobre la superficie del agua cuando se sobresalta, este singular lagarto se observa fácilmente junto a la quebrada."
+        },
+        {
+          id: 'tropical-slider-turtle',
+          name: "Tortuga Jicotea Tropical",
+          frequency: "Común en la quebrada Crocodile Creek",
+          category: 'reptiles',
+          description: "Las tortugas jicoteas tropicales bebé (verdes con una raya roja cerca de la oreja) se vendieron en todo Estados Unidos durante muchos años. ¿Quizás tuviste una como mascota cuando eras niño?\n\nPídele a Greg que te muestre el tambor de tortuga que recibió de un indígena Emberá."
+        },
+        {
+          id: 'iguana',
+          name: "Iguana",
+          frequency: "Visitan todos los días",
+          category: 'reptiles',
+          description: "Iguanas de diferentes tamaños se desplazan por el Puente del Mono hacia nuestros comederos de aves todos los días. Después de que las aves y los coatíes han terminado con la fruta, las iguanas son el equipo de limpieza que come los restos de cáscaras de papaya y banano. A veces verá a una iguana grande ahuyentar a las aves o a una iguana más pequeña. Las iguanas más pequeñas tienen un color verde más intenso."
         },
         {
           id: 'tropical-birds',
@@ -2160,26 +2196,6 @@ export const content = {
           description: "Rara en Albrook, no habíamos visto una en más de 10 años. Pero ahora, una o dos visitan Greg’s Place todos los días. Les encanta la mazorca de maíz fresco, los maníes tostados con cáscara y las semillas de girasol con cáscara."
         },
         {
-          id: 'tropical-slider-turtle',
-          name: "Tortuga Jicotea Tropical",
-          frequency: "Común en la quebrada Crocodile Creek",
-          category: 'reptiles',
-          description: "Las tortugas jicoteas tropicales bebé (verdes con una raya roja cerca de la oreja) se vendieron en todo Estados Unidos durante muchos años. ¿Quizás tuviste una como mascota cuando eras niño?\n\nPídele a Greg que te muestre el tambor de tortuga que recibió de un indígena Emberá."
-        },
-        {
-          id: 'iguana',
-          name: "Iguana",
-          category: 'reptiles',
-          description: "Iguanas de diferentes tamaños se desplazan por el Puente del Mono hacia nuestros comederos de aves todos los días. Después de que las aves y los coatíes han terminado con la fruta, las iguanas son el equipo de limpieza que come los restos de cáscaras de papaya y banano. A veces verá a una iguana grande ahuyentar a las aves o a una iguana más pequeña. Las iguanas más pequeñas tienen un color verde más intenso."
-        },
-        {
-          id: 'panama-house-gecko',
-          name: "Salamanquesa o Gecko de Casa en Panamá",
-          scientificOrLocal: "Hemidactylus frenatus",
-          category: 'reptiles',
-          description: "Se considera de buena suerte tener geckos dentro y alrededor de su hogar en Panamá. Se pueden ver y escuchar por las noches cazando insectos, especialmente alrededor de las luces. También les gusta beber jugos de frutas dulces; ocasionalmente los he encontrado tomando un sorbo de gotas derramadas de un batido de frutas. El artículo a continuación es fascinante. Aquí hay un extracto:\n\n«A diferencia de muchos lagartos, los geckos no tienen párpados. En su lugar, limpian y humedecen sus ojos lamiéndoles con la lengua, un comportamiento que muchas personas encuentran extraño y extrañamente adorable.\n\nSus habilidades para escalar son aún más notables. Los geckos domésticos pueden correr sin esfuerzo por paredes verticales, ventanas de vidrio y techos gracias a millones de estructuras microscópicas similares a pelos en sus dedos llamadas setas.»\n\nFuente: «The Secret Life of House Geckos in Panama» — The Lost and Found Jungle Hostel"
-        },
-        {
           id: 'capybara',
           name: "Capibara (Poncho)",
           category: 'mammals',
@@ -2192,11 +2208,27 @@ export const content = {
           description: "Las pacas son un roedor nocturno grande de tamaño intermedio entre el capibara menor y el agutí (ñeque). Son muy apreciadas como animales de caza, siendo su carne cocida considerada un manjar entre los entusiastas de la carne silvestre. De hecho, se han servido en Belice a la reina Isabel II como «la rata real».\n\nLas pacas comen frutas, hojas, brotes, flores, hongos e insectos. Desempeñan un papel fundamental en la dispersión de semillas, y sus dominios vitales a menudo se centran en un grupo de árboles frutales. Las pacas normalmente no usan sus patas delanteras para manipular las frutas (como sí lo hacen los agutíes)."
         },
         {
+          id: 'northern-tamandua',
+          name: "Tamandúa Norteño (Oso Hormiguero)",
+          scientificOrLocal: "Tamandua mexicana · Oso hormiguero",
+          frequency: "Residente nocturno y crepuscular poco frecuente",
+          habitat: "Copas de los árboles y cerca del puente de Crocodile Creek",
+          category: 'mammals',
+          description: "Los tamandúas norteños subsisten casi por completo de una dieta de hormigas y termitas. Pueden comer hasta 9,000 insectos al día, de entre 50 y 80 nidos diferentes, los cuales localizan por el olfato y luego excavan con sus poderosas garras. Extraen las hormigas con sus lenguas largas, estrechas y pegajosas. Uno vive cerca del puente sobre Crocodile Creek, próximo a Greg's Place, pero rara vez se deja ver."
+        },
+        {
           id: 'armadillo',
           name: "Armadillo de nueve bandas",
           scientificOrLocal: "Dasypus novemcinctus",
           category: 'mammals',
           description: "Los vemos de vez en cuando al caminar de noche. Si escuchas mucho crujido entre los arbustos, probablemente sea uno de ellos.\n\nTuve uno viviendo debajo de mi casa («Freddy the Freeloader») durante dos años antes de que finalmente lograra convencerlo de irse.\n\nMi perro atrapó uno una vez. Cuando intentó levantarlo, se le resbaló de la boca debido a su cuerpo anguloso y resbaladizo. Sostuve a mi perro y el armadillo se alejó corriendo, ileso.\n\nSon conocidos por tener mala vista. Una vez, un armadillo bebé caminó hasta donde yo estaba de pie sin haberme visto nunca. ¡Cuando su nariz tocó mis dedos de los pies, finalmente se dio cuenta de mi presencia y corrió hacia los arbustos!"
+        },
+        {
+          id: 'panama-house-gecko',
+          name: "Salamanquesa o Gecko de Casa en Panamá",
+          scientificOrLocal: "Hemidactylus frenatus",
+          category: 'reptiles',
+          description: "Se considera de buena suerte tener geckos dentro y alrededor de su hogar en Panamá. Se pueden ver y escuchar por las noches cazando insectos, especialmente alrededor de las luces. También les gusta beber jugos de frutas dulces; ocasionalmente los he encontrado tomando un sorbo de gotas derramadas de un batido de frutas. El artículo a continuación es fascinante. Aquí hay un extracto:\n\n«A diferencia de muchos lagartos, los geckos no tienen párpados. En su lugar, limpian y humedecen sus ojos lamiéndoles con la lengua, un comportamiento que muchas personas encuentran extraño y extrañamente adorable.\n\nSus habilidades para escalar son aún más notables. Los geckos domésticos pueden correr sin esfuerzo por paredes verticales, ventanas de vidrio y techos gracias a millones de estructuras microscópicas similares a pelos en sus dedos llamadas setas.»\n\nFuente: «The Secret Life of House Geckos in Panama» — The Lost and Found Jungle Hostel"
         }
       ]
     },
@@ -2268,12 +2300,16 @@ export const content = {
           description: "Servicios esenciales diarios, compras y centros profesionales ubicados en las inmediaciones de Greg's Place:",
           facilities: [
             {
-              name: "Aeropuerto Marcos A. Gelabert",
+              name: "Aeropuerto Marcos A. Gelabert (PAC)",
               time: "~3 minutos en auto o ~12 minutos caminando"
             },
             {
               name: "Embajada de los Estados Unidos",
               time: "~7 minutos en auto"
+            },
+            {
+              name: "Ciudad del Saber (City of Knowledge)",
+              time: "~10 minutos en auto (~15+ minutos en hora pico)"
             },
             {
               name: "Mercado Agrícola / de Productores (frutas, verduras, huevos)",
@@ -2646,21 +2682,6 @@ export const content = {
           iconType: "train"
         },
         {
-          id: 'monkey-island',
-          name: "Tour de Naturaleza a la Isla de Monos en Bote Privado",
-          category: "Excursión de Naturaleza",
-          categoryKey: "nature",
-          distance: "Salida desde la Selva de Gamboa",
-          driveTime: "40 min en auto desde Greg’s Place",
-          description: "Este es un viaje maravilloso, ya que zarpará en un pequeño bote desde el área de la selva tropical de Gamboa hacia el río Chagres. Estará justo al lado de los barcos gigantes que acaban de salir de las esclusas de Pedro Miguel mientras continúan hacia el Lago Gatún.\n\nRoberto sale temprano para que su bote sea el primero en llegar y los monos tengan hambre. Además, escuchará a los monos aulladores cantar temprano en la mañana. Roberto suele encontrar al menos 3 especies diferentes de monos (¡no todos están en la isla!). También hay muchas aves acuáticas interesantes. Roberto suele encontrar un cocodrilo de agua salada también.",
-          futureNote: "con Roberto, el amigo de Greg\nSalida de Greg’s Place hacia Gamboa (40 minutos)",
-          highlights: [
-            "Pesca de sargento en el Lago Gatún, seguida de un asado de pescado en Greg’s Place.",
-            "Visita al zoológico del Parque Nacional Soberanía de regreso de Gamboa. No se pierda la exhibición del Águila Arpía."
-          ],
-          iconType: "canal"
-        },
-        {
           id: 'multiplaza-mall',
           name: "Multiplaza Mall",
           category: "Compras y Lujo",
@@ -2709,6 +2730,21 @@ export const content = {
             { label: "Horarios, Tarifas e Información de la Terminal", url: "https://www.google.com/search?q=Albrook+Bus+Terminal+schedule+Gran+Terminal+Nacional+de+Transporte" }
           ],
           iconType: "services"
+        },
+        {
+          id: 'monkey-island',
+          name: "Tour de Naturaleza a la Isla de Monos en Bote Privado",
+          category: "Excursión de Naturaleza",
+          categoryKey: "nature",
+          distance: "Salida desde la Selva de Gamboa",
+          driveTime: "40 min en auto desde Greg’s Place",
+          description: "Este es un viaje maravilloso, ya que zarpará en un pequeño bote desde el área de la selva tropical de Gamboa hacia el río Chagres. Estará justo al lado de los barcos gigantes que acaban de salir de las esclusas de Pedro Miguel mientras continúan hacia el Lago Gatún.\n\nRoberto sale temprano para que su bote sea el primero en llegar y los monos tengan hambre. Además, escuchará a los monos aulladores cantar temprano en la mañana. Roberto suele encontrar al menos 3 especies diferentes de monos (¡no todos están en la isla!). También hay muchas aves acuáticas interesantes. Roberto suele encontrar un cocodrilo de agua salada también.",
+          futureNote: "con Roberto, el amigo de Greg\nSalida de Greg’s Place hacia Gamboa (40 minutos)",
+          highlights: [
+            "Pesca de sargento en el Lago Gatún, seguida de un asado de pescado en Greg’s Place.",
+            "Visita al zoológico del Parque Nacional Soberanía de regreso de Gamboa. No se pierda la exhibición del Águila Arpía."
+          ],
+          iconType: "canal"
         },
         {
           id: '51-fun-things',
