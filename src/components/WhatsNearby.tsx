@@ -129,11 +129,6 @@ const nearbyCardPhotos: Record<string, { src: string; defaultAlt: string; defaul
     defaultAlt: 'Night Walk & Nocturnal Wildlife in Albrook',
     defaultTitle: 'Night Walk',
   },
-  'monkey-island': {
-    src: '/pictures/tamarin.jpeg',
-    defaultAlt: "Wild monkey observed during Roberto's Monkey Island Nature Tour",
-    defaultTitle: "Roberto’s Monkey Island Nature Tour",
-  },
 };
 
 interface WhatsNearbyProps {
@@ -278,25 +273,6 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
             if (place.id === 'monkey-island') {
               const monkeyGallery = [
                 {
-                  src: '/pictures/tamarin.jpeg',
-                  alt:
-                    lang === 'fr'
-                      ? 'Singe observé lors de l’excursion à l’Île aux Singes avec Roberto'
-                      : lang === 'de'
-                      ? 'Wilder Affe auf Robertos Affeninsel-Naturtour'
-                      : lang === 'es'
-                      ? 'Mono observado durante el Tour a la Isla de Monos con Roberto'
-                      : 'Wild monkey observed on Roberto’s Monkey Island Nature Tour',
-                  title:
-                    lang === 'fr'
-                      ? 'Observation des singes sur le lac Gatún'
-                      : lang === 'de'
-                      ? 'Affenbeobachtung am Gatun-See'
-                      : lang === 'es'
-                      ? 'Avistamiento de monos en el Lago Gatún'
-                      : 'Wild Monkeys on Gatun Lake',
-                },
-                {
                   src: '/pictures/natpark.jpg',
                   alt:
                     lang === 'fr'
@@ -355,6 +331,24 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                 },
               ];
 
+              const tourHeading =
+                lang === 'fr'
+                  ? "Excursion Nature à l'Île aux Singes en Bateau Privé"
+                  : lang === 'de'
+                  ? 'Affeninsel-Naturtour im Privatboot'
+                  : lang === 'es'
+                  ? 'Tour de Naturaleza a la Isla de Monos en Bote Privado'
+                  : 'Monkey Island Nature Tour by Private Boat';
+
+              const tourSubtitle =
+                lang === 'fr'
+                  ? "avec Roberto, l'ami de Greg"
+                  : lang === 'de'
+                  ? 'mit Roberto, Gregs Freund'
+                  : lang === 'es'
+                  ? 'con Roberto, el amigo de Greg'
+                  : 'with Greg’s friend Roberto';
+
               const spotlightLabel =
                 lang === 'fr'
                   ? 'Excursion Recommandée · Bateau Privé'
@@ -388,146 +382,136 @@ export const WhatsNearby: React.FC<WhatsNearbyProps> = ({ lang }) => {
                   id={place.id}
                   className="col-span-1 md:col-span-2 lg:col-span-3 bg-gradient-to-br from-[#1B3022] via-[#203828] to-[#15261B] text-[#FAF8F5] border-2 border-[#C5A059]/60 shadow-xl p-6 sm:p-8 lg:p-10 relative overflow-hidden"
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-9 items-start">
-                    {/* Left Column: Header, Metadata, Description, Host Note & Highlights */}
-                    <div className="lg:col-span-7 flex flex-col justify-between space-y-5">
-                      <div>
-                        {/* Top Badges */}
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                          <div className="flex items-center gap-2.5">
-                            <div className="w-10 h-10 bg-[#C5A059]/20 border border-[#C5A059]/50 flex items-center justify-center shrink-0">
-                              <Ship className="w-5 h-5 text-[#C5A059]" />
-                            </div>
-                            <span className="text-[11px] font-mono uppercase tracking-[0.2em] font-bold text-[#C5A059]">
-                              {spotlightLabel}
-                            </span>
+                  <div className="flex flex-col space-y-7">
+                    {/* Top Section: Badges, Heading, Subtitle, Pills & Full Tour Introduction */}
+                    <div className="space-y-5">
+                      {/* Top Badges */}
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-10 h-10 bg-[#C5A059]/20 border border-[#C5A059]/50 flex items-center justify-center shrink-0">
+                            <Ship className="w-5 h-5 text-[#C5A059]" />
                           </div>
-                          <span className="text-[11px] font-mono uppercase tracking-widest font-bold px-2.5 py-1 bg-white/10 border border-white/15 text-[#FAF8F5]">
-                            {place.category}
+                          <span className="text-[11px] font-mono uppercase tracking-[0.2em] font-bold text-[#C5A059]">
+                            {spotlightLabel}
                           </span>
                         </div>
-
-                        {/* Title */}
-                        <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-light text-white tracking-tight leading-snug mb-4">
-                          {place.name}
-                        </h3>
-
-                        {/* Departure & Drive Time Pills */}
-                        {(place.distance || place.driveTime) && (
-                          <div className="flex flex-wrap gap-3 mb-5">
-                            {place.distance && (
-                              <div className="inline-flex items-center gap-2 px-3.5 py-2 bg-white/10 border border-[#C5A059]/35 text-xs sm:text-sm font-semibold text-white">
-                                <MapPin className="w-4 h-4 text-[#C5A059] shrink-0" />
-                                <span>{place.distance}</span>
-                              </div>
-                            )}
-                            {place.driveTime && (
-                              <div className="inline-flex items-center gap-2 px-3.5 py-2 bg-white/10 border border-[#C5A059]/35 text-xs sm:text-sm font-medium text-[#E8D5A7]">
-                                <Clock className="w-4 h-4 text-[#C5A059] shrink-0" />
-                                <span>{place.driveTime}</span>
-                              </div>
-                            )}
-                          </div>
-                        )}
-
-                        {/* Narrative Description */}
-                        {place.description && (
-                          <div className="text-sm sm:text-[15.5px] text-white/90 leading-relaxed whitespace-pre-line font-light">
-                            {place.description}
-                          </div>
-                        )}
+                        <span className="text-[11px] font-mono uppercase tracking-widest font-bold px-2.5 py-1 bg-white/10 border border-white/15 text-[#FAF8F5]">
+                          {place.category}
+                        </span>
                       </div>
 
-                      {/* Host Note */}
-                      {place.futureNote && (
-                        <div className="p-4 bg-black/25 border-l-3 border-[#C5A059] space-y-1">
-                          <div className="font-mono text-[10px] sm:text-[11px] text-[#C5A059] uppercase tracking-wider font-bold">
-                            {lang === 'fr' ? "Note de l'hôte" : lang === 'de' ? 'Hinweis des Gastgebers' : lang === 'en' ? 'Host Note' : 'Nota Local'}
-                          </div>
-                          <div className="italic text-xs sm:text-sm text-white/95 whitespace-pre-line leading-relaxed">
-                            {place.futureNote}
-                          </div>
+                      {/* Tour Heading & Subtitle */}
+                      <div>
+                        <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-light text-white tracking-tight leading-snug">
+                          {tourHeading}
+                        </h3>
+                        <p className="font-serif text-lg sm:text-xl italic text-[#E8D5A7] mt-1">
+                          {tourSubtitle}
+                        </p>
+                      </div>
+
+                      {/* Departure & Drive Time Pills */}
+                      {(place.distance || place.driveTime) && (
+                        <div className="flex flex-wrap gap-3">
+                          {place.distance && (
+                            <div className="inline-flex items-center gap-2 px-3.5 py-2 bg-white/10 border border-[#C5A059]/35 text-xs sm:text-sm font-semibold text-white">
+                              <MapPin className="w-4 h-4 text-[#C5A059] shrink-0" />
+                              <span>{place.distance}</span>
+                            </div>
+                          )}
+                          {place.driveTime && (
+                            <div className="inline-flex items-center gap-2 px-3.5 py-2 bg-white/10 border border-[#C5A059]/35 text-xs sm:text-sm font-medium text-[#E8D5A7]">
+                              <Clock className="w-4 h-4 text-[#C5A059] shrink-0" />
+                              <span>{place.driveTime}</span>
+                            </div>
+                          )}
                         </div>
                       )}
 
-                      {/* Optional Highlights: Fishing, BBQ, Soberanía National Park Zoo */}
-                      {place.highlights && place.highlights.length > 0 && (
-                        <div className="pt-4 border-t border-white/15 space-y-2.5">
-                          <div className="text-[11px] font-mono uppercase tracking-widest text-[#C5A059] font-bold">
-                            {optionalHeading}
-                          </div>
-                          <div className="space-y-2">
-                            {place.highlights.map((highlight: string, idx: number) => (
-                              <div
-                                key={idx}
-                                className="flex items-start gap-2.5 text-xs sm:text-sm text-white/90 leading-relaxed"
-                              >
-                                <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
-                                <span>{highlight}</span>
-                              </div>
-                            ))}
-                          </div>
+                      {/* Tour Introduction Above Photographs */}
+                      {place.description && (
+                        <div className="max-w-4xl text-sm sm:text-[15.5px] text-white/90 leading-relaxed whitespace-pre-line font-light">
+                          {place.description}
                         </div>
                       )}
                     </div>
 
-                    {/* Right Column: Authentic Wildlife, River & Fishing Photo Mosaic */}
-                    <div className="lg:col-span-5 space-y-3">
-                      {/* Primary Featured Photo */}
-                      <button
-                        type="button"
-                        onClick={() => setLightboxImage(monkeyGallery[0])}
-                        className="w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059] cursor-pointer block rounded-[2px]"
-                        aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${monkeyGallery[0].title}`}
-                      >
-                        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#C5A059]/40 bg-[#14231B] shadow-lg group-hover/photo:border-[#C5A059] transition-all duration-300">
-                          <img
-                            src={encodeURI(monkeyGallery[0].src)}
-                            alt={monkeyGallery[0].alt}
-                            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-103"
-                            loading="lazy"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
-                          <div className="absolute bottom-2.5 left-3 right-12 text-xs sm:text-sm font-serif text-white drop-shadow">
-                            {monkeyGallery[0].title}
-                          </div>
-                          <div className="absolute bottom-2.5 right-2.5 bg-black/70 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1">
-                            <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
-                            <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>
-                          </div>
-                        </div>
-                      </button>
-
-                      {/* Supporting 3-Photo Strip */}
-                      <div className="grid grid-cols-3 gap-2.5">
-                        {monkeyGallery.slice(1).map((photo, pIdx) => (
+                    {/* Centered Full-Width 3-Photo Gallery (1-col mobile, 2+1 centered tablet, 3-col desktop) */}
+                    <div className="space-y-3">
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {monkeyGallery.map((photo, pIdx) => (
                           <button
                             key={pIdx}
                             type="button"
                             onClick={() => setLightboxImage(photo)}
-                            className="w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059] cursor-pointer block rounded-[2px]"
+                            className={`w-full text-left group/photo focus:outline-none focus:ring-2 focus:ring-[#C5A059] cursor-pointer block rounded-[2px] ${
+                              pIdx === 2
+                                ? 'md:col-span-2 md:w-[calc((100%-1.25rem)/2)] md:mx-auto lg:col-span-1 lg:w-full lg:mx-0'
+                                : ''
+                            }`}
                             aria-label={`${lang === 'fr' ? 'Agrandir la photo de' : lang === 'de' ? 'Foto vergrößern von' : lang === 'es' ? 'Ampliar foto de' : 'Expand photo of'} ${photo.title}`}
                           >
-                            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2px] border border-white/20 bg-[#14231B] group-hover/photo:border-[#C5A059] transition-all duration-300">
+                            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2px] border border-[#C5A059]/45 bg-[#14231B] shadow-lg group-hover/photo:border-[#C5A059] transition-all duration-300">
                               <img
                                 src={encodeURI(photo.src)}
                                 alt={photo.alt}
-                                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-105"
+                                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/photo:scale-103"
                                 loading="lazy"
                               />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
-                              <span className="absolute bottom-1 left-1.5 right-1.5 text-[10px] leading-tight text-white/95 font-medium line-clamp-2 drop-shadow">
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none" />
+                              <div className="absolute bottom-2.5 left-3 right-20 text-xs sm:text-sm font-serif text-white drop-shadow leading-snug">
                                 {photo.title}
-                              </span>
+                              </div>
+                              <div className="absolute bottom-2.5 right-2.5 bg-black/70 backdrop-blur-xs text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-xs border border-white/20 flex items-center gap-1">
+                                <Maximize2 className="w-2.5 h-2.5 text-[#C5A059]" />
+                                <span className="hidden sm:inline">{lang === 'fr' ? 'Agrandir' : lang === 'de' ? 'Vergrößern' : lang === 'es' ? 'Ampliar' : 'Expand'}</span>
+                              </div>
                             </div>
                           </button>
                         ))}
                       </div>
 
-                      <p className="text-[11px] font-mono text-white/65 text-right">
+                      <p className="text-[11px] font-mono text-white/65 text-center">
                         {galleryHint}
                       </p>
                     </div>
+
+                    {/* Bottom Section: Host Note & Optional Fishing / Zoo Highlights */}
+                    {(place.futureNote || (place.highlights && place.highlights.length > 0)) && (
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start pt-4 border-t border-white/15">
+                        {/* Host Note */}
+                        {place.futureNote && (
+                          <div className={`${place.highlights && place.highlights.length > 0 ? 'lg:col-span-5' : 'lg:col-span-12'} p-4 bg-black/25 border-l-3 border-[#C5A059] space-y-1`}>
+                            <div className="font-mono text-[10px] sm:text-[11px] text-[#C5A059] uppercase tracking-wider font-bold">
+                              {lang === 'fr' ? "Note de l'hôte" : lang === 'de' ? 'Hinweis des Gastgebers' : lang === 'en' ? 'Host Note' : 'Nota Local'}
+                            </div>
+                            <div className="italic text-xs sm:text-sm text-white/95 whitespace-pre-line leading-relaxed">
+                              {place.futureNote}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Optional Highlights: Fishing, BBQ, Soberanía National Park Zoo */}
+                        {place.highlights && place.highlights.length > 0 && (
+                          <div className={`${place.futureNote ? 'lg:col-span-7' : 'lg:col-span-12'} space-y-2.5`}>
+                            <div className="text-[11px] font-mono uppercase tracking-widest text-[#C5A059] font-bold">
+                              {optionalHeading}
+                            </div>
+                            <div className="space-y-2">
+                              {place.highlights.map((highlight: string, idx: number) => (
+                                <div
+                                  key={idx}
+                                  className="flex items-start gap-2.5 text-xs sm:text-sm text-white/90 leading-relaxed"
+                                >
+                                  <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
+                                  <span>{highlight}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               );

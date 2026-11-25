@@ -18,7 +18,7 @@ export const contentFr = {
     },
     {
       "id": "birding-breakfast",
-      "label": "Observation des Oiseaux, Petit-déjeuner & Faune"
+      "label": "Expérience Petit-Déjeuner"
     },
     {
       "id": "whats-nearby",
@@ -26,7 +26,7 @@ export const contentFr = {
     },
     {
       "id": "51-fun-things",
-      "label": "51+ Activités Amusantes à Faire"
+      "label": "51+ Activités"
     },
     {
       "id": "wildlife",

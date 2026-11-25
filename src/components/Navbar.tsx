@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar, Phone } from 'lucide-react';
-import { Language, NavItem } from '../types';
+import { Language, NavItem, NearbyPlace } from '../types';
 import { content } from '../data/content';
 import { localPictures } from '../data/images';
 import { LANGUAGES } from './LanguageSelector';
@@ -27,8 +27,8 @@ const DESKTOP_TWO_LINE_ITEMS: Record<Language, Record<string, readonly [string, 
     'story': ['THE', 'HOME'],
     'about-greg': ['YOUR', 'HOST'],
     'why-albrook': ['WHY', 'ALBROOK?'],
-    '51-fun-things': ['51+ FUN THINGS', 'TO DO'],
-    'birding-breakfast': ['BIRDING BREAKFAST', 'AND CRITTERS'],
+    '51-fun-things': ['51+ FUN', 'THINGS'],
+    'birding-breakfast': ['BREAKFAST', 'EXPERIENCE'],
     'whats-nearby': ["WHAT'S", 'NEARBY'],
   },
   es: {
@@ -37,7 +37,7 @@ const DESKTOP_TWO_LINE_ITEMS: Record<Language, Record<string, readonly [string, 
     'about-greg': ['SU', 'ANFITRIÓN'],
     'why-albrook': ['¿POR QUÉ', 'ALBROOK?'],
     '51-fun-things': ['51+ COSAS', 'DIVERTIDAS'],
-    'birding-breakfast': ['OBSERVACIÓN DE AVES', 'DESAYUNO Y FAUNA'],
+    'birding-breakfast': ['EXPERIENCIA', 'DESAYUNO'],
     'whats-nearby': ['QUÉ HAY', 'CERCA'],
   },
   de: {
@@ -45,8 +45,8 @@ const DESKTOP_TWO_LINE_ITEMS: Record<Language, Record<string, readonly [string, 
     'story': ['DAS', 'HAUS'],
     'about-greg': ['IHR', 'GASTGEBER'],
     'why-albrook': ['WARUM', 'ALBROOK?'],
-    '51-fun-things': ['51+ UNTERHALTSAME', 'AKTIVITÄTEN'],
-    'birding-breakfast': ['VOGELBEOBACHTUNG', 'FRÜHSTÜCK & TIERWELT'],
+    '51-fun-things': ['51+', 'AKTIVITÄTEN'],
+    'birding-breakfast': ['FRÜHSTÜCKS-', 'ERLEBNIS'],
     'whats-nearby': ['WAS GIBT ES', 'IN DER NÄHE?'],
   },
   fr: {
@@ -54,8 +54,8 @@ const DESKTOP_TWO_LINE_ITEMS: Record<Language, Record<string, readonly [string, 
     'story': ['LA', 'DEMEURE'],
     'about-greg': ['VOTRE', 'HÔTE'],
     'why-albrook': ['POURQUOI', 'ALBROOK ?'],
-    '51-fun-things': ['51+ ACTIVITÉS', 'AMUSANTES'],
-    'birding-breakfast': ['OBSERVATION OISEAUX', 'DÉJEUNER & FAUNE'],
+    '51-fun-things': ['51+', 'ACTIVITÉS'],
+    'birding-breakfast': ['EXPÉRIENCE', 'PETIT-DÉJEUNER'],
     'whats-nearby': ['À', 'PROXIMITÉ'],
   },
 };
@@ -63,7 +63,7 @@ const DESKTOP_TWO_LINE_ITEMS: Record<Language, Record<string, readonly [string, 
 const SPECIAL_MENU_I18N = {
   en: {
     'birding-breakfast': {
-      title: 'Birding Breakfast and Critters',
+      title: 'Breakfast Experience',
       badge: 'EXPERIENCE',
     },
     'whats-nearby': {
@@ -71,13 +71,13 @@ const SPECIAL_MENU_I18N = {
       badge: 'EXPLORE',
     },
     '51-fun-things': {
-      title: '51+ Fun Things to Do',
+      title: '51+ Fun Things',
       badge: 'PANAMA',
     },
   },
   es: {
     'birding-breakfast': {
-      title: 'Observación de Aves, Desayuno y Fauna',
+      title: 'Experiencia Desayuno',
       badge: 'EXPERIENCIA',
     },
     'whats-nearby': {
@@ -85,13 +85,13 @@ const SPECIAL_MENU_I18N = {
       badge: 'EXPLORAR',
     },
     '51-fun-things': {
-      title: '51+ Cosas Divertidas para Hacer',
+      title: '51+ Cosas Divertidas',
       badge: 'PANAMÁ',
     },
   },
   de: {
     'birding-breakfast': {
-      title: 'Vogelbeobachtung, Frühstück & Tierwelt',
+      title: 'Frühstückserlebnis',
       badge: 'ERLEBNIS',
     },
     'whats-nearby': {
@@ -99,13 +99,13 @@ const SPECIAL_MENU_I18N = {
       badge: 'ENTDECKEN',
     },
     '51-fun-things': {
-      title: '51+ Unterhaltsame Aktivitäten',
+      title: '51+ Aktivitäten',
       badge: 'PANAMA',
     },
   },
   fr: {
     'birding-breakfast': {
-      title: 'Observation des Oiseaux, Petit-déjeuner & Faune',
+      title: 'Expérience Petit-Déjeuner',
       badge: 'EXPÉRIENCE',
     },
     'whats-nearby': {
@@ -113,7 +113,7 @@ const SPECIAL_MENU_I18N = {
       badge: 'EXPLORER',
     },
     '51-fun-things': {
-      title: '51+ Activités Amusantes à Faire',
+      title: '51+ Activités',
       badge: 'PANAMA',
     },
   },
@@ -154,6 +154,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   // Single horizontal row navigation items from content
   const navItems: readonly NavItem[] = t.nav;
+  const funThingsUrl =
+    (t.whatsNearby.places as readonly NearbyPlace[]).find((p) => p.id === '51-fun-things')?.linkUrl ||
+    'https://tourscanner.com/things-to-do-in-panama-city-panama';
 
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
@@ -210,7 +213,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </button>
 
         {/* Desktop Navigation Links - Kept strictly as ONE single horizontal row */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2 2xl:gap-2.5 flex-nowrap shrink">
+        <nav className="hidden lg:flex items-center justify-center gap-1 xl:gap-2.5 2xl:gap-3.5 flex-nowrap flex-1 min-w-0">
           {navItems.map((item) => {
             const isActive = isPhotoGalleryActive && item.id === 'photo-gallery';
             const twoLineConfig = DESKTOP_TWO_LINE_ITEMS[lang]?.[item.id];
@@ -248,14 +251,15 @@ export const Navbar: React.FC<NavbarProps> = ({
               );
             }
 
-            // Special Compact Two-Line Button: 51+ FUN THINGS TO DO
+            // Special Compact Two-Line External Link: 51+ FUN THINGS
             if (item.id === '51-fun-things' || item.id === '51-things') {
-              const lines = twoLineConfig || ['51+ FUN THINGS', 'TO DO'];
+              const lines = twoLineConfig || ['51+ FUN', 'THINGS'];
               return (
-                <button
+                <a
                   key={item.id}
-                  type="button"
-                  onClick={() => scrollToSection('51-fun-things')}
+                  href={funThingsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`inline-flex flex-col items-center justify-center text-center px-1.5 xl:px-2 py-0.5 rounded-[3px] font-bold text-[9.5px] xl:text-[10.5px] 2xl:text-[12px] leading-[1.08] tracking-wide transition-all border shrink-0 cursor-pointer ${
                     effectiveScrolled
                       ? 'text-[#DC2626] border-[#DC2626]/40 hover:border-[#DC2626] hover:bg-red-50/70 shadow-2xs'
@@ -265,13 +269,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                 >
                   <span className="font-bold whitespace-nowrap">{lines[0]}</span>
                   <span className="font-bold whitespace-nowrap">{lines[1]}</span>
-                </button>
+                </a>
               );
             }
 
-            // Special Compact Two-Line Button: BIRDING BREAKFAST AND CRITTERS
+            // Special Compact Two-Line Button: BREAKFAST EXPERIENCE
             if (item.id === 'birding-breakfast') {
-              const lines = twoLineConfig || ['BIRDING BREAKFAST', 'AND CRITTERS'];
+              const lines = twoLineConfig || ['BREAKFAST', 'EXPERIENCE'];
               return (
                 <button
                   key={item.id}
@@ -480,21 +484,23 @@ export const Navbar: React.FC<NavbarProps> = ({
               const isActive = isPhotoGalleryActive && item.id === 'photo-gallery';
               const specialI18n = SPECIAL_MENU_I18N[lang];
 
-              // Mobile 51+ Fun Things
+              // Mobile 51+ Fun Things (direct external link in new tab)
               if (item.id === '51-fun-things' || item.id === '51-things') {
                 const data = specialI18n['51-fun-things'];
                 return (
-                  <button
+                  <a
                     key={item.id}
-                    type="button"
-                    onClick={() => scrollToSection('51-fun-things')}
+                    href={funThingsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
                     className="text-left text-xs sm:text-sm uppercase tracking-wider font-bold py-2.5 border-b border-[#1B3022]/10 transition-colors text-[#DC2626] flex items-center justify-between gap-2 cursor-pointer"
                   >
                     <span className="leading-tight font-bold pr-1">{data.title}</span>
                     <span className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 border border-[#DC2626]/40 rounded-xs text-[#DC2626] shrink-0 font-semibold">
                       {data.badge}
                     </span>
-                  </button>
+                  </a>
                 );
               }
 
